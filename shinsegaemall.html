@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 비슷한것끼리 나누기 -->
+    <!-- 모듈 재사용된것 [R] -->
+    <!-- 모듈 한번만 사용되는 것 [1] -->
+
+    <!-- HEADER -->
+
+    <header>
+        <!-- logo -->
+        <h1>SSG.COM</h1>
+        <div>
+            <input type="text"/><span>icon</span>
+        </div>
+        <div>
+            cart icon
+        </div>
+    </header>
+
+<!-- carousel -->
+
+    <div>
+        이미지 자동 슬라이드
+        <!-- 특이사항 fixed z-index 뒤에 -->
+    </div>
+
+    <!-- type Category [R]-->
+    
+    <div>
+        <ul>
+            <li>홈</li>
+            <li>추석</li>
+            <li>명품관</li>
+            <li>해피라운지</li>
+            <li>베스트</li>
+            <li>백화점</li>
+            <li>브랜드</li>
+        </ul>
+    </div>
+
+    <!-- type four img [1]-->
+    <div>
+        <div>
+            <img src="" alt="명품">
+            <img src="" alt="패션">
+            <img src="" alt="뷰티">
+            <img src="" alt="라이프">
+        </div>
+    </div>
+
+
+    <!-- products [R]-->
+
+    <div>
+        <h3>Happy Lounge</h3>
+        <p>당신의 쇼핑이 특별해지는, 매일 오전 9시 <span>전체보기></span></p>
+        <div>
+            <img src="" alt="left main">
+
+            <img src="" alt="right sub 1">
+            <img src="" alt="right sub 2">
+            <img src="" alt="right sub 3">
+        </div>
+        <h4>남성특급 TOP 50</h4>
+        <h4>최多구매! 최大할인!</h4>
+        <h4><b>신세계몰</b> 지금 남자들은 어떤 옷을 살까? BEST 상품만 모았다!</h4>
+
+        <p>39,945원~</p>
+        <p>1195개 구매중 <span>❤</span><span>🎁</span></p>
+        <!-- 총 3번 반복 이후 데이터 받아서 반복-->
+
+    </div>
+
+
+    <!-- big imgs [1]-->
+    <div>
+        <h3>New Service</h3>
+
+        <!-- 3번 반복 슬라이드로 진행 가로 flex or 이어가는것-->
+        <p>새롭게 오픈한 서비스를 소개해드려요</p>
+        <div>
+            <img src="" alt="달 이미지">
+            <h4>2022추석 명절</h4>
+            <p>미리 준비하는 올 추석 명절 선물</p>
+        </div>
+        <!-- 3번 반복 슬라이드로 진행 -->
+
+    </div>
+
+    <!-- mini icons/brands [R]-->
+    <!-- 아이콘, 브랜드 재사용-->
+
+    <div>
+        <!-- 그리드 5*2 반복-->
+        <div>
+            <div id="mini_item">
+                <img src="" alt="logo">
+                <p>명절</p>
+            </div>
+        </div>
+        <!-- 그리드 5*2 반복-->
+    </div>
+
+    <!-- banner -->
+    <div>
+        <img src="https://sui.ssgcdn.com/cmpt/banner/202202/2022021109162446068589319858_569.jpg" alt="신세계 백화점으로 가기">
+    </div>
+
+
+
+    <!-- card promotion [1]-->
+    <div>
+        <h3>이번 주 카드 프로모션</h3>
+        <p>SSGPAY로 결제하셔도 혜택 받을 수 있어요</p>
+        <!-- 4번 반복 -->
+        <div id="card_ad">
+            <p>~8만 <span>ssg</span></p>
+            <p>SSG.COM카드</p>
+            <p>첫결제할인/룰렛 쿠폰</p>
+        </div>
+        <!-- 4번 반복 -->
+    </div>
+
+
+    <!-- hot brand [R]-->
+    <div>
+        <h3>Hot Brand</h3>
+        <!-- 그리드 4*3 -->
+        <div>
+            <div id="mini_item">
+                <img src="" alt="logo">
+                <p>샤넬</p>
+            </div>
+        </div>
+        <!-- 그리드 4*3 -->
+    </div>
+
+
+    <!-- Brand Ranking [R]-->
+    <div>
+        <h3>Brand Ranking <span>전체보기></span></h3>
+        <ul>
+            <li>전체</li>
+            <li>패션</li>
+            <li>뷰티&잡화</li>
+            <li>스포츠&레저</li>
+            <li>지털&라이프</li>
+            <!-- 확장되는거 조금 생각js -->
+        </ul>
+
+        <!-- 랭킹 클릭 -->
+        <div>
+            <p>1 COACH - <span>🧡</span></p>
+        </div>
+
+        <!-- 상품 슬라이드 (반복)[R] -->
+        <div>
+            <img src="" alt="가방 이미지">
+            <p>신세계백화점</p>
+            <p>[공식] 필드 도트 22인 컬러블랙 C3455</p>
+            <p>550,000원</p>
+            <p>별5.0 | 3건</p>
+        </div>
+        <!-- 상품 슬라이드 (반복)[R] -->
+    </div>
+
+    
+
+
+    <!-- category items slide -->
+    제목 전체보기>
+    메뉴들
+
+    이미지
+    상품명
+    내용
+    가격
+    별점 / 후기개수 
+
+    바로가기>
+
+    <!-- footer -->
+
+    <footer>
+        <div>
+            <div>
+                <i></i>
+                <p>SSG.COM 고객센터 / 전자금융거래 분쟁처리 <br/>
+                    1577-3419 / ssg@ssg.com
+                </p>
+            </div>
+            <div>
+                <button>전화걸기</button>
+                <button>1:1 고객센터</button>
+            </div>
+        </div>
+        <div>
+            <div><p>로그아웃</p></div>
+            <div><p>앱다운로드</p></div>
+            <div><p>PC버전</p></div>
+        </div>
+        <div>
+            <div>
+                <p>(주)에스에지닷컴<br/>
+                    대표자: 강희석 | 사업자등록번호: 870-88-01143<br/>
+                    통신판매업 신고번호: 제2022-서울강남-03751호 사업자 정보확인<br/>
+                    개인정보보호 책임자: 김우진 | 주소: 서울특별시 강남구 테헤란로 231<br/>
+                    호스팅서비스 사업자: (주)에스에지닷컴<br/>
+                </p>
+            </div>
+            <div>
+                <p>우리은행 채무지급보증 안내 서비스가입사실 확인<br/>
+                    당사는 고객님이 현금 결제한 금액에 대해 우리은행과<br/>
+                    채무지급 보증 계약을 체결하여 안전거래를 보장하고 있습니다.<br/>
+                </p>
+            </div>
+            <div>
+                <p>회사소개 | 이용약관 | 전자금융거래이용약관 | 개인정보처리방침 | 청소년보호방침 | 소비자분쟁해결기준 | 입점상담</p>
+            </div>
+            <div>
+                <p>(주)에스에지닷컴 사이트의 상품/판매자/쇼핑정보, 컨텐츠, UI 등에 대한 무단 복제, 전송, 배포, 스크래핑 등의 행위는 저작권법, 콘텐츠사업 진흥법 등에 의하여 엄격히 금지됩니다.</p>
+            </div>
+            <div>
+                <p>Copyright ⓒ SSG.COM Corp. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- 아래 nav -->
+    <div>
+        <nav>
+            <ul>
+                <li>카테고리</li>
+                <li>통합안내</li>
+                <li>홈</li>
+                <li>MY</li>
+                <li>최근본</li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
