@@ -1,5 +1,5 @@
-import Logo from 'component/ui/Logo'
-import SearchBar from 'component/ui/SearchBar'
+import Logo from 'component/atoms/Logo'
+import SearchBar from 'component/atoms/SearchBar'
 import React from 'react'
 
 function Header() {

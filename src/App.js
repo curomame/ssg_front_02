@@ -1,14 +1,16 @@
-import Main from 'pages/main/Main';
+
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom';
+import Main from './pages/Main';
 
 function App() {
 
   return (
+    <BrowserRouter>
+      
+      <Main/>
 
-      <div className="App">
-        <Main/>
-      </div>
-
+    </BrowserRouter>
   );
 }
 
