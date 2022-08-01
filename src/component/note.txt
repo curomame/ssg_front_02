@@ -1,9 +1,0 @@
-아토믹 디자인 구조로 나눔
-
-Atoms - Molecules - Organisms - Templates - Pages
-
-주요 요소의 유기체 담당을 하는 녀석들
-component의 js파일과
-컴포넌트에 맞는 css 파일로 구성
-
-내부에는 각 컴포넌트 구성을 위한 atom 파일들로 구성되어있을 예정
