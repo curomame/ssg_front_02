@@ -1,16 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function MainTitleSub() {
+function MainTitleSub({title,sub,link,price}) {
+
+  [title, sub, link, price] = ['title area','sub area','c','price']
 
   return (
     <>
-      <div className='mainTitle titleTop'><h2>메인 타이틀 제목입니다.</h2></div>
+
+      {title ? <div className='mainTitle titleTop'><h2>{title}</h2></div> : ""}
+
       <div className='titleBottom'>
-        <div className='subTitle'><p>서브 부분의 내용입니다.</p></div>
+        {sub ? <div className='subTitle'><p>{sub}</p></div>: ""}
         <div className='linkToAll'><Link to="/"><p>전체보기</p></Link></div>
       </div>
-      <div className='titlePrice'>1,995원~</div>
+      {price ? <div className='titlePrice'>{price}</div> : ""}
     
     </>
   )

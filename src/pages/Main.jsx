@@ -10,9 +10,13 @@ import MainImgBanner from '../component/atoms/MainImgBanner'
 import MainCardPromotion from '../component/components/MainCardPromotion'
 import MainBrandGrid from '../component/components/MainBrandGrid'
 import MainBottomNav from '../component/components/MainBottomNav'
+import MainBrandRank from '../component/components/MainBrandRank'
+import JsonTest from '../component/atoms/JsonTest'
 function Main() {
   return (
     <>
+      <JsonTest/>
+
       <MainEventSlider/>
       <hr/>
       <MainUpperCategory/>
@@ -31,10 +35,9 @@ function Main() {
       <hr />
       <MainBrandGrid/>
       <hr />
-
+      <MainBrandRank/>
       <hr />
       <MainBottomNav/>
-
     </>
   )
 }

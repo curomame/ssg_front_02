@@ -1,5 +1,4 @@
 import React from 'react';
-import "./MainBottomNav.module.css";
 
 function MainBottomNav() {
     
