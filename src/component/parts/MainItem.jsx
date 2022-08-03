@@ -1,18 +1,20 @@
 import React from 'react';
+import MainTitleSub from './MainTitleSub';
 
 function MainItem() {
+
+    // 들어오는 개별의 아이템 정보 input! input!
+
+
     return ( 
-        <>
+      <>
         <div>
-            <img src="" alt="img1" /></div>
-        <p style={{"font-weight":"bold"}}>판매자명</p>
-        <p style={{"font-weight":"bold"}}>브랜드명</p>
-        <p>상품명</p>
-        <div>
-            <div style={{"width":"50%", "float":"left"}}>금액</div>
-            <div style={{"width":"50%", "float":"right"}}>할인율</div>
+          <div><img src="" alt="상품이름" /></div>
+          <div>
+            <MainTitleSub/>
+          </div>
         </div>
-        </>
+      </>
      );
 }
 
