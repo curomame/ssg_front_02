@@ -7,21 +7,31 @@
   { 
     "id" : 2,
     "name" : "추석",
-    "url" : "/"
+    "url" : "/page/giftshop"
   },
   { 
     "id" : 3,
     "name" : "명품관",
-    "url" : "/"
+    "url" : "/page/luxury"
   },
   { 
     "id" : 4,
     "name" : "해피라운지",
-    "url" : "/"
+    "url" : "/page/happybuy"
   },
   { 
     "id" : 5,
     "name" : "베스트",
-    "url" : "/"
+    "url" : "/page/best"
+  } ,
+  { 
+    "id" : 6,
+    "name" : "백화점",
+    "url" : "/page/dept"
+  } ,
+  { 
+    "id" : 7,
+    "name" : "브랜드",
+    "url" : "/page/brand"
   } 
 ]

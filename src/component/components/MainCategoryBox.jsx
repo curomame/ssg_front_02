@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import datas from '../../datas/mainSqaureCategory.json'
 
 function MainCategoryBox() {
   
@@ -6,26 +8,14 @@ function MainCategoryBox() {
 
   return (
     <>
-    <div className='item_boxs'>
-        <div className='wrap'>
-          <div><img src="https://sui.ssgcdn.com/cmpt/banner/202207/2022072913235503848089411908_280.jpg" alt="명품 카테고리 선택" /></div>
-          <div className='text'><span>명품</span></div>
-        </div>
-
-        <div className='wrap'>
-          <div><img src="https://sui.ssgcdn.com/cmpt/banner/202207/2022072913235503848089411908_280.jpg" alt="명품 카테고리 선택" /></div>
-          <div className='text'><span>명품</span></div>
-        </div>
-
-        <div className='wrap'>
-          <div><img src="https://sui.ssgcdn.com/cmpt/banner/202207/2022072913235503848089411908_280.jpg" alt="명품 카테고리 선택" /></div>
-          <div className='text'><span>명품</span></div>
-        </div>
-
-        <div className='wrap'>
-          <div><img src="https://sui.ssgcdn.com/cmpt/banner/202207/2022072913235503848089411908_280.jpg" alt="명품 카테고리 선택" /></div>
-          <div className='text'><span>명품</span></div>
-        </div>
+      <div style={{"display":"flex", "justifyContent":"space-between"}}>
+        {datas && 
+          datas.map(data => (
+            <div key={data.id} >
+              <Link to={data.url}><img style={{"width":"100px","height":"100px"}} src="https://sui.ssgcdn.com/cmpt/banner/202207/2022072216460396994225724522_92.png" alt="img" /></Link>
+            </div>
+          ))
+          }
       </div>
     </>
   )

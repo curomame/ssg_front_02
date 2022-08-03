@@ -1,0 +1,23 @@
+[
+  { 
+    "id" : 1,
+    "name" : "명품관",
+    "url" : "/page/luxury",
+    "img" : "../../../public/img/test1.png"
+  },
+  { 
+    "id" : 2,
+    "name" : "패션",
+    "url" : "/page/fashion"
+  },
+  { 
+    "id" : 3,
+    "name" : "뷰티",
+    "url" : "/page/beauty"
+  },
+  { 
+    "id" : 4,
+    "name" : "라이프",
+    "url" : "/page/life"
+  }
+]
