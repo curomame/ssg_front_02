@@ -13,6 +13,7 @@ import MainBottomNav from '../component/components/MainBottomNav'
 import MainBrandRank from '../component/components/MainBrandRank'
 import MainFooter from '../component/components/MainFooter'
 import Header from '../component/components/Header'
+import MainSpecialGift from '../component/components/MainSpecialGift'
 // import JsonTest from '../component/atoms/JsonTest'
 function Main() {
   return (
@@ -39,6 +40,8 @@ function Main() {
       <MainBrandGrid/>
       <hr />
       <MainBrandRank/>
+      <hr />
+      <MainSpecialGift/>
       <hr />
       <MainFooter/>
       <hr />

@@ -1,0 +1,32 @@
+[
+    {
+        "id": 0,
+        "icon" : "/",
+        "title" : "카테고리",
+        "url" : "/disp/category"
+    },
+    {
+        "id": 1,
+        "icon" : "/",
+        "title" : "통합검색",
+        "url" : "/mall/search"
+    },
+    {
+        "id": 2,
+        "icon" : "/",
+        "title" : "홈",
+        "url" : "/"
+    },
+    {
+        "id": 3,
+        "icon" : "/",
+        "title" : "My",
+        "url" : "/user"
+    },
+    {
+        "id" : 4,
+        "icon" : "/",
+        "title" : "최근 본 상품",
+        "url" : "/"
+    }
+]
