@@ -1,6 +1,6 @@
 import React from 'react'
-import MainCreditCard from '../atoms/MainCreditCard'
-import MainTitleSub from '../atoms/MainTitleSub'
+import MainCreditCard from '../parts/MainCreditCard'
+import MainTitleSub from '../parts/MainTitleSub'
 
 function MainCardPromotion() {
   return (

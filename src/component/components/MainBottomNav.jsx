@@ -42,7 +42,7 @@ function MainBottomNav() {
     // 여기서 디자인 요소를 작성하되, 확인 후 css 파일로 이동시킨다.
     return (
         <div className='bottom-nav'>
-           <ul>
+           <ul style={{"display":"flex","listStyle":"none"}}>
             {listNav}
            </ul>
         </div>

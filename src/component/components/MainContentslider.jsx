@@ -1,5 +1,5 @@
 import React from 'react'
-import MainTitleSub from '../atoms/MainTitleSub'
+import MainTitleSub from '../parts/MainTitleSub'
 function MainContentslider() {
   return (
     <>

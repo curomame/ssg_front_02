@@ -1,8 +1,8 @@
 import React from 'react'
-import MainCategorySelect from '../atoms/MainCategorySelect'
-import MainHyperLink from '../atoms/MainHyperLink'
-import MainTitleSub from '../atoms/MainTitleSub'
-import StarNReview from '../atoms/StarNReview'
+import MainCategorySelect from '../parts/MainCategorySelect'
+import MainHyperLink from '../parts/MainHyperLink'
+import MainTitleSub from '../parts/MainTitleSub'
+import StarNReview from '../parts/StarNReview'
 
 function MainBrandRank() {
   return (

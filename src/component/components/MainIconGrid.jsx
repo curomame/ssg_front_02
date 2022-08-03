@@ -1,5 +1,5 @@
 import React from 'react'
-import MainIcon from '../atoms/MainIcon'
+import MainIcon from '../parts/MainIcon'
 
 function MainIconGrid() {
 

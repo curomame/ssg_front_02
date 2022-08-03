@@ -6,18 +6,20 @@ import MainItemsRight from '../component/components/MainItemsRight'
 import MainContentslider from '../component/components/MainContentslider'
 import MainIconGrid from '../component/components/MainIconGrid'
 import '../css/MainPage/MainPage.css'
-import MainImgBanner from '../component/atoms/MainImgBanner'
+import MainImgBanner from '../component/parts/MainImgBanner'
 import MainCardPromotion from '../component/components/MainCardPromotion'
 import MainBrandGrid from '../component/components/MainBrandGrid'
 import MainBottomNav from '../component/components/MainBottomNav'
 import MainBrandRank from '../component/components/MainBrandRank'
 import MainFooter from '../component/components/MainFooter'
+import Header from '../component/components/Header'
 // import JsonTest from '../component/atoms/JsonTest'
 function Main() {
   return (
     <>
       {/* <JsonTest/> */}
-
+      <Header/>
+      <hr />
       <MainEventSlider/>
       <hr/>
       <MainUpperCategory/>
