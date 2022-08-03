@@ -1,12 +1,13 @@
 import React from 'react'
 
-function StarNReview() {
+function StarNReview({point, count}) {
   return (
     <>
       <div className='starNReview'>
         <div>⭐️</div>
-        <div>5.0</div>
-        <div>1건</div>
+        <div>{point}</div>
+        <div>|</div>
+        <div>{count}건</div>
       </div>
     </>
   )

@@ -40,8 +40,7 @@ function MainFooter() {
 
 
   ]
-
-
+ 
 
   return (
     <>
