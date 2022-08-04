@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React from 'react'
 import MainTitleSub from '../parts/MainTitleSub'
 import StarNReview from '../parts/StarNReview'
@@ -6,6 +7,8 @@ import StarNReview from '../parts/StarNReview'
 //여기서 상품 데이터 받아오기 진행해보기
 
 function Items() {
+
+
   return (
     <>
       <div style={{"display":"flex","flexDirection":"column", "width":"135px"}}>
@@ -15,11 +18,12 @@ function Items() {
         width="135px"
         height="135px"
         /></div>
-        <div><MainTitleSub 
-        title="상품명"
-        sub="상품데이터"
-        price="10000"
-        discount='5'
+        <div>
+          <MainTitleSub 
+            title="상품명"
+            sub="상품데이터"
+            price="10000"
+            discount='5'
         /></div>
         <div><StarNReview point="3.0" count="3"/></div>
       </div>

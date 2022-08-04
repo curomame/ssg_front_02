@@ -1,14 +1,19 @@
 
 import React from 'react'
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Test from './component/test/Test';
 import Main from './pages/Main';
+import Pages from './pages/Pages';
 
 function App() {
 
   return (
     <BrowserRouter>
-      
-      <Main/>
+      <Routes>
+        <Route path="/" element={<Main/>}/>
+        <Route path="/page/:id" element={<Pages/>}/>
+        <Route path="/test" element={<Test/>}/>
+      </Routes>
 
     </BrowserRouter>
   );

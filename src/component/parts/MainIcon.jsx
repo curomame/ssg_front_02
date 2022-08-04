@@ -35,7 +35,7 @@ function MainIcon({contents, column}) {
 
     <div className='mainGrid'>
 
-      <div className='upperGrid'>
+      <div className='upperGrid' style={{"justifyContent":"space-between"}}>
         {upper.map((i) => {
           return(
             <div key={i.id}>
@@ -46,7 +46,7 @@ function MainIcon({contents, column}) {
         })}
       </div>
 
-      <div className='underGrid'>
+      <div className='underGrid' style={{"justifyContent":"space-between"}}>
         {under.map((i) => {
                 return(
                   <div key={i.id}>
