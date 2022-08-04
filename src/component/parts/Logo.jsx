@@ -10,7 +10,7 @@ function Logo() {
       <div className='headerLogo'>
         <div><a href="https://www.ssg.com/"><h1>SSG</h1></a></div>
         <div><p>/<Link to='/'><span>신세계몰</span></Link></p></div>
-        <div><img src="" alt="dropbar"/></div>
+        <div><span className="material-icons-outlined">arrow_drop_down</span></div>
       </div>
     </>
   )

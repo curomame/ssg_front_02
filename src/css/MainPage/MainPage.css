@@ -1,3 +1,4 @@
+
 a {
     text-decoration: none;
     color: black;
@@ -10,6 +11,63 @@ margin:0;
 
 address {
     font-style:normal;
+}
+
+.headerLayout{
+    margin: 10px 15px;
+}
+.headerRight{
+    
+    display: flex;
+    align-items: center;
+}
+
+
+.headerLogo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 100%;
+
+}
+
+
+.headerLogo h1 {
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+.headerLogo p {
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: -1px;
+}
+
+.headerLayout {
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerSearchBar{
+    position: relative;
+}
+
+.headerSearchBar input{
+    width: 210px;
+    height: 40px;
+    border: 0px;
+    background-color: #F5F5F5;
+}
+
+.headerSearchIcon {
+    position: absolute;
+    right: 4px;
+    top: 20%;
+}
+
+
+.headerCartIcon{
+    margin-left: 10px;
 }
 
 .item_boxs{
