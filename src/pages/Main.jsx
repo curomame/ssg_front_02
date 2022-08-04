@@ -21,6 +21,7 @@ import MainPremiumNewArrival from '../component/components/MainPremiumNewArrival
 import MainCrossBorderShopping from '../component/components/MainCrossBorderShopping'
 import MainBrandLookBook from '../component/components/MainBrandLookBook'
 import MainLifeMegazine from '../component/components/MainLifeMegazine'
+import MainBestItems from '../component/components/MainBestItems'
 // import JsonTest from '../component/atoms/JsonTest'
 function Main() {
   return (
@@ -64,8 +65,7 @@ function Main() {
       <hr />
       <MainLifeMegazine/>
       <hr />
-      {/* Best Items와 네이밍 겹침(확인 필요) */}
-      <MainBestItem/>
+      <MainBestItems/>
       <hr />
       <MainFooter/>
       <hr />

@@ -1,0 +1,30 @@
+{
+
+"bestitemList" : [
+    {
+        "id": 0,
+        "img" : "/",
+        "title" : "다이슨",
+        "description" : "New 다이슨 에어랩",
+        "price" : "599,000원",
+        "discountRate" : "0%"
+    },
+    {
+        "id": 1,
+        "img" : "/",
+        "title" : "버팔로",
+        "description" : "버팔로 프리미엄 구명조끼",
+        "price" : "200,000원",
+        "discountRate" : "10%"
+    },
+    {
+        "id": 2,
+        "img" : "/",
+        "title" : "랑콤",
+        "description" : "파운데이션 세트",
+        "price" : "19,900원",
+        "discountRate" : "50%"
+    }
+]
+
+}
