@@ -8,7 +8,7 @@ function MainCategoryBox() {
 
   return (
     <>
-      <div style={{"display":"flex", "justifyContent":"space-between"}}>
+      <div className="mainCategoryBox">
         {datas && 
           datas.map(data => (
             <div key={data.id} >
