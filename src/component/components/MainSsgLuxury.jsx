@@ -1,20 +1,18 @@
 import React from 'react';
 import Items from '../layout/Items';
 import MainHyperLink from '../parts/MainHyperLink';
+import MainImgBanner from '../parts/MainImgBanner';
 import MainTitleSub from '../parts/MainTitleSub';
 
-
-function MainSpecialGift() {
-
-    // 일정 갯수까지만 반복되는 함수 작성
-
+function MainSsgLuxury() {
     return ( 
         <>
-        <MainTitleSub title="Special Gift" sub="포장으로 마음을 담은 백화점 선물"/>
+        <MainTitleSub title="SSG Luxury" sub="명품의 신세계를 만나다"/>
+        <MainImgBanner/>
         <Items/>
         <MainHyperLink/>
         </>
      );
 }
 
-export default MainSpecialGift;
+export default MainSsgLuxury;
