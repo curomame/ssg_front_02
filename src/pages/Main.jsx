@@ -28,13 +28,9 @@ function Main() {
     <>
       {/* <JsonTest/> */}
       <Header/>
-      <hr />
       <MainEventSlider/>
-      <hr/>
       <MainUpperCategory/>
-      <hr/>
       <MainCategoryBox/>
-      <hr/>
       <MainItemsRight/>
       <hr/>
       <MainContentslider/>
