@@ -1,15 +1,20 @@
 import React from 'react'
+import MyCart from './MyCart'
 
 function SearchBar() {
   return (
     <>
-      <div className='headerRight' style={{"display":"flex"}}>
+      <div className='headerRight'>
+        
         <div>
-          <input type="text"/>
-          <span><img src="" alt="searchimg" /></span>
+          <div className='headerSearchBar'>
+            <input type="text"/>
+            <span className="headerSearchIcon material-icons-outlined">search</span>
+          </div>
         </div>
-        <div>
-          <img src="" alt="장바구니아이콘" />
+
+        <div >
+          <MyCart/>
         </div>
       </div>
     </>

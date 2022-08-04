@@ -5,7 +5,7 @@ import SearchBar from '../parts/SearchBar';
 function Header() {
   return (
     <>
-      <div style={{"dispaly":"flex","justifyContent": "space-between"}}>
+      <div className='headerLayout'>
         <Logo/>
         <SearchBar/>
       </div>
