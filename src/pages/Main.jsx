@@ -22,6 +22,8 @@ import MainCrossBorderShopping from '../component/components/MainCrossBorderShop
 import MainBrandLookBook from '../component/components/MainBrandLookBook'
 import MainLifeMegazine from '../component/components/MainLifeMegazine'
 import MainBestItems from '../component/components/MainBestItems'
+import MainBlankSpace from '../component/parts/MainBlankSpace'
+
 
 // import JsonTest from '../component/atoms/JsonTest'
 function Main() {
