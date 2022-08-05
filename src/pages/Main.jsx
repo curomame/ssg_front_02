@@ -22,6 +22,7 @@ import MainCrossBorderShopping from '../component/components/MainCrossBorderShop
 import MainBrandLookBook from '../component/components/MainBrandLookBook'
 import MainLifeMegazine from '../component/components/MainLifeMegazine'
 import MainBestItems from '../component/components/MainBestItems'
+
 // import JsonTest from '../component/atoms/JsonTest'
 function Main() {
   return (
@@ -31,8 +32,9 @@ function Main() {
       <MainEventSlider/>
       <MainUpperCategory/>
       <MainCategoryBox/>
+      <MainBlankSpace px={60}/>
       <MainItemsRight/>
-      <hr/>
+      <MainBlankSpace px={60}/>
       <MainContentslider/>
       <hr/>
       <MainIconGrid/>
