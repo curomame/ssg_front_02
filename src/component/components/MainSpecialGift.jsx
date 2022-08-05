@@ -1,17 +1,45 @@
-import React from 'react';
-import MainItem from '../parts/MainItem';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import Items from '../layout/Items';
+import MainHyperLink from '../parts/MainHyperLink';
 import MainTitleSub from '../parts/MainTitleSub';
-import MainItemsRight from './MainItemsRight';
+
 
 function MainSpecialGift() {
+
+
+    const [giftDatas,setGiftDatas] = useState([]);
+
+    // 일정 갯수까지만 반복되는 함수 작성
+    useEffect(() => {
+        axios.get('http://localhost:5000/gifts')
+            .then(res => {
+                setGiftDatas(res.data);
+                console.log("Success");
+            })
+            .catch((Error) => {
+                console.log("Fail : " + Error);
+            });
+    }, [])
+
     return ( 
         <>
-        {/* Parts 1 시작 */}
-        <h2>Special Gift</h2>
-        <p>포장으로 마음을 담은 백화점 선물</p>
-        {/* Parts 1 끝 */}
-        {/* Part 2(MainItem) 구성 : (위 > 아래) 이미지, 판매자명, 브랜드명, 상품명, ((좌 > 우) 가격, 할인률), ((좌 > 우) 별점 | 리뷰건수)*/}
-        <MainItem />
+        <MainTitleSub title="Special Gift" sub="포장으로 마음을 담은 백화점 선물"/>
+            <div style={{"display":"flex"}}>
+            {
+                giftDatas && giftDatas.map(items => (
+                    <Items 
+                        imgsrc={items.imgsrc}
+                        alt={items.sub}
+                        title={items.title}
+                        sub={items.sub}
+                        price={items.price}
+                        discount={items.discount} />
+            
+            ))}
+        </div>
+
+        <MainHyperLink/>
         </>
      );
 }

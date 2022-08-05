@@ -14,8 +14,6 @@ import MainBrandRank from '../component/components/MainBrandRank'
 import MainFooter from '../component/components/MainFooter'
 import Header from '../component/components/Header'
 import MainSpecialGift from '../component/components/MainSpecialGift'
-<<<<<<< Updated upstream
-=======
 import MainBestItem from '../component/components/MainBestItem'
 import MainLetsTryOn from '../component/components/MainLetsTryOn'
 import MainSSGLuxury from '../component/components/MainSsgLuxury'
@@ -24,8 +22,7 @@ import MainCrossBorderShopping from '../component/components/MainCrossBorderShop
 import MainBrandLookBook from '../component/components/MainBrandLookBook'
 import MainLifeMegazine from '../component/components/MainLifeMegazine'
 import MainBestItems from '../component/components/MainBestItems'
-import MainBlankSpace from '../component/parts/MainBlankSpace'
->>>>>>> Stashed changes
+
 // import JsonTest from '../component/atoms/JsonTest'
 function Main() {
   return (
@@ -50,7 +47,23 @@ function Main() {
       <hr />
       <MainBrandRank/>
       <hr />
+      <MainLetsTryOn/>
+      <hr />
+      <MainBestItem/>
+      <hr />
+      <MainSSGLuxury/>
+      <hr />
+      <MainPremiumNewArrival/>
+      <hr />
+      <MainCrossBorderShopping/>
+      <hr />
+      <MainBrandLookBook/>
+      <hr />
       <MainSpecialGift/>
+      <hr />
+      <MainLifeMegazine/>
+      <hr />
+      <MainBestItems/>
       <hr />
       <MainFooter/>
       <hr />
