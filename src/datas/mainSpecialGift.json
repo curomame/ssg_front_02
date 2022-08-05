@@ -1,0 +1,25 @@
+{
+    "gifts":[{
+        "id": 0,
+        "imgsrc" : "https://sitem.ssgcdn.com/41/90/42/item/1000427429041_i1_500.jpg",
+        "title" : "다이슨",
+        "sub" : "New 다이슨 에어랩",
+        "price" : 599000,
+        "discount" : 0
+    }, {
+        "id": 1,
+        "imgsrc" : "https://sitem.ssgcdn.com/24/84/09/item/1000290098424_i1_500.jpg",
+        "title" : "버팔로",
+        "sub" : "버팔로 프리미엄 구명조끼",
+        "price" : 200000,
+        "discount" : 10
+    },
+    {
+        "id": 2,
+        "imgsrc" : "//sitem.ssgcdn.com/14/47/43/item/1000072434714_i1_500.jpg",
+        "title" : "랑콤",
+        "sub" : "파운데이션 세트",
+        "price" : 19900,
+        "discount" : 0
+    }]
+}
