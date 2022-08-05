@@ -1,15 +1,21 @@
 import React from 'react'
+import CartIcon from './CartIcon'
+import HeartIcon from './HeartIcon'
 
-function MainNowBuying() {
+function MainNowBuying({}) {
+  
+  // 상품정보 받아오기
+  // 
+  
   return (
     <>
-      <div style={{"display":"flex","justifyContent":"space-between"}}>
+      <div style={{"display":"flex","justifyContent":"space-between", "margin":"0 15px"}}>
 
         <div><p>3,408개 구매중</p></div>
 
-        <div style={{"display":"flex"}}>
-          <div><i>H</i></div>
-          <div><i>C</i></div>
+        <div className="nowBuyingIcons" style={{"display":"flex"}}>
+          <div><HeartIcon/></div>
+          <div><CartIcon/></div>
         </div>
 
       </div>

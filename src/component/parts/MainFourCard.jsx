@@ -5,14 +5,14 @@ function MainFourCard() {
     <>
       <div className='MainItemsRight'>
 
-        <div style={{"border":"1px solid black", }} className='MainItemLeftParts'>
-          <img src="" alt="Rimg1" />
+        <div  className='MainItemLeftParts'>
+          <img src="https://sitem.ssgcdn.com/13/59/06/item/1000057065913_i1_500.jpg" alt="Rimg1" />
         </div>
         <div className='MainItemRightParts'>
-          <div style={{"border":"1px solid black", }}><img src="" alt="Limg1" /></div>
-          <div style={{"border":"1px solid black", }}><img src="" alt="Limg2" /></div>
-          <div style={{"border":"1px solid black", }}><img src="" alt="Limg3" /></div>
-          <div style={{"border":"1px solid black", }}><img src="" alt="Limg4" /></div>
+          <div><img src="https://sitem.ssgcdn.com/13/59/06/item/1000057065913_i1_500.jpg" alt="Limg1" /></div>
+          <div><img src="https://sitem.ssgcdn.com/13/59/06/item/1000057065913_i1_500.jpg" alt="Limg2" /></div>
+          <div><img src="https://sitem.ssgcdn.com/13/59/06/item/1000057065913_i1_500.jpg" alt="Limg3" /></div>
+          <div><img src="https://sitem.ssgcdn.com/13/59/06/item/1000057065913_i1_500.jpg" alt="Limg4" /></div>
         </div>
 
       </div>

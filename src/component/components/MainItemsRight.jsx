@@ -14,17 +14,37 @@ function MainItemsRight() {
         sub="당신의 쇼핑이 특별해지는, 매일 오전 9시"
         link="'/'"
         />
+      
+      <div className='mainFourCard'>
       <MainFourCard/>
-      {/* 아이템 이미지 넘기기 */}
+      <MainTitleSub 
+        title={"바캉스 휴가 시작 8월 빅세일 start"}
+        sub={"신세계백화점 단 3일! 보내기 아쉬운 특가, 앵콜 세일로 다시 만나다! 최대 ~87% 세일" }
+        price={"46020"}
+        />
       <MainNowBuying/>
+      </div>
 
+      <div className='mainFourCard'>
       <MainFourCard/>
-      {/* 아이템 이미지 넘기기 */}
+      <MainTitleSub 
+        title={"바캉스 휴가 시작 8월 빅세일 start"}
+        sub={"신세계백화점 단 3일! 보내기 아쉬운 특가, 앵콜 세일로 다시 만나다! 최대 ~87% 세일" }
+        price={"46020"}
+        />
       <MainNowBuying/>
+      </div>
+      
+      <div className='mainFourCard'>
+      <MainFourCard/>
+      <MainTitleSub 
+        title={"바캉스 휴가 시작 8월 빅세일 start"}
+        sub={"신세계백화점 단 3일! 보내기 아쉬운 특가, 앵콜 세일로 다시 만나다! 최대 ~87% 세일" }
+        price={"46020"}
+        />
+      <MainNowBuying/>
+      </div>
 
-      <MainFourCard/>
-      {/* 아이템 이미지 넘기기 */}
-      <MainNowBuying/>
     </>
   )
 }
