@@ -1,6 +1,8 @@
 {
     "gifts":[{
         "id": 0,
+        "productId":123214121,
+        "url": "/item/itemDetail",
         "imgsrc" : "https://sitem.ssgcdn.com/41/90/42/item/1000427429041_i1_500.jpg",
         "title" : "다이슨",
         "sub" : "New 다이슨 에어랩",
@@ -8,6 +10,8 @@
         "discount" : 0
     }, {
         "id": 1,
+        "productId":123214122,
+        "url": "/item/itemDetail",
         "imgsrc" : "https://sitem.ssgcdn.com/24/84/09/item/1000290098424_i1_500.jpg",
         "title" : "버팔로",
         "sub" : "버팔로 프리미엄 구명조끼",
@@ -16,6 +20,8 @@
     },
     {
         "id": 2,
+        "productId":123214123,
+        "url": "/item/itemDetail",
         "imgsrc" : "//sitem.ssgcdn.com/14/47/43/item/1000072434714_i1_500.jpg",
         "title" : "랑콤",
         "sub" : "파운데이션 세트",
