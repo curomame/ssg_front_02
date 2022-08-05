@@ -1,6 +1,5 @@
 import React from 'react';
-import MainImgBanner from '../parts/MainImgBanner';
-import MainTitleSub from '../parts/MainTitleSub';
+import MainTitleSub from '../../parts/mainParts/MainTitleSub';
 import MainEventSlider from './MainEventSlider';
 
 function MainBrandLookBook() {

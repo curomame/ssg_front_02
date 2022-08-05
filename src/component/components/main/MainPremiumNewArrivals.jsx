@@ -1,8 +1,9 @@
 import React from 'react';
-import Items from '../layout/Items';
-import MainCategorySelect from '../parts/MainCategorySelect';
-import MainHyperLink from '../parts/MainHyperLink';
-import MainTitleSub from '../parts/MainTitleSub';
+import Items from '../../layout/Items';
+import MainCategorySelect from '../../parts/mainParts/MainCategorySelect';
+import MainHyperLink from '../../parts/mainParts/MainHyperLink';
+import MainTitleSub from '../../parts/mainParts/MainTitleSub';
+
 
 function MainPremiumNewArrival() {
     return ( 

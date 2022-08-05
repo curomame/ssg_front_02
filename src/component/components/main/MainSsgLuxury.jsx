@@ -1,8 +1,8 @@
 import React from 'react';
-import Items from '../layout/Items';
-import MainHyperLink from '../parts/MainHyperLink';
-import MainImgBanner from '../parts/MainImgBanner';
-import MainTitleSub from '../parts/MainTitleSub';
+import Items from '../../layout/Items';
+import MainHyperLink from '../../parts/mainParts/MainHyperLink';
+import MainImgBanner from '../../parts/mainParts/MainImgBanner';
+import MainTitleSub from '../../parts/mainParts/MainTitleSub';
 
 function MainSsgLuxury() {
     return ( 

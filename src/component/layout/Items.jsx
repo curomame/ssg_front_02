@@ -1,6 +1,6 @@
 import React from 'react'
-import MainTitleSub from '../parts/MainTitleSub'
-import StarNReview from '../parts/StarNReview'
+import StarNReview from '../parts/commonsParts/StarNReview'
+import MainTitleSub from '../parts/mainParts/MainTitleSub'
 
 //상품 데이터 받아오기 필요
 //여기서 상품 데이터 받아오기 진행해보기
@@ -22,7 +22,7 @@ function Items({imgsrc, alt, title, sub, price, discount}) {
         height="135px"
         /></div>
         <div>
-          <MainTitleSub 
+          <MainTitleSub
             title={title ? title : "기본제목값"}
             sub={sub ? sub : "기본 설명값"}
             price={price ? price : "30000"}

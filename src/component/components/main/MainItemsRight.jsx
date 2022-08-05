@@ -1,7 +1,8 @@
 import React from 'react'
-import MainFourCard from '../parts/MainFourCard'
-import MainNowBuying from '../parts/MainNowBuying'
-import MainTitleSub from '../parts/MainTitleSub'
+import MainFourCard from '../../parts/mainParts/MainFourCard'
+import MainNowBuying from '../../parts/mainParts/MainNowBuying'
+import MainTitleSub from '../../parts/mainParts/MainTitleSub'
+
 
 function MainItemsRight() {
 

@@ -5,7 +5,7 @@ const footerMenus = [
     { 
       "id" : 1,
       "name" : "홈",
-      "icon" : a,
+      "icon" : 'a',
       "url" : "/"
     },
     { 

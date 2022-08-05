@@ -1,6 +1,6 @@
 import React from 'react'
-import MainIcon from '../parts/MainIcon'
-import icons from '../../datas/mainBrandGrid.json'
+import icons from '../../../assets/datas/mainBrandGrid.json'
+import MainIcon from '../../parts/mainParts/MainIcon'
 
 function MainBrandGrid() {
 

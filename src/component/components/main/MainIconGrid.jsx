@@ -1,6 +1,6 @@
 import React from 'react'
-import MainIcon from '../parts/MainIcon'
-import contents from '../../datas/mainicongrid.json'
+import contents from '../../../assets/datas/mainicongrid.json'
+import MainIcon from '../../parts/mainParts/MainIcon'
 function MainIconGrid({column}) {
 
   return (

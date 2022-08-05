@@ -1,8 +1,9 @@
 import React from 'react'
-import MainTitleSub from '../parts/MainTitleSub'
+import MainTitleSub from '../../parts/mainParts/MainTitleSub';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
+
 
 
 function MainContentslider() {

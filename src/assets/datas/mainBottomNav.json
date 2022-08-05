@@ -3,7 +3,7 @@
         "id": 0,
         "icon" : "/",
         "title" : "카테고리",
-        "url" : "/disp/category"
+        "url" : "/category"
     },
     {
         "id": 1,
@@ -21,7 +21,7 @@
         "id": 3,
         "icon" : "/",
         "title" : "My",
-        "url" : "/user"
+        "url" : "/login"
     },
     {
         "id" : 4,

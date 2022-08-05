@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Items from '../layout/Items';
-import MainHyperLink from '../parts/MainHyperLink';
-import MainTitleSub from '../parts/MainTitleSub';
+import Items from '../../layout/Items';
+import MainHyperLink from '../../parts/mainParts/MainHyperLink';
+import MainTitleSub from '../../parts/mainParts/MainTitleSub';
 
 
 function MainSpecialGift() {

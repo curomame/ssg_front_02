@@ -1,6 +1,6 @@
 import React from 'react';
-import MainHyperLink from '../parts/MainHyperLink';
-import MainTitleSub from '../parts/MainTitleSub';
+import MainHyperLink from '../../parts/mainParts/MainHyperLink';
+import MainTitleSub from '../../parts/mainParts/MainTitleSub';
 
 function MainLetsTryOn() {
     return ( 

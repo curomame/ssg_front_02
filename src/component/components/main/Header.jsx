@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from '../parts/Logo';
-import SearchBar from '../parts/SearchBar';
+import Logo from '../../parts/commonsParts/Logo';
+import SearchBar from '../../parts/commonsParts/SearchBar';
 
 function Header() {
   return (

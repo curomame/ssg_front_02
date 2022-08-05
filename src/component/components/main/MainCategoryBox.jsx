@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import datas from '../../datas/mainSqaureCategory.json'
+import datas from '../../../assets/datas/mainSqaureCategory.json'
 
 function MainCategoryBox() {
   

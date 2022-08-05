@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import menus from "../../datas/mainCategory.json"
+import menus from "../../../assets/datas/mainCategory.json"
 
 function MainUpperCategory() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import MainTitleSub from '../parts/MainTitleSub';
+import MainTitleSub from '../../parts/mainParts/MainTitleSub';
 import MainEventSlider from './MainEventSlider';
 
 function MainLifeMegazine() {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import NavMenu from '../../datas/mainBottomNav.json';
+import NavMenu from '../../../assets/datas/mainBottomNav.json';
 
 function MainBottomNav() {
     return (

@@ -1,6 +1,6 @@
 import React from 'react'
-import CartIcon from './CartIcon'
-import HeartIcon from './HeartIcon'
+import CartIcon from '../commonsParts/CartIcon'
+import HeartIcon from '../commonsParts/HeartIcon'
 
 function MainNowBuying({}) {
   
