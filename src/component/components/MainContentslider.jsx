@@ -30,7 +30,7 @@ function MainContentslider() {
 
   return (
     <>
-    <MainTitleSub/>
+    <MainTitleSub title={"New Service"} sub={"새롭게 오픈한 서비스를 소개해드려요"}/>
     <div style={{"width":"100%", "overflow":"scroll"}}>
       <div className='mainContentsSlider' style={{"width":`${sliderjson.length*100}%`, "display":"flex" }}>
               {sliderjson &&

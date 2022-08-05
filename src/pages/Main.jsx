@@ -22,6 +22,7 @@ import MainCrossBorderShopping from '../component/components/MainCrossBorderShop
 import MainBrandLookBook from '../component/components/MainBrandLookBook'
 import MainLifeMegazine from '../component/components/MainLifeMegazine'
 import MainBestItems from '../component/components/MainBestItems'
+import MainBlankSpace from '../component/parts/MainBlankSpace'
 
 // import JsonTest from '../component/atoms/JsonTest'
 function Main() {
@@ -36,14 +37,14 @@ function Main() {
       <MainItemsRight/>
       <MainBlankSpace px={60}/>
       <MainContentslider/>
-      <hr/>
-      <MainIconGrid/>
+      <MainBlankSpace px={60}/>
+      <MainIconGrid column={2}/>
       <hr />
       <MainImgBanner/>
       <hr />
       <MainCardPromotion/>
       <hr />
-      <MainBrandGrid/>
+      <MainBrandGrid column={3}/>
       <hr />
       <MainBrandRank/>
       <hr />
