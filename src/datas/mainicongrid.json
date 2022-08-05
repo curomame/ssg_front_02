@@ -1,11 +1,11 @@
 [ 
-  {"id":"1","img":"link","alt":"내용","name":"이름"},
-  {"id":"2","img":"link","alt":"내용","name":"이름"},
-  {"id":"3","img":"link","alt":"내용","name":"이름"},
-  {"id":"4","img":"link","alt":"내용","name":"이름"},
-  {"id":"5","img":"link","alt":"내용","name":"이름"},
-  {"id":"6","img":"link","alt":"내용","name":"이름"},
-  {"id":"7","img":"link","alt":"내용","name":"이름"},
-  {"id":"8","img":"link","alt":"내용","name":"이름"},
-  {"id":"9","img":"link","alt":"내용","name":"이름"},
-  {"id":"10","img":"link","alt":"내용","name":"이름"} ]
+  {"id":"1","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"},
+  {"id":"2","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"},
+  {"id":"3","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"},
+  {"id":"4","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"},
+  {"id":"5","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"},
+  {"id":"6","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"},
+  {"id":"7","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"},
+  {"id":"8","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"},
+  {"id":"9","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"},
+  {"id":"10","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"} ]
