@@ -8,7 +8,7 @@ import MainIconGrid from '../component/components/main/MainIconGrid'
 
 import MainCardPromotion from '../component/components/main/MainCardPromotion'
 import MainBrandGrid from '../component/components/main/MainBrandGrid'
-import MainBottomNav from '../component/components/main/MainBottomNav'
+import MainBottomNav from '../component/layout/BottomNav'
 import MainBrandRank from '../component/components/main/MainBrandRank'
 import MainFooter from '../component/components/main/MainFooter'
 import Header from '../component/components/main/Header'
@@ -70,6 +70,7 @@ function Main() {
       <hr />
       <MainFooter/>
       <hr />
+      <MainBlankSpace px={100}/>
       <MainBottomNav/>
     </>
   )

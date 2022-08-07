@@ -1,32 +1,32 @@
 [
     {
         "id": 0,
-        "icon" : "/",
+        "icon" : "menu",
         "title" : "카테고리",
         "url" : "/category"
     },
     {
         "id": 1,
-        "icon" : "/",
+        "icon" : "search",
         "title" : "통합검색",
         "url" : "/mall/search"
     },
     {
         "id": 2,
-        "icon" : "/",
+        "icon" : "home",
         "title" : "홈",
         "url" : "/"
     },
     {
         "id": 3,
-        "icon" : "/",
+        "icon" : "perm_identity",
         "title" : "My",
         "url" : "/login"
     },
     {
         "id" : 4,
-        "icon" : "/",
-        "title" : "최근 본 상품",
+        "icon" : "remove_red_eye",
+        "title" : "최근본",
         "url" : "/"
     }
 ]

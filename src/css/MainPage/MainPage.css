@@ -280,3 +280,80 @@ h3 {
     text-align: right;
     color: gray;
 }
+
+/* Footer Contents */
+
+.footerContents{
+    font-size: 10px;
+}
+
+.footerBold{
+    font-weight: 500;
+    margin-bottom: 3px;
+    
+}
+
+.footerLight{
+    color: #888;
+    margin-bottom: 3px;
+}
+
+.footerHyperLink{
+    display: flex;
+    justify-content: space-between;
+}
+.footerHyperLink li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerHyperLink li::after{
+    content: '|';
+}
+
+/* Botton Nav */
+
+.bottomNav ul {
+    margin: 5 15px;
+    padding-top: 3px;
+
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+
+    background: white;
+
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    
+    z-index: 100;
+    
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+
+}
+
+.bottomNav li {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    /* background: blue; */
+    text-align: center;
+}
+
+.bottomNav li div span {
+    width: 100%;
+    /* background: red; */
+    
+
+}
+
+.bottonNavFont {
+    font-size: 12px;
+}
+
+.bottonNavIconSize {
+    font-size: 24px;
+}

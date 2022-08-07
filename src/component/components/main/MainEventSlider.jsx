@@ -6,13 +6,18 @@ import "slick-carousel/slick/slick-theme.css";
 function MainEventSlider() {
 
   const settings = {
+    classNmae:"",
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1500,
+    pauseOnHover: true
   }
 
+  //slick to go
 
   const sliderjson = [
 
