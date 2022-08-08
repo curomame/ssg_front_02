@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 function LoginPreviousIcon() {
   return (
     <div>
+        {/* 뒤로가기 할 때 이전에 접속한 페이지로 이동시키기 */}
         <div><span className="material-icons-outlined"><Link to='/'>arrow_back</Link></span></div>
     </div>
   )
