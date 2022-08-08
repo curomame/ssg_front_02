@@ -5,7 +5,7 @@ import Test from './component/test/Test';
 import Category from './pages/Category';
 import Login from './pages/Login';
 import Main from './pages/Main';
-import Pages from './pages/Pages';
+// import Pages from './pages/Pages';
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
         <Route path="/category" element={<Category/>}/> 
         <Route path="/login" element={<Login/>}/> 
 
-        <Route path="/page/:id" element={<Pages/>}/>
+        {/* <Route path="/page/:id" element={<Pages/>}/> */}
         <Route path="/test" element={<Test/>}/>
       </Routes>
 
