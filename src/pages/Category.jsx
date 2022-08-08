@@ -1,9 +1,10 @@
 import React from 'react'
+import CategoryMain from '../component/components/category/CategoryMain'
 
 function Category() {
   return (
     <>
-      <h2>형민 부분</h2>
+      <CategoryMain/>
     </>
   )
 }
