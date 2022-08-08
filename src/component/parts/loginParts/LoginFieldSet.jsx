@@ -57,13 +57,15 @@ function LoginFieldSet() {
                     onChange={handleChange}
                     />
                     <br/>
+                    {/* 아이디 저장 : 로그인에 성공하면, 입력한 
+                    id값을 userId의 기본 값으로 저장한다. */}
                 <input
                     type="checkbox"
                     defaultChecked="Y"
                     />
                 <label>아이디 저장</label>
                 <br/>
-                <button type="submit">로그인</button>
+                <button type="submit" style={{backgroundColor:"#ff5b59", border: 0, outline: 0, color: "#fff"}}>로그인</button>
             </fieldset>
         </form>
     </div>

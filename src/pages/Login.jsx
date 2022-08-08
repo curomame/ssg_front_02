@@ -1,19 +1,19 @@
 import React from 'react'
-import Header from '../component/components/login/LoginHeader'
-import LoginFooter from '../component/components/login/LoginFooter'
+import LoginHeader from '../component/components/login/LoginHeader'
 import LoginFieldSet from '../component/parts/loginParts/LoginFieldSet'
+import MainFooter from '../component/components/main/MainFooter'
 
-// 로그인 페이지 메인 화면
+// 로그인 메인 화면
 
 function Login() {
 
   return (
     <>
-      <Header/>
+      <LoginHeader/>
       <hr/>
       <LoginFieldSet/>
       <hr />
-      <LoginFooter/>
+      <MainFooter/>
     </>
   )
 }
