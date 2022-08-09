@@ -1,5 +1,3 @@
-import img1 from "../a.svg"
-
 const footerMenus = [
   
     { 

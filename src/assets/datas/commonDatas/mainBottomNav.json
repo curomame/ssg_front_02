@@ -9,7 +9,8 @@
         "id": 1,
         "icon" : "search",
         "title" : "통합검색",
-        "url" : "/mall/search"
+        "url" : "/",
+        "onClick":true
     },
     {
         "id": 2,

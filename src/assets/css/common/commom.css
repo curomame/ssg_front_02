@@ -1,0 +1,75 @@
+.searchBarContainer {
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  height:100vh;
+  background-color:white;
+  z-index:9999;
+  position:fixed;
+}
+
+.searchBarBox {
+  margin:5px 15px;
+}
+
+.searchPreIconBox {
+  width: 30px;
+  height: 40px;
+  display: table;
+}
+
+.searchPreIcon{
+  display: table-cell;  
+  text-align: center;
+  vertical-align: middle;
+}
+
+.searchBarPrevious{
+  display:flex;
+  justify-content:space-between;
+  
+}
+
+.searchBarRight {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.searchBarInput {
+
+  display:flex;
+  align-items:center;
+  width: 100%;
+  
+
+}
+
+.searchBarInput input {
+  height: 40px;
+  width: 100%;
+  border: none;
+}
+
+.searchBarIcon {
+  position: absolute;
+  
+  right: 10%;
+}
+
+.searchCartIcon{
+  width: 24px;
+
+}
+
+/* 최근 검색어 부분 */
+
+.searchRecentKeyword{
+  display: table;
+  width: 100%;
+}
+
+.searchRecentKeyword div {
+  text-align: center;
+}

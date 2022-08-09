@@ -1,37 +1,42 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import {SearchModalContext} from '../../../context/SearchModalContext'
-
+import '../../../assets/css/common/commom.css'
+import CategoryMainGrid from '../../components/category/CategoryMainGrid';
 
 function SearchModal() {
 
   const {isModal, setIsModal} = useContext(SearchModalContext);
 
+  window.scrollTo({
+    top: 0
+  });
 
   return (
     <>
 
-      <div style={ {"top":"0","left":"0","botton":"0","right":"0", height:"100vh","backgroundColor":"skyblue", "zIndex":9999 , position:"fixed","display": isModal ? "block": "none"}}>
-        <div >
+      <div className="searchBarContainer" style={ {"display": isModal ? "block": "none"}}>
+        <div className="searchBarBox">
           
-          <div className='headerRight' style={{"display":"flex", justifyContent:"space-between"}}>
-            
-            <div onClick={() => {setIsModal(!isModal)}}><span class="material-icons-outlined">chevron_left</span></div>
-            
-            <div style={{"display":"flex", "alignItems": "center"}}>
-              <div className='headerSearchBar'>
-                <input type="text" style={{"width":"100%"}}/>
-                <span className="headerSearchIcon material-icons-outlined">search</span>
-              </div>
-              <div><span style={{"margin":"auto"}} class="material-icons-outlined">shopping_cart</span></div>
+          <div className="searchBarPrevious">
+            <div className='searchPreIconBox'>
+              <div className='searchPreIcon' onClick={() => {setIsModal(!isModal)}}><span class="material-icons-outlined">chevron_left</span></div>
+            </div>
+            <div className='searchBarRight'>
+              <div className='searchBarInput'>
+                <input type="text"/>
+                <div className='searchBarIcon'><span className="material-icons-outlined">search</span></div>
+                </div >
+              <div className='searchCartIcon'><span className="material-icons-outlined">shopping_cart</span></div>
             </div>
           </div>
           
-          <div>
-            최근검색어
+          <div className='searchRecentKeyword'>
+            <div><span class="material-icons-outlined">error_outline</span></div>
+            <div><p>최근 검색어가 없습니다</p></div>
           </div>
 
           <div>
-            추천 태그
+            <CategoryMainGrid/>
           </div>
 
         </div>

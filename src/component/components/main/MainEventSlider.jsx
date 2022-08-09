@@ -1,67 +1,59 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import mainEventSliderDatas from "../../../assets/datas/mainDatas/mainEventSliderDatas.json"
 
-function MainEventSlider() {
+function MainEventSlider({datas, height, numbering, }) {
+
+  const [current, setCurrent ] = useState(1);
 
   const settings = {
-    classNmae:"",
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1500,
-    pauseOnHover: true
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
+    afterChange: () => {
+      // 숫자 수동 변경시 안바뀌는 오류 잡기
+      // 숫자 css 오류 잡기
+
+      if(current >= mainEventSliderDatas.length){
+        setCurrent(1);
+      } else{
+        setCurrent(current+1);
+      }
+      
+    }
   }
 
-  //slick to go
 
-  const sliderjson = [
-
-      {
-       id:1,
-       url:"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87",
-       alt:"" 
-      },
-      {
-        id:2,
-        url:"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87",
-        alt:"" 
-       },
-       {
-        id:3,
-        url:"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87",
-        alt:"" 
-       },
-       {
-        id:4,
-        url:"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87",
-        alt:"" 
-       },
-       {
-        id:5,
-        url:"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87",
-        alt:"" 
-       }
-
-  ]
 
 
   return (
     <>
-    <Slider className="mainUpperSlider" {...settings}>
+    <div style={{"width":"100%"}}>
 
-      {sliderjson 
-      ? sliderjson.map((img) => (
-        <div key={img.id}>
-          <img style={{"width":"100%"}} src={img.url} alt={img.alt}/>
-        </div>
-      ))
-      :""}
-    </Slider>
+      <p style={{"position":"absolute","top":"30%",color:"white",fontSize:"20px","fontWeight":"600","marginLeft":"15px"}}>{current} - {mainEventSliderDatas.length}</p>
+
+      <Slider className="mainUpperSlider" {...settings}>
+        
+        {mainEventSliderDatas 
+        ? mainEventSliderDatas.map((img) => (
+          <div key={img.id}>
+            <img style={{"width":"100%"}} src={img.url} alt={img.alt}/>
+            <div style={{"position":"fixed","bottom":"10%",color:"white",fontSize:"20px","fontWeight":"600","marginLeft":"15px"}}>
+              <h2>{img.title}</h2>
+              <p>{img.sub}</p>
+            </div>
+          </div>
+        ))
+        :""}
+      </Slider>
+    </div>
 
     </>
   )

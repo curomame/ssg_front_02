@@ -27,11 +27,9 @@ import '../assets/css/main/mainPage.css'
 import MainBlankSpace from '../component/parts/mainParts/MainBlankSpace'
 import MainImgBanner from '../component/parts/mainParts/MainImgBanner'
 
-// import JsonTest from '../component/atoms/JsonTest'
 function Main() {
   return (
     <>
-      {/* <JsonTest/> */}
       <Header/>
       <MainEventSlider/>
       <MainUpperCategory/>
@@ -42,7 +40,7 @@ function Main() {
       <MainContentslider/>
       <MainBlankSpace px={60}/>
       <MainIconGrid column={2}/>
-      <hr />
+      <MainBlankSpace px={60}/>
       <MainImgBanner/>
       <hr />
       <MainCardPromotion/>

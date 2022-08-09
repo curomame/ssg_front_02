@@ -8,6 +8,8 @@ import Main from './pages/Main';
 
 import {SearchModalContext} from './context/SearchModalContext'
 import SearchModal from './component/parts/commonsParts/SearchModal';
+import CategoryDetailTopAll from './component/components/category/CategoryDetailTopAll';
+
 
 
 function App() {
@@ -22,10 +24,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main/>}/>
-          <Route path="/category" element={<Category/>}/> 
-          <Route path="/login" element={<Login/>}/> 
+          <Route path="/category" element={<Category/>}/>
+          <Route path="/category/:id" element={<CategoryDetailTopAll/>}/>
 
-          {/* <Route path="/page/:id" element={<Pages/>}/> */}
+          <Route path="/login" element={<Login/>}/>
           <Route path="/test" element={<Test/>}/>
         </Routes>
       </BrowserRouter>
