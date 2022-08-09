@@ -247,15 +247,33 @@ h3 {
 }
 
 .mainCards{
-    width: 80px;
-    height: 120px;
+    width: 90px;
+    height: 140px;
     overflow: hidden;
-    border:  1px solid blue;
     border-radius: 10%;
+    background: #363635;
+    color: white;
+}
+
+.mainCardsBox{
+    padding: 10px 8px;
 }
 
 .upperCard{
+
     display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.upperCardIcon {
+    width: 20px;
+    height: 20px;
+}
+
+.upperCardIcon img {
+    width: 100%;
 }
 
 .mainRankLink{

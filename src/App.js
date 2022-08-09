@@ -24,15 +24,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main/>}/>
-          <Route path="/category" element={<Category/>}>
-            {/* <Route path="/nest" element={<CategoryDetailTopAll/>}/> */}
-          </Route> 
-          
+          <Route path="/category" element={<Category/>}/>
           <Route path="/category/:id" element={<CategoryDetailTopAll/>}/>
 
           <Route path="/login" element={<Login/>}/> 
-
-          {/* <Route path="/page/:id" element={<Pages/>}/> */}
           <Route path="/test" element={<Test/>}/>
         </Routes>
       </BrowserRouter>
