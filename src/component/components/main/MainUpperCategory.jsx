@@ -6,13 +6,15 @@ import menus from "../../../assets/datas/mainCategory.json"
 function MainUpperCategory() {
   return (
     <>
-    <ul className='upperCategory'>
-        {
-          menus && menus.map(menu=>(
-            <Link to={menu.url} key={menu.id}><li>{menu.name}</li></Link>
-          ))
-        }
-    </ul>
+    <div>
+      <ul className='upperCategory'>
+          {
+            menus && menus.map(menu=>(
+              <Link to={menu.url} key={menu.id}><li>{menu.name}</li></Link>
+            ))
+          }
+      </ul>
+    </div>
     </>
   )
 }

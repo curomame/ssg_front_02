@@ -18,8 +18,8 @@ function MainEventSlider({datas, height, numbering, }) {
     autoplaySpeed: 2000,
     pauseOnHover: true,
     afterChange: () => {
-
-      console.log(1);
+      // 숫자 수동 변경시 안바뀌는 오류 잡기
+      // 숫자 css 오류 잡기
 
       if(current >= mainEventSliderDatas.length){
         setCurrent(1);
