@@ -2,11 +2,11 @@ import React from 'react'
 import SignUpPreviousIcon from '../../parts/signUpParts/SignUpPreviousIcon'
 import SignUpTitleText from '../../parts/signUpParts/SignUpTitleText'
 
-function SignUpHeader() {
+function SignUpHeader({title}) {
   return (
     <div style = {{display:"flex"}}>
         <SignUpPreviousIcon />
-        <SignUpTitleText />
+        <SignUpTitleText title={title} />
     </div>
   )
 }

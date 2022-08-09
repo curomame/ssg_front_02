@@ -1,8 +1,12 @@
 import React from 'react'
 
-function SignUpTitleText() {
+function SignUpTitleText({title}) {
   return (
-    <h2 style={{width:"100%", fontWeight:"bold", textAlign:"center"}}>회원가입</h2>
+    <>
+      <div style={{"width":"100%", "fontWeight":"bold", "textAlign":"center"}}>
+        { title ? <h2>{title}</h2> : "" }
+      </div>
+    </>
   )
 }
 
