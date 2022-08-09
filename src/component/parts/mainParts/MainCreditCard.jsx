@@ -1,7 +1,7 @@
 import React from 'react'
 import MainTitleSub from './MainTitleSub'
 
-function MainCreditCard() {
+function MainCreditCard({numbering}) {
   return (
     <>
     <div className='mainCards'>

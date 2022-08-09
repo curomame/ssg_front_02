@@ -27,7 +27,7 @@ function App() {
           <Route path="/category" element={<Category/>}/>
           <Route path="/category/:id" element={<CategoryDetailTopAll/>}/>
 
-          <Route path="/login" element={<Login/>}/> 
+          <Route path="/login" element={<Login/>}/>
           <Route path="/test" element={<Test/>}/>
         </Routes>
       </BrowserRouter>
