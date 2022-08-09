@@ -3,16 +3,16 @@ import SignUpBenefit from '../../parts/signUpParts/SignUpBenefit'
 import SignupButton from '../../parts/signUpParts/SignupButton'
 import SignUpTopCard from '../../parts/signUpParts/SignUpTopCard'
 
-function SignUpBody() {
+function SignUpMainBody() {
   return (
     <>
-        <SignUpTopCard/>
-        <hr/>
+        <SignUpTopCard title="신세계포인트 통합회원"/>
+        <br/>
         <SignUpBenefit/>
-        <hr/>
+        <br/>
         <SignupButton/>
     </>
   )
 }
 
-export default SignUpBody
+export default SignUpMainBody
