@@ -1,6 +1,6 @@
 
-import React, { useState } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Test from './component/test/Test';
 import Category from './pages/Category';
 import Login from './pages/Login';
@@ -9,6 +9,7 @@ import Main from './pages/Main';
 import {SearchModalContext} from './context/SearchModalContext'
 import SearchModal from './component/parts/commonsParts/SearchModal';
 
+import useScrollUp from './hooks/useScrollUp';
 
 function App() {
 
