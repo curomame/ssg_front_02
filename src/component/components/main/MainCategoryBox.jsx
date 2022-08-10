@@ -12,7 +12,12 @@ function MainCategoryBox() {
         {datas && 
           datas.map(data => (
             <div key={data.id} >
-              <Link to={data.url}><img style={{"width":"100px","height":"100px"}} src="https://sui.ssgcdn.com/cmpt/banner/202207/2022072216460396994225724522_92.png" alt="img" /></Link>
+              <Link to={data.url}>
+                <img 
+                  style={{"width":"100px","height":"100px"}} 
+                  src={data.src} 
+                  alt="img" />
+                </Link>
             </div>
           ))
           }

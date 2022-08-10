@@ -3,6 +3,8 @@ import MainTitleSub from '../../parts/mainParts/MainTitleSub';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
+import CommonTitleSub from '../../parts/commonsParts/CommonTitleSub';
+import MainSliderQuarter from './MainSliderQuarter';
 
 
 
@@ -31,8 +33,15 @@ function MainContentslider() {
 
   return (
     <>
-    <MainTitleSub title={"New Service"} sub={"새롭게 오픈한 서비스를 소개해드려요"}/>
-    <div style={{"width":"100%", "overflow":"scroll"}}>
+    <CommonTitleSub
+        title="New Service"
+        sub="새롭게 오픈한 서비스를 소개해드려요"
+        type="mainTitleSubTotal"
+        />
+
+    <MainSliderQuarter/>
+    
+    {/* <div style={{"width":"100%", "overflow":"scroll"}}>
       <div className='mainContentsSlider' style={{"width":`${sliderjson.length*100}%`, "display":"flex" }}>
               {sliderjson &&
                 sliderjson.map((slide) => (
@@ -46,7 +55,7 @@ function MainContentslider() {
               }
 
         </div>
-      </div>
+      </div> */}
     </>
   )
 }
