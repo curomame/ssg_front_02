@@ -32,7 +32,7 @@ function MainFooter() {
     "name":"입점상담",
     "url":'https://partners.ssgadm.com/m/'
   },
-  { "id":1,
+  { "id":9,
     "name":"회사소개",
     "url":'https://company.ssg.com'
   },
@@ -65,8 +65,6 @@ function MainFooter() {
                     <li key={link.id}>
                       <Link to={link.url}>{link.name}</Link>
                     </li>
-                    
-
                 )) : ""}
 						</ul>
 					</div>
