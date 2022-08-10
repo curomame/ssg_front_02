@@ -5,7 +5,7 @@ function MainIconGrid({column}) {
 
   return (
     <>
-        <MainIcon contents={contents} column={column}/>
+        <MainIcon/>
     </>
   )
 }

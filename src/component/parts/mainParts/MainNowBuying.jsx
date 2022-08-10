@@ -9,9 +9,9 @@ function MainNowBuying({}) {
   
   return (
     <>
-      <div style={{"display":"flex","justifyContent":"space-between", "margin":"0 15px"}}>
+      <div className="mainNowBuying" >
 
-        <div><p>3,408개 구매중</p></div>
+        <div className='mainNowBuyingBox'>3,408개 구매중</div>
 
         <div className="nowBuyingIcons" style={{"display":"flex"}}>
           <div><HeartIcon/></div>

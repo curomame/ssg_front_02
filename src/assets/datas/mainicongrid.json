@@ -1,11 +1,11 @@
 [ 
-  {"id":"1","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"},
-  {"id":"2","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"},
-  {"id":"3","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"},
-  {"id":"4","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"},
-  {"id":"5","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"},
-  {"id":"6","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"},
-  {"id":"7","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"},
-  {"id":"8","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"},
-  {"id":"9","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"},
-  {"id":"10","img":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87","alt":"내용","name":"이름"} ]
+  {"id":"1","src":"//sui.ssgcdn.com/cmpt/banner/202207/2022072018095879442344852334_902.png","alt":"내용","name":"명절"},
+  {"id":"2","src":"//sui.ssgcdn.com/cmpt/banner/202207/2022072018085132408328907832_886.png","alt":"내용","name":"해피라운지"},
+  {"id":"3","src":"//sui.ssgcdn.com/cmpt/banner/202207/2022072018090271094493915549_213.png","alt":"내용","name":"공식브랜드관"},
+  {"id":"4","src":"//sui.ssgcdn.com/cmpt/banner/202206/2022062117422173428272685827_495.png","alt":"내용","name":"백화점"},
+  {"id":"5","src":"//sui.ssgcdn.com/cmpt/banner/202207/2022072018095879442344852334_902.png","alt":"내용","name":"SSG럭셔리"},
+  {"id":"6","src":"//sui.ssgcdn.com/cmpt/banner/202207/2022072018095879442344852334_902.png","alt":"내용","name":"스마일클럽"},
+  {"id":"7","src":"//sui.ssgcdn.com/cmpt/banner/202207/2022072018095879442344852334_902.png","alt":"내용","name":"이벤트"},
+  {"id":"8","src":"//sui.ssgcdn.com/cmpt/banner/202207/2022072018095879442344852334_902.png","alt":"내용","name":"선물하기"},
+  {"id":"9","src":"//sui.ssgcdn.com/cmpt/banner/202207/2022072018095879442344852334_902.png","alt":"내용","name":"베스트"},
+  {"id":"10","src":"//sui.ssgcdn.com/cmpt/banner/202207/2022072018095879442344852334_902.png","alt":"내용","name":"신상품"} ]

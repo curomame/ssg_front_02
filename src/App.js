@@ -11,7 +11,6 @@ import SearchModal from './component/parts/commonsParts/SearchModal';
 import CategoryDetailTopAll from './component/components/category/CategoryDetailTopAll';
 
 
-
 function App() {
 
   const [isModal, setIsModal] = useState(false);
@@ -29,6 +28,7 @@ function App() {
 
           <Route path="/login" element={<Login/>}/>
           <Route path="/test" element={<Test/>}/>
+          <Route path="/*" element={<div>nopage</div>}/>
         </Routes>
       </BrowserRouter>
 
