@@ -10,7 +10,7 @@ function SignUpMainBody() {
         <br/>
         <SignUpBenefit/>
         <br/>
-        <SignupButton/>
+        <SignupButton url="./terms" title="통합 회원가입"/>
     </>
   )
 }
