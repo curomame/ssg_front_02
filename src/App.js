@@ -9,6 +9,7 @@ import Main from './pages/Main';
 import {SearchModalContext} from './context/SearchModalContext'
 import SearchModal from './component/parts/commonsParts/SearchModal';
 import CategoryDetailTopAll from './component/components/category/CategoryDetailTopAll';
+import SignUp from './pages/signUpPage/SignUpMain';
 
 
 
@@ -29,6 +30,8 @@ function App() {
 
           <Route path="/login" element={<Login/>}/>
           <Route path="/test" element={<Test/>}/>
+          <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/*" element={<div>nopage</div>}/>
         </Routes>
       </BrowserRouter>
 

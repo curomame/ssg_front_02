@@ -1,24 +1,43 @@
 import React from 'react'
+import '../../../assets/css/category/category.css'
 
-function CategoryItem() {
+function CategoryItem({item}) {
+
+  console.log(item);
+
   return (
     <>
-      <div style={{"width":"50%"}} className='test'>
-        <div>
+      <div className="categoryItemContainer" style={{"width":"50%", "marginTop":"10px"}}>
+        {/* <div>
           <div><p>SSG개런티</p></div>
-        </div>
+        </div> */}
 
         <div>
-          <div><img style={{"width":"100%"}} src="//sitem.ssgcdn.com/56/23/61/item/1000456612356_i1_232.jpg" alt="" /></div>
-          <div><h3>신세계몰</h3></div>
-          <div><h2>버버리</h2></div>
-          <div><p>다이아몬드 어쩌고</p></div>
-          <div><p>1,620,000원</p></div>
-        </div>
+          <div><img style={{"width":"100%"}} src={item.src} alt="" /></div>
+          
+          <div className='categoryItemText'>
+          
+              <div><h3>{item.mall}</h3></div>
+              <div><h2>{item.title}</h2></div>
+              <div><p className='categoryItemSub'>{item.sub}</p></div>
+              <div><p className={`categoryItemPrice ${item.discount ? "categoryline" : null}`}>{(item.price).toLocaleString()}원</p></div>
+              {item.discount 
+                ? <div className='categoryItemDiscount'>
+                    <p>{(item.price * (100 - item.discount)/100).toLocaleString()}원</p>
+                    <p>{item.discount}%</p>
+                  </div> 
+                : null}
+              <div className='categoryItemStar'><p>★</p><p>{item.star}</p><p>|</p><p>{(item.reviewCount).toLocaleString()}건</p></div>
 
-        <div style={{display:"flex"}}>
-          <div><p>해외직구</p></div>
-          <div style={{marginLeft:"5px"}}><p>무료배송</p></div>
+            <div style={{display:"flex"}}>
+              
+              {item.import ? <div className='categoryAttBox'><p>해외직구</p></div> :null}
+              {item.freeShip ? <div className='categoryAttBox'><p>무료배송</p></div> :null}
+            </div>
+          </div>
+            
+      
+
         </div>
       </div>
     </>
