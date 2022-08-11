@@ -14,6 +14,8 @@ import SignUpInfo from './pages/signUpPage/SignUpInfo';
 import SignUpComplete from './pages/signUpPage/SignUpComplete';
 import SignUpMain from './pages/signUpPage/SignUpMain'
 
+import './assets/css/common.css'
+
 function App() {
 
   const [isModal, setIsModal] = useState(false);

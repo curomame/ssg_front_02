@@ -1,54 +1,81 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import categoryMainDatas from '../../../assets/datas/categoryDatas/categorymainDatas.json'
 
+
 function CategoryMainGrid() {
+
+
+
+
+  const testData = categoryMainDatas;
+  
+  const [isClick, setIsClick] = useState(false);
+
+  
+
   return (
     <>
     
 
+      <div className='categoryMainGridContainer' >
+{/* 반복화 진행 */}
+{/* 받아올 값 카테고리 이름들 */}
 
-    <div style={{"width":"100%", "display":"flex", "flexWrap": "wrap"}}>
+      <div className='categoryMainGridContainerIconBox' >
+          <div><img src='https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202109/2021090117370424472933833393_256.jpg&w=150&h=150&edit=c&t=1563dd18551f16231432da715468c33acc03630e' alt=""/></div>
+          <div style={{"margin":"auto"}} ><h2>카테고리</h2></div>
+      </div>
 
+      <div className='categoryMainGridContainerIconBox' >
+          <div><img src='https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202109/2021090117370424472933833393_256.jpg&w=150&h=150&edit=c&t=1563dd18551f16231432da715468c33acc03630e' alt=""/></div>
+          <div style={{"margin":"auto"}} ><h2>카테고리</h2></div>
+          
+
+
+      </div>
+
+      <div className='categoryMainGridContainerIconBox' >
+          <div><img src='https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202109/2021090117370424472933833393_256.jpg&w=150&h=150&edit=c&t=1563dd18551f16231432da715468c33acc03630e' alt=""/></div>
+          <div style={{"margin":"auto"}} ><h2>카테고리</h2></div>
+          
+
+
+      </div>
+
+      <div className='categoryMainGridContainerIconBox' >
+          <div><img src='https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202109/2021090117370424472933833393_256.jpg&w=150&h=150&edit=c&t=1563dd18551f16231432da715468c33acc03630e' alt=""/></div>
+          <div style={{"margin":"auto"}} ><h2>카테고리</h2></div>
+          
+
+
+      </div>
+
+
+    {/* 정보를 받아오면 해당 값으로 변경 */}
+
+      <div className='categoryMainSubBox' >
+
+        {testData[0].underCategory && 
+          <div className={'변수가 들어올 예정'}>
+
+        {testData[0].underCategory.map((data) => {
+          return <div>{data.title}</div>
+        })}
+
+        </div>
+        }
+
+
+          
+        </div>
+
+        </div>
       
-    {/* {categoryMainDatas && 
-    
-    categoryMainDatas.map((data) => (
-
-      <div key={data.id} style={{"display":"flex", "flexDirection":"column", "width":"25%"}}>
-        <div><img style={{"width":"100%", "margin":"auto"}} src='https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202109/2021090117370424472933833393_256.jpg&w=150&h=150&edit=c&t=1563dd18551f16231432da715468c33acc03630e' alt="" /></div>
-        <div style={{"margin":"auto"}}><h2>{data.category}</h2></div>
-      </div>
-
-      ))
-
-    } */}
-
-
-      <div style={{"display":"flex", "flexDirection":"column", "width":"25%"}}>
-        <div><img style={{"width":"100%", "margin":"auto"}} src='https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202109/2021090117370424472933833393_256.jpg&w=150&h=150&edit=c&t=1563dd18551f16231432da715468c33acc03630e' alt="" /></div>
-        <div style={{"margin":"auto"}}><h2>카테고리</h2></div>
-
-      <div style={{ "background":"red", "position":"relative", "width":"400%", display:"none", flexWrap:"wrap"}}>
-        <div style={{"background":"skyblue", "width":"50%"}}>hi</div>
-        <div style={{"background":"skyblue", "width":"50%"}}>hi</div>
-        <div style={{"background":"skyblue", "width":"50%"}}>hi</div>
-        <div style={{"background":"skyblue", "width":"50%"}}>hi</div>
-        <div style={{"background":"skyblue", "width":"50%"}}>hi</div>
-        <div style={{"background":"skyblue", "width":"50%"}}>hi</div>
-        <div style={{"background":"skyblue", "width":"50%"}}>hi</div>
-        <div style={{"background":"skyblue", "width":"50%"}}>hi</div>
-      </div>
-
-      </div>
 
 
 
-      </div>
-
-
-
-
+        
     </>
   )
 }

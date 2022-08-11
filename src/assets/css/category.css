@@ -1,0 +1,174 @@
+
+.categoryItemText{
+  padding: 10px 15px 0px 15px;
+}
+
+.categoryItemDiscount{
+  display: flex;
+  justify-content: space-between;
+}
+
+.categoryItemText h3{
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.categoryItemText h2{
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.categoryItemText .categoryItemSub {
+  font-size: 13px;
+  color: #444;
+}
+
+.categoryline {
+  text-decoration: line-through;
+  color: gray;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+}
+
+.categoryItemText .categoryItemPrice {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.categoryItemDiscount p:nth-child(1){
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.categoryItemDiscount p:nth-child(2){
+  font-size: 18px;
+  font-weight: 400;
+  color: red;
+}
+
+.categoryItemStar{
+  display: flex;
+  font-weight: 300;
+}
+
+.categoryItemStar p {
+  margin-right: 5px;
+
+}
+
+.categoryAttBox{
+  border: 1px solid rgb(117, 117, 117);
+  font-size: 12px;
+  color: #444;
+  margin-top: 4px;
+}
+
+.categoryAttBox p {
+  padding: 0 8px;
+}
+
+
+
+.categoryMainGridContainer{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.categoryMainGridContainerIconBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.categoryMainGridContainerIconBox img {
+  width: 100%;
+  margin: auto;
+}
+
+.categoryMainSubBox {
+  margin: 10px 15px;
+  width: 100%;
+  display: blcok;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.categoryMainSubBox.test {
+ display: none;
+}
+
+.categoryMainSubBox > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.categoryMainSubBox > div > div {
+  width: 50%;
+}
+
+.categoryMainThememImgContainger{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.categoryMainTheme{
+  margin: 0 15px;
+}
+
+.categoryMainTheme h2{
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 5px;
+  letter-spacing: -1px;
+}
+
+.categoryMainThemeImgBox{
+  width: 49%;
+}
+
+.categoryMainThemeImg img {
+  width: 100%;
+  margin: auto;
+  border-radius: 5%;
+}
+
+.categoryMainThemeImgBox div:nth-last-child(1){
+  font-weight: 13px;
+  font-weight: 550;
+  letter-spacing: -0.5px;
+}
+
+.CategoryMainReco{
+  margin: 0 15px;
+}
+
+.CategoryMainReco h2{
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 5px;
+  letter-spacing: -1px;
+}
+
+.CategoryMainRecoSlideBox{
+  overflow: scroll;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.CategoryMainRecoSlideBox::-webkit-scrollbar{
+  display: none;
+}
+
+.CategoryMainRecoSlider{
+  margin-right: 5px;
+}
+
+.CategoryMainRecoSlider img{
+  border-radius: 30%;
+}
+
