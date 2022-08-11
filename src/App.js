@@ -9,11 +9,10 @@ import Main from './pages/Main';
 import {SearchModalContext} from './context/SearchModalContext'
 import SearchModal from './component/parts/commonsParts/SearchModal';
 import CategoryDetailTopAll from './component/components/category/CategoryDetailTopAll';
-import SignUpMainBody from './component/components/signup/SignUpMainBody';
 import SignUpTerms from './pages/signUpPage/SignUpTerms';
 import SignUpInfo from './pages/signUpPage/SignUpInfo';
 import SignUpComplete from './pages/signUpPage/SignUpComplete';
-
+import SignUpMain from './pages/signUpPage/SignUpMain'
 
 function App() {
 
@@ -34,12 +33,11 @@ function App() {
           <Route path="/test" element={<Test/>}/>
           
 
-                    {/* for Test start */}
-          <Route path="/signup" element={<SignUpMainBody/>}/>
+
+          <Route path="/signup" element={<SignUpMain/>}/>
           <Route path="/signup/terms" element={<SignUpTerms/>}/>
           <Route path="/signup/info" element={<SignUpInfo/>}/>
           <Route path="/signup/complete>" element={<SignUpComplete/>}/>
-          {/* for Test End */}
 
           <Route path="/*" element={<div>nopage</div>}/>
         </Routes>
