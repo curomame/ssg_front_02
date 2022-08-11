@@ -41,6 +41,8 @@ function App() {
           <Route path="/signup/info" element={<SignUpInfo/>}/>
           <Route path="/signup/complete>" element={<SignUpComplete/>}/>
 
+          <Route path="/test>" element={<Test/>}/>
+
           <Route path="/*" element={<div>nopage</div>}/>
         </Routes>
       </BrowserRouter>

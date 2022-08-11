@@ -8,7 +8,7 @@ function MainSliderQuarter() {
     className: "center",
     infinite: false,
     centerPadding: "20px",
-    slidesToShow: 2,
+    slidesToShow: 1.5,
     swipeToSlide: true,
     }
 

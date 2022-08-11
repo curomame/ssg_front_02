@@ -70,6 +70,7 @@
 
 
 .categoryMainGridContainer{
+  margin-top: 20px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -83,16 +84,27 @@
 }
 
 .categoryMainGridContainerIconBox img {
+  
   width: 100%;
   margin: auto;
 }
+.categoryMainSubBoxBackGround{
+  background-color: #F5F5F5;
+  color: #666666;
+  width: 100%;
+}
 
 .categoryMainSubBox {
-  margin: 10px 15px;
+  
+  margin: 15px 15px;
   width: 100%;
   display: blcok;
   justify-content: space-between;
   flex-direction: column;
+}
+
+.categoryMainSubBox div {
+  margin: 3px 0px;
 }
 
 .categoryMainSubBox.test {
