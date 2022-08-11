@@ -2,9 +2,9 @@
 
   {
     "id":1,
-    "src":"",
     "link":"/",
     "category":"패션의류",
+    "src":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202109/2021090117370424472933833393_256.jpg&w=150&h=150&edit=c&t=1563dd18551f16231432da715468c33acc03630e",
     "underCategory":[
       {
         "id":1,
@@ -20,40 +20,44 @@
         "id":3,
         "title":"여성브랜드패션",
         "link":"/"
-      },
-      {
-        "id":4,
-        "title":"여성트렌드패션",
-        "link":"/"
       }
-      
   ]
   },
   
   {
     "id":2,
-    "src":"",
     "link":"/",
     "category":"패션의류2",
+    "src":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202109/2021090117370424472933833393_256.jpg&w=150&h=150&edit=c&t=1563dd18551f16231432da715468c33acc03630e",
     "underCategory":[
       {
         "id":1,
-        "title":"상품 전체보기2",
+        "title":"상품 전체보기",
         "link":"/"
       },
       {
         "id":2,
-        "title":"명품/수입의류2",
+        "title":"인형이양",
         "link":"/"
       },
       {
         "id":3,
-        "title":"여성브랜드패션2",
+        "title":"푸룽푸룽",
         "link":"/"
       },
       {
         "id":4,
         "title":"여성트렌드패션2",
+        "link":"/"
+      },
+      {
+        "id":5,
+        "title":"열심히만들었음",
+        "link":"/"
+      },
+      {
+        "id":6,
+        "title":"머리터질뻔함",
         "link":"/"
       }
       

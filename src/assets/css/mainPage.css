@@ -198,7 +198,7 @@ h3 {
 
 .MainItemsRight {
     display: flex;
-    margin: 0px 15px;
+    margin: 15px 15px;
 }
 
 .MainItemLeftParts{
@@ -373,13 +373,6 @@ h3 {
 
 }
 
-.bottonNavFont {
-    font-size: 12px;
-}
-
-.bottonNavIconSize {
-    font-size: 24px;
-}
 
 .mainTitleSubTotal{
     display: flex;
@@ -464,4 +457,8 @@ h3 {
 .mainIconGrid > div div {
     margin: 2px;
     font-size: 12px;
+}
+
+.mainSliderQuarterContainer{
+    margin-left: 15px;
 }

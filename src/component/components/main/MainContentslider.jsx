@@ -41,21 +41,6 @@ function MainContentslider() {
 
     <MainSliderQuarter/>
     
-    {/* <div style={{"width":"100%", "overflow":"scroll"}}>
-      <div className='mainContentsSlider' style={{"width":`${sliderjson.length*100}%`, "display":"flex" }}>
-              {sliderjson &&
-                sliderjson.map((slide) => (
-
-                <div style={{"display":"inline"}}>
-                  <div><img style={{"width":"100%"}} src="https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87" alt="" /></div>
-                  <div><MainTitleSub title={"2022 추석 명절"} sub={"미리 준비하는 올 추석 명절 선물"}/></div>
-                </div>
-
-                ))
-              }
-
-        </div>
-      </div> */}
     </>
   )
 }

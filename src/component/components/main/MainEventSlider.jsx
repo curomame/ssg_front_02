@@ -9,6 +9,11 @@ function MainEventSlider({datas, height, numbering, }) {
   const [current, setCurrent ] = useState(1);
 
   const settings = {
+
+    state:{
+      slideIndex: 0,
+      updateCount: 0
+    },
     dots: false,
     infinite: true,
     speed: 500,
@@ -17,9 +22,10 @@ function MainEventSlider({datas, height, numbering, }) {
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
+    // beforeChange:() => {
+    //   setCurrent(current-1);
+    // },
     afterChange: () => {
-      // 숫자 수동 변경시 안바뀌는 오류 잡기
-      // 숫자 css 오류 잡기
 
       if(current >= mainEventSliderDatas.length){
         setCurrent(1);
@@ -30,7 +36,7 @@ function MainEventSlider({datas, height, numbering, }) {
     }
   }
 
-
+console.log(current)
 
 
   return (

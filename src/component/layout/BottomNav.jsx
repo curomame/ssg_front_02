@@ -15,14 +15,14 @@ function BottomNav() {
                 <li>
                     
                     {menu.onClick ? 
-                    <div key={menu.id} onClick={() => {setIsModal(!isModal)}}>
+                    <div className="bottonNavFont" key={menu.id} onClick={() => {setIsModal(!isModal)}}>
                       <div><span className="material-icons-outlined bottonNavIconSize">{menu.icon}</span></div>
-                      <div><span className="bottonNavFont">{menu.title}</span></div>
+                      <div><span>{menu.title}</span></div>
                     </div>
                     : 
-                    <Link to={menu.url} key={menu.id}>
+                    <Link className="bottonNavFont" to={menu.url} key={menu.id}>
                       <div><span className="material-icons-outlined bottonNavIconSize">{menu.icon}</span></div>
-                      <div><span className="bottonNavFont">{menu.title}</span></div>
+                      <div><span >{menu.title}</span></div>
                     </Link>}
                     
                     
