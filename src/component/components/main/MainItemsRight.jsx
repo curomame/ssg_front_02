@@ -1,6 +1,7 @@
 import React from 'react'
 import CommonTitleSub from '../../parts/commonsParts/CommonTitleSub'
 import MainFourCard from '../../parts/mainParts/MainFourCard'
+import MainFourCardSet from '../../parts/mainParts/MainFourCardSet'
 import MainNowBuying from '../../parts/mainParts/MainNowBuying'
 import MainTitleSub from '../../parts/mainParts/MainTitleSub'
 
@@ -22,14 +23,11 @@ function MainItemsRight() {
 
         {/* 반복되는 부분 */}
 
-        <MainFourCard/>
-        <CommonTitleSub 
-          title={"빈폴 레이디스"}
-          sub={"신세계백화점 단 3일! 보내기 아쉬운 특가, 앵콜 세일로 다시 만나다! 최대 ~87% 세일" }
-          type="mainFourTitleSub"
-          price="25,234"
-          />  
-        <MainNowBuying/>
+        
+
+        <MainFourCardSet/>
+        <MainFourCardSet/>
+        <MainFourCardSet/>
       
       
       </div>

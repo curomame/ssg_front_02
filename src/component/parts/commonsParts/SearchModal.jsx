@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import {SearchModalContext} from '../../../context/SearchModalContext'
-import CategoryMainGrid from '../../components/category/CategoryMainGrid';
 
 function SearchModal() {
 
@@ -35,7 +34,7 @@ function SearchModal() {
           </div>
 
           <div>
-            <CategoryMainGrid/>
+            <h2>추천앙냥냥</h2>
           </div>
 
         </div>

@@ -73,3 +73,20 @@
 .searchRecentKeyword div {
   text-align: center;
 }
+
+/* 바텀 네브 */
+
+.bottomNav ul{
+  padding-top: 5px;
+  background-color: #fbfbfb;
+  box-shadow:0 -1px 4px 0 rgb(0 0 0 / 5%), inset 0 1px 0 0 #fff;
+}
+
+.bottonNavFont {
+  font-size: 10px;
+  color: #8b8b8b;
+}
+
+.bottonNavIconSize {
+  font-size: 24px;
+}

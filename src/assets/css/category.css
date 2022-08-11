@@ -81,7 +81,9 @@
   display: flex;
   flex-direction: column;
   width: 25%;
+  
 }
+
 
 .categoryMainGridContainerIconBox img {
   
@@ -107,7 +109,7 @@
   margin: 3px 0px;
 }
 
-.categoryMainSubBox.test {
+.categoryMainSubBoxBackGround.Boxoff {
  display: none;
 }
 
