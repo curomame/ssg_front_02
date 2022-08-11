@@ -22,7 +22,7 @@ import MainBrandLookBook from '../component/components/main/MainBrandLookBook'
 import MainLifeMegazine from '../component/components/main/MainLifeMegazine'
 import MainBestItems from '../component/components/main/MainBestItems'
 
-import '../assets/css/main/mainPage.css'
+import '../assets/css/mainPage.css'
 
 import MainBlankSpace from '../component/parts/mainParts/MainBlankSpace'
 import MainImgBanner from '../component/parts/mainParts/MainImgBanner'

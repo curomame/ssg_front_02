@@ -5,14 +5,15 @@ function CategoryMainTheme() {
   return (
     <>
 
-      <div><h2>title</h2></div>
-      <div style={{"width":"100%", "display":"flex"}}>
+    <div className="categoryMainTheme">
+      <h2>테마추천</h2>
+      <div className='categoryMainThememImgContainger'>
         
         {CategoryMainThemeDatas &&
         CategoryMainThemeDatas.map((data) => (
 
-          <div key={data.id} style={{"width":"50%"}} >  
-            <div><img style={{"width":"100%", "margin":"auto", "borderRadius":"5%"}} src={data.src} alt="" /></div>
+          <div className='categoryMainThemeImgBox' key={data.id} >  
+            <div className='categoryMainThemeImg'><img src={data.src} alt="" /></div>
             <div><p>{data.title}</p></div>
           </div>
 
@@ -21,7 +22,7 @@ function CategoryMainTheme() {
 
 
         </div>
-      
+    </div>
     </>
   )
 }

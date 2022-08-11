@@ -452,6 +452,16 @@ h3 {
     font-size: 12px;
 }
 
-.nowBuyingIcons{
+.mainIconGrid{
+    display: flex;
+    flex-direction: column;
+}
 
+.mainIconGrid > div {
+    margin-bottom: 10px;
+}
+
+.mainIconGrid > div div {
+    margin: 2px;
+    font-size: 12px;
 }

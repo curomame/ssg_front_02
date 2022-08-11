@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import mainicongrid from '../../../assets/datas/mainicongrid.json'
 
-function MainIcon() {
+function MainIcon({type}) {
 
   // 상위 프롭스에서 img data(json) 그리고 column만 넘기면 됨
   // 아이콘 그리드를 받아오는 로직 완성!
@@ -25,16 +26,20 @@ function MainIcon() {
   <>
     <div>
       {newArr[0] ?
-        <div style={{"display":"flex","flexDirection":"column"}}>
+        <div className={type} >
           
           {newArr.map((grids) => (
 
           <div style={{"display":"flex","justifyContent":"space-between"}}>
             {grids.map((grid) => (
-              <div>
-                <div><img style={{"width":"100%"}} src={grid.src} alt="" /></div>
-                <div style={{"textAlign":"center"}} ><p>{grid.name}</p></div>
+              
+              <div style={{"width":`${100/column}%`}}>
+                <Link to='/'>
+                  <div><img style={{"width":"100%"}} src={grid.src} alt="" /></div>
+                  <div style={{"textAlign":"center"}}><p>{grid.name}</p></div>
+                </Link>
               </div>
+              
             ))}
           </div>            
 

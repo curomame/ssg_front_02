@@ -35,9 +35,10 @@ function MainEventSlider({datas, height, numbering, }) {
 
   return (
     <>
-    <div style={{"width":"100%"}}>
+    
+    <div style={{"width":"100%", "position":"relative"}}>
 
-      <p style={{"position":"absolute","top":"30%",color:"white",fontSize:"20px","fontWeight":"600","marginLeft":"15px"}}>{current} - {mainEventSliderDatas.length}</p>
+      <p style={{"zIndex":"100" ,"position":"absolute","top":"65%",color:"white",fontSize:"20px","fontWeight":"600","marginLeft":"15px"}}>{current} - {mainEventSliderDatas.length}</p>
 
       <Slider className="mainUpperSlider" {...settings}>
         

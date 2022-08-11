@@ -14,6 +14,8 @@ import SignUpInfo from './pages/signUpPage/SignUpInfo';
 import SignUpComplete from './pages/signUpPage/SignUpComplete';
 import SignUpMain from './pages/signUpPage/SignUpMain'
 
+import './assets/css/common.css'
+
 function App() {
 
   const [isModal, setIsModal] = useState(false);
@@ -38,6 +40,8 @@ function App() {
           <Route path="/signup/terms" element={<SignUpTerms/>}/>
           <Route path="/signup/info" element={<SignUpInfo/>}/>
           <Route path="/signup/complete>" element={<SignUpComplete/>}/>
+
+          <Route path="/test>" element={<Test/>}/>
 
           <Route path="/*" element={<div>nopage</div>}/>
         </Routes>

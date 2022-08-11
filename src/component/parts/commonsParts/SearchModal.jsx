@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import {SearchModalContext} from '../../../context/SearchModalContext'
-import '../../../assets/css/common/commom.css'
 import CategoryMainGrid from '../../components/category/CategoryMainGrid';
 
 function SearchModal() {

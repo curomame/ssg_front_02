@@ -3,13 +3,10 @@ import axios from 'axios'
 
 function Test() {
 
-  const [getDatas, setGetDatas] = useState([]);
-  const [putDatas, setPutDats] = useState([]);
-
   const getDataFunc = () => {
 
-    axios.get("http://10.10.10.167:8080/json/test")
-                    .then(res => console.log(res.data));
+    axios.get("http://10.10.10.167:8080/ProductCategory")
+                    .then(res => console.log(res.data))
                     
   }
 
@@ -35,11 +32,6 @@ function Test() {
 
       </div>
 
-      <div>
-
-        <h1>axios POST</h1>
-        <h3 onClick={postDataFunc}>Click this</h3>
-      </div>
     </>
   )
 }

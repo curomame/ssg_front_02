@@ -1,5 +1,4 @@
 import React from 'react'
-import '../../../assets/css/category/category.css'
 
 function CategoryItem({item}) {
 

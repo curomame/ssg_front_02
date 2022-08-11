@@ -6,29 +6,25 @@ function CategoryMainReco() {
   return (
     <>
     
-      <div><h2>SSG 서비스 추천</h2></div>
+      <div className='CategoryMainReco'>
+        <div><h2>SSG 서비스 추천</h2></div>
 
-      <div style={{"overflow":"scroll", "display":"flex", "justifyContent":"space-between", "flexDirection":"row"}}>
-        
-        {categoryServiceDatas && 
-        categoryServiceDatas.map((data)=>(
+        <div className='CategoryMainRecoSlideBox'>
+          
+          {categoryServiceDatas && 
+          categoryServiceDatas.map((data)=>(
 
-        <div key={data.id} style={{"marginRight":"6px"}}>
-          <Link to={data.link}>
-            <img style={{"width":"54px"}} src={data.src} alt="img" />
-            <p style={{"fontSize":"12px"}}>{data.title}</p>
-          </Link>
+          <div className='CategoryMainRecoSlider' key={data.id} >
+            <Link to={data.link}>
+              <img style={{"width":"54px"}} src={data.src} alt="img" />
+              <p style={{"fontSize":"12px"}}>{data.title}</p>
+            </Link>
+          </div>
+
+          ))
+          }
         </div>
-
-        ))
-        }
-
-        
-
-
-
       </div>
-
     </>
   )
 }
