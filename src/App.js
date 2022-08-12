@@ -15,6 +15,7 @@ import SignUpComplete from './pages/signUpPage/SignUpComplete';
 import SignUpMain from './pages/signUpPage/SignUpMain'
 
 import './assets/css/common.css'
+import ProductDetail from './pages/ProductDetail';
 
 function App() {
 
@@ -40,6 +41,8 @@ function App() {
           <Route path="/signup/terms" element={<SignUpTerms/>}/>
           <Route path="/signup/info" element={<SignUpInfo/>}/>
           <Route path="/signup/complete>" element={<SignUpComplete/>}/>
+
+          <Route path="/item/detail" element={<ProductDetail />} />
 
           <Route path="/test>" element={<Test/>}/>
 
