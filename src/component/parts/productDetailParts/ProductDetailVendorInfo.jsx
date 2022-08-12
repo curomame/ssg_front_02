@@ -2,7 +2,7 @@ import React from "react";
 
 function ProductDetailVendorInfo() {
   return (
-    <div>
+    <div style={{ borderBottom: "1px solid #f0f0f0" }}>
       <div>
         <p>삼성</p>
       </div>
