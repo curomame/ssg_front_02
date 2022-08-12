@@ -105,6 +105,17 @@ h3 {
     text-align: center;
 }
 
+.mainCardsContainer{
+    display: flex;
+    margin-left: 15px;
+    overflow: scroll;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.mainCardsContainer::-webkit-scrollbar{
+     display: none;
+    }
 
 .mainCategoryBox {
     display: flex;
@@ -248,6 +259,7 @@ h3 {
 }
 
 .mainCards{
+    margin-right: 6px;
     width: 90px;
     height: 140px;
     overflow: hidden;
@@ -272,13 +284,29 @@ h3 {
     justify-content: space-between;
 }
 
+/* .upperCard div img {
+    margin: auto;
+} */
+
 .upperCardIcon {
     width: 20px;
     height: 20px;
+    /* display: flex;
+    justify-content: center; */
 }
 
 .upperCardIcon img {
     width: 100%;
+}
+
+.mainCardTitleSub div:nth-child(1){
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+}
+.mainCardTitleSub div:nth-child(2){
+    font-size: 11px;
+    letter-spacing: -0.3px;
 }
 
 .mainRankLink{
@@ -303,6 +331,8 @@ h3 {
     text-align: right;
     color: gray;
 }
+
+
 
 /* Footer Contents */
 
@@ -374,29 +404,6 @@ h3 {
 }
 
 
-.mainTitleSubTotal{
-    display: flex;
-    justify-content: space-between;
-    letter-spacing: -0.8px;
-    margin: 0 15px;
-}
-
-
-.mainTitleSubTotal div h3 {
-    font-size: 20px;
-}
-
-.mainTitleSubTotal div p {
-    margin-top: 2px;
-    font-size: 14px;
-    color: #777777;
-}
-
-.mainTitleSubTotal a {
-    color: #969696;
-    font-size: 13px;
-}
-
 .mainFourTitleSub{
     display: flex;
     justify-content: space-between;
@@ -446,6 +453,7 @@ h3 {
 }
 
 .mainIconGrid{
+    margin: 0 10px;
     display: flex;
     flex-direction: column;
 }
@@ -457,7 +465,13 @@ h3 {
 .mainIconGrid > div div {
     margin: 2px;
     font-size: 12px;
+    letter-spacing: -1px;
 }
+/* 
+.mainIconGrid p {
+    font-size: 12px;
+} */
+
 
 .mainSliderQuarterContainer{
     margin-left: 15px;

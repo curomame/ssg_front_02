@@ -1,11 +1,17 @@
 import React from 'react'
 import contents from '../../../assets/datas/mainicongrid.json'
 import MainIcon from '../../parts/mainParts/MainIcon'
-function MainIconGrid({column}) {
+import mainicongrid from '../../../assets/datas/mainicongrid.json'
+
+function MainIconGrid() {
 
   return (
     <>
-        <MainIcon type="mainIconGrid"/>
+        <MainIcon 
+          type="mainIconGrid"
+          Indatas={mainicongrid} 
+          Incolumn={2}
+        />
     </>
   )
 }

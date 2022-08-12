@@ -5,14 +5,14 @@ function Test() {
 
   const getDataFunc = () => {
 
-    axios.get("http://10.10.10.167:8080/ProductCategory")
+    axios.get("http://10.10.10.167:8083/ProductCategory")
                     .then(res => console.log(res.data))
                     
   }
 
   const postDataFunc = () => {
 
-    axios.post("http://10.10.10.167:8080/json/test",{
+    axios.post("http://10.10.10.167:8083/json/test",{
         one: 'this is string message',
         two: 999,
         three:true,

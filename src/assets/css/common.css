@@ -90,3 +90,28 @@
 .bottonNavIconSize {
   font-size: 24px;
 }
+
+
+.mainTitleSubTotal{
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: -0.8px;
+  margin: 0 15px;
+}
+
+
+.mainTitleSubTotal div h3 {
+  font-size: 20px;
+  letter-spacing: -1.5px;
+}
+
+.mainTitleSubTotal div p {
+  margin-top: 2px;
+  font-size: 14px;
+  color: #777777;
+}
+
+.mainTitleSubTotal a {
+  color: #969696;
+  font-size: 13px;
+}

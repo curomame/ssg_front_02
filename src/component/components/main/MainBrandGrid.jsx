@@ -1,12 +1,21 @@
 import React from 'react'
-import icons from '../../../assets/datas/mainBrandGrid.json'
 import MainIcon from '../../parts/mainParts/MainIcon'
+import CommonTitleSub from '../../parts/commonsParts/CommonTitleSub'
+import mainBrandGridDatas from '../../../assets/datas/mainDatas/mainBrandGridDatas.json'
 
 function MainBrandGrid() {
-
+ 
   return (
     <>
-        <MainIcon contents={icons} column={icons.length/3}/>
+        <CommonTitleSub
+        title='Hot Brand'
+        type='mainTitleSubTotal'/>
+        
+        <MainIcon
+          type="mainIconGrid"
+          Indatas={mainBrandGridDatas} 
+          Incolumn={3}
+        />
     </>
   )
 }
