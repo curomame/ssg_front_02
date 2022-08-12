@@ -1,23 +1,27 @@
 import React from 'react'
 
-function CategoryMainSelectSub({testData,tempId}) {
+function CategoryMainSelectSub({ctDatas,tempId}) {
 
+  // console.log(tempId);
 
   if(tempId === ''){
     return null;
   }
 
+  // console.log(ctDatas)
 
   return (
     <>
       <div className='categoryMainSubBoxBackGround' >
         <div className='categoryMainSubBox' >
 
-          {testData[tempId].underCategory && 
+          {ctDatas[tempId] && 
             <div className={'변수가 들어올 예정'}>
 
-          {testData[tempId].underCategory.map((data) => {
-            return <div>{data.title}</div>
+          {ctDatas[tempId].productLCategories.map((data) => {
+
+            return <div key={data.id}>{data.name}</div>
+          
           })}
 
           </div>

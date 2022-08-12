@@ -36,8 +36,6 @@ function MainEventSlider({datas, height, numbering, }) {
     }
   }
 
-console.log(current)
-
 
   return (
     <>

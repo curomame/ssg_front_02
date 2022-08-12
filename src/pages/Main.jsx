@@ -39,16 +39,17 @@ function Main() {
       <MainBlankSpace px={60}/>
       <MainContentslider/>
       <MainBlankSpace px={60}/>
-      <MainIconGrid column={2}/>
+      <MainIconGrid/>
       <MainBlankSpace px={60}/>
       <MainImgBanner/>
-      <hr />
+      <MainBlankSpace px={60}/>
       <MainCardPromotion/>
-      <hr />
+      <MainBlankSpace px={60}/>
       <MainBrandGrid column={3}/>
-      <hr />
+      <MainBlankSpace px={60}/>
       <MainBrandRank/>
-      <hr />
+      
+      {/* <hr />
       <MainLetsTryOn/>
       <hr />
       <MainBestItem/>
@@ -65,7 +66,7 @@ function Main() {
       <hr />
       <MainLifeMegazine/>
       <hr />
-      <MainBestItems/>
+      <MainBestItems/> */}
       <hr />
       <MainFooter/>
       <hr />

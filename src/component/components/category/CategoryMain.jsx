@@ -14,11 +14,15 @@ function CategoryMain() {
       <Header/>
       <CategoryMainGrid/>
       <MainBlankSpace px={60}/>
+
       <CategoryMainTheme/>
       <MainBlankSpace px={60}/>
+
       <CategoryMainReco/>
       <MainBlankSpace px={60}/>
+
       <CategoryFooter/>
+      <MainBlankSpace px={120}/>
       <BottomNav/>
     </>
   ) 
