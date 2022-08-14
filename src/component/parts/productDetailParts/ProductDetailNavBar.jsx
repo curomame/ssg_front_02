@@ -6,14 +6,17 @@ function ProductDetailNavBar() {
       style={{
         display: "flex",
         textAlign: "center",
+        width: "100%",
+        position: "fixed",
+        backgroundColor: "grey",
       }}
     >
       <div>
-        <span className="material-icons-outlined">favorite</span>
+        <p className="material-icons-outlined">favorite</p>
       </div>
       <div>
         <button style={{ backgroundcolor: "#ff3e3e" }}>
-          <span>구매하기</span>
+          <p>구매하기</p>
         </button>
       </div>
     </div>
