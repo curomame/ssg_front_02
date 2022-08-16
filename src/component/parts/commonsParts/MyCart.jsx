@@ -1,14 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function MyCart() {
 
-  const toMyCart = () => {
-    console.log('my cart로 이동합니다 :)')
-  }
 
   return (
     <>
-      <span onClick={toMyCart} className="headerCartIcon material-icons-outlined">shopping_cart</span>
+      <div style={{"marginTop":"auto", "marginBottom":"auto", alignContent:"center"}}>
+        <Link to='/cart'><span  className="headerCartIcon material-icons-outlined">shopping_cart</span></Link>
+      </div>
     </>
   )
 }

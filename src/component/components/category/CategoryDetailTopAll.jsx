@@ -2,9 +2,9 @@ import React from 'react'
 
 import BottomNav from '../../layout/BottomNav'
 import MainImgBanner from '../../parts/mainParts/MainImgBanner'
-import Header from '../main/Header'
+import Header from '../common/Header'
 import MainEventSlider from '../main/MainEventSlider'
-import MainFooter from '../main/MainFooter'
+import MainFooter from '../common/Footer'
 import CategoryItem from './CategoryItem'
 import CategoryMainGrid from './CategoryMainGrid'
 

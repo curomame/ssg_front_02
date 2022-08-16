@@ -16,6 +16,7 @@ import SignUpMain from './pages/signUpPage/SignUpMain'
 
 import './assets/css/common.css'
 import ProductDetail from './pages/ProductDetail';
+import Cart from './pages/Cart';
 
 function App() {
 
@@ -44,7 +45,7 @@ function App() {
 
           <Route path="/item/detail" element={<ProductDetail />} />
 
-          <Route path="/test>" element={<Test/>}/>
+          <Route path="/cart" element={<Cart/>}/>
 
           <Route path="/*" element={<div>nopage</div>}/>
         </Routes>

@@ -1,7 +1,9 @@
-import React from "react";
-import MainFooter from "../../component/components/main/MainFooter";
-import SignUpHeader from "../../component/components/signup/SignUpHeader";
-import SignUpTermsBody from "../../component/components/signup/SignUpTermsBody";
+
+import React from 'react'
+import MainFooter from '../../component/components/common/Footer'
+import SignUpHeader from '../../component/components/signup/SignUpHeader'
+import SignUpTermsBody from '../../component/components/signup/SignUpTermsBody'
+
 
 // 회원가입 약관 동의 화면
 
