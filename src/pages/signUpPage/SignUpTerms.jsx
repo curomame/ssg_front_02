@@ -1,3 +1,4 @@
+
 import React from 'react'
 import MainFooter from '../../component/components/common/Footer'
 import SignUpHeader from '../../component/components/signup/SignUpHeader'
@@ -8,13 +9,13 @@ import SignUpTermsBody from '../../component/components/signup/SignUpTermsBody'
 function SignUpTerms() {
   return (
     <>
-      <SignUpHeader title="신세계포인트 통합회원 가입"/>
-      <hr/>
-      <SignUpTermsBody/>
-      <hr/>
-      <MainFooter/>
+      <SignUpHeader title="신세계포인트 통합회원 가입" />
+      <hr />
+      <SignUpTermsBody />
+      <hr />
+      <MainFooter />
     </>
-  )
+  );
 }
 
-export default SignUpTerms
+export default SignUpTerms;
