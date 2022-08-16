@@ -476,3 +476,48 @@ h3 {
 .mainSliderQuarterContainer{
     margin-left: 15px;
 }
+
+
+.mainFooterContainer{
+    letter-spacing: -0.8px;
+    padding: 0 20px;
+    overflow: auto;
+}
+
+.mainFooterContainer h5{
+ font-size: 11px;
+}
+
+
+
+.mainFooterContainer ul{
+    color: #414141;
+    display: flex;
+    font-size: 11px;
+    flex-wrap: wrap;
+}
+
+
+.mainFooterContainer li::after{
+    content: '|';
+    margin: 0px 4px;
+    color: #414141;
+}
+
+.mainFooterContainer li:nth-child(4){
+    color: red;
+}
+
+.mainFooterContainer p{
+    font-size: 10px;
+    color: #888;
+}
+
+.mainFooterContainer div {
+    margin: 6px 0px;
+}
+
+.mainFooterContainer span{
+    text-decoration: underline;
+    color: #414141;
+}

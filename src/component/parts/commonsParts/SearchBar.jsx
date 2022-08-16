@@ -17,10 +17,6 @@ function SearchBar() {
             <span className="headerSearchIcon material-icons-outlined">search</span>
           </div>
         </div>
-
-        <div >
-          <MyCart/>
-        </div>
       </div>
     </>
   )

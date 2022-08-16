@@ -1,7 +1,8 @@
 import React from 'react'
-import LoginHeader from '../component/components/login/LoginHeader'
 import LoginFieldSet from '../component/parts/loginParts/LoginFieldSet'
-import MainFooter from '../component/components/main/MainFooter'
+import Header from '../component/components/common/Header'
+import '../assets/css/login.css'
+import Footer from '../component/components/common/Footer'
 
 // 로그인 메인 화면
 
@@ -9,11 +10,11 @@ function Login() {
 
   return (
     <>
-      <LoginHeader/>
-      <hr/>
+      <Header
+        type={'login'}/>
       <LoginFieldSet/>
       <hr />
-      <MainFooter/>
+      <Footer/>
     </>
   )
 }

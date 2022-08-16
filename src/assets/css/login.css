@@ -1,0 +1,111 @@
+.loginHeaderLayout{
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  line-height: 45px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.loginHeaderLayout div:last-child{
+ 
+ width: 100%;
+ text-align: center;
+}
+
+.loginHeaderLayout div:first-child{
+  width: 50px;
+  text-align: center;
+}
+
+.loginHeaderLayout div:first-child span{
+  line-height: 45px;
+}
+
+.loginHeaderLayout div:last-child{
+  width: 50px;
+}
+
+.loginHeaderLayout h3 {
+  font-size: 16px;
+}
+
+
+.loginFieldContainer{
+  padding: 40px 20px 20px 20px;
+}
+
+.loginFieldContainer input{
+  width: 100%;
+
+}
+.loginFieldIDPW input{
+  height: 48px;
+  border: 1px solid #c9c9c9;
+  width: 100%;
+}
+
+.loginFieldSaveId{
+  margin: 16px 0px;
+  display: flex;
+  width: 100%;
+}
+
+/* .loginFieldSaveId input{
+  width: 24px;
+  height: 24px;
+  
+} */
+
+.loginFieldSaveId input[type='checkbox']{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid white;
+  appearance: none;
+  cursor: pointer;
+  transition: background 0.2s;
+
+}
+
+.loginFieldSaveId input[type='checkbox']::after{
+  color: white;
+  content:'✔';
+  text-align: center;
+  padding: 5px;
+}
+
+.loginFieldSaveId input[type='checkbox']:checked{
+  background-color: #ff5b59;
+  
+}
+
+.loginFieldSaveId p{
+  font-size:14px ;
+  line-height: 24px;
+}
+
+.loginButton {
+  background-color: #ff5b59;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  font-size: 16px;
+  margin: 16px 0px;
+}
+
+.loginSubMenu{
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.loginSubMenu a {
+  color: #4a4a4a;
+}
+
+.loginSubMenu span:not(:last-child)::after{
+  content: '|';
+  margin: 0px 6px;
+  color: #4a4a4a;
+}
