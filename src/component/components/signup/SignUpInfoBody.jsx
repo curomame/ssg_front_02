@@ -1,7 +1,7 @@
 import React from "react";
 import SignUpInfoField from "../../parts/signUpParts/SignUpInfoField";
 import SignUpTopCard from "../../parts/signUpParts/SignUpTopCard";
-import MainFooter from "../../components/common/Footer";
+import MainFooter from "../../components/common/CommonFooter";
 import SignUpCheckAd from "../../parts/signUpParts/SignUpCheckAd";
 import { useState } from "react";
 import axios from "axios";

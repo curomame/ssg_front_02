@@ -1,66 +1,129 @@
 [
 
-  {
+  {"id":1,
+  "name":"대카테고리",
+  "productLCategories":[
+    {
     "id":1,
-    "link":"/",
-    "category":"패션의류",
-    "src":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202109/2021090117370424472933833393_256.jpg&w=150&h=150&edit=c&t=1563dd18551f16231432da715468c33acc03630e",
-    "underCategory":[
-      {
-        "id":1,
-        "title":"상품 전체보기",
-        "link":"/"
-      },
-      {
-        "id":2,
-        "title":"명품/수입의류",
-        "link":"/"
-      },
-      {
-        "id":3,
-        "title":"여성브랜드패션",
-        "link":"/"
-      }
-  ]
+    "name":"김"
   },
-  
   {
     "id":2,
-    "link":"/",
-    "category":"패션의류2",
-    "src":"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202109/2021090117370424472933833393_256.jpg&w=150&h=150&edit=c&t=1563dd18551f16231432da715468c33acc03630e",
-    "underCategory":[
-      {
-        "id":1,
-        "title":"상품 전체보기",
-        "link":"/"
-      },
-      {
-        "id":2,
-        "title":"인형이양",
-        "link":"/"
-      },
-      {
-        "id":3,
-        "title":"푸룽푸룽",
-        "link":"/"
-      },
-      {
-        "id":4,
-        "title":"여성트렌드패션2",
-        "link":"/"
-      },
-      {
-        "id":5,
-        "title":"열심히만들었음",
-        "link":"/"
-      },
-      {
-        "id":6,
-        "title":"머리터질뻔함",
-        "link":"/"
-      }
-      
-  ]
+    "name":"김이"
+  },
+  {
+    "id":3,
+    "name":"김이박"
+  },
+  {
+    "id":4,
+    "name":"김이박나"
+  },
+  {
+    "id":5,
+    "name":"김가루"
   }
+  
+  ]},
+  {"id":2,
+  "name":"대카테고리",
+  "productLCategories":[
+    {
+    "id":1,
+    "name":"김3"
+  },
+  {
+    "id":2,
+    "name":"김3이"
+  },
+  {
+    "id":3,
+    "name":"김2이박"
+  },
+  {
+    "id":4,
+    "name":"김이5박나"
+  },
+  {
+    "id":5,
+    "name":"김가루"
+  }
+  
+  ]},
+  {"id":3,
+  "name":"대카테고리",
+  "productLCategories":[
+    {
+    "id":1,
+    "name":"김"
+  },
+  {
+    "id":2,
+    "name":"김이"
+  },
+  {
+    "id":3,
+    "name":"김이박"
+  },
+  {
+    "id":4,
+    "name":"김이박나"
+  },
+  {
+    "id":5,
+    "name":"김가루"
+  }
+  
+  ]},
+  {"id":4,
+  "name":"대카테고리",
+  "productLCategories":[
+    {
+    "id":1,
+    "name":"김"
+  },
+  {
+    "id":2,
+    "name":"김이"
+  },
+  {
+    "id":3,
+    "name":"김이박"
+  },
+  {
+    "id":4,
+    "name":"김이박나"
+  },
+  {
+    "id":5,
+    "name":"김가루"
+  }
+  
+  ]},
+  {"id":5,
+  "name":"대카테고리2",
+  "productLCategories":[
+    {
+    "id":1,
+    "name":"김5"
+  },
+  {
+    "id":2,
+    "name":"김이4"
+  },
+  {
+    "id":3,
+    "name":"김이박3"
+  },
+  {
+    "id":4,
+    "name":"김이박나1"
+  },
+  {
+    "id":5,
+    "name":"김가루2"
+  }
+  
+  ]}
+
 ]
