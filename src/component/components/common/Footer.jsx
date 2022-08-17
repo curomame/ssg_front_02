@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 function Footer() {
 
   const footerlink = [
@@ -43,9 +44,38 @@ function Footer() {
 
   return (
     <>
+      
+      <div className='mainFooterCall'>
+            <div className='mainFooterCallIcon'>
+              
+              <div>
+                <span class="material-icons-outlined">phone</span>
+              </div>
+            
+            <div className='mainFooterCallWords'>
+              <div>SSG.COM 고객센터 / 전자금융거래 분쟁처리</div>
+              <div>1577-3419 / ssg@ssg.com</div>
+            </div>
+
+          </div>
+          
+          <div className='mainFooterCallRight'>
+            <div><p>전화걸기</p></div>
+            <div><p>1:1 고객센터</p></div>
+          </div>
+
+        </div>
+
+        <div className='mainFooterThreeBar'>
+          <p><Link to='/'>로그아웃</Link></p>
+          <p><Link to='/'>앱다운로드</Link></p>
+          <p><Link to='/'>PC버전</Link></p>
+        </div>
+
       <footer className='mainFooterContainer'>
 
-        <div>
+
+        <div className='mainFooterInform'>
           <h5>(주)에스에스지닷컴</h5>
           
           <p>대표자: 강희석 사업자등록번호: 870-88-01143</p>

@@ -1,0 +1,60 @@
+import React from 'react'
+import Slider from 'react-slick'
+import CommonTitleSub from '../../parts/commonsParts/CommonTitleSub'
+
+function CommonSlider() {
+
+  const dummyDatas = [
+    {
+      id:1,
+      src:"//sui.ssgcdn.com/cmpt/banner/202207/2022072816035474063543788354_518.jpg"
+    },
+    {
+      id:2,
+      src:"//sui.ssgcdn.com/cmpt/banner/202207/2022072816035474063543788354_518.jpg"
+    },
+    {
+      id:3,
+      src:"//sui.ssgcdn.com/cmpt/banner/202207/2022072816035474063543788354_518.jpg"
+    },
+  ]
+
+
+
+  const settings = {
+    className: "center",
+    infinite: false,
+    centerPadding: "20px",
+    slidesToShow: 1,
+    swipeToSlide: true,
+    }
+
+  return (
+    <>
+      <div>
+        <Slider {...settings}>
+          
+          {dummyDatas &&
+          
+          dummyDatas.map((data) => (
+          <div>
+            <div>
+              <img style={{"width":"100%","background":"red", "borderRight":"10px solid white"}} src={data.src} alt=''/>
+              <CommonTitleSub
+                title="title"
+                sub="sub"/>
+            </div>
+          </div>
+          ))
+
+          
+        }
+
+
+        </Slider>
+      </div>
+    </>
+    )
+}
+
+export default CommonSlider

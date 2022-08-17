@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { SearchModalContext } from '../../../context/SearchModalContext';
 import Logo from '../../parts/commonsParts/Logo';
 import MyCart from '../../parts/commonsParts/MyCart';
 import SearchBar from '../../parts/commonsParts/SearchBar';
@@ -9,7 +10,7 @@ function Header({type}) {
 
   const navigate = useNavigate();
 
-
+  const {isModal,setIsModal} = useContext(SearchModalContext);
 
 
   switch(type){
@@ -30,7 +31,37 @@ function Header({type}) {
                 <div></div>
               </div>
 
+case 'mypage':
+  return <div className='mypageLayout'>
+            <div><span className="material-icons-outlined" onClick={()=>navigate(-1)}>arrow_back</span></div>
+            
+            <div><h2>MYSSG</h2></div>
+            
+            <div className='mypageLayoutRight'>
+              <div><span className="material-icons-outlined"><Link to='/cart'>shopping_cart</Link></span></div>
+              <div><span className="material-icons-outlined"><Link to='/'>home</Link></span></div>
+            </div>
+            
+          </div>
 
+case 'searchModal':
+  return <div className='searchModal'>
+
+                <div><span className="material-icons-outlined" onClick={() => (setIsModal(!isModal))}>arrow_back</span></div>
+                
+                <div className='searchModalRight'>
+                <div>
+                  <div className='headerSearchBar'>
+                  <input type="text"/>
+                  <span className="headerSearchIcon material-icons-outlined">search</span>
+                </div>
+                </div>
+
+                  <div><span className="material-icons-outlined"><Link to='/cart'>shopping_cart</Link></span></div>
+                </div>
+              
+            
+          </div>
 
     default:
       return <>
