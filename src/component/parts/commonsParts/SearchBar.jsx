@@ -9,7 +9,7 @@ function SearchBar() {
 
   return (
     <>
-      <div className='headerRight'>
+      <div className='headerSearchIn'>
         
         <div>
           <div onClick={() => (setIsModal(!isModal))} className='headerSearchBar'>

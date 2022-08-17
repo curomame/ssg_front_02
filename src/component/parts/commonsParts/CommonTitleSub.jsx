@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 function CommonTitleSub({title,sub,link, type, price}) {
 // type도 받아와야함
 
+    //type 종류 
+
     return (
       <>
         <div className={type} >

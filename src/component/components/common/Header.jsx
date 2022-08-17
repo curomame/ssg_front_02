@@ -67,8 +67,12 @@ case 'searchModal':
       return <>
               <div className='headerLayout'>
                 <Logo/>
-                <SearchBar/>
-                <MyCart/>
+                
+                <div className='headerLayoutRight'>
+                  <SearchBar/>
+                  <div className='headerLayoutRightCart'><span className="material-icons-outlined"><Link to='/cart'>shopping_cart</Link></span></div>
+                </div>
+
               </div>
             </>
 

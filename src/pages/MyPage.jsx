@@ -1,5 +1,5 @@
 import React from 'react'
-import Footer from '../component/components/common/Footer'
+import Footer from '../component/components/common/CommonFooter'
 import Header from '../component/components/common/Header'
 import BottomNav from '../component/layout/BottomNav'
 import '../assets/css/mypage.css'

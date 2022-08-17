@@ -1,5 +1,5 @@
 import React from "react";
-import MainFooter from "../../component/components/common/Footer";
+import MainFooter from "../../component/components/common/CommonFooter";
 import SignUpMainBody from "../../component/components/signup/SignUpMainBody";
 import SignUpHeader from "../../component/components/signup/SignUpHeader";
 
