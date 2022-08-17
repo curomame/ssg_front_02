@@ -1,17 +1,23 @@
-import React from 'react'
+import React from "react";
 
-function SignUpCheckBox({label, hideoption}) {
+function SignUpCheckBox({ handleName, value, title, checkBoxName }) {
   return (
-    <div>
-        <label>
-            <input
-                type="checkbox"
-            />
-            {label}
-        </label>
-        {hideoption ==='Y' ? "" : <button>내용보기</button>}
+    <div style={{ display: "flex" }}>
+      <div>
+        <input
+          onChange={handleName}
+          type="checkbox"
+          value={value}
+          checked={checkBoxName}
+        />
+      </div>
+      {/* 내용보기 Modal 필요 */}
+      <div style={{ width: "70%" }}>{title}</div>
+      <div style={{ textAlign: "right" }}>
+        <button>내용보기</button>
+      </div>
     </div>
-  )
+  );
 }
 
-export default SignUpCheckBox
+export default SignUpCheckBox;

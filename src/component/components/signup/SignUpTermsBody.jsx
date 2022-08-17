@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import SignupButton from "../../parts/signUpParts/SignupButton";
 import SignUpCheckBox from "../../parts/signUpParts/SignUpCheckBox";
+import termsPointInfo from "../../../assets/datas/signupDatas/signUpPointTerms.json";
+import termsSsgInfo from "../../../assets/datas/signupDatas/signUpSsgTerms.json";
 
 function SignUpTermsBody() {
+  // 각 checkbox 상태값
   const [checkData, setCheckData] = useState({
     allCheck: false,
     point1: false,
@@ -15,10 +17,41 @@ function SignUpTermsBody() {
     ssg2: false,
   });
 
+  // test 시작
+  const test1 = [
+    checkData.point1,
+    checkData.point2,
+    checkData.point3,
+    checkData.point4,
+  ];
+  const test2 = [checkData.ssg1, checkData.ssg2];
+  // test 끝
+
+  // url 이동
+  const [url, setUrl] = useState("#");
+
+  // 전체 선택 여부 확인
+  const [checkCount, setCheckCount] = useState(0);
+
+  // 클릭에 대해 늦은 반응에 대응하기 위해 useEffect 사용
   useEffect(() => {
     console.log(checkData);
-  }, [checkData]);
+    // console.log(url);
+    console.log(checkCount);
+  }, [checkData, url, checkCount]);
 
+  // 개별 checkbox 선택
+  const handleCheck = (e) => {
+    setCheckData({ ...checkData, [e.target.value]: e.target.checked });
+
+    if (e.target.checked === true) {
+      setCheckCount((prevCount) => prevCount + 1);
+    } else {
+      setCheckCount((prevCount) => prevCount - 1);
+    }
+  };
+
+  // 전체 선택
   const handleAllCheck = (e) => {
     setCheckData({
       allCheck: e.target.checked,
@@ -29,15 +62,23 @@ function SignUpTermsBody() {
       ssg1: e.target.checked,
       ssg2: e.target.checked,
     });
+
+    if (e.target.checked === true) {
+      setCheckCount((prevCount) => 6);
+    } else {
+      setCheckCount((prevCount) => 0);
+    }
   };
 
-  const handleCheck = (e) => {
-    setCheckData({ ...checkData, [e.target.value]: e.target.checked });
-  };
-
+  // 다음 버튼 눌렀을 때, 이동할 url을 지정
   const handleTermCheck = (e) => {
-    if (e) {
-      // console.log("Hi");
+    if (checkCount !== 6) {
+      alert("필수 약관 안내 모두 동의해주세요.");
+    } else {
+      setUrl("/signup/info");
+
+      // 작업을 위해 임시로 처리
+      window.location.href = "/signup/info";
     }
   };
 
@@ -54,75 +95,20 @@ function SignUpTermsBody() {
       <div>
         <h4>신세계 포인트</h4>
         <div>
-          {/* 포인트 약관 1 */}
-          <div style={{ display: "flex" }}>
-            <div>
-              <input
-                onChange={handleCheck}
-                type="checkbox"
-                value="point1"
-                checked={checkData.point1}
+          {/* 포인트 약관 시작 */}
+          {termsPointInfo &&
+            termsPointInfo.map((info, i) => (
+              <SignUpCheckBox
+                handleName={handleCheck}
+                value={info.value}
+                title={info.title}
+                checkBoxName={test1[i]}
+                // [Suggestion]
+                // 1 > isChecked={isChecked}
+                // 2 > setIsChecked={setIs}
               />
-            </div>
-            <div style={{ width: "70%" }}>
-              (필수) 신세계포인트 회원 이용약관
-            </div>
-            <div style={{ textAlign: "right" }}>
-              <button>내용보기</button>
-            </div>
-          </div>
-          {/* 포인트 약관 2 */}
-          <div style={{ display: "flex" }}>
-            <div>
-              <input
-                onChange={handleCheck}
-                type="checkbox"
-                value="point2"
-                checked={checkData.point2}
-              />
-            </div>
-            <div style={{ width: "70%" }}>
-              (필수) 개인정보 수집 및 이용 동의
-            </div>
-            <div style={{ textAlign: "right" }}>
-              <button>내용보기</button>
-            </div>
-          </div>
-          {/* 포인트 약관 3 */}
-          <div style={{ display: "flex" }}>
-            <div>
-              <input
-                onChange={handleCheck}
-                type="checkbox"
-                value="point3"
-                checked={checkData.point3}
-              />
-            </div>
-            <div style={{ width: "70%" }}>
-              (필수) 필수 정보 이마트/신세계백화점 공동 개인정보 수집 이용 동의
-            </div>
-            <div style={{ textAlign: "right" }}>
-              <button>내용보기</button>
-            </div>
-          </div>
-          {/* 포인트 약관 4 */}
-          <div style={{ display: "flex" }}>
-            <div>
-              <input
-                onChange={handleCheck}
-                type="checkbox"
-                value="point4"
-                checked={checkData.point4}
-              />
-            </div>
-            <div style={{ width: "70%" }}>
-              (필수) 통합회원 서비스 제공을 위한 개인정보 제3자 제공 동의
-            </div>
-            <div style={{ textAlign: "right" }}>
-              <button>내용보기</button>
-            </div>
-          </div>
-          {/* 약관 끝. */}
+            ))}
+          {/* 포인트 약관 끝. */}
         </div>
       </div>
 
@@ -131,55 +117,36 @@ function SignUpTermsBody() {
       <div>
         <h4>SSG.COM</h4>
         <div>
-          {/* SSG 약관 1 */}
-          <div style={{ display: "flex" }}>
-            <div>
-              <input
-                onChange={handleCheck}
-                type="checkbox"
-                value="ssg1"
-                checked={checkData.ssg1}
+          {/* SSG 약관 시작 */}
+          {termsSsgInfo &&
+            termsSsgInfo.map((info, i) => (
+              <SignUpCheckBox
+                handleName={handleCheck}
+                value={info.value}
+                title={info.title}
+                checkBoxName={test2[i]}
               />
-            </div>
-            <div style={{ width: "70%" }}>(필수) SSG.COM회원 이용 약관</div>
-            <div style={{ textAlign: "right" }}>
-              <button>내용보기</button>
-            </div>
-          </div>
-          {/* SSG 약관 2 */}
-          <div style={{ display: "flex" }}>
-            <div>
-              <input
-                onChange={handleCheck}
-                type="checkbox"
-                value="ssg2"
-                checked={checkData.ssg2}
-              />
-            </div>
-            <div style={{ width: "70%" }}>
-              (필수) 개인정보 수집 및 이용 동의
-            </div>
-            <div style={{ textAlign: "right" }}>
-              <button>내용보기</button>
-            </div>
-          </div>
-          {/* 약관 끝. */}
+            ))}
+          {/* SSG 약관 끝. */}
         </div>
       </div>
 
+      {/* 다음 버튼 */}
       <div style={{ textAlign: "center" }}>
-        <button
-          style={{
-            width: "90%",
-            backgroundColor: "#ff5b59",
-            border: 0,
-            outline: 0,
-            color: "#fff",
-          }}
-          onClick={handleTermCheck}
-        >
-          다음
-        </button>
+        <Link to={url}>
+          <button
+            style={{
+              width: "90%",
+              backgroundColor: "#ff5b59",
+              border: 0,
+              outline: 0,
+              color: "#fff",
+            }}
+            onClick={handleTermCheck}
+          >
+            다음
+          </button>
+        </Link>
       </div>
     </div>
   );
