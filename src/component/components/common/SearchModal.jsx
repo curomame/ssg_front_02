@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import {SearchModalContext} from '../../../context/SearchModalContext'
+import Header from './Header';
 
 function SearchModal() {
 
@@ -12,10 +13,12 @@ function SearchModal() {
   return (
     <>
 
+      
+
       <div className="searchBarContainer" style={ {"display": isModal ? "block": "none"}}>
         <div className="searchBarBox">
           
-          <div className="searchBarPrevious">
+          {/* <div className="searchBarPrevious">
             <div className='searchPreIconBox'>
               <div className='searchPreIcon' onClick={() => {setIsModal(!isModal)}}><span class="material-icons-outlined">chevron_left</span></div>
             </div>
@@ -26,8 +29,11 @@ function SearchModal() {
                 </div >
               <div className='searchCartIcon'><span className="material-icons-outlined">shopping_cart</span></div>
             </div>
-          </div>
+          </div> */}
           
+
+          <Header
+            type={'searchModal'}/>
           <div className='searchRecentKeyword'>
             <div><span class="material-icons-outlined">error_outline</span></div>
             <div><p>최근 검색어가 없습니다</p></div>

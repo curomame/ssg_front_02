@@ -15,7 +15,7 @@ function CategoryMainGrid() {
   useEffect(()=>{
 
     axios.get('http://10.10.10.167:8083/ProductCategory')
-      .then(res => setCtDatas(res.data.slice(0,8)))
+      .then(res => setCtDatas(res.data.slice(0,4)))
       .catch(err => console.error("get error "+err))
 
     },[])

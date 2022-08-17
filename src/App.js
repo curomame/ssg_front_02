@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import Main from './pages/Main';
 
 import {SearchModalContext} from './context/SearchModalContext'
-import SearchModal from './component/parts/commonsParts/SearchModal';
+import SearchModal from './component/components/common/SearchModal';
 import CategoryDetailTopAll from './component/components/category/CategoryDetailTopAll';
 import SignUpTerms from './pages/signUpPage/SignUpTerms';
 import SignUpInfo from './pages/signUpPage/SignUpInfo';
@@ -17,6 +17,7 @@ import SignUpMain from './pages/signUpPage/SignUpMain'
 import './assets/css/common.css'
 import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
+import MyPage from './pages/MyPage';
 
 function App() {
 
@@ -26,8 +27,8 @@ function App() {
   return (
 
     <SearchModalContext.Provider value={{isModal,setIsModal}}>
-      <SearchModal/>
       <BrowserRouter>
+      <SearchModal/>
         <Routes>
           <Route path="/" element={<Main/>}/>
           <Route path="/category" element={<Category/>}/>
@@ -36,6 +37,7 @@ function App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="/test" element={<Test/>}/>
           
+          <Route path="/mypage" element={<MyPage/>}/>
 
 
           <Route path="/signup" element={<SignUpMain/>}/>

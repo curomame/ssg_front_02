@@ -1,0 +1,58 @@
+
+.mypageProfile{
+  margin: 15px 15px 0px;
+  display: flex;
+}
+
+.mypageProfileIcon{
+  width: 50px;
+  height: 50px;
+}
+
+.mypageProfileIcon span{
+  font-size: 50px;
+}
+
+.mypageProfileDetail{
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+  letter-spacing: -1.2px;
+}
+
+.mypageProfileDetail div:first-child{
+  font-size: 18px;
+  font-weight: 700;
+}
+.mypageProfileDetail div:last-child{
+  font-size: 14px;
+}
+
+.mypageProfileDetail span{
+  font-weight: 700;
+  color: #ff3e3e;
+}
+
+.mypageFunctions{
+  margin: 15px 15px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+.mypageFunctions span {
+  margin-right: 6px;
+}
+
+.mypageFunctions div{
+  margin-right: 10px;
+  padding: 12px 0px;
+}
+
+.mypageFunctions div p {
+  display: flex;
+}

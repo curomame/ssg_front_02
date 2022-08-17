@@ -5,7 +5,7 @@ function Test() {
 
   const getDataFunc = () => {
 
-    axios.get("http://10.10.10.167:8083/ProductCategory")
+    axios.get("http://10.10.10.167:8083/ProductCategory/mainCtg/findAll")
                     .then(res => console.log(res.data))
                     
   }

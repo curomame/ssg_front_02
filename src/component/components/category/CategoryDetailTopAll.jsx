@@ -7,6 +7,7 @@ import MainEventSlider from '../main/MainEventSlider'
 import MainFooter from '../common/Footer'
 import CategoryItem from './CategoryItem'
 import CategoryMainGrid from './CategoryMainGrid'
+import CommonSlider from '../common/CommonSlider'
 
 
 const dummys = [
@@ -69,7 +70,7 @@ function CategoryDetailTopAll() {
 
       <div>위의 카테고리 부분</div>
       {/* 전체보기 카테고리 누르면 그 바로 아래를 기준으로 메뉴 드롭 com 1*/}
-      <MainEventSlider/>
+      <CommonSlider/>
       <CategoryMainGrid/>
       <MainImgBanner/>
       <div><h2>공식 브랜드관</h2></div>

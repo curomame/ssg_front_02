@@ -13,6 +13,11 @@ function LoginFieldSet() {
         password: ""
     })
 
+// 에러관련 헨들링
+// 정상적으로 입력이 안됐습니다.
+// 입력될때 
+// 아이디패스워드 틀립니다.
+
     const handleChange = ( e ) => {
         setLoginData(
             { ...loginData, [e.target.name]: e.target.value }
