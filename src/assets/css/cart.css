@@ -1,35 +1,4 @@
-.cartHeaderLayout{
-  height: 45px;
-  display: flex;
-  justify-content: space-between;
-  line-height: 45px;
-  border-bottom: 1px solid #e2e2e2;
-}
 
-.cartHeaderLayout div:first-child{
-  width: 50px;
-  text-align: center;
-}
-
-.cartHeaderLayout div:first-child span{
-  line-height: 45px;
-}
-
-.cartHeaderLayout h2 {
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.cartHeaderLayout div:last-child{
-  width: 80px;
-  text-align: center;
-}
-
-.cartHeaderLayout div:last-child span{
-  line-height: 45px;
-  margin-right: 5px;
-  font-size: 28px;
-}
 
 .cartNotLogin{
   text-align: center;
