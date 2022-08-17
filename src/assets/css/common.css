@@ -205,23 +205,37 @@ font-size: 11px;
 }
 
 .mainFooterCallIcon{
+  padding-top: 10px;
   display: flex;
 }
 
-.mainFooterCallIcon span{
-  
+.mainFooterCallIcon div{
+  margin-right: 5px;
+}
+
+.mainFooterCallIcon div:last-child{
+  width: 100%;
+}
+
+.mainFooterCallIconSelect span{
+  /* background: red; */
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
 }
 
 .mainFooterCallWords{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content:center
 }
 
 .mainFooterCallRight{
+  padding: 20px 0px;
   display: flex;
   flex-direction: row;
-  flex-wrap:wrap;
+  justify-content: right;
+  flex-wrap: wrap;
 }
 
 .mainFooterCallRight div{
@@ -229,8 +243,9 @@ font-size: 11px;
   border: 1px solid #606066;
   background-color: #606066;
   text-align: center;
-  padding: 2px 6px;
+  /* padding: 2px 6px; */
   margin-right: 4px;
+  width:80%;
 
 }
 
@@ -320,11 +335,10 @@ font-size: 11px;
 }
 
 
-.headerLayout{
-  margin: 10px 15px;
-}
-.headerRight{
-  
+
+
+
+.headerSearchIn{
   display: flex;
   align-items: center;
 }
@@ -350,8 +364,22 @@ font-size: 11px;
 }
 
 .headerLayout {
+  margin: 10px 15px;
   display: flex;
   justify-content: space-between;
+}
+
+.headerLayoutRight{
+  display: flex;
+}
+
+.headerLayoutRightCart {
+  margin-left: 8px;
+  
+}
+
+.headerLayoutRightCart span{
+  line-height: 40px;
 }
 
 .headerSearchBar{
@@ -359,7 +387,7 @@ font-size: 11px;
 }
 
 .headerSearchBar input{
-  width: 100%;
+  min-width: 20px;
   height: 40px;
   border: 0px;
   background-color: #F5F5F5;

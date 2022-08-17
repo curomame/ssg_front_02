@@ -23,10 +23,15 @@ function CommonSlider() {
 
   const settings = {
     className: "center",
-    infinite: false,
+    infinite: true,
     centerPadding: "20px",
     slidesToShow: 1,
     swipeToSlide: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
     }
 
   return (

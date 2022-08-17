@@ -1,16 +1,17 @@
 import React from 'react'
+import CommonTitleSub from '../parts/commonsParts/CommonTitleSub'
 import StarNReview from '../parts/commonsParts/StarNReview'
 import MainTitleSub from '../parts/mainParts/MainTitleSub'
 
 //상품 데이터 받아오기 필요
 //여기서 상품 데이터 받아오기 진행해보기
 
-function Items({imgsrc, alt, title, sub, price, discount}) {
+function Items({imgsrc, alt, title, sub, price, discount,isReview}) {
   
 //개별 아이템
 //135px 고정
   // {title ? title : "기본제목값"}
-
+// 넘겨주는 값까지만 생각
 
   return (
     <>
@@ -21,14 +22,13 @@ function Items({imgsrc, alt, title, sub, price, discount}) {
         width="135px"
         height="135px"
         /></div>
-        <div>
-          <MainTitleSub
-            title={title ? title : "기본제목값"}
-            sub={sub ? sub : "기본 설명값"}
-            price={price ? price : "30000"}
-            discount={discount && discount}
-        /></div>
-        <div><StarNReview point="3.0" count="3"/></div>
+        <ul>
+          <li>신세계몰</li>
+          <li>상품명</li>
+          <li>설명</li>
+          <li>가격</li>
+        </ul>
+        { isReview && <div><StarNReview point="3.0" count="3"/></div>}
       </div>
     </>
   )

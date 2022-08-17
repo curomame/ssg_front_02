@@ -1,6 +1,6 @@
 
 import React from 'react'
-import MainFooter from '../../component/components/common/Footer'
+import MainFooter from '../../component/components/common/CommonFooter'
 import SignUpHeader from '../../component/components/signup/SignUpHeader'
 import SignUpTermsBody from '../../component/components/signup/SignUpTermsBody'
 

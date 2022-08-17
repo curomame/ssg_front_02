@@ -258,13 +258,33 @@ h3 {
     letter-spacing: -0.3px;
 }
 
+.mainRankLinkContainer{
+    overflow-x: scroll;
+}
+
+.mainRankLinkContainer::-webkit-scrollbar{
+    display: none;
+}
+
 .mainRankLink{
     display: flex;
     list-style: none;
+    
+    width:max-content;
+    margin-left: 15px;
 }
 
 .mainRankLink > li{
-    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 14px;
+    border: 1px solid black;
+    padding: 0 14px;
+    height: 32px;
+    line-height: 32px;
+}
+
+.mainRankLink > li a{
+    width: 100%;
 }
 
 .starNReview {

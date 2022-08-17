@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-function Footer() {
+function CommonFooter() {
 
   const footerlink = [
 
@@ -48,11 +48,11 @@ function Footer() {
       <div className='mainFooterCall'>
             <div className='mainFooterCallIcon'>
               
-              <div>
+              <div className='mainFooterCallIconSelect'>
                 <span class="material-icons-outlined">phone</span>
               </div>
             
-            <div className='mainFooterCallWords'>
+            <div className='<span class="material-icons-outlined">phone</span>'>
               <div>SSG.COM 고객센터 / 전자금융거래 분쟁처리</div>
               <div>1577-3419 / ssg@ssg.com</div>
             </div>
@@ -113,4 +113,4 @@ function Footer() {
   )
 }
 
-export default Footer
+export default CommonFooter

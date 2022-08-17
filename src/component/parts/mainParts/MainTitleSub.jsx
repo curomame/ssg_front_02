@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom'
 
 function MainTitleSub({title,sub,link,price,discount,allview,fontSize,fontWeight}) {
 
-  // console.log(price,discount);
-//사항
 
-//1. 할인율이 들어올때
   const [dcPrice,setDcPrice] = useState('');
   
   useEffect(() => {
