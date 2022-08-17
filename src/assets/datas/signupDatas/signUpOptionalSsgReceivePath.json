@@ -1,0 +1,10 @@
+[
+  {
+    "value": "email",
+    "title": "이메일"
+  },
+  {
+    "value": "sms",
+    "title": "문자"
+  }
+]

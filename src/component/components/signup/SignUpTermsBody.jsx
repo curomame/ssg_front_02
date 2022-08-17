@@ -17,15 +17,14 @@ function SignUpTermsBody() {
     ssg2: false,
   });
 
-  // test 시작
-  const test1 = [
+  // 각 checkbox 상태값을 받아오기 위해 요소명을 배열로 작성
+  const pointList = [
     checkData.point1,
     checkData.point2,
     checkData.point3,
     checkData.point4,
   ];
-  const test2 = [checkData.ssg1, checkData.ssg2];
-  // test 끝
+  const ssgList = [checkData.ssg1, checkData.ssg2];
 
   // url 이동
   const [url, setUrl] = useState("#");
@@ -34,11 +33,7 @@ function SignUpTermsBody() {
   const [checkCount, setCheckCount] = useState(0);
 
   // 클릭에 대해 늦은 반응에 대응하기 위해 useEffect 사용
-  useEffect(() => {
-    console.log(checkData);
-    // console.log(url);
-    console.log(checkCount);
-  }, [checkData, url, checkCount]);
+  useEffect(() => {}, [checkData, url, checkCount]);
 
   // 개별 checkbox 선택
   const handleCheck = (e) => {
@@ -99,13 +94,11 @@ function SignUpTermsBody() {
           {termsPointInfo &&
             termsPointInfo.map((info, i) => (
               <SignUpCheckBox
+                key={i}
                 handleName={handleCheck}
                 value={info.value}
                 title={info.title}
-                checkBoxName={test1[i]}
-                // [Suggestion]
-                // 1 > isChecked={isChecked}
-                // 2 > setIsChecked={setIs}
+                checkBoxName={pointList[i]}
               />
             ))}
           {/* 포인트 약관 끝. */}
@@ -121,10 +114,11 @@ function SignUpTermsBody() {
           {termsSsgInfo &&
             termsSsgInfo.map((info, i) => (
               <SignUpCheckBox
+                key={i}
                 handleName={handleCheck}
                 value={info.value}
                 title={info.title}
-                checkBoxName={test2[i]}
+                checkBoxName={ssgList[i]}
               />
             ))}
           {/* SSG 약관 끝. */}

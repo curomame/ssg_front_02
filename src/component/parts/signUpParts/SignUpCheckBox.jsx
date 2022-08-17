@@ -1,6 +1,12 @@
 import React from "react";
 
-function SignUpCheckBox({ handleName, value, title, checkBoxName }) {
+function SignUpCheckBox({
+  handleName,
+  value,
+  title,
+  checkBoxName,
+  hideButton,
+}) {
   return (
     <div style={{ display: "flex" }}>
       <div>
@@ -11,11 +17,16 @@ function SignUpCheckBox({ handleName, value, title, checkBoxName }) {
           checked={checkBoxName}
         />
       </div>
-      {/* 내용보기 Modal 필요 */}
+
       <div style={{ width: "70%" }}>{title}</div>
-      <div style={{ textAlign: "right" }}>
-        <button>내용보기</button>
-      </div>
+      {/* 내용보기 Modal 필요 */}
+      {hideButton === "Y" ? (
+        ""
+      ) : (
+        <div style={{ textAlign: "right" }}>
+          <button>내용보기</button>
+        </div>
+      )}
     </div>
   );
 }
