@@ -1,0 +1,18 @@
+[
+  {
+    "value": "email",
+    "title": "이메일"
+  },
+  {
+    "value": "sms",
+    "title": "문자"
+  },
+  {
+    "value": "dm",
+    "title": "우편물"
+  },
+  {
+    "value": "tm",
+    "title": "텔레마케팅"
+  }
+]
