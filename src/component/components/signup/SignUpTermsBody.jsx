@@ -8,14 +8,24 @@ import termsSsgInfo from "../../../assets/datas/signupDatas/signUpSsgTerms.json"
 function SignUpTermsBody() {
   // 각 checkbox 상태값
   const [checkData, setCheckData] = useState({
-    allCheck: "",
-    point1: "",
-    point2: "",
-    point3: "",
-    point4: "",
-    ssg1: "",
-    ssg2: "",
+    allCheck: false,
+    point1: false,
+    point2: false,
+    point3: false,
+    point4: false,
+    ssg1: false,
+    ssg2: false,
   });
+
+  // test 시작
+  const test1 = [
+    checkData.point1,
+    checkData.point2,
+    checkData.point3,
+    checkData.point4,
+  ];
+  const test2 = [checkData.ssg1, checkData.ssg2];
+  // test 끝
 
   // url 이동
   const [url, setUrl] = useState("#");
@@ -87,14 +97,15 @@ function SignUpTermsBody() {
         <div>
           {/* 포인트 약관 시작 */}
           {termsPointInfo &&
-            termsPointInfo.map((info) => (
+            termsPointInfo.map((info, i) => (
               <SignUpCheckBox
                 handleName={handleCheck}
                 value={info.value}
                 title={info.title}
-                checkBoxName={info.name}
-                // isChecked={isChecked}
-                // setIsChecked={setIs}
+                checkBoxName={test1[i]}
+                // [Suggestion]
+                // 1 > isChecked={isChecked}
+                // 2 > setIsChecked={setIs}
               />
             ))}
           {/* 포인트 약관 끝. */}
@@ -108,12 +119,12 @@ function SignUpTermsBody() {
         <div>
           {/* SSG 약관 시작 */}
           {termsSsgInfo &&
-            termsSsgInfo.map((info) => (
+            termsSsgInfo.map((info, i) => (
               <SignUpCheckBox
                 handleName={handleCheck}
                 value={info.value}
                 title={info.title}
-                checkBoxName={info.chk}
+                checkBoxName={test2[i]}
               />
             ))}
           {/* SSG 약관 끝. */}
