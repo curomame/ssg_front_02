@@ -7,23 +7,26 @@ function CategoryMainGrid() {
 
 
   const testData = categoryMainDatas;
+  const [selectedId, setSelectedId] = useState(null);
 
   const [tempId, setTempId] = useState('');
-  const [ctDatas, setCtDatas] = useState('');
+  // const [ctDatas, setCtDatas] = useState('');
   const [cutDatas,setCutDatas] = useState([]);
 
-  useEffect(()=>{
+  const [isShow, setIsShow] = useState(false);
 
-    axios.get('http://10.10.10.167:8083/ProductCategory')
-      .then(res => setCtDatas(res.data.slice(0,4)))
-      .catch(err => console.error("get error "+err))
+  // useEffect(()=>{
 
-    },[])
+  //   axios.get('http://10.10.10.167:8083/ProductCategory')
+  //     .then(res => setCtDatas(res.data.slice(0,4)))
+  //     .catch(err => console.error("get error "+err))
+
+  //   },[])
 
   
   useEffect(() => {
-    setCutDatas(CutTheAxios(ctDatas,4));
-  },[ctDatas])
+    setCutDatas(CutTheAxios(testData,4));
+  },[])
 
   const CutTheAxios = (arr, num) => {
     const result = [];
@@ -39,8 +42,10 @@ function CategoryMainGrid() {
 
   const ClickFunc = (id) => {
     setTempId(id);
+    setSelectedId(id)
   }
 
+  // console.log(selectedId)
   return (
 
     <>
@@ -49,21 +54,29 @@ function CategoryMainGrid() {
       <div className='categoryMainGridContainer' >
 
       {
-          ctDatas[0] 
+          testData[0] 
           && 
           <>
-            {ctDatas.map((data) => 
+            {testData.map((data) => 
                   (
                     <div onClick={() => ClickFunc(data.id-1)} key={data.id} className='categoryMainGridContainerIconBox' >
-                      <div><img src="//simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202109/2021090117370424472933833393_256.jpg&w=150&h=150&edit=c&t=1563dd18551f16231432da715468c33acc03630e" alt=""/></div>
-                      <div style={{"margin":"auto"}} ><h2>{data.name}</h2></div>
-                    </div>)   
+
+                      <div>
+                        <div><img src="//simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202109/2021090117370424472933833393_256.jpg&w=150&h=150&edit=c&t=1563dd18551f16231432da715468c33acc03630e" alt=""/></div>
+                        <div style={{"margin":"auto"}} ><h2>{data.name}</h2></div>
+                      </div>
+                      <CategoryMainSelectSub
+                        underId={data.id-1}
+                        testData={testData} 
+                        tempId={tempId}
+                        /> 
+                    </div>
+                    
+                    
+                    )   
                   )}
                   
-            <CategoryMainSelectSub
-              ctDatas={ctDatas} 
-              tempId={tempId}
-            /> 
+
           </>
 
           }      

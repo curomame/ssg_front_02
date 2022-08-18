@@ -1,36 +1,47 @@
 import React from 'react'
 
-function CategoryMainSelectSub({ctDatas,tempId}) {
+function CategoryMainSelectSub({testData,tempId,underId}) {
 
-  // console.log(tempId);
+  // console.log(underId);
 
+  const calculedNum = Math.floor(tempId%4);
+  
+  // console.log(calculedNum);
   if(tempId === ''){
     return null;
   }
 
-  // console.log(ctDatas)
+  // isShow = true
 
   return (
+
+    
     <>
-      <div className='categoryMainSubBoxBackGround' >
-        <div className='categoryMainSubBox' >
+    {(tempId === underId) ?
+      <div className='categoryMainSubBoxBackGround' style={{"transform":`translateX(${-25*calculedNum}%)`}}>
+      <div className='categoryMainSubBox' >
 
-          {ctDatas[tempId] && 
-            <div className={'변수가 들어올 예정'}>
+        {testData[tempId] && 
+          <div className={'변수가 들어올 예정'}>
 
-          {ctDatas[tempId].productLCategories.map((data) => {
+        {testData[tempId].productLCategories.map((data) => {
 
-            return <div key={data.id}>{data.name}</div>
-          
-          })}
+          return <div key={data.id}>{data.name}</div>
+        
+        })}
 
-          </div>
-          }
-
-
-          
         </div>
+        }
+
+
+        
+      </div>
     </div>
+
+    
+    :null}
+    
+      
     </>
   )
 }
