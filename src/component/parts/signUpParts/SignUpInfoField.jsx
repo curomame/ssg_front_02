@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { useDaumPostcodePopup } from "react-daum-postcode";
-import { postcodeScriptUrl } from "react-daum-postcode/lib/loadPostcode";
+import SignUpAddressPopup from "./SignUpAddressPopup";
+
+/* 모든 입력란에 대해 나눌 필요가 있으며,
+이 파일은 Layout으로 변경될 예정 */
 
 function SignUpInfoField() {
   // 인증 성공 후 받아온 데이터
   const basicInfo = ["TestUser", "010-1234-5678"];
+
+  // 2개의 비밀번호 입력란 비교 결과값에 따라 출력되는 메시지를 저장
+  const [passwordValidate, setpasswordValidate] = useState("");
 
   const [signUpData, setSignUpData] = useState({
     userId: "",
@@ -27,12 +32,6 @@ function SignUpInfoField() {
     // 영문, 숫자 외 값의 입력을 방지하기 위한 정규표현식
     var regex = /^[a-z0-9]*$/;
 
-    // 이메일 주소 입력 시 적용될 정규표현식과 입력 중일 경우 검증 동작
-    if (e.target.name === "userEmail") {
-      regex = /^[@a-z0-9.]*$/;
-      handleEmailCheck(e.target.value);
-    }
-
     // 입력받은 문자열이 정규표현식을 만족여부를 판별
     if (regex.test(e.target.value)) {
       setSignUpData({ ...signUpData, [e.target.name]: e.target.value });
@@ -42,25 +41,32 @@ function SignUpInfoField() {
     if (e.target.name === "passwordCheck") {
       handlePassWordCheck(e.target.value);
     }
+
+    // 이메일 주소 입력 시 적용될 정규표현식과 입력 중일 경우 검증 동작
+    if (e.target.name === "userEmail") {
+      regex = /^[@a-z0-9.]*$/;
+      handleEmailCheck(e.target.value);
+    }
   };
 
   // 비밀번호 검증을 위한 코드
   const handlePassWordCheck = (chk) => {
     if (signUpData.password === chk) {
       console.log("비밀번호 검증 성공");
+      setpasswordValidate("비밀번호가 일치합니다.");
     } else {
       console.log("비밀번호 검증 실패(불일치)");
+      setpasswordValidate("비밀번호가 일치하지 않습니다.");
     }
+
+    console.log(passwordValidate);
   };
 
   // 이메일 주소 형식 검증을 위한 코드
   const handleEmailCheck = (chk) => {
-    // 값이 정상적으로 들어오는 지 확인을 위한 출력
+    // 값이 정상적으로 들어오는지 확인을 위한 출력
     // console.log(chk);
   };
-
-  // 주소 찾기 시작
-  // 주소 찾기 끝.
 
   return (
     <div>
@@ -105,6 +111,11 @@ function SignUpInfoField() {
             maxLength="20"
             onChange={handleChange}
           />
+
+          <br />
+
+          {/* 비밀번호 입력칸 */}
+          <p>{passwordValidate}</p>
         </div>
       </div>
 
@@ -113,27 +124,32 @@ function SignUpInfoField() {
       {/* 이름칸 */}
       <div>
         <label>이름</label>
-        {basicInfo[0]}
+        <input
+          type="text"
+          name="userName"
+          value={signUpData.userName}
+          readOnly
+        />
       </div>
+
       <hr />
+
       {/* 주소 입력칸 */}
       <div>
-        <label>
-          주소
-          <input
-            type="text"
-            name="address"
-            value={signUpData.address}
-            onChange={handleChange}
-          />
-          <button>우편번호</button>
-        </label>
+        <SignUpAddressPopup />
       </div>
+
       <hr />
+
       {/* 휴대폰 번호칸 */}
       <div>
         <label>휴대폰 번호</label>
-        {basicInfo[1]}
+        <input
+          type="text"
+          name="userName"
+          value={signUpData.phoneNumber}
+          readOnly
+        />
       </div>
       <hr />
       {/* 이메일 주소칸 */}
