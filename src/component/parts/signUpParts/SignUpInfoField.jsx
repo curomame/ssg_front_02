@@ -6,40 +6,40 @@ import SignUpAddressPopup from "./SignUpAddressPopup";
 이 파일은 Layout으로 변경될 예정 */
 
 function SignUpInfoField() {
-  // 인증 성공 후 받아온 데이터
-  const basicInfo = ["TestUser", "010-1234-5678"];
-
   // 2개의 비밀번호 입력란 비교 결과값에 따라 출력되는 메시지를 저장
   const [passwordValidate, setpasswordValidate] = useState("");
+
+  // Address Parts에서 주소 결과값을 저장
+  const [addressValue, setAddressValue] = useState("");
 
   const [signUpData, setSignUpData] = useState({
     userId: "",
     password: "",
     passwordCheck: "",
-    userName: basicInfo[0],
+    userName: "",
     address: "",
-    phoneNumber: basicInfo[1],
+    phoneNumber: "",
     userEmail: "",
   });
 
   useEffect(() => {
     // 여기에 Test 코드를 작성
-    // console.log(signUpData);
+    console.log(signUpData);
   }, [signUpData]);
 
   // 입력 값에 대한 제한 조건 검증을 위한 코드
   const handleChange = (e) => {
     // 영문, 숫자 외 값의 입력을 방지하기 위한 정규표현식
-    var regex = /^[a-z0-9]*$/;
-
-    // 입력받은 문자열이 정규표현식을 만족여부를 판별
-    if (regex.test(e.target.value)) {
-      setSignUpData({ ...signUpData, [e.target.name]: e.target.value });
-    }
+    let regex = /^[a-z0-9]*$/;
 
     // 입력 중인 필드가 "비밀번호 확인란"일 경우 동작
     if (e.target.name === "passwordCheck") {
       handlePassWordCheck(e.target.value);
+    }
+
+    // 전화번호 입력 시 적용될 정규표현식
+    if (e.target.name === "phoneNumber") {
+      regex = /^[0-9-]*$/;
     }
 
     // 이메일 주소 입력 시 적용될 정규표현식과 입력 중일 경우 검증 동작
@@ -47,19 +47,22 @@ function SignUpInfoField() {
       regex = /^[@a-z0-9.]*$/;
       handleEmailCheck(e.target.value);
     }
+
+    // 입력받은 문자열이 정규표현식을 만족여부를 판별하여 입력받음.
+    if (regex.test(e.target.value)) {
+      setSignUpData({ ...signUpData, [e.target.name]: e.target.value });
+    }
   };
 
   // 비밀번호 검증을 위한 코드
   const handlePassWordCheck = (chk) => {
     if (signUpData.password === chk) {
-      console.log("비밀번호 검증 성공");
+      // console.log("비밀번호 검증 성공");
       setpasswordValidate("비밀번호가 일치합니다.");
     } else {
-      console.log("비밀번호 검증 실패(불일치)");
+      // console.log("비밀번호 검증 실패(불일치)");
       setpasswordValidate("비밀번호가 일치하지 않습니다.");
     }
-
-    console.log(passwordValidate);
   };
 
   // 이메일 주소 형식 검증을 위한 코드
@@ -128,7 +131,7 @@ function SignUpInfoField() {
           type="text"
           name="userName"
           value={signUpData.userName}
-          readOnly
+          onChange={handleChange}
         />
       </div>
 
@@ -136,7 +139,10 @@ function SignUpInfoField() {
 
       {/* 주소 입력칸 */}
       <div>
-        <SignUpAddressPopup />
+        <SignUpAddressPopup
+          addressValue={signUpData}
+          setAddressValue={setSignUpData}
+        />
       </div>
 
       <hr />
@@ -146,9 +152,9 @@ function SignUpInfoField() {
         <label>휴대폰 번호</label>
         <input
           type="text"
-          name="userName"
+          name="phoneNumber"
           value={signUpData.phoneNumber}
-          readOnly
+          onChange={handleChange}
         />
       </div>
       <hr />
