@@ -63,6 +63,14 @@ case 'searchModal':
             
           </div>
 
+  case 'writeReview':
+    return <div className='loginHeaderLayout'>
+            <div><span className="material-icons-outlined" onClick={()=>navigate(-1)}>arrow_back</span></div>
+            <div><h3>리뷰 작성</h3></div>
+            <div></div>
+          </div>
+
+
     default:
       return <>
               <div className='headerLayout'>

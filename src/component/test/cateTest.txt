@@ -1,45 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import categoryMainDatas from '../../../assets/datas/categoryDatas/categorymainDatas.json'
-import CategoryMainSelectSub from '../../parts/categoryParts/CategoryMainSelectSub';
-import axios from 'axios';
-
-function CategoryMainGrid() {
+// 카테고리 윗부분
 
 
-// const [selectedId, setSelectedId] = useState(null);
-  // const [ctDatas, setCtDatas] = useState('');
-  // const [isShow, setIsShow] = useState(false);
-  // const [cutDatas,setCutDatas] = useState([]);
-  
-
-  // useEffect(()=>{
-
-  //   axios.get('http://10.10.10.167:8083/ProductCategory')
-  //     .then(res => setCtDatas(res.data.slice(0,4)))
-  //     .catch(err => console.error("get error "+err))
-
-  //   },[])
-
-  
-  // useEffect(() => {
-  //   setCutDatas(CutTheAxios(testData,4));
-  // },[])
-
-
-    // const CutTheAxios = (arr, num) => {
-  //   const result = [];
-  //   if(arr){
-  //     for(let i=0; i<arr.length; i += num){
-  //       result.push(arr.slice(i,i+num));
-  //     };
-  //     return result;
-  //   }
-  //   return undefined;
-  // }
-
-    // console.log(selectedId)
-    
-  const testData = categoryMainDatas;
+const testData = categoryMainDatas;
   const [tempId, setTempId] = useState('');
   
 
@@ -88,7 +50,61 @@ function CategoryMainGrid() {
 
         </div>    
     </>
+
+
+// 카테고리 아랫부분
+
+import React from 'react'
+
+function CategoryMainSelectSub({testData,tempId,underId}) {
+
+  // console.log(underId);
+  console.log(tempId,underId)
+
+  const calculedNum = Math.floor(tempId%4);
+  
+  // console.log(calculedNum);
+  if(tempId === ''){
+    return null;
+  }
+
+  // isShow = true
+
+  return (
+
+    
+    <>
+    {(tempId === underId) ?
+      <div className='categoryMainSubBoxBackGround' style={{"transform":`translateX(${-25*calculedNum}%)`}}>
+      <div className='categoryMainSubBox' >
+
+        {testData[tempId] && 
+          <div>
+
+        {testData[tempId].productLCategories.map((data) => {
+
+          return <div key={data.id}>{data.name}</div>
+        
+        })}
+
+        </div>
+        }
+
+
+        
+      </div>
+    </div>
+
+    
+    :null}
+    
+      
+    </>
   )
 }
 
-export default CategoryMainGrid
+export default CategoryMainSelectSub
+
+
+
+

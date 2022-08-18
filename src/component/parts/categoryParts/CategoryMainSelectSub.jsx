@@ -3,6 +3,7 @@ import React from 'react'
 function CategoryMainSelectSub({testData,tempId,underId}) {
 
   // console.log(underId);
+  console.log(tempId,underId)
 
   const calculedNum = Math.floor(tempId%4);
   
@@ -22,7 +23,7 @@ function CategoryMainSelectSub({testData,tempId,underId}) {
       <div className='categoryMainSubBox' >
 
         {testData[tempId] && 
-          <div className={'변수가 들어올 예정'}>
+          <div>
 
         {testData[tempId].productLCategories.map((data) => {
 
