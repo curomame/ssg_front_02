@@ -3,6 +3,7 @@ import Footer from '../component/components/common/CommonFooter'
 import Header from '../component/components/common/Header'
 import BottomNav from '../component/layout/BottomNav'
 import '../assets/css/mypage.css'
+import { Link } from 'react-router-dom'
 
 function MyPage() {
   return (
@@ -36,6 +37,12 @@ function MyPage() {
         
         </div>
 
+        <div>
+          <Link to='/review'>
+        <p><span class="material-icons-outlined">notifications</span>리뷰쓰러가깅</p>
+          </Link>
+        </div>
+          
       <Footer/>
       <BottomNav/>
     </>

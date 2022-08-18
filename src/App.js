@@ -18,6 +18,9 @@ import './assets/css/common.css'
 import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
 import MyPage from './pages/MyPage';
+import Review from './pages/Review';
+import MyReviewCreate from './component/components/myReview/MyReviewCreate';
+import MyReviewUpdate from './component/components/myReview/MyReviewUpdate';
 
 function App() {
 
@@ -38,7 +41,16 @@ function App() {
           <Route path="/test" element={<Test/>}/>
           
           <Route path="/mypage" element={<MyPage/>}/>
+          
+          <Route path="/cart" element={<Cart/>}/>
+          <Route path='/review' element={<Review/>}/>
+          <Route path="/review/write" element={<MyReviewCreate/>}>
+            <Route path=':id' element={<MyReviewCreate />} />
+          </Route>
 
+          <Route path="/review/update" element={<MyReviewUpdate/>}>
+            <Route path=':id' element={<MyReviewUpdate />} />
+          </Route>
 
           <Route path="/signup" element={<SignUpMain/>}/>
           <Route path="/signup/terms" element={<SignUpTerms/>}/>
@@ -47,7 +59,7 @@ function App() {
 
           <Route path="/item/detail" element={<ProductDetail />} />
 
-          <Route path="/cart" element={<Cart/>}/>
+          
 
           <Route path="/*" element={<div>nopage</div>}/>
         </Routes>

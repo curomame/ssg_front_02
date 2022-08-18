@@ -1,0 +1,71 @@
+.myReviewContainer{
+  margin: 0px 14px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.myReviewContainer div{
+  width: 100%;
+  text-align: center;
+  height: 52px;
+  line-height: 52px;
+}
+
+.myReviewSelectBox_true{
+  background: #444;
+  color: white;
+}
+
+.myReviewSelectBox_false{
+  background: white;
+  color: #888;
+}
+
+.myReviewBoxsContainer{
+  display: flex;
+  flex-direction: column;
+  margin: 0px 15px;
+}
+
+.myReviewBoxsdate {
+  font-size: 10px;
+  color: gray;
+  margin: 6px 0px;
+}
+
+.myReviewBoxsUnder{
+  display: flex;
+  margin-bottom: 10px;
+ 
+}
+
+.myReviewBoxsDetailInfo{
+  padding-left: 15px;
+
+}
+
+.myReviewBoxsUnderImg{
+  width: 80px;
+  height: 80px;
+}
+
+.myReviewBoxsWriteClick{
+  border: 1px solid gray;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.myreviewCreateInputBox{
+  display: flex;
+  flex-direction: column;
+  margin: 0 16px;
+}
+
+.myreviewCreateButton{
+  margin: 10px 0px;
+  text-align: center;
+  border: 1px solid black;
+}
