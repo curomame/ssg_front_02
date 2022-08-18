@@ -6,6 +6,7 @@ function SignUpCheckBox({
   title,
   checkBoxName,
   hideButton,
+  disableButton,
 }) {
   return (
     <div style={{ display: "flex" }}>
@@ -15,6 +16,7 @@ function SignUpCheckBox({
           type="checkbox"
           value={value}
           checked={checkBoxName}
+          disabled={disableButton}
         />
       </div>
 

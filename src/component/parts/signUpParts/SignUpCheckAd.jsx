@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import termsOptPointInfo from "../../../assets/datas/signupDatas/signUpOptionalPointTerms.json";
 import termsOptPointPath from "../../../assets/datas/signupDatas/signUpOptionalPointReceivePath.json";
 import termsOptSsgInfo from "../../../assets/datas/signupDatas/signUpOptionalSsgTerms.json";
@@ -6,6 +6,59 @@ import termsOptSsgPath from "../../../assets/datas/signupDatas/signUpOptionalSsg
 import SignUpCheckBox from "./SignUpCheckBox";
 
 function SignUpCheckAd() {
+  // 각 checkbox 상태값
+  const [checkData, setCheckData] = useState({
+    pointOpt1: false,
+    pointOpt2: false,
+    pointOptEmail: false,
+    pointOptSms: false,
+    pointOptDm: false,
+    pointOptTm: false,
+    ssgOpt1: false,
+    ssgOptEmail: false,
+    ssgOptSms: false,
+  });
+
+  // 각 checkbox 상태값을 받아오기 위해 요소명을 배열로 작성
+  const pointOptList = [checkData.pointOpt1, checkData.pointOpt2];
+
+  const pointOptPathList = [
+    checkData.pointOptEmail,
+    checkData.pointOptSms,
+    checkData.pointOptDm,
+    checkData.pointOptTm,
+  ];
+
+  const ssgOptList = [checkData.ssgOpt1];
+
+  const ssgOptPathList = [checkData.ssgOptEmail, checkData.ssgOptSms];
+
+  const [isCheckedPoint, setIsCheckedPoint] = useState(true);
+
+  const [isCheckedSsg, setIsCheckedSsg] = useState(true);
+
+  // 클릭에 대해 늦은 반응에 대응하기 위해 useEffect 사용
+  useEffect(() => {
+    if (checkData.pointOpt1 === true && checkData.pointOpt2 === true) {
+      setIsCheckedPoint(false);
+    } else {
+      setIsCheckedPoint(true);
+    }
+
+    if (checkData.ssgOpt1 === true) {
+      setIsCheckedSsg(false);
+    } else {
+      setIsCheckedSsg(true);
+    }
+
+    console.log(checkData);
+  }, [checkData, isCheckedPoint, isCheckedSsg]);
+
+  // 개별 checkbox 선택
+  const handleCheck = (e) => {
+    setCheckData({ ...checkData, [e.target.value]: e.target.checked });
+  };
+
   return (
     <div>
       {/* 포인트 선택 약관 시작 */}
@@ -16,10 +69,10 @@ function SignUpCheckAd() {
             termsOptPointInfo.map((info, i) => (
               <SignUpCheckBox
                 key={i}
-                // handleName={}
+                handleName={handleCheck}
                 value={info.value}
                 title={info.title}
-                // checkBoxName={}
+                checkBoxName={pointOptList[i]}
               />
             ))}
         </div>
@@ -34,11 +87,12 @@ function SignUpCheckAd() {
           termsOptPointPath.map((info, i) => (
             <SignUpCheckBox
               key={i}
-              // handleName={}
+              handleName={handleCheck}
               value={info.value}
               title={info.title}
-              // checkBoxName={}
+              checkBoxName={pointOptPathList[i]}
               hideButton="Y"
+              disableButton={isCheckedPoint}
             />
           ))}
 
@@ -62,10 +116,10 @@ function SignUpCheckAd() {
             termsOptSsgInfo.map((info, i) => (
               <SignUpCheckBox
                 key={i}
-                // handleName={}
+                handleName={handleCheck}
                 value={info.value}
                 title={info.title}
-                // checkBoxName={}
+                checkBoxName={ssgOptList[i]}
               />
             ))}
         </div>
@@ -80,11 +134,12 @@ function SignUpCheckAd() {
           termsOptSsgPath.map((info, i) => (
             <SignUpCheckBox
               key={i}
-              // handleName={}
+              handleName={handleCheck}
               value={info.value}
               title={info.title}
-              // checkBoxName={}
+              checkBoxName={ssgOptPathList[i]}
               hideButton="Y"
+              disableButton={isCheckedSsg}
             />
           ))}
 

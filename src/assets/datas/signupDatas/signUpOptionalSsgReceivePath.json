@@ -1,10 +1,10 @@
 [
   {
-    "value": "email",
+    "value": "ssgOptEmail",
     "title": "이메일"
   },
   {
-    "value": "sms",
+    "value": "ssgOptSms",
     "title": "문자"
   }
 ]
