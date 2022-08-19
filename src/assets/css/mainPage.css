@@ -414,3 +414,29 @@ h3 {
     font-size: 12px;
 } */
 
+/* MainItem */
+
+.mainItemContainer{
+    
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    width: 100%;
+}
+
+.mainItemContainer::-webkit-scrollbar{
+    display: none;
+}
+
+.mainItems{
+    margin-right: 6px;
+}
+
+
+.mainItemName{
+    width:100px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+
+}

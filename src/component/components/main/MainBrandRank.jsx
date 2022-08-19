@@ -5,11 +5,13 @@ import MainTitleSub from '../../parts/mainParts/MainTitleSub'
 import Items from '../../layout/Items'
 import CommonTitleSub from '../../parts/commonsParts/CommonTitleSub'
 import MainSelectedCategory from '../../parts/mainParts/MainSelectedCategory'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import axios from 'axios'
 
 
 function MainBrandRank() {
 
-  
 
   return (
     <>
@@ -19,10 +21,8 @@ function MainBrandRank() {
         type={'mainTitleSubTotal'}
       />
 
-
-      <MainSelectedCategory/>
-
-
+      <MainSelectedCategory
+      />
 
       <MainHyperLink/>
     </>

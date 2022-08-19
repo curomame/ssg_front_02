@@ -5,47 +5,24 @@ import axios from 'axios';
 
 function CategoryMainGrid() {
 
-
-// const [selectedId, setSelectedId] = useState(null);
-  // const [ctDatas, setCtDatas] = useState('');
-  // const [isShow, setIsShow] = useState(false);
-  // const [cutDatas,setCutDatas] = useState([]);
-  
-
-  // useEffect(()=>{
-
-  //   axios.get('http://10.10.10.167:8083/ProductCategory')
-  //     .then(res => setCtDatas(res.data.slice(0,4)))
-  //     .catch(err => console.error("get error "+err))
-
-  //   },[])
-
-  
-  // useEffect(() => {
-  //   setCutDatas(CutTheAxios(testData,4));
-  // },[])
+  const [categoryDatas, setCategoryDatas] = useState('');
 
 
-    // const CutTheAxios = (arr, num) => {
-  //   const result = [];
-  //   if(arr){
-  //     for(let i=0; i<arr.length; i += num){
-  //       result.push(arr.slice(i,i+num));
-  //     };
-  //     return result;
-  //   }
-  //   return undefined;
-  // }
+  useEffect(()=>{
+    axios.get("http://10.10.10.167:8083/ProductCategory/findAll/mCtg")
+      .then(res => setCategoryDatas(res.data))
+      .then(err => console.error('카테고리 통신'+err))
+  },[])
 
-    // console.log(selectedId)
     
   const testData = categoryMainDatas;
+
   const [tempId, setTempId] = useState('');
   
 
   const ClickFunc = (id) => {
     setTempId(id);
-    // setSelectedId(id)
+
   }
 
 
@@ -57,10 +34,10 @@ function CategoryMainGrid() {
       <div className='categoryMainGridContainer' >
 
       {
-          testData[0] 
+          categoryDatas[0] 
           && 
           <>
-            {testData.map((data) => 
+            {categoryDatas.map((data) => 
                   (
                     <div onClick={() => ClickFunc(data.id-1)} key={data.id} className='categoryMainGridContainerIconBox' >
 
@@ -70,7 +47,7 @@ function CategoryMainGrid() {
                       </div>
                       <CategoryMainSelectSub
                         underId={data.id-1}
-                        testData={testData} 
+                        categoryDatas={categoryDatas} 
                         tempId={tempId}
                         /> 
                     </div>

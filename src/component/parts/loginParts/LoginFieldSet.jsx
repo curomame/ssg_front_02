@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom'
 
 function LoginFieldSet() {
 
-    const url = "http://10.10.10.167:8080/login"
+    const url = "http://10.10.10.99:8080/user/login"
 
     const [loginData, setLoginData] = useState({
         userId: "",
-        password: ""
+        pwd: ""
     })
 
 // 에러관련 헨들링
@@ -28,17 +28,10 @@ function LoginFieldSet() {
         e.preventDefault()
 
         axios.post(url, {
-            userid : loginData.userId,
-            password : loginData.password
-        })
-        .then(
-            Response => {
-                console.log(Response)
-            })
-            .catch(
-                error => {
-                    console.error(error)
-            })
+            "userId" : loginData.userId,
+            "pwd" : loginData.pwd})
+        .then(res => {console.log(res.headers)})
+        .catch(error => {console.error(error)})
     }
 
 
@@ -56,9 +49,9 @@ function LoginFieldSet() {
                 />
             <input
                 type="password"
-                name="password"
+                name="pwd"
                 placeholder="비밀번호"
-                value={loginData.password}
+                value={loginData.pwd}
                 onChange={handleChange}
                 />
         </div>
@@ -71,7 +64,7 @@ function LoginFieldSet() {
             
 
           <div>
-              <div className='loginButton'>로그인</div>
+              <div onClick={handleLogin} className='loginButton'>로그인</div>
           </div>
 
             

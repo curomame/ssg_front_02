@@ -334,6 +334,12 @@ font-size: 11px;
   display: flex;
 }
 
+.mypageLayoutRight span{
+  height: 45px;
+  line-height: 45px;
+  padding-right: 6px;
+}
+
 
 
 
@@ -400,6 +406,7 @@ font-size: 11px;
 }
 
 .searchModal{
+  height: 60px;
   display: flex;
   justify-content: space-between;
 }
@@ -410,4 +417,18 @@ font-size: 11px;
 
 .searchModalRight div span{
   line-height: 40px;
+}
+
+.searchModalInput{
+  position: relative;
+}
+
+.searchModalIcon{
+  position: absolute;
+  right: 4px;
+  top: 20%;
+}
+
+.searchModalRight{
+  display: flex;
 }
