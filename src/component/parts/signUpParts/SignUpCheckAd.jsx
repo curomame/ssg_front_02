@@ -5,7 +5,7 @@ import termsOptSsgInfo from "../../../assets/datas/signupDatas/signUpOptionalSsg
 import termsOptSsgPath from "../../../assets/datas/signupDatas/signUpOptionalSsgReceivePath.json";
 import SignUpCheckBox from "./SignUpCheckBox";
 
-function SignUpCheckAd() {
+function SignUpCheckAd({ integrateInfo, setIntegrateInfo }) {
   // 각 checkbox 상태값
   const [checkData, setCheckData] = useState({
     pointOpt1: false,
@@ -51,7 +51,20 @@ function SignUpCheckAd() {
       setIsCheckedSsg(true);
     }
 
-    console.log(checkData);
+    // console.log(checkData);
+
+    setIntegrateInfo({
+      ...integrateInfo,
+      ["pointOpt1"]: checkData.pointOpt1,
+      ["pointOpt2"]: checkData.pointOpt2,
+      ["pointOptEmail"]: checkData.pointOptEmail,
+      ["pointOptSms"]: checkData.pointOptSms,
+      ["pointOptDm"]: checkData.pointOptDm,
+      ["pointOptTm"]: checkData.pointOptTm,
+      ["ssgOpt1"]: checkData.ssgOpt1,
+      ["ssgOptEmail"]: checkData.ssgOptEmail,
+      ["ssgOptSms"]: checkData.ssgOptSms,
+    });
   }, [checkData, isCheckedPoint, isCheckedSsg]);
 
   // 개별 checkbox 선택
