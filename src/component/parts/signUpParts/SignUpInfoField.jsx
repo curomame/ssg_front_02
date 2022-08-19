@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import SignUpAddressPopup from "./SignUpAddressPopup";
@@ -5,7 +6,7 @@ import SignUpAddressPopup from "./SignUpAddressPopup";
 /* 모든 입력란에 대해 나눌 필요가 있으며,
 이 파일은 Layout으로 변경될 예정 */
 
-function SignUpInfoField() {
+function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
   // 2개의 비밀번호 입력란 비교 결과값에 따라 출력되는 메시지를 저장
   const [passwordValidate, setpasswordValidate] = useState("");
 
@@ -24,7 +25,16 @@ function SignUpInfoField() {
 
   useEffect(() => {
     // 여기에 Test 코드를 작성
-    console.log(signUpData);
+    // console.log(signUpData);
+    setIntegrateInfo({
+      ...integrateInfo,
+      ["userId"]: signUpData.userId,
+      ["password"]: signUpData.password,
+      ["userName"]: signUpData.userName,
+      ["address"]: signUpData.address,
+      ["phoneNumber"]: signUpData.phoneNumber,
+      ["userEmail"]: signUpData.userEmail,
+    });
   }, [signUpData]);
 
   // 입력 값에 대한 제한 조건 검증을 위한 코드
@@ -65,10 +75,34 @@ function SignUpInfoField() {
     }
   };
 
-  // 이메일 주소 형식 검증을 위한 코드
+  // 이메일 주소 형식 검증을 위한 코드(구현중)
   const handleEmailCheck = (chk) => {
     // 값이 정상적으로 들어오는지 확인을 위한 출력
     // console.log(chk);
+  };
+
+  // 아이디 중복확인을 위한 코드(구현중)
+  const handleCheckId = (chk) => {
+    const url = "";
+    let result = "";
+
+    axios
+      .get(url, {
+        userId: chk,
+      })
+      .then((Response) => {
+        console.log(Response);
+        console.log(result);
+
+        if (result === true) {
+          console.log("사용가능한 아이디입니다.");
+        } else {
+          console.log("사용할 수 없는 아이디입니다.");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -86,7 +120,7 @@ function SignUpInfoField() {
             maxLength="20"
           />
         </label>
-        <button>중복 확인</button>
+        <button onClick={handleCheckId}>중복 확인</button>
       </div>
 
       <hr />
