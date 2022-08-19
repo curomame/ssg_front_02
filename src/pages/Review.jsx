@@ -11,14 +11,13 @@ import MainImgBanner from '../component/parts/mainParts/MainImgBanner'
 
 function Review() {
 
-  const [ableReview,setAbleReview] = useState(null)
-  const [cantReview,setCantReview] = useState(null)
-
-  const [isClicked, setIsClicked] = useState(true)
+  const [ableReview,setAbleReview] = useState(null);
+  const [cantReview,setCantReview] = useState(null);
+  const [isClicked, setIsClicked] = useState(true);
 
   const handleChangeClicked = (e) => {
     setIsClicked(!isClicked)
-  }
+  };
 
   useEffect(()=>{
 
@@ -27,14 +26,15 @@ function Review() {
     axios.get('http://10.10.10.108:8080/user/review/notYet/1')
       .then(res=> setAbleReview(res.data.data))
 
-  },[])
+  },[]);
 
 
   return (
     <>
     {/* 헤더타입 바꾸기 */}
 
-      <Header/>
+      <Header
+        type={'myReviw'}/>
       <MainImgBanner/>
       <div className='myReviewContainer'>
 

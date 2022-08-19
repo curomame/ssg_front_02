@@ -5,12 +5,13 @@ import { useParams } from 'react-router-dom';
 import BottomNav from '../../layout/BottomNav';
 import Header from '../common/Header';
 
-function MyReviewCreate() {
-  const orderId = useParams();
+function MyReviewCreate({orderId}) {
+  
+  const pathId = useParams();
   const [contents, setContents] = useState();
 
 
-    console.log(orderId)
+    console.log(orderId+'here')
     
 
   const handleWriteReview = () => {

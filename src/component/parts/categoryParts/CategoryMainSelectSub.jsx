@@ -1,9 +1,9 @@
 import React from 'react'
 
-function CategoryMainSelectSub({testData,tempId,underId}) {
+function CategoryMainSelectSub({categoryDatas,tempId,underId}) {
 
   // console.log(underId);
-  console.log(tempId,underId)
+  // console.log(tempId,underId)
 
   const calculedNum = Math.floor(tempId%4);
   
@@ -22,10 +22,10 @@ function CategoryMainSelectSub({testData,tempId,underId}) {
       <div className='categoryMainSubBoxBackGround' style={{"transform":`translateX(${-25*calculedNum}%)`}}>
       <div className='categoryMainSubBox' >
 
-        {testData[tempId] && 
+        {categoryDatas[tempId] && 
           <div>
 
-        {testData[tempId].productLCategories.map((data) => {
+        {categoryDatas[tempId].lcategoryList.map((data) => {
 
           return <div key={data.id}>{data.name}</div>
         

@@ -18,20 +18,6 @@ function SearchModal() {
       <div className="searchBarContainer" style={ {"display": isModal ? "block": "none"}}>
         <div className="searchBarBox">
           
-          {/* <div className="searchBarPrevious">
-            <div className='searchPreIconBox'>
-              <div className='searchPreIcon' onClick={() => {setIsModal(!isModal)}}><span class="material-icons-outlined">chevron_left</span></div>
-            </div>
-            <div className='searchBarRight'>
-              <div className='searchBarInput'>
-                <input type="text"/>
-                <div className='searchBarIcon'><span className="material-icons-outlined">search</span></div>
-                </div >
-              <div className='searchCartIcon'><span className="material-icons-outlined">shopping_cart</span></div>
-            </div>
-          </div> */}
-          
-
           <Header
             type={'searchModal'}/>
           <div className='searchRecentKeyword'>

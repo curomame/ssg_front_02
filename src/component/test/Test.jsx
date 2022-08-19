@@ -5,7 +5,14 @@ function Test() {
 
   const getDataFunc = () => {
 
-    axios.get("http://10.10.10.167:8083/productCategory/mCtg/1/4")
+    // 1 카테고리 http://10.10.10.167:8083/ProductCategory/findAll/mCtg 
+    // 2 메인상품 http://10.10.10.167:8083/productCtgList/list/5 
+    // 3 M카테고리 눌렀을때 s카테고리까지 쫙 나올수 있도록 http://localhost:8080/productCtgList/mCtg/1/4 
+    // 보내는 방식은 똑같은데 주소가 다름 
+
+
+
+    axios.get("http://10.10.10.167:8083/productCtgList/mCtg/1/4")
                     .then(res => console.log(res.data))
                     
   }
