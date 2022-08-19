@@ -1,18 +1,18 @@
 [
   {
-    "value": "email",
+    "value": "pointOptEmail",
     "title": "이메일"
   },
   {
-    "value": "sms",
+    "value": "pointOptSms",
     "title": "문자"
   },
   {
-    "value": "dm",
+    "value": "pointOptDm",
     "title": "우편물"
   },
   {
-    "value": "tm",
+    "value": "pointOptTm",
     "title": "텔레마케팅"
   }
 ]

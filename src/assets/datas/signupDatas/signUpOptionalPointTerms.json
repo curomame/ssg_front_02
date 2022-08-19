@@ -1,10 +1,10 @@
 [
   {
-    "value": "point1",
+    "value": "pointOpt1",
     "title": "(선택) 서비스 이벤트정보 제공을 위한 개인정보 수집 및 이용 동의"
   },
   {
-    "value": "point2",
+    "value": "pointOpt2",
     "title": "(선택) 선택 정보 이마트/신세계백화점 공통 개인정보 수집 및 이용 동의"
   }
 ]
