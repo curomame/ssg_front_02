@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Test from './component/test/Test';
+import Test from './test/Test';
 import Category from './pages/Category';
 import Login from './pages/Login';
 import Main from './pages/Main';
@@ -21,14 +21,19 @@ import MyPage from './pages/MyPage';
 import Review from './pages/Review';
 import MyReviewCreate from './component/components/myReview/MyReviewCreate';
 import MyReviewUpdate from './component/components/myReview/MyReviewUpdate';
+import Recent from './pages/Recent';
+import { RecoilRoot, useRecoilState } from 'recoil';
+import SearchModalState from './recoil/atoms/SearchModalState';
+import LocalStorage from './test/LocalStorage';
 
 function App() {
 
   const [isModal, setIsModal] = useState(false);
 
 
-  return (
 
+  return (
+    <RecoilRoot>
     <SearchModalContext.Provider value={{isModal,setIsModal}}>
       <BrowserRouter>
       <SearchModal/>
@@ -38,7 +43,7 @@ function App() {
           <Route path="/category/:id" element={<CategoryDetailTopAll/>}/>
 
           <Route path="/login" element={<Login/>}/>
-          <Route path="/test" element={<Test/>}/>
+
           
           <Route path="/mypage" element={<MyPage/>}/>
           
@@ -47,6 +52,8 @@ function App() {
           <Route path="/review/write" element={<MyReviewCreate/>}>
             <Route path=':id' element={<MyReviewCreate />} />
           </Route>
+
+          <Route path="/recent" element={<Recent/>}/>
 
           <Route path="/review/update" element={<MyReviewUpdate/>}>
             <Route path=':id' element={<MyReviewUpdate />} />
@@ -59,6 +66,9 @@ function App() {
 
           <Route path="/item/detail" element={<ProductDetail />} />
 
+
+          <Route path="/test" element={<Test/>}/>
+          <Route path="/testStorage" element={<LocalStorage/>}/>
           
 
           <Route path="/*" element={<div>nopage</div>}/>
@@ -66,6 +76,7 @@ function App() {
       </BrowserRouter>
 
     </SearchModalContext.Provider>
+    // </RecoilRoot>
   );
 }
 

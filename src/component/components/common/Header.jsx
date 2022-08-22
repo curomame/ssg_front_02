@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
 import { SearchModalContext } from '../../../context/SearchModalContext';
+import SearchModalState from '../../../recoil/atoms/SearchModalState';
 import Logo from '../../parts/commonsParts/Logo';
 import MyCart from '../../parts/commonsParts/MyCart';
 import SearchBar from '../../parts/commonsParts/SearchBar';
@@ -10,8 +12,9 @@ function Header({type}) {
 
   const navigate = useNavigate();
 
-  const {isModal,setIsModal} = useContext(SearchModalContext);
+  // const {isModal,setIsModal} = useContext(SearchModalContext);
 
+  const [reModal, setReModal] = useRecoilState(SearchModalState);
 
   switch(type){
     case 'cart':
@@ -47,7 +50,7 @@ function Header({type}) {
     case 'searchModal':
       return <div className='searchModal'>
 
-                    <div><span className="material-icons-outlined" onClick={() => (setIsModal(!isModal))}>arrow_back</span></div>
+                    <div><span className="material-icons-outlined" onClick={() => (setReModal(!reModal))}>arrow_back</span></div>
                     
                     <div className='searchModalRight'>
                     <div>
@@ -77,6 +80,13 @@ function Header({type}) {
               <div><span className="material-icons-outlined" onClick={()=>navigate(-1)}>arrow_back</span></div>
               <div><h3>리뷰 작성</h3></div>
               <div></div>
+            </div>
+
+    case 'recent':
+      return <div className='loginHeaderLayout'>
+              <div><span className="material-icons-outlined" onClick={()=>navigate(-1)}>arrow_back</span></div>
+              <div><h3>최근 본 쇼핑정보</h3></div>
+              <div>편집</div>
             </div>
 
 

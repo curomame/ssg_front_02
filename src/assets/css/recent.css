@@ -1,0 +1,95 @@
+.recentBackground{
+  background-color: #eee;
+  height: 100vh;
+}
+
+.recentUpperMenuContainer{
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 16px;
+  letter-spacing: -2px;
+  font-size: 14px;
+  
+}
+
+.recentUpperMenuContainer div{
+  border: 1px solid white;
+  background-color: white;
+  color: #777;
+  padding: 6px 4px;
+  border-radius: 24px;
+  text-align: center;
+}
+
+
+
+.recentItemContainer {
+  margin: 12px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.recentItemContainer > a{
+  width: 100%;
+}
+
+.recentItemInfo{
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 16px;
+  letter-spacing: -1px;
+}
+
+.recentItemInfo h2{
+
+  font-size: 13px;
+  font-weight: 600;
+
+}
+
+.recentItemInfo h3{
+  
+  font-size: 13px;
+  font-weight: 400;
+
+}
+
+.recentItemInfo h4{
+  font-size: 18px;
+}
+
+.recentItemInfo h4 span{
+  font-weight: 500;
+}
+
+
+.recentItemRight{
+  display: flex;
+}
+
+.recentItemRight img {
+ vertical-align: bottom;
+}
+
+.recentItemImg{
+  width: 100px;
+  height: 100px;
+}
+
+.recentItemIcon{
+  display: flex;
+  flex-direction: column;
+}
+
+.recentItemIcon div{
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+.recentItemIcon span {
+  line-height: 50px;
+}

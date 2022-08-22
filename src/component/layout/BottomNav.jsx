@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
 import NavMenu from '../../assets/datas/commonDatas/mainBottomNav.json';
-import { SearchModalContext } from '../../context/SearchModalContext';
+import SearchModalState from '../../recoil/atoms/SearchModalState';
 
 function BottomNav() {
 
-    const {isModal, setIsModal} = useContext(SearchModalContext);
-
+    const [reModal, setReModal] = useRecoilState(SearchModalState);
+    
     return (
         <>
           <div className="bottomNav">
@@ -15,7 +16,7 @@ function BottomNav() {
                 <li>
                     
                     {menu.onClick ? 
-                    <div className="bottonNavFont" key={menu.id} onClick={() => {setIsModal(!isModal)}}>
+                    <div className="bottonNavFont" key={menu.id} onClick={() => {setReModal(!reModal)}}>
                       <div><span className="material-icons-outlined bottonNavIconSize">{menu.icon}</span></div>
                       <div><span>{menu.title}</span></div>
                     </div>

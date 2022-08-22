@@ -274,6 +274,11 @@ h3 {
     margin-left: 15px;
 }
 
+.mainRankLinkList .selected_red{
+    background-color: red;
+    color: white;
+}
+
 .mainRankLink > li{
     margin-right: 10px;
     font-size: 14px;
