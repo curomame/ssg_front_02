@@ -55,15 +55,15 @@ function SignUpCheckAd({ integrateInfo, setIntegrateInfo }) {
 
     setIntegrateInfo({
       ...integrateInfo,
-      ["pointOpt1"]: checkData.pointOpt1,
-      ["pointOpt2"]: checkData.pointOpt2,
-      ["pointOptEmail"]: checkData.pointOptEmail,
-      ["pointOptSms"]: checkData.pointOptSms,
-      ["pointOptDm"]: checkData.pointOptDm,
-      ["pointOptTm"]: checkData.pointOptTm,
-      ["ssgOpt1"]: checkData.ssgOpt1,
-      ["ssgOptEmail"]: checkData.ssgOptEmail,
-      ["ssgOptSms"]: checkData.ssgOptSms,
+      pointOpt1: checkData.pointOpt1,
+      pointOpt2: checkData.pointOpt2,
+      pointOptEmail: checkData.pointOptEmail,
+      pointOptSms: checkData.pointOptSms,
+      pointOptDm: checkData.pointOptDm,
+      pointOptTm: checkData.pointOptTm,
+      ssgOpt1: checkData.ssgOpt1,
+      ssgOptEmail: checkData.ssgOptEmail,
+      ssgOptSms: checkData.ssgOptSms,
     });
   }, [checkData, isCheckedPoint, isCheckedSsg]);
 

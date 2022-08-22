@@ -38,16 +38,16 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
     // console.log(signUpData);
     setIntegrateInfo({
       ...integrateInfo,
-      ["userId"]: signUpData.userId,
-      ["password"]: signUpData.password,
-      ["userName"]: signUpData.userName,
+      userId: signUpData.userId,
+      password: signUpData.password,
+      userName: signUpData.userName,
 
-      ["zoneCode"]: signUpData.zoneCode,
-      ["roadAddress"]: signUpData.roadAddress,
-      ["detailAddress"]: signUpData.detailAddress,
+      zoneCode: signUpData.zoneCode,
+      roadAddress: signUpData.roadAddress,
+      detailAddress: signUpData.detailAddress,
 
-      ["phoneNumber"]: signUpData.phoneNumber,
-      ["userEmail"]: signUpData.userEmail,
+      phoneNumber: signUpData.phoneNumber,
+      userEmail: signUpData.userEmail,
     });
   }, [signUpData]);
 
@@ -205,7 +205,9 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
           onChange={handleChange}
         />
       </div>
+
       <hr />
+
       {/* 이메일 주소칸 */}
       <div>
         <label>

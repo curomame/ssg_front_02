@@ -1,7 +1,9 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { useDaumPostcodePopup } from "react-daum-postcode";
 import { postcodeScriptUrl } from "react-daum-postcode/lib/loadPostcode";
+import SignUpInputBox from "./SignUpInputBox";
 
 function SignUpAddressPopup({ addressValue, setAddressValue }) {
   /* react-daum-postcode에서 제공된 팝업 Reference Code 시작 */
@@ -9,6 +11,19 @@ function SignUpAddressPopup({ addressValue, setAddressValue }) {
 
   // 주소 결과값 저장을 위해 usestate 사용
   const [result, SetResult] = useState("");
+
+  // 도로명 주소 입력 시 상세주소란 활성화를 위해 사용
+  const [isFull, setIsFull] = useState("");
+
+  const [detailAddress, setDetailAddress] = useState("");
+
+  useEffect(() => {
+    if (result.length > 0) {
+      setIsFull("");
+    } else {
+      setIsFull("Y");
+    }
+  }, [result, isFull, detailAddress]);
 
   const handleComplete = (data) => {
     let fullAddress = data.address;
@@ -43,12 +58,11 @@ function SignUpAddressPopup({ addressValue, setAddressValue }) {
 
     // Parts를 사용하는 Components에 값을 전달
     // setAddressValue(fullAddress);
-
     setAddressValue({
       ...addressValue,
-      ["zoneCode"]: data.zonecode,
-      ["roadAddress"]: fullAddress,
-      ["address"]: fullAddress,
+      zoneCode: data.zonecode,
+      roadAddress: fullAddress,
+      detailAddress: detailAddress,
     });
   };
 
@@ -56,6 +70,10 @@ function SignUpAddressPopup({ addressValue, setAddressValue }) {
     open({ onComplete: handleComplete });
   };
   /* react-daum-postcode에서 제공된 팝업 Reference Code 끝. */
+
+  const handleFullRoadAddress = (e) => {
+    setDetailAddress({ ...detailAddress, [e.target.name]: e.target.value });
+  };
 
   return (
     <>
@@ -67,6 +85,18 @@ function SignUpAddressPopup({ addressValue, setAddressValue }) {
         style={{ width: "60%" }}
         readOnly
       />
+
+      <br />
+
+      <SignUpInputBox
+        onChange={handleFullRoadAddress}
+        title="detailAddress"
+        name="detailAddress"
+        value={detailAddress}
+        placeHolder="상세주소입력"
+        hideBox={isFull}
+      />
+
       <button type="button" onClick={handleClick}>
         우편번호
       </button>
