@@ -5,7 +5,7 @@ function SignUpBenefit() {
     <div style={{ width: "100%", textAlign: "center", padding: "30px 0 10px" }}>
       <ul style={{ display: "flex", listStyle: "none" }}>
         <li>
-          <span class="material-symbols-icons">cake</span>
+          <img src="/" alt="Photo1" />
           <p>
             <span>
               최대 20만원

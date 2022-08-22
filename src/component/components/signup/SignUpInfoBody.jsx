@@ -14,7 +14,11 @@ function SignUpInfoBody() {
     userId: "",
     password: "",
     userName: "",
-    address: "",
+
+    zoneCode: 0,
+    roadAddress: "",
+    detailAddress: "",
+
     phoneNumber: "",
     userEmail: "",
 
@@ -34,7 +38,7 @@ function SignUpInfoBody() {
 
   useEffect(() => {
     // console.log("정상적인 값");
-    console.log(integrateInfo);
+    // console.log(integrateInfo);
   }, [integrateInfo]);
 
   const handleSignUp = (e) => {
@@ -46,7 +50,11 @@ function SignUpInfoBody() {
         userId: integrateInfo.userId,
         pwd: integrateInfo.password,
         name: integrateInfo.userName,
-        address: integrateInfo.address,
+
+        zoneCode: 0,
+        roadAddress: "",
+        detailAddress: "",
+
         phoneNum: integrateInfo.phoneNumber,
         email: integrateInfo.userEmail,
 

@@ -22,19 +22,34 @@ function SignUpAddressPopup({ addressValue, setAddressValue }) {
         extraAddress +=
           extraAddress !== "" ? `, ${data.buildingName}` : data.buildingName;
       }
+
       fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
     }
 
     // 사용자가 선택한 주소값을 console 출력
     // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
-    // console.log(fullAddress);
+
+    // 우편번호
+    console.log(data.zonecode);
+
+    // 도로명 주소
+    console.log(fullAddress);
+
+    // 상세 주소
+    // console.log();
 
     // 결과값으로 result 상태 저장
-    SetResult(fullAddress);
+    SetResult(data.zonecode + ", " + fullAddress);
 
     // Parts를 사용하는 Components에 값을 전달
     // setAddressValue(fullAddress);
-    setAddressValue({ ...addressValue, ["address"]: fullAddress });
+
+    setAddressValue({
+      ...addressValue,
+      ["zoneCode"]: data.zonecode,
+      ["roadAddress"]: fullAddress,
+      ["address"]: fullAddress,
+    });
   };
 
   const handleClick = () => {
