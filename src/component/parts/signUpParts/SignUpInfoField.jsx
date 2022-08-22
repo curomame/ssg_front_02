@@ -6,6 +6,13 @@ import SignUpAddressPopup from "./SignUpAddressPopup";
 /* 모든 입력란에 대해 나눌 필요가 있으며,
 이 파일은 Layout으로 변경될 예정 */
 
+
+/**
+ * zoneCode : 우편번호
+ * roadAddress : 도로명주소
+ * detailAddress : 상세주소
+ */
+
 function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
   // 2개의 비밀번호 입력란 비교 결과값에 따라 출력되는 메시지를 저장
   const [passwordValidate, setpasswordValidate] = useState("");
@@ -18,7 +25,11 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
     password: "",
     passwordCheck: "",
     userName: "",
-    address: "",
+
+    zoneCode: "",
+    roadAddress: "",
+    detailAddress: "",
+
     phoneNumber: "",
     userEmail: "",
   });
@@ -28,12 +39,18 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
     // console.log(signUpData);
     setIntegrateInfo({
       ...integrateInfo,
-      ["userId"]: signUpData.userId,
-      ["password"]: signUpData.password,
-      ["userName"]: signUpData.userName,
-      ["address"]: signUpData.address,
-      ["phoneNumber"]: signUpData.phoneNumber,
-      ["userEmail"]: signUpData.userEmail,
+
+      userId: signUpData.userId,
+      password: signUpData.password,
+      userName: signUpData.userName,
+
+      zoneCode: signUpData.zoneCode,
+      roadAddress: signUpData.roadAddress,
+      detailAddress: signUpData.detailAddress,
+
+      phoneNumber: signUpData.phoneNumber,
+      userEmail: signUpData.userEmail,
+
     });
   }, [signUpData]);
 
@@ -191,7 +208,9 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
           onChange={handleChange}
         />
       </div>
+
       <hr />
+
       {/* 이메일 주소칸 */}
       <div>
         <label>
