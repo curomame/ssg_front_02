@@ -28,6 +28,6 @@
         "id" : 4,
         "icon" : "remove_red_eye",
         "title" : "최근본",
-        "url" : "/"
+        "url" : "/recent"
     }
 ]

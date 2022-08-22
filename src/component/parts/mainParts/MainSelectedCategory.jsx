@@ -19,14 +19,12 @@ function MainSelectedCategory() {
     { url && 
       axios.get(url)
       .then(res => setItemDatas(res.data))
-      // .then(err => console.error('axios get'+err))
-      // 에러 자꾸 발생해서 꺼둠
     }
     
   },[url]);
 
   useEffect(()=> {
-    setUrl(`http://10.10.10.167:8083/productCtgList/list/${isSelected+1}`)
+    setUrl(`http://10.10.10.167:8083/productCtgList/list/${+isSelected+1}`)
   },[isSelected])
 
 
@@ -35,7 +33,6 @@ function MainSelectedCategory() {
 
 
       <MainCategorySelect
-        setUrl={setUrl}
         isSelected={isSelected}
         setIsSelected={setIsSelected}
       />

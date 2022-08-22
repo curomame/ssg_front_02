@@ -1,19 +1,51 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import datas from '../../../assets/datas/mainDatas/mainBrandSelectDatas.json'
 
-function MainCategorySelect({setIsSelected}) {
-
-  const [boxColor,setBoxColor] = useState(0);
-  //boxColor 기본 설정 0
-
+function MainCategorySelect({isSelected,setIsSelected}) {
 
   const handleRank = (e) => {
-    setIsSelected(Number(e.target.id))
+    setIsSelected(e.target.id)
   }
 
+  let idx = datas.length
+
+  const [coloringMenu, setColoringMenu] = useState({});
+
+  useEffect(() => {
+
+    const inputObj = {};
+
+    
+
+  })
+
+
+  useEffect(() => {
+    const newer = []
+    
+    console.log(coloringMenu)
+    console.log(coloringMenu[0],'here')
+
+
+    {coloringMenu[0] && 
+      (coloringMenu.filter((item,i) => {
+        if(item === '1'){
+          newer.push(0);
+        } else if (+isSelected === i){
+          newer.push(1);
+        } else {
+          newer.push(0);
+        }
+
+      }))
+      
+    }
+    
+    setColoringMenu(newer);
+    
+  },[isSelected])
 
   return (
     <>
@@ -21,7 +53,9 @@ function MainCategorySelect({setIsSelected}) {
         <ul className='mainRankLink'>
           {datas.map((data,i) => (
             <li 
-              className='mainRankLinkList'
+              className={coloringMenu[i]===1 
+                ? 'mainRankLinkList selected_red' 
+                : "mainRankLinkList"} 
               key={data.id}
               onClick={(e) => handleRank(e)}
               id={i}>

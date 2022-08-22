@@ -55,6 +55,7 @@ function SignUpCheckAd({ integrateInfo, setIntegrateInfo }) {
 
     setIntegrateInfo({
       ...integrateInfo,
+
       pointOpt1: checkData.pointOpt1,
       pointOpt2: checkData.pointOpt2,
       pointOptEmail: checkData.pointOptEmail,
@@ -64,6 +65,7 @@ function SignUpCheckAd({ integrateInfo, setIntegrateInfo }) {
       ssgOpt1: checkData.ssgOpt1,
       ssgOptEmail: checkData.ssgOptEmail,
       ssgOptSms: checkData.ssgOptSms,
+
     });
   }, [checkData, isCheckedPoint, isCheckedSsg]);
 

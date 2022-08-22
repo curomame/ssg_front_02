@@ -38,7 +38,9 @@ function SignUpInfoBody() {
 
   useEffect(() => {
     // console.log("정상적인 값");
+
     // console.log(integrateInfo);
+
   }, [integrateInfo]);
 
   const handleSignUp = (e) => {

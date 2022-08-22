@@ -6,6 +6,7 @@ import SignUpAddressPopup from "./SignUpAddressPopup";
 /* 모든 입력란에 대해 나눌 필요가 있으며,
 이 파일은 Layout으로 변경될 예정 */
 
+
 /**
  * zoneCode : 우편번호
  * roadAddress : 도로명주소
@@ -38,6 +39,7 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
     // console.log(signUpData);
     setIntegrateInfo({
       ...integrateInfo,
+
       userId: signUpData.userId,
       password: signUpData.password,
       userName: signUpData.userName,
@@ -48,6 +50,7 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
 
       phoneNumber: signUpData.phoneNumber,
       userEmail: signUpData.userEmail,
+
     });
   }, [signUpData]);
 

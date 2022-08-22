@@ -1,10 +1,16 @@
 import React, { useContext } from 'react'
-import {SearchModalContext} from '../../../context/SearchModalContext'
+import { useRecoilState } from 'recoil';
+// import {SearchModalContext} from '../../../context/SearchModalContext'
+import SearchModalState from '../../../recoil/atoms/SearchModalState';
 import Header from './Header';
 
 function SearchModal() {
 
-  const {isModal, setIsModal} = useContext(SearchModalContext);
+
+  // const {isModal, setIsModal} = useContext(SearchModalContext);
+
+  const [reModal, setReModal] = useRecoilState(SearchModalState);
+
 
   window.scrollTo({
     top: 0
@@ -15,7 +21,7 @@ function SearchModal() {
 
       
 
-      <div className="searchBarContainer" style={ {"display": isModal ? "block": "none"}}>
+      <div className="searchBarContainer" style={ {"display": reModal ? "block": "none"}}>
         <div className="searchBarBox">
           
           <Header
