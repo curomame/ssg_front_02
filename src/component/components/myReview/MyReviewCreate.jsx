@@ -49,6 +49,7 @@ function MyReviewCreate({orderId}) {
             </div>
           </div>
         
+
           <div><p>고객님의 리뷰가 다른 고객들에게 도움이 될 수 있어요!</p></div>
           <div><input type="textarea" onChange={(e)=>setContents(e.target.value)}/></div>
           <div className='myreviewCreateButton' onClick={handleWriteReview}>리뷰 작성!</div>

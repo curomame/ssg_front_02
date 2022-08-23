@@ -25,6 +25,7 @@ import Recent from './pages/Recent';
 import { RecoilRoot, useRecoilState } from 'recoil';
 import SearchModalState from './recoil/atoms/SearchModalState';
 import LocalStorage from './test/LocalStorage';
+import WishList from './pages/WishList';
 
 function App() {
 
@@ -48,12 +49,15 @@ function App() {
           <Route path="/mypage" element={<MyPage/>}/>
           
           <Route path="/cart" element={<Cart/>}/>
+
           <Route path='/review' element={<Review/>}/>
           <Route path="/review/write" element={<MyReviewCreate/>}>
             <Route path=':id' element={<MyReviewCreate />} />
           </Route>
 
           <Route path="/recent" element={<Recent/>}/>
+
+          <Route path="/wishlist" element={<WishList/>}/>
 
           <Route path="/review/update" element={<MyReviewUpdate/>}>
             <Route path=':id' element={<MyReviewUpdate />} />
@@ -76,7 +80,7 @@ function App() {
       </BrowserRouter>
 
     </SearchModalContext.Provider>
-    // </RecoilRoot>
+    </RecoilRoot>
   );
 }
 
