@@ -27,7 +27,7 @@ function SearchModal() {
           <Header
             type={'searchModal'}/>
           <div className='searchRecentKeyword'>
-            <div><span class="material-icons-outlined">error_outline</span></div>
+            <div><span className="material-icons-outlined">error_outline</span></div>
             <div><p>최근 검색어가 없습니다</p></div>
           </div>
 

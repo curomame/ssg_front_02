@@ -28,6 +28,7 @@ import MainBlankSpace from '../component/parts/mainParts/MainBlankSpace'
 import MainImgBanner from '../component/parts/mainParts/MainImgBanner'
 
 function Main() {
+
   return (
     <>
       <Header/>
@@ -55,7 +56,7 @@ function Main() {
       <MainBlankSpace px={60}/>
       
       <MainBrandRank/>
-      
+      <MainBlankSpace px={60}/>
       {/* <hr />
       <MainLetsTryOn/>
       <hr />

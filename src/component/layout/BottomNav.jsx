@@ -13,7 +13,7 @@ function BottomNav() {
           <div className="bottomNav">
             <ul>
               {NavMenu && NavMenu.map(menu => (
-                <li>
+                <li key={menu.id}>
                     
                     {menu.onClick ? 
                     <div className="bottonNavFont" key={menu.id} onClick={() => {setReModal(!reModal)}}>

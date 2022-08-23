@@ -5,11 +5,13 @@ function MyReviewBoxs({datas}) {
 
   const [reviewId, setReviewId] = useState(0)
 
+
+
   
   return (
     <>
 
-      {datas && 
+      {datas ? 
       datas.map((item)=> 
       
       <div key={item.orderId || item.reviewId} className='myReviewBoxsContainer'>
@@ -31,6 +33,13 @@ function MyReviewBoxs({datas}) {
           
         </div>
       </div>)
+      :
+      <div>
+        <p>최근 3개월간 구매 내역이 없습니다.</p>
+
+        <p>SSG.COM이 준비한 상품들을 구매하시고</p>
+        <p>리뷰를 작성하시면 다양한 혜택을 받을 수 있습니다.</p>
+      </div>
       }
       
     </>

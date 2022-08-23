@@ -21,10 +21,11 @@ function Review() {
 
   useEffect(()=>{
 
-    axios.get('http://10.10.10.108:8080/user/review/already/1')
+    axios.get('http://10.10.10.167:8080/user/review/already/1')
       .then(res => setCantReview(res.data.data))
-    axios.get('http://10.10.10.108:8080/user/review/notYet/1')
+    axios.get('http://10.10.10.167:8080/user/review/notYet/1')
       .then(res=> setAbleReview(res.data.data))
+      .catch(err => console.error(err.response.data.detail))
 
   },[]);
 
@@ -35,7 +36,9 @@ function Review() {
 
       <Header
         type={'myReviw'}/>
-      <MainImgBanner/>
+      <MainImgBanner
+        src={"https://sui.ssgcdn.com/cmpt/banner/202207/2022072820481302228584678858_897.jpg"}
+      />
       <div className='myReviewContainer'>
 
         <div onClick={(e)=>handleChangeClicked(e)} className={'myReviewSelectBox_'+`${isClicked}`}>

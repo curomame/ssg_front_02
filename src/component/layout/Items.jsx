@@ -23,7 +23,7 @@ function Items({itemDatas,row}) {
           <div className='mainItems'>
             <div>
               <img 
-            src={"https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202207/2022072913301745431834913283_620.jpg&w=750&t=1b1ed0795e074eba045ba768cadf532d6fc57a87"} 
+            src={`http://10.10.10.167:8080/display?fileName=${item.titleImgUrl}`} 
             alt={'사진'}
             width="135px"
             height="135px"

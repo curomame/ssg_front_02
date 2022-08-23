@@ -51,3 +51,60 @@
   font-size: 12px;
   color: #888;
 }
+
+
+.cartItemContainer{
+  display: flex;
+}
+
+.cartItemBox{
+  width: 100%;
+}
+
+.cartItemImg{
+  background-color: red;
+  width: 85px;
+  height: 85px;
+}
+
+.cartItemTitleFunc{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartItemTitleTitleOption{
+  display: flex;
+  flex-direction: column;
+}
+
+.cartItemPrice{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartItemPricePNM{
+  display: flex;
+}
+
+.cartItemButton{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.cartItemButton div{
+  width: 100%;
+}
+
+.cartTotalPrice{
+  margin: 6px 14px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+.cartTotalPrice div:not(first-child){
+  display: flex;
+  justify-content: space-between;
+}

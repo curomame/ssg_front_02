@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
+import CommonWishParts from '../component/parts/commonsParts/CommonWishParts'
 
 function Test() {
 
@@ -59,9 +60,16 @@ function Test() {
 
 
 
+
+
   return (
     <>
-      
+        <CommonWishParts/>
+
+        <br />
+        <br />
+        <br />
+        
       
       <input onChange={onLoadFile} type="file" id="imgs" name="imgs"/>
       <div onClick={handleClick}>이미지 보내기!</div>

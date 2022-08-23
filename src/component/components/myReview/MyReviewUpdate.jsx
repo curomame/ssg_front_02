@@ -8,8 +8,6 @@ function MyReviewUpdate() {
   
   const pathid = useParams();
   const [contents, setContents] = useState();
-  
-  console.log(pathid.id)
 
 
   const handleUpdateReview = () => {
@@ -31,6 +29,12 @@ function MyReviewUpdate() {
     }).then(res => console.log(res))
 }
 
+  const upLoadImg = (e) => {
+    const file = e.target.files;
+    console.log(file);
+  }
+
+
   return (<>
     <Header
       type={'writeReview'}/>
@@ -45,8 +49,14 @@ function MyReviewUpdate() {
             </div>
           </div>
         
+          
+
           <div><p>리뷰를 수정할수있습니다.</p></div>
           <div><input type="textarea" onChange={(e)=>setContents(e.target.value)}/></div>
+
+          <div>사진 업로드</div>
+          <input onChange={upLoadImg} type="file" id="imgs" name="imgs"/>
+
           <div className='myreviewCreateButton' onClick={handleUpdateReview}>리뷰 작성!</div>
     
 
