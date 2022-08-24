@@ -8,10 +8,12 @@ function CategoryMainGrid() {
   const [categoryDatas, setCategoryDatas] = useState('');
 
 
+
   useEffect(()=>{
-    axios.get("http://10.10.10.167:8083/ProductCategory/findAll/mCtg")
+    axios.get("http://10.10.10.167:8080/ProductCategory/findAll/mCtg",{
+    })
       .then(res => setCategoryDatas(res.data))
-      .then(err => console.error('카테고리 통신'+err))
+      .then(err => console.error(err))
   },[])
 
     

@@ -5,7 +5,7 @@ import CommonWishParts from '../component/parts/commonsParts/CommonWishParts'
 
 function Test() {
 
-  const PhotoUrl = "http://10.10.10.167:8083/uploadAjax/product"
+  const PhotoUrl = "http://10.10.10.167:8080/uploadAjax/product"
 
 
   const [formdata, setFromdata] = useState(new FormData())
@@ -26,6 +26,8 @@ function Test() {
     const formdata = new FormData();
     formdata.append('uploadFiles',files[0])
 
+    console.log([].concat(...formdata));
+
     const config = {
       Headers : {
         'content-type':'multipart/form-data'
@@ -35,6 +37,9 @@ function Test() {
     axios.post(PhotoUrl,formdata,config)
       .then(res => setTestImg(res.data[0].imageURL))
 
+    console.log(formdata)
+    
+
   }
 
 
@@ -42,7 +47,7 @@ function Test() {
 
 
     if(testImg){
-      setInputImg(axios.get(`http://10.10.10.167:8083/display?fileName=${testImg}`,
+      setInputImg(axios.get(`http://10.10.10.167:8080/display?fileName=${testImg}`,
       {
       Headers:{
         'content-type':'image/png'
@@ -74,7 +79,7 @@ function Test() {
       <input onChange={onLoadFile} type="file" id="imgs" name="imgs"/>
       <div onClick={handleClick}>이미지 보내기!</div>
       
-      <div className='img_box' style={{"background":`url(http://10.10.10.167:8083/display?fileName=${testImg})`, width:"100px", height:"100px" }}> </div>
+      <div className='img_box' style={{"background":`url(http://10.10.10.167:8080/display?fileName=${testImg})`, width:"100px", height:"100px" }}> </div>
       <img src={inputImg} alt="" />
 
     </>

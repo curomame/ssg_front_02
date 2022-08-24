@@ -11,10 +11,10 @@ function CommonItem({datas}) {
   {datas && 
 
 
-    datas.map(item => 
+    datas.map((item) => 
 
       
-      <div className="" style={{"width":"45%", "margin":"0px","padding":"35px 7px 12px 8px"}}>
+      <div key={item.wishId} className="" style={{"width":"45%", "margin":"0px","padding":"35px 7px 12px 8px"}}>
         {/* <div>
           <div><p>SSG개런티</p></div>
         </div> */}

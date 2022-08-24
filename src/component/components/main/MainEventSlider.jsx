@@ -40,9 +40,9 @@ function MainEventSlider({datas, height, numbering, }) {
   return (
     <>
     
-    <div style={{"width":"100%", "position":"relative"}}>
+    <div style={{"width":"100%", "height":"60%", "position":"relative"}}>
 
-      <p style={{"zIndex":"100" ,"position":"absolute","top":"65%",color:"white",fontSize:"20px","fontWeight":"600","marginLeft":"15px"}}>{current} - {mainEventSliderDatas.length}</p>
+      <p style={{"zIndex":"100" ,"position":"absolute","top":"63%",color:"white",fontSize:"14px","fontWeight":"600","marginLeft":"15px","letterSpacing":"-1px"}}>{current} - {mainEventSliderDatas.length}</p>
 
       <Slider className="mainUpperSlider" {...settings}>
         
@@ -50,7 +50,7 @@ function MainEventSlider({datas, height, numbering, }) {
         ? mainEventSliderDatas.map((img) => (
           <div key={img.id}>
             <img style={{"width":"100%"}} src={img.url} alt={img.alt}/>
-            <div style={{"position":"fixed","bottom":"10%",color:"white",fontSize:"20px","fontWeight":"600","marginLeft":"15px"}}>
+            <div style={{"position":"fixed","bottom":"20%",color:"white",fontSize:"16px","fontWeight":"600","marginLeft":"15px"}}>
               <h2>{img.title}</h2>
               <p>{img.sub}</p>
             </div>

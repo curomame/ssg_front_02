@@ -14,11 +14,6 @@ function LoginFieldSet() {
     })
 
 
-// 에러관련 헨들링
-// 정상적으로 입력이 안됐습니다.
-// 입력될때 
-// 아이디패스워드 틀립니다.
-
 // 
 // 아이디 공백, 특수문자,길이 6자이상 20자 이하
 // 비밀번호 공백, 대소 섞여야하고, 특수문자 하나, 숫자 하나, 14자 이상 30자이하
@@ -57,21 +52,20 @@ function LoginFieldSet() {
           }
 
           
-          axios.get("http://10.10.10.107:8083/user/login", {
-
-          data : JSON.stringify(pushData)
-        }
+          axios.post("http://10.10.10.107:8080/user/login",
+            loginData
             )
-        .then(res => {console.log(res.data)})
+
+        .then(res => {
+          console.log(res.data.detail)
+          localStorage.setItem("Authorization",res.data.detail)
+        })
         .catch(error => {console.error(error)})
 
-        console.log(loginData.userId)
-        console.log(loginData.pwd)
-        console.log(typeof pushData);
-
         }
 
-
+        
+        console.log(loginData);
 
         
 
@@ -115,6 +109,7 @@ function LoginFieldSet() {
             <span><Link to="/signup">회원가입</Link></span>
         </div>
         
+
       </div>
     </div>
   )
