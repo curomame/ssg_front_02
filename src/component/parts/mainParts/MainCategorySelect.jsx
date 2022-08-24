@@ -11,40 +11,21 @@ function MainCategorySelect({isSelected,setIsSelected}) {
 
   let idx = datas.length
 
-  const [coloringMenu, setColoringMenu] = useState({});
+  const [colorIndex, setColorIndex] = useState(new Array(idx))
 
   useEffect(() => {
+    colorIndex[0] = 1;
+    setColorIndex(colorIndex)
 
-    const inputObj = {};
-
-    
-
-  })
-
+  },[])
 
   useEffect(() => {
-    const newer = []
     
-    console.log(coloringMenu)
-    console.log(coloringMenu[0],'here')
+    const temp = colorIndex.indexOf(1) 
+    colorIndex[temp] = 0;
+    colorIndex[isSelected] = 1;
+    setColorIndex(colorIndex);
 
-
-    {coloringMenu[0] && 
-      (coloringMenu.filter((item,i) => {
-        if(item === '1'){
-          newer.push(0);
-        } else if (+isSelected === i){
-          newer.push(1);
-        } else {
-          newer.push(0);
-        }
-
-      }))
-      
-    }
-    
-    setColoringMenu(newer);
-    
   },[isSelected])
 
   return (
@@ -53,7 +34,7 @@ function MainCategorySelect({isSelected,setIsSelected}) {
         <ul className='mainRankLink'>
           {datas.map((data,i) => (
             <li 
-              className={coloringMenu[i]===1 
+              className={colorIndex[i]===1
                 ? 'mainRankLinkList selected_red' 
                 : "mainRankLinkList"} 
               key={data.id}

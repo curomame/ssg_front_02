@@ -8,16 +8,16 @@ import axios from "axios";
 import { useEffect } from "react";
 
 function SignUpInfoBody() {
-  const url = "http://10.10.10.99:8080/user/signup";
+  const url = "http://10.10.10.107:8080/user/signup";
 
   const [integrateInfo, setIntegrateInfo] = useState({
     userId: "",
     password: "",
     userName: "",
 
-    zoneCode: 0,
-    roadAddress: "",
-    detailAddress: "",
+    // zoneCode: 0,
+    // roadAddress: "",
+    // detailAddress: "",
 
     phoneNumber: "",
     userEmail: "",
@@ -34,6 +34,13 @@ function SignUpInfoBody() {
 
     ssgOptEmail: false,
     ssgOptSms: false,
+
+    "userAddress": {
+      "addrStreet":"도로명",
+      "addrDetail":"상세주소",
+      "addrZipCode":123,
+      "addrDefault" : true
+     }
   });
 
   useEffect(() => {

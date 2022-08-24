@@ -26,6 +26,7 @@ import { RecoilRoot, useRecoilState } from 'recoil';
 import SearchModalState from './recoil/atoms/SearchModalState';
 import LocalStorage from './test/LocalStorage';
 import WishList from './pages/WishList';
+import CategoryAtomAxios from './component/components/Invisible/CategoryAtomAxios';
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
     <RecoilRoot>
     <SearchModalContext.Provider value={{isModal,setIsModal}}>
       <BrowserRouter>
+      <CategoryAtomAxios/>
       <SearchModal/>
         <Routes>
           <Route path="/" element={<Main/>}/>
