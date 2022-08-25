@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
-import CommonWishParts from '../component/parts/commonsParts/CommonWishParts'
+// import CommonWishParts from '../component/parts/commonsParts/CommonWishParts'
 
 function Test() {
 
   const PhotoUrl = "http://10.10.10.167:8080/uploadAjax/product"
-
 
   const [formdata, setFromdata] = useState(new FormData())
 
@@ -69,7 +68,7 @@ function Test() {
 
   return (
     <>
-        <CommonWishParts/>
+        {/* <CommonWishParts/> */}
 
         <br />
         <br />

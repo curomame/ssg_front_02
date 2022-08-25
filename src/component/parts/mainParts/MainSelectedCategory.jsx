@@ -16,7 +16,7 @@ function MainSelectedCategory() {
   const [url, setUrl] = useState(`http://10.10.10.167:8080/productCtgList/list/1`)
 
 
-  console.log(itemDatas)
+  // console.log(itemDatas)
 
   useEffect(() => {
     { url && 
@@ -34,18 +34,17 @@ function MainSelectedCategory() {
   return (
     <>
 
-
       <MainCategorySelect
         isSelected={isSelected}
         setIsSelected={setIsSelected}
       />
-
 
       <div style={{"marginLeft":"15px", "marginTop":"10px"}}>
         <Items
           itemDatas={itemDatas}
           row={row}
         />
+
       </div>
 
 

@@ -21,7 +21,8 @@ function SearchModal() {
 
       
 
-      <div className="searchBarContainer" style={ {"display": reModal ? "block": "none"}}>
+      <div className="searchBarContainer" 
+           style={ {"display": reModal ? "block": "none"}}>
         <div className="searchBarBox">
           
           <Header
@@ -32,7 +33,7 @@ function SearchModal() {
           </div>
 
           <div>
-            <h2>추천앙냥냥</h2>
+            <h2>추천태그</h2>
           </div>
 
         </div>

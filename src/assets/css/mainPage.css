@@ -29,16 +29,33 @@ h3 {
     margin-left: 10px;
 }
 
+.upperCategoryContainer{
+    /* font-size: 15px; */
+   overflow:scroll;
+   width:"100%";
+}
+
+.upperCategoryContainer::-webkit-scrollbar{
+    display: none;
+}
 
 .upperCategory {
     
-    overflow-x:scroll;
+    display: flex;
+    width: 100%;
+    overflow: scroll;
+    height: 45px;
+    align-items: center;
+    margin: 0 15px;
+    justify-content: space-between;
+
+    /* overflow-x:scroll;
     width: 300%;
     list-style: none;
     display: flex;
     height: 45px;
     align-items: center;
-    margin: 0 15px;
+    margin: 0 15px; */
 }
 
 .upperCategory::-webkit-scrollbar{
@@ -46,6 +63,7 @@ h3 {
 }
 
 .upperCategory li {
+    font-size: 200px;
     margin-right: 20px;
     font-weight: 550;
     letter-spacing: -1.3px;
@@ -297,7 +315,7 @@ h3 {
 }
 
 .starNReview > div {
-    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .mainHyper {
@@ -434,6 +452,7 @@ h3 {
 
 .mainItems{
     margin-right: 6px;
+    position: relative;
 }
 
 

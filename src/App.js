@@ -27,25 +27,27 @@ import SearchModalState from './recoil/atoms/SearchModalState';
 import LocalStorage from './test/LocalStorage';
 import WishList from './pages/WishList';
 import CategoryAtomAxios from './component/components/Invisible/CategoryAtomAxios';
+import { TokenVerifying } from './context/TokenVerifying';
+import EmailTest from './test/EmailTest';
 
 function App() {
 
-  const [isModal, setIsModal] = useState(false);
+  const [isAuth, setIsAuth] = useState(false);
 
 
 
   return (
     <RecoilRoot>
-    <SearchModalContext.Provider value={{isModal,setIsModal}}>
       <BrowserRouter>
       <CategoryAtomAxios/>
       <SearchModal/>
         <Routes>
           <Route path="/" element={<Main/>}/>
+          
           <Route path="/category" element={<Category/>}/>
           <Route path="/category/:id" element={<CategoryDetailTopAll/>}/>
 
-          <Route path="/login" element={<Login/>}/>
+          
 
           
           <Route path="/mypage" element={<MyPage/>}/>
@@ -64,6 +66,8 @@ function App() {
           <Route path="/review/update" element={<MyReviewUpdate/>}>
             <Route path=':id' element={<MyReviewUpdate />} />
           </Route>
+          
+          <Route path="/login" element={<Login/>}/>
 
           <Route path="/signup" element={<SignUpMain/>}/>
           <Route path="/signup/terms" element={<SignUpTerms/>}/>
@@ -74,6 +78,7 @@ function App() {
 
 
           <Route path="/test" element={<Test/>}/>
+          <Route path="/emailtest" element={<EmailTest/>}/>
           <Route path="/testStorage" element={<LocalStorage/>}/>
           
 
@@ -81,7 +86,6 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-    </SearchModalContext.Provider>
     </RecoilRoot>
   );
 }

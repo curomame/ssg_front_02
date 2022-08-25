@@ -4,21 +4,21 @@ import Header from '../component/components/common/Header'
 import '../assets/css/cart.css'
 import { useState,useEffect } from 'react';
 import axios from 'axios';
+import { useRecoilValue } from 'recoil';
+import { TempAuthState } from '../recoil/atoms/TempAuthState';
 
 
 function Cart() {
 
   const login = false;
 
+  const tempAuth = useRecoilValue(TempAuthState)
   const [cartDatas, setCartDatas] = useState(null);
   const [cartCount, setCartCount] = useState([])
 
   useEffect(() => {
-    axios.get('http://10.10.10.167:8080/cart/1')
+    axios.get('http://10.10.10.167:8080/cart/101')
       .then(res => setCartDatas(res.data.data))
-    // return () => {
-    //   alert('페이지 벗어남 테스트')
-    // }
   },[])
 
 
@@ -82,7 +82,7 @@ function Cart() {
           type={'cart'}/>
         
         {/* 로그인이 되어 있지 않다면? */}
-        {login ? null: <CartNotLogin/>}
+        {tempAuth ? null: <CartNotLogin/>}
 
         {/* 장바구니 아이템 나오는 부분 */}
         {cartDatas ? 

@@ -22,9 +22,7 @@ function MainEventSlider({datas, height, numbering, }) {
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
-    // beforeChange:() => {
-    //   setCurrent(current-1);
-    // },
+
     afterChange: () => {
 
       if(current >= mainEventSliderDatas.length){

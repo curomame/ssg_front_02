@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CategoryMainSelectSub({categoryDatas,tempId,underId}) {
+function CategoryMainSelectSub({atomCategoryDatas,tempId,underId}) {
 
   // console.log(underId);
   // console.log(tempId,underId)
@@ -22,10 +22,10 @@ function CategoryMainSelectSub({categoryDatas,tempId,underId}) {
       <div className='categoryMainSubBoxBackGround' style={{"transform":`translateX(${-25*calculedNum}%)`}}>
       <div className='categoryMainSubBox' >
 
-        {categoryDatas[tempId] && 
+        {atomCategoryDatas[tempId] && 
           <div>
 
-        {categoryDatas[tempId].lcategoryList.map((data) => {
+        {atomCategoryDatas[tempId].lcategoryList.map((data) => {
 
           return <div key={data.id}>{data.name}</div>
         

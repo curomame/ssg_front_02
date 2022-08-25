@@ -1,75 +1,50 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-
-// 로그인 영역 파츠
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'
+import { useRecoilState } from 'recoil';
+import { TempAuthState } from '../../../recoil/atoms/TempAuthState';
 
 
 
 function LoginFieldSet() {
 
-    const [loginData, setLoginData] = useState({
-        userId: "",
-        pwd: ""
+  const navigate = useNavigate();
+  const tempToken = localStorage.getItem("Authorization");
+  const [tempAuth, setTempAuth] = useRecoilState(TempAuthState);
+
+
+  const [login, setLogin] = useState(false);
+
+
+  useEffect(()=>{
+    {tempAuth && navigate('/') }
+  },[login])
+
+  const [loginData, setLoginData] = useState({
+      userId: "",
+      pwd: ""
     })
 
 
-// 
-// 아이디 공백, 특수문자,길이 6자이상 20자 이하
-// 비밀번호 공백, 대소 섞여야하고, 특수문자 하나, 숫자 하나, 14자 이상 30자이하
+  const remindAuth = () => {
+
+  }
 
 
-    const handleChange = ( e ) => {
-        setLoginData(
-            { ...loginData, [e.target.name]: e.target.value }
-        )
-    }
+  const handleChange = ( e ) => {
+      setLoginData({...loginData, [e.target.name]: e.target.value })}
 
-    const handleLogin = ( e ) => {
-        e.preventDefault()
 
-        const ID_PATTERN =  /[`~!@#$%^&*|\\\'\";:\/?]/gi;
-        
-
-        // const PWD_PATTERN1 =  /[`~!@#$%^&*|\\\'\";:\/?0-9A-Za-z]/gi;
-        // const PWD_PATTERN2 =  /[0-9]/gi;
-        // const PWD_PATTERN3 =  /[A-Za-z]/gi;
-
-        // testtest123
-        // Sssg123123!
-
-        if(loginData.userId.trim() === ''){
-          alert('아이디를 입력해주세요.')
-        } else if (loginData.pwd.trim() === ''){
-          alert('비밀번호를 입력해주세요.')
-        } else if ((ID_PATTERN.test(loginData.userId.trim()) === true) || loginData.userId.length < 6 || loginData.userId.length > 21){
-          alert('아이디, 비밀번호가 정확하지 않습니다.')
-        } else {
-
-          let pushData = {
-            "userId" : loginData.userId,
-            "pwd" : loginData.pwd
-          }
-
-          
-          axios.post("http://10.10.10.107:8080/user/login",
-            loginData
-            )
-
+  const handleLogin = ( ) => {
+      axios.post("http://10.10.10.167:8080/user/login",loginData)
         .then(res => {
-          console.log(res.data.detail)
-          localStorage.setItem("Authorization",res.data.detail)
+        localStorage.setItem("Authorization",res.data.detail)
+        setTempAuth(true);
+        setLogin(true)
         })
         .catch(error => {console.error(error)})
-
-        }
-
-        
-        console.log(loginData);
-
-        
-
-    }
+  }
 
 
   return (
@@ -102,12 +77,7 @@ function LoginFieldSet() {
             <div onClick={handleLogin} className='loginButton'>로그인</div>
         </div>
 
-          
-        <div className='loginSubMenu'>
-            <span><Link to="/findIdPw">아이디 찾기</Link></span>
-            <span><Link to="/findIdPw">비밀번호 찾기</Link></span>
-            <span><Link to="/signup">회원가입</Link></span>
-        </div>
+        
         
 
       </div>

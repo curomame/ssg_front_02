@@ -9,9 +9,9 @@
   position:fixed;
 }
 
-.searchBarBox {
+/* .searchBarBox {
   margin:5px 15px;
-}
+} */
 
 .searchPreIconBox {
   width: 30px;
@@ -406,29 +406,54 @@ font-size: 11px;
 }
 
 .searchModal{
-  height: 60px;
+  /* background-color: red; */
+  padding: 10px;
+  height: 40px;
   display: flex;
   justify-content: space-between;
 }
-.searchModalRight{
-  display: flex;
-  
-}
 
-.searchModalRight div span{
+
+.searchModalLeft span{
   line-height: 40px;
 }
 
-.searchModalInput{
+.searchModalRightBox{
+  display: flex;
   position: relative;
 }
 
-.searchModalIcon{
+
+.searchModalMiddleProps span{
+  /* background-color: blue; */
   position: absolute;
-  right: 4px;
-  top: 20%;
+  right: 10%;
+  line-height: 40px;
+} 
+
+.searchModalMiddleProps input{
+  line-height: 40px;
+  min-width: 340px;
+  border: none;
 }
 
-.searchModalRight{
+.searchModalCart span{
+  line-height: 40px;
+  margin-left: 6px;
+}
+
+/* 위시리스트 */
+
+.wishListIconInnerContainer{
   display: flex;
+  position: absolute;
+  top: 46%;
+  right: 10%;
+  color: #dbdbe0;
+
+}
+
+.redicon {
+  color: red;
+  /* background-color: red; */
 }

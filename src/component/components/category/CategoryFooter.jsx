@@ -4,7 +4,7 @@ function CategoryFooter() {
   return (
     <>
 
-      <div style={{"display":"flex"}}>
+      <div className='categoryFooter'>
         <p>고객센터</p>
         <p>제안해봐쓱</p>
         <p>공지사항</p>

@@ -22,7 +22,7 @@
         "id": 3,
         "icon" : "perm_identity",
         "title" : "My",
-        "url" : "/login"
+        "url" : "/mypage"
     },
     {
         "id" : 4,

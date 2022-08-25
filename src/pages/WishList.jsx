@@ -12,7 +12,7 @@ function WishList() {
 
   useEffect(() => {
 
-    axios.get('http://10.10.10.167:8080/user/wish/1')
+    axios.get('http://10.10.10.167:8080/user/wish/101')
     .then(res => setWishDatas(res.data.data))
 
   },[])

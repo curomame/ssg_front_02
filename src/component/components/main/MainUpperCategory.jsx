@@ -6,7 +6,7 @@ import menus from "../../../assets/datas/mainCategory.json"
 function MainUpperCategory() {
   return (
     <>
-    <div>
+    <div className='upperCategoryContainer' >
       <ul className='upperCategory'>
           {
             menus && menus.map(menu=>(

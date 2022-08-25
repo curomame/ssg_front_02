@@ -50,17 +50,17 @@ function Header({type}) {
     case 'searchModal':
       return <div className='searchModal'>
 
-                    <div><span className="material-icons-outlined" onClick={() => (setReModal(!reModal))}>arrow_back</span></div>
+                    <div className='searchModalLeft'><span className="material-icons-outlined" onClick={() => (setReModal(!reModal))}>arrow_back</span></div>
                     
-                    <div className='searchModalRight'>
-                    <div>
-                      <div className='searchModalInput'>
-                      <input type="text" placeholder='검색어를 입력하세요!'/>
-                      <span className="searchModalIcon material-icons-outlined">search</span>
-                    </div>
-                    </div>
+                    <div className='searchModalRightBox'>
+                      <div>
+                        <div className='searchModalMiddleProps'>
+                          <input type="text" placeholder='검색어를 입력하세요!' />
+                          <span className="material-icons-outlined">search</span>
+                        </div>
+                      </div>
 
-                      <div><span className="material-icons-outlined"><Link to='/cart'>shopping_cart</Link></span></div>
+                      <div className='searchModalCart'><span className="material-icons-outlined"><Link to='/cart'>shopping_cart</Link></span></div>
                     </div>
                   
                 
