@@ -21,9 +21,19 @@ function Review() {
 
   useEffect(()=>{
 
-    axios.get('http://10.10.10.167:8080/user/review/already/1')
-      .then(res => setCantReview(res.data.data))
-    axios.get('http://10.10.10.167:8080/user/review/notYet/1')
+    axios.get('http://10.10.10.167:8080/user/review/already/101',{
+      header:{
+        'Authorization':localStorage.getItem('Authorization')
+      }
+    })
+      .then(res => {
+        setCantReview(res.data.data)
+      })
+    axios.get('http://10.10.10.167:8080/user/review/notYet/101',{
+      header:{
+        'Authorization':localStorage.getItem('Authorization')
+      }
+    })
       .then(res=> setAbleReview(res.data.data))
       .catch(err => console.error(err.response.data.detail))
 

@@ -6,7 +6,7 @@ function CommonWishListParts({type,productId}) {
   
 
   //type inner outer
-  const url = "http://10.10.10.117:8080/user/wish/add"
+  const url = "http://10.10.10.167:8080/user/wish/add"
   const [wish,setWish] = useState(false);
 
   const handleWishListToggle = () => {

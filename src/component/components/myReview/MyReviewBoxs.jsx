@@ -5,12 +5,9 @@ function MyReviewBoxs({datas}) {
 
   const [reviewId, setReviewId] = useState(0)
 
-
-
-  
   return (
     <>
-
+    
       {datas ? 
       datas.map((item)=> 
       

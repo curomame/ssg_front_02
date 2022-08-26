@@ -2,8 +2,6 @@ import React from 'react'
 
 function CategoryItem({item}) {
 
-  console.log(item);
-
   return (
     <>
       <div className="categoryItemContainer" style={{"width":"50%", "marginTop":"10px"}}>

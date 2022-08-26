@@ -20,7 +20,7 @@ function CommonItem({datas}) {
         </div> */}
    <Link to='#' style={{width:"100%"}}>
         <div>
-          <div><img style={{"width":"100%"}} src={`http://10.10.10.167:8080/display?fileName=${datas[0].titleImgUrl}`} alt="" /></div>
+          <div><img style={{"width":"100%"}} src={datas[0].titleImgUrl ?`http://10.10.10.167:8080/display?fileName=${datas[0].titleImgUrl}`:""} alt="ㅠㅠ" /></div>
           
           <div className='categoryItemText'>
           

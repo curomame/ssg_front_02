@@ -6,6 +6,8 @@ import SignUpAddressPopup from "./SignUpAddressPopup";
 /* 모든 입력란에 대해 나눌 필요가 있으며,
 이 파일은 Layout으로 변경될 예정 */
 
+// 도로명 api = devU01TX0FVVEgyMDIyMDgyNjEzNDI1OTExMjkyMDk=
+
 
 /**
  * zoneCode : 우편번호
@@ -18,39 +20,28 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
   const [passwordValidate, setpasswordValidate] = useState("");
 
   // Address Parts에서 주소 결과값을 저장
-  const [addressValue, setAddressValue] = useState("");
+  // const [addressValue, setAddressValue] = useState("");
 
   const [signUpData, setSignUpData] = useState({
-    userId: "",
-    password: "",
-    passwordCheck: "",
-    userName: "",
+    "userId": "",
+    "pwd": "",
+    "pwdCheck": "",
+    "name": "",
 
-    zoneCode: "",
-    roadAddress: "",
-    detailAddress: "",
+    "zoneCode": "",
+    "roadAddress": "",
+    "detailAddress": "",
 
-    phoneNumber: "",
-    userEmail: "",
+    "phoneNum": "",
+    "email": "",
   });
 
   useEffect(() => {
     // 여기에 Test 코드를 작성
-    // console.log(signUpData);
+    // console.log(signUpData,'jere');
     setIntegrateInfo({
       ...integrateInfo,
-
-      userId: signUpData.userId,
-      password: signUpData.password,
-      userName: signUpData.userName,
-
-      zoneCode: signUpData.zoneCode,
-      roadAddress: signUpData.roadAddress,
-      detailAddress: signUpData.detailAddress,
-
-      phoneNumber: signUpData.phoneNumber,
-      userEmail: signUpData.userEmail,
-
+      ...signUpData
     });
   }, [signUpData]);
 
@@ -75,10 +66,11 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
       handleEmailCheck(e.target.value);
     }
 
-    // 입력받은 문자열이 정규표현식을 만족여부를 판별하여 입력받음.
-    if (regex.test(e.target.value)) {
-      setSignUpData({ ...signUpData, [e.target.name]: e.target.value });
-    }
+    // // 입력받은 문자열이 정규표현식을 만족여부를 판별하여 입력받음.
+    // if (regex.test(e.target.value)) {
+      
+    // }
+    setSignUpData({ ...signUpData, [e.target.name]: e.target.value });
   };
 
   // 비밀번호 검증을 위한 코드
@@ -123,34 +115,38 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
   };
 
   return (
-    <div>
-      {/* 아이디 입력칸 */}
-      <div>
-        <label>
-          아이디
-          <input
-            type="text"
-            name="userId"
-            placeholder="영어 또는 숫자로 6~20자리"
-            value={signUpData.userId}
-            onChange={handleChange}
-            maxLength="20"
-          />
-        </label>
+    <div className="signupInfoFieldContainer">
+
+      <div className="signupInfoFieldBox">
+        <div className="signupInfoFieldBoxUnder">
+          <div>아이디</div>
+          <div>
+            <input
+              type="text"
+              name="userId"
+              placeholder="영어 또는 숫자로 6~20자리"
+              value={signUpData.userId}
+              onChange={handleChange}
+              maxLength="20"
+            />
+          </div>
+        </div>
+
         <button onClick={handleCheckId}>중복 확인</button>
+
+
       </div>
 
       <hr />
 
-      {/* 비밀번호 입력칸 */}
-      <div style={{ display: "flex" }}>
-        <label>비밀번호</label>
+      <div className="signupInfoFieldBoxUnder">
+        <div>비밀번호</div>
         <div>
           <input
             type="password"
-            name="password"
+            name="pwd"
             placeholder="영문, 숫자 조합 8~20자리"
-            value={signUpData.password}
+            value={signUpData.pwd}
             onChange={handleChange}
             maxLength="20"
           />
@@ -159,9 +155,9 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
           {/* 비밀번호 재입력칸 */}
           <input
             type="password"
-            name="passwordCheck"
+            name="pwdCheck"
             placeholder="비밀번호 재확인"
-            value={signUpData.passwordCheck}
+            value={signUpData.pwdCheck}
             maxLength="20"
             onChange={handleChange}
           />
@@ -175,20 +171,18 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
 
       <hr />
 
-      {/* 이름칸 */}
-      <div>
-        <label>이름</label>
+      <div className="signupInfoFieldBoxUnder">
+        <div>이름</div>
         <input
           type="text"
-          name="userName"
-          value={signUpData.userName}
+          name="name"
+          value={signUpData.name}
           onChange={handleChange}
         />
       </div>
 
       <hr />
 
-      {/* 주소 입력칸 */}
       <div>
         <SignUpAddressPopup
           addressValue={signUpData}
@@ -198,9 +192,8 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
 
       <hr />
 
-      {/* 휴대폰 번호칸 */}
-      <div>
-        <label>휴대폰 번호</label>
+      <div className="signupInfoFieldBoxUnder">
+        <div>휴대폰 번호</div>
         <input
           type="text"
           name="phoneNumber"
@@ -211,19 +204,16 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
 
       <hr />
 
-      {/* 이메일 주소칸 */}
-      <div>
-        <label>
-          이메일주소
+        <div className="signupInfoFieldBoxUnder">
+          <div> 이메일주소</div>
           <input
             type="text"
-            name="userEmail"
+            name="email"
             placeholder="이메일주소"
             value={signUpData.userEmail}
             onChange={handleChange}
           />
-        </label>
-      </div>
+        </div>
     </div>
   );
 }

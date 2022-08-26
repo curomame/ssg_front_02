@@ -6,13 +6,8 @@ import Category from './pages/Category';
 import Login from './pages/Login';
 import Main from './pages/Main';
 
-import {SearchModalContext} from './context/SearchModalContext'
 import SearchModal from './component/components/common/SearchModal';
 import CategoryDetailTopAll from './component/components/category/CategoryDetailTopAll';
-import SignUpTerms from './pages/signUpPage/SignUpTerms';
-import SignUpInfo from './pages/signUpPage/SignUpInfo';
-import SignUpComplete from './pages/signUpPage/SignUpComplete';
-import SignUpMain from './pages/signUpPage/SignUpMain'
 
 import './assets/css/common.css'
 import ProductDetail from './pages/ProductDetail';
@@ -23,16 +18,22 @@ import MyReviewCreate from './component/components/myReview/MyReviewCreate';
 import MyReviewUpdate from './component/components/myReview/MyReviewUpdate';
 import Recent from './pages/Recent';
 import { RecoilRoot, useRecoilState } from 'recoil';
-import SearchModalState from './recoil/atoms/SearchModalState';
 import LocalStorage from './test/LocalStorage';
 import WishList from './pages/WishList';
 import CategoryAtomAxios from './component/components/Invisible/CategoryAtomAxios';
-import { TokenVerifying } from './context/TokenVerifying';
 import EmailTest from './test/EmailTest';
+import DetailProduct from './pages/DetailProduct';
+import SignUp from './pages/SignUp';
+import SignUpEntry from './component/components/signup/SignUpEntry';
+import SignUpPoint from './component/components/signup/SignUpPoint';
+import SignUpInformation from './component/components/signup/SignUpInformation';
+import SignUpAuth from './component/components/signup/SignUpAuth';
+import Wrong from './pages/Wrong';
+import useAuthToken from './hooks/useAuthToken';
+import useStatusUpdate from './hooks/useStatusUpdate';
+import AuthStatusUpdate from './component/parts/commonsParts/AuthStatusUpdate';
 
 function App() {
-
-  const [isAuth, setIsAuth] = useState(false);
 
 
 
@@ -40,14 +41,13 @@ function App() {
     <RecoilRoot>
       <BrowserRouter>
       <CategoryAtomAxios/>
+      <AuthStatusUpdate/>    
       <SearchModal/>
         <Routes>
           <Route path="/" element={<Main/>}/>
           
           <Route path="/category" element={<Category/>}/>
           <Route path="/category/:id" element={<CategoryDetailTopAll/>}/>
-
-          
 
           
           <Route path="/mypage" element={<MyPage/>}/>
@@ -69,10 +69,15 @@ function App() {
           
           <Route path="/login" element={<Login/>}/>
 
-          <Route path="/signup" element={<SignUpMain/>}/>
-          <Route path="/signup/terms" element={<SignUpTerms/>}/>
-          <Route path="/signup/info" element={<SignUpInfo/>}/>
-          <Route path="/signup/complete>" element={<SignUpComplete/>}/>
+
+          <Route path="/detailproduct" element={<DetailProduct/>}/>
+
+          <Route path="/signup" element={<SignUp/>}>
+            <Route path="entry" element={<SignUpEntry/>}/>
+            {/* <Route path="point" element={<SignUpPoint/>}/> */}
+            <Route path="info" element={<SignUpInformation/>}/>
+            <Route path="auth" element={<SignUpAuth/>}/>
+          </Route>
 
           <Route path="/item/detail" element={<ProductDetail />} />
 
@@ -82,7 +87,7 @@ function App() {
           <Route path="/testStorage" element={<LocalStorage/>}/>
           
 
-          <Route path="/*" element={<div>nopage</div>}/>
+          <Route path="/*" element={<Wrong/>}/>
         </Routes>
       </BrowserRouter>
 

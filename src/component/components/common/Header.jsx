@@ -29,7 +29,7 @@ function Header({type}) {
     
     case 'login':
       return <div className='loginHeaderLayout'>
-                <div><span className="material-icons-outlined" onClick={()=>navigate(-1)}>arrow_back</span></div>
+                <div><span className="material-icons-outlined" onClick={()=>navigate('/')}>arrow_back</span></div>
                 <div><h3>로그인</h3></div>
                 <div></div>
               </div>
@@ -71,6 +71,20 @@ function Header({type}) {
       return <div className='loginHeaderLayout'>
               <div><span className="material-icons-outlined" onClick={()=>navigate(-1)}>arrow_back</span></div>
               <div><h3>리뷰 작성</h3></div>
+              <div></div>
+            </div>
+
+    case 'wish':
+      return <div className='loginHeaderLayout'>
+              <div><span className="material-icons-outlined" onClick={()=>navigate(-1)}>arrow_back</span></div>
+              <div><h3>좋아요</h3></div>
+              <div></div>
+            </div>
+
+    case 'signup':
+      return <div className='loginHeaderLayout'>
+              <div><span className="material-icons-outlined" onClick={()=>navigate(-1)}>arrow_back</span></div>
+              <div><h3>회원가입</h3></div>
               <div></div>
             </div>
 

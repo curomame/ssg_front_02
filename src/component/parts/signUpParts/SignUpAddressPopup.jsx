@@ -77,7 +77,8 @@ function SignUpAddressPopup({ addressValue, setAddressValue }) {
 
   return (
     <>
-      <label>주소</label>
+    <div className="signupInfoFieldBoxUnder">
+      <div>주소</div>
       <input
         type="text"
         name="address"
@@ -100,6 +101,7 @@ function SignUpAddressPopup({ addressValue, setAddressValue }) {
       <button type="button" onClick={handleClick}>
         우편번호
       </button>
+      </div>
     </>
   );
 }

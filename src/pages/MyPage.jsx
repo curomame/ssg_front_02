@@ -31,7 +31,7 @@ function MyPage() {
 
       <div className='mypageProfile'>
         <div className='mypageProfileIcon'>
-          <span class="material-icons-outlined">account_circle</span>
+          <img src="//sui.ssgcdn.com/ui/m_ssg/img/@100x100.png" alt="" />
         </div>
         <div className='mypageProfileDetail'>
           <div>이형민 님 {'>'}</div>
@@ -42,7 +42,7 @@ function MyPage() {
 
       <div className='mypageFunctions'>
         <div>
-          <p><span class="material-icons-outlined">favorite_border</span>좋아요</p>
+          <Link to='/wishlist'><span class="material-icons-outlined">favorite_border</span>좋아요</Link>
       </div>
         
         <div>
@@ -55,9 +55,10 @@ function MyPage() {
         
         </div>
 
-        <div>
+        <div className='mypageReviewBox'>
           <Link to='/review'>
-        <p><span class="material-icons-outlined">notifications</span>리뷰쓰러가깅</p>
+            <div><p>지금 작성 가능한 리뷰</p></div>
+            <div><p>일반 0 | 스페셜 0</p></div>
           </Link>
         </div>
           

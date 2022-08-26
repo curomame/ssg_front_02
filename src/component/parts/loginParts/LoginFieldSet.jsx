@@ -15,21 +15,16 @@ function LoginFieldSet() {
 
 
   const [login, setLogin] = useState(false);
-
+  // console.log(tempAuth,'loginpage');
 
   useEffect(()=>{
-    {tempAuth && navigate('/') }
+    {tempAuth && navigate(-1) }
   },[login])
 
   const [loginData, setLoginData] = useState({
       userId: "",
       pwd: ""
     })
-
-
-  const remindAuth = () => {
-
-  }
 
 
   const handleChange = ( e ) => {
@@ -42,8 +37,10 @@ function LoginFieldSet() {
         localStorage.setItem("Authorization",res.data.detail)
         setTempAuth(true);
         setLogin(true)
+        alert('로그인이 성공적으로 완료되었습니다!')
         })
-        .catch(error => {console.error(error)})
+        .catch(err => alert('회원 정보가 맞지 않습니다 :<'))
+        // .catch(error => alert('아이디와 비밀번호를 확인해주세요 :)'))
   }
 
 

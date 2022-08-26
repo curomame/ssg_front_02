@@ -19,7 +19,7 @@ function Login() {
       <div className='loginSubMenu'>
             <span><Link to="/findIdPw">아이디 찾기</Link></span>
             <span><Link to="/findIdPw">비밀번호 찾기</Link></span>
-            <span><Link to="/signup">회원가입</Link></span>
+            <span><Link to="/signup/entry">회원가입</Link></span>
         </div>
 
 

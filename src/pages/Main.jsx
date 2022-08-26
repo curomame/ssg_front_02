@@ -28,7 +28,6 @@ import MainBlankSpace from '../component/parts/mainParts/MainBlankSpace'
 import MainImgBanner from '../component/parts/mainParts/MainImgBanner'
 
 function Main() {
-
   return (
     <>
       <Header/>

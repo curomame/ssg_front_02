@@ -4,6 +4,7 @@ import { TokenVerifying } from '../context/TokenVerifying';
 
  function useAuthToken() {
 
+  console.log('useAuthToken 접속')
   const {isAuth, setIsAuth} = useContext(TokenVerifying);
   const Token = localStorage.getItem('Authorization')
 

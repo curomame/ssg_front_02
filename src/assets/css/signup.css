@@ -1,0 +1,77 @@
+
+.signupTopHead{
+  height: 50px;
+  background-color: #f8f8f8;
+  line-height: 50px;
+  padding: 0px 20px;
+  color: #666;
+}
+
+
+.signupEntryButton{
+height: 50px;
+background-color: #ff5b59;
+text-align: center;
+line-height: 50px;
+margin: 10px 10px;
+}
+
+.signupEntryButton a {
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.signupEntryButton div{
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+
+.signupEntryIcons{
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.signupEntryIcons img{
+  width: 90px;
+  height: 90px;
+  background-color: black;
+  border-radius: 100%;
+}
+
+.signupAuthContainer{
+  text-align: center;
+}
+
+.signupAuthMethod{
+  display: flex;
+  justify-content: center;
+}
+
+.signupInfoFieldContainer{
+
+  margin: 0px 20px;
+}
+
+.signupInfoFieldBox{
+  display: flex;
+  justify-content: space-between;
+}
+
+.signupInfoFieldBoxUnder{
+  display: flex;
+}
+
+.signupInfoFieldBoxUnder div{
+  margin-right:10px;
+  width: 80px;
+}
+
+.signupInfoFieldBoxUnder input{
+  /* width: 100%; */
+}

@@ -257,13 +257,8 @@ font-size: 11px;
 }
 
 .mainFooterThreeBar p{
-  
-  font-size: 11px;
-}
-
-
-.mainFooterThreeBar a{
   color: #565656;
+  font-size: 11px;
 }
 
 .mainFooterThreeBar p:not(:last-child)::after{

@@ -1,47 +1,25 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom'
+import { useRecoilState, useRecoilValue } from 'recoil'
+import { TempAuthState } from '../../../recoil/atoms/TempAuthState'
 function CommonFooter() {
 
-  const footerlink = [
+  const [tempAuth,setTempAuth] = useRecoilState(TempAuthState);
+  const navigate = useNavigate()
 
-  { "id":1,
-    "name":"회사소개",
-    "url":'https://company.ssg.com'
-  },
-  { "id":2,
-    "name":"이용약관",
-    "url":'https://m.ssg.com/comm/commInfo.ssg?type=clause&amp;_mpop=new'
-  },
-  { "id":3,
-    "name":"전자금융거래이용약관",
-    "url":'https://member.ssg.com/m/policies/tradeTerms.ssg'
-  },
-  { "id":4,
-    "name":"개인정보처리방침",
-    "url":'https://member.ssg.com/m/policies/privacy.ssg'
-  },
-  { "id":5,
-    "name":"청소년보호방침",
-    "url":'https://member.ssg.com/m/policies/youthProtection.ssg'
-  },
-  { "id":6,
-    "name":"소비자분쟁해결기준",
-    "url":'https://member.ssg.com/m/policies/consumerDispute.ssg'
-  },
-  { "id":7,
-    "name":"입점상담",
-    "url":'https://partners.ssgadm.com/m/'
-  },
-  { "id":9,
-    "name":"회사소개",
-    "url":'https://company.ssg.com'
-  },
+  const handleLogout = () => {
 
+    localStorage.removeItem('Authorization');
+    setTempAuth(false);
+    alert('로그아웃이 완료되었습니다!')
+  }
 
+  // useEffect(()=>{
+  //   console.log('auth상태 변경');
+  // },[tempAuth])
 
-  ]
- 
-
+  console.log(tempAuth)
   return (
     <>
       
@@ -67,9 +45,9 @@ function CommonFooter() {
         </div>
 
         <div className='mainFooterThreeBar'>
-          <p><Link to='/'>로그아웃</Link></p>
-          <p><Link to='/'>앱다운로드</Link></p>
-          <p><Link to='/'>PC버전</Link></p>
+          {tempAuth ? <p onClick={handleLogout}>로그아웃</p>: <p onClick={()=>navigate('/login')}>로그인</p>}
+          <p>앱다운로드</p>
+          <p>PC버전</p>
         </div>
 
       <footer className='mainFooterContainer'>
