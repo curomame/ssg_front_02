@@ -75,3 +75,15 @@ margin: 10px 10px;
 .signupInfoFieldBoxUnder input{
   /* width: 100%; */
 }
+
+.signupAuthMethodParts{
+  background-color: red;
+  width: 40%;
+  height: 100px;
+}
+
+
+.signupAuthUnder{
+  text-align: left;
+  margin: 0px 20px;
+}

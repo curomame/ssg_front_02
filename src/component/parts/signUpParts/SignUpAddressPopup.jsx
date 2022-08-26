@@ -83,12 +83,12 @@ function SignUpAddressPopup({ addressValue, setAddressValue }) {
         type="text"
         name="address"
         value={result}
-        style={{ width: "60%" }}
         readOnly
       />
 
       <br />
 
+      <div>
       <SignUpInputBox
         onChange={handleFullRoadAddress}
         title="detailAddress"
@@ -98,9 +98,10 @@ function SignUpAddressPopup({ addressValue, setAddressValue }) {
         hideBox={isFull}
       />
 
-      <button type="button" onClick={handleClick}>
+      <div onClick={handleClick} style={{"textAlign":"center"}}>
         우편번호
-      </button>
+      </div>
+      </div>
       </div>
     </>
   );
