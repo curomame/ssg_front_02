@@ -5,6 +5,7 @@ import ProductSlider from '../component/layout/product/ProductSlider'
 import '../assets/css/product.css'
 import { useState } from 'react';
 import ProductReviewCards from '../component/components/product/ProductReviewCards'
+import { Link } from 'react-router-dom'
 
 function Product() {
 
@@ -61,7 +62,7 @@ function Product() {
 
           <div className='productBottomReviewAllTitle'>
             <div>전체 리뷰</div>
-            <div>더보기(16) {'>'}</div>
+            <div><Link to='reviews'>더보기(16) {'>'}</Link></div>
           </div>
 
           <ProductReviewCards/>

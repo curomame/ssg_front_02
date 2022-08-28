@@ -10,27 +10,18 @@ function ProductSlider({datas, height, numbering, }) {
 
   const settings = {
 
-    state:{
-      slideIndex: 0,
-      updateCount: 0
-    },
+    prev:0,
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 200,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 2000,
     pauseOnHover: true,
 
-    afterChange: () => {
-
-      if(current >= mainEventSliderDatas.length){
-        setCurrent(1);
-      } else{
-        setCurrent(current+1);
-      }
-      
+    afterChange(e){
+      setCurrent(e+1);
     }
   }
 
@@ -38,11 +29,14 @@ function ProductSlider({datas, height, numbering, }) {
   return (
     <>
     
-    <div style={{"width":"100%", "height":"60%", "position":"relative"}}>
+    <div className='productSliderContainer'>
 
-      <p style={{"border":"1px solid white","backgroundColor":"gray","padding":"2px 6px", "zIndex":"100" ,"position":"absolute",color:"white",fontSize:"14px","fontWeight":"600","letterSpacing":"-1px", "bottom":"5%","right":"45%"}}>
-        {current}/{mainEventSliderDatas.length}
+    <div className='productSliderNumbering'>
+      <div></div>
+      <p>
+        0{current}/0{mainEventSliderDatas.length}
       </p>
+    </div>
 
       <Slider className="mainUpperSlider" {...settings}>
         

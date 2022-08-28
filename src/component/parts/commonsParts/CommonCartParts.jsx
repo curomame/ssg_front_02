@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CommonCartIconParts() {
+function CommonCartParts() {
 
 
   
@@ -14,4 +14,4 @@ function CommonCartIconParts() {
   )
 }
 
-export default CommonCartIconParts
+export default CommonCartParts
