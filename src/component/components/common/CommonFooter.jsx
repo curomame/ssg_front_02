@@ -19,7 +19,7 @@ function CommonFooter() {
   //   console.log('auth상태 변경');
   // },[tempAuth])
 
-  console.log(tempAuth)
+  // console.log(tempAuth)
   return (
     <>
       

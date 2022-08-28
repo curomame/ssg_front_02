@@ -33,10 +33,5 @@
     "id" : 7,
     "name" : "브랜드",
     "url" : "/page/brand"
-  } ,
-  { 
-    "id" : 8,
-    "name" : "dummy",
-    "url" : "/"
-  } 
+  }
 ]

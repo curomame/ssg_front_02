@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Test from './test/Test';
 import Category from './pages/Category';
@@ -16,32 +16,31 @@ import Review from './pages/Review';
 import MyReviewCreate from './component/components/myReview/MyReviewCreate';
 import MyReviewUpdate from './component/components/myReview/MyReviewUpdate';
 import Recent from './pages/Recent';
-import { RecoilRoot, useRecoilState } from 'recoil';
+import { RecoilRoot } from 'recoil';
 import LocalStorage from './test/LocalStorage';
 import WishList from './pages/WishList';
 import CategoryAtomAxios from './component/components/Invisible/CategoryAtomAxios';
 import EmailTest from './test/EmailTest';
 import SignUp from './pages/SignUp';
 import SignUpEntry from './component/components/signup/SignUpEntry';
-import SignUpPoint from './component/components/signup/SignUpPoint';
 import SignUpInformation from './component/components/signup/SignUpInformation';
 import SignUpAuth from './component/components/signup/SignUpAuth';
 import Wrong from './pages/Wrong';
-import useAuthToken from './hooks/useAuthToken';
-import useStatusUpdate from './hooks/useStatusUpdate';
 import AuthStatusUpdate from './component/parts/commonsParts/AuthStatusUpdate';
 import Product from './pages/Product';
+import ScrollToTop from './utils/ScrollToTop';
 
 function App() {
-
-
 
   return (
     <RecoilRoot>
       <BrowserRouter>
+      
       <CategoryAtomAxios/>
-      <AuthStatusUpdate/>    
+      <AuthStatusUpdate/>
+      <ScrollToTop/>
       <SearchModal/>
+
         <Routes>
           <Route path="/" element={<Main/>}/>
           
