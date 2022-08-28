@@ -10,7 +10,6 @@ import SearchModal from './component/components/common/SearchModal';
 import CategoryDetailTopAll from './component/components/category/CategoryDetailTopAll';
 
 import './assets/css/common.css'
-import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
 import MyPage from './pages/MyPage';
 import Review from './pages/Review';
@@ -22,7 +21,6 @@ import LocalStorage from './test/LocalStorage';
 import WishList from './pages/WishList';
 import CategoryAtomAxios from './component/components/Invisible/CategoryAtomAxios';
 import EmailTest from './test/EmailTest';
-import DetailProduct from './pages/DetailProduct';
 import SignUp from './pages/SignUp';
 import SignUpEntry from './component/components/signup/SignUpEntry';
 import SignUpPoint from './component/components/signup/SignUpPoint';
@@ -32,6 +30,7 @@ import Wrong from './pages/Wrong';
 import useAuthToken from './hooks/useAuthToken';
 import useStatusUpdate from './hooks/useStatusUpdate';
 import AuthStatusUpdate from './component/parts/commonsParts/AuthStatusUpdate';
+import Product from './pages/Product';
 
 function App() {
 
@@ -70,7 +69,7 @@ function App() {
           <Route path="/login" element={<Login/>}/>
 
 
-          <Route path="/detailproduct" element={<DetailProduct/>}/>
+          <Route path="/product" element={<Product/>}/>
 
           <Route path="/signup" element={<SignUp/>}>
             <Route path="entry" element={<SignUpEntry/>}/>
@@ -79,7 +78,6 @@ function App() {
             <Route path="auth" element={<SignUpAuth/>}/>
           </Route>
 
-          <Route path="/item/detail" element={<ProductDetail />} />
 
 
           <Route path="/test" element={<Test/>}/>

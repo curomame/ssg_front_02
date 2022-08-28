@@ -1,0 +1,177 @@
+.productContainer{
+  margin: 0px 20px;
+  letter-spacing: -0.5px;
+  line-height: 150%;
+}
+
+.productTitleSubBox{
+  margin-bottom: 16px;
+}
+
+.productTitleSubBox h4{
+  font-size: 13px;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.productTitleSubBox h3{
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.productTitleSubBox p{
+  color: #777;
+}
+
+.productPriceBox{
+  margin-bottom: 10px;
+}
+
+.productPriceBox h3{
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.productPriceBox span{
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.productTopReviewBox{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.productTopReviewBox div {
+  margin-right: 8px;
+}
+
+.productDetailBox{
+  line-height: 100%;
+  margin-bottom: 40px;
+  
+}
+
+.productDetailBox p {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.productDetailBox img {
+  width: 100%;
+  
+}
+
+
+.productDetailImgBefore{
+  overflow: hidden;
+  height: 1500px;
+  position: relative;
+}
+
+.productDetailImgBefore div{
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  background-color: white;
+  line-height: 50px;
+}
+
+
+.productDetailImgBlur{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  height: 30px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#ffffff));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
+}
+
+.productDetailImgAfter{
+  position: relative;
+}
+
+.productDetailImgAfter div{
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  text-align: center;
+}
+
+.productBottomReviewBox h2{
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.productBottomReviewBox h4{
+  font-size: 16px;
+  font-weight: 700;
+
+}
+
+.productBottomReviewBox h3{
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  
+}
+
+.productBottomReviewAllTitle{
+  display: flex;
+  justify-content: space-between;
+}
+
+.productBottomReviewAllTitle div:nth-child(1){
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.productBottomReviewAllTitle div:nth-child(2){
+  color: #777;
+}
+
+/* 리뷰 카드 */
+
+.productReviewCard{
+  margin-bottom: 24px;
+}
+
+.productReviewCardTop{
+  display: flex;
+  font-size: 13px;
+}
+
+.productReviewCardTop div{
+}
+
+.productReviewCardTop div:not(:last-child)::after{
+  content: '|';
+  margin: 0 6px;
+}
+
+.productReviewCardImg img{
+  width: 50px;
+  height: 50px;
+  background-color: skyblue;
+}
+
+.productReviewCardBottom{
+  display: flex;
+  justify-content: space-between;
+}
+
+.productReviewCardBottom div:first-child{
+  padding-right: 12px;
+}
+
+.productReviewCardBottom p{
+  font-size: 14px;
+}
+
+.productReviewCardBottom div:nth-child(2) p{
+  line-height: 42px;
+}
