@@ -13,6 +13,8 @@ function CategoryMainSelectSub({atomCategoryDatas,tempId,underId}) {
     return null;
   }
 
+  
+
 
   return (
 
@@ -27,9 +29,9 @@ function CategoryMainSelectSub({atomCategoryDatas,tempId,underId}) {
           <div>
 
         {atomCategoryDatas[tempId].lcategoryList.map((data) => {
-          console.log(data.id);
 
-          return <div key={data.id}><Link to={`${data.id}`}>{data.name}</Link></div>;
+          // console.log(tempId,data.id);
+          return <div key={data.id}><Link to='detail' state={{"Lid":tempId+1, "Mid":data.id}}>{data.name}</Link></div>;
         
         })}
 

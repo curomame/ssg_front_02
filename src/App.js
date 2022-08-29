@@ -29,6 +29,7 @@ import Wrong from './pages/Wrong';
 import AuthStatusUpdate from './component/parts/commonsParts/AuthStatusUpdate';
 import Product from './pages/Product';
 import ScrollToTop from './utils/ScrollToTop';
+import KakaoAuth from './component/components/kakao/KakaoAuth';
 
 function App() {
 
@@ -45,7 +46,7 @@ function App() {
           <Route path="/" element={<Main/>}/>
           
           <Route path="/category" element={<Category/>}/>
-          <Route path="/category/:id" element={<CategoryDetail/>}/>
+          <Route path="/category/detail" element={<CategoryDetail/>}/>
 
 
           <Route path="/product" element={<div>상품정보를 찾을 수 없습니다.</div>}/>
@@ -77,6 +78,8 @@ function App() {
             <Route path="auth" element={<SignUpAuth/>}/>
           </Route>
 
+
+          <Route path="/kakao/:params" element={<KakaoAuth/>}/>
 
 
           <Route path="/test" element={<Test/>}/>

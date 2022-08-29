@@ -93,6 +93,7 @@
 .categoryMainSubBoxBackGround{
   background-color: #F5F5F5;
   width: 400%;
+  z-index: 10000;
 }
 
 .categoryMainGridContainerIconTitle{
@@ -212,4 +213,152 @@
   content: '|';
   margin:0px 12px
 
+}
+
+/* 디테일 카테고리 category detail */
+
+.categoryUpperMenuContainer{
+  margin: 20px 0px;
+}
+
+.categoryUpperMenuTop{
+  display: flex;
+  height: 45px;
+  line-height: 45px;
+}
+
+.categoryUpperMenuTopBack span{
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+}
+
+.categoryUpperMenuMiddleContainer{
+  overflow: scroll;
+}
+
+.categoryUpperMenuMiddleContainer::-webkit-scrollbar{
+  display: none;
+}
+
+.categoryUpperMenuMiddle{
+  height: 50px;
+  line-height: 50px;
+  background-color: #f5f5f5;
+  display: flex;
+  overflow:scroll;
+  justify-content: space-between;
+  width: 150%;
+}
+
+.categoryUpperMenuMiddle div{
+  margin-right: 12px;
+}
+
+
+
+.categoryUpperMenuBottom{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.categoryUpperMenuBottom div{
+  width: 30%;
+  padding-left: 8px;
+  padding-top: 12px;
+  
+}
+
+
+/* QNA */
+
+.productQNABubbleQuestionBox{
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.productQNABubbleQuestionBox div{
+
+  margin: 6px 0px;
+}
+
+.productQNABubbleQuestionInfo{
+  display: flex;
+  font-size: 11px;
+  color: #888;
+  line-height: 11px;
+}
+
+.productQNABubbleQuestionContent div:first-child{
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.productQNABubbleQuestionContent div:last-child{
+  font-size: 13px;
+  font-weight: 500;
+  color: #777;
+}
+
+.productQNABubbleQuestionInfo div{
+ margin-right: 6px;
+}
+
+.productQNABubbleAnswerBox{
+  margin-top: 16px;
+  margin-left: 24px;
+  border-radius: 4px;
+  background-color: #f9f8eb;
+}
+
+
+.productQNABubbleAnswerBox div{
+  margin: 6px 0px;
+}
+
+.productQNABubbleAnswerInfo{
+  display: flex;
+}
+
+
+.categoryUpperMenuMContainer{
+  overflow-x: scroll;
+}
+
+.categoryUpperMenuMContainer::-webkit-scrollbar{
+  display: none;
+}
+
+
+.categoryUpperMenuMBox{
+  /* width: 180%; */
+  overflow-x: scroll;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  background-color: #f5f5f5;
+  line-height: 50px;
+  font-size: 14px;
+  letter-spacing: -1px;
+}
+
+.categoryUpperMenuMBox div{
+  margin: 0 6px;
+  text-align: center;
+}
+
+.categoryUpperMenuMBox div p {
+  height: 50px;
+}
+
+.categoryUnderMenuContainer{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.categoryUnderMenuContainer div{
+  width: 33%;
 }

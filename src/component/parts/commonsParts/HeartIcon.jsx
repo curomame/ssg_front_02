@@ -6,7 +6,7 @@ function HeartIcon() {
 
   return (
     <>
-      <span class="material-icons-outlined">favorite_border</span>
+      <span className="material-icons-outlined">favorite_border</span>
     </>
   )
 }

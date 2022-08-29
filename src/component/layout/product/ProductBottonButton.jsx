@@ -26,7 +26,6 @@ function ProductBottonButton() {
       setPurchaseCondition={setPurchaseCondition}
     />
   }
-
     <div className='productBottomButtonContainer'>
       {purchaseCondition 
       ?

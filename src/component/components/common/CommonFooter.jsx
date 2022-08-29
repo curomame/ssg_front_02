@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { TempAuthState } from '../../../recoil/atoms/TempAuthState'
+import ScrollToTop from '../../../utils/ScrollToTop';
 function CommonFooter() {
 
   const [tempAuth,setTempAuth] = useRecoilState(TempAuthState);
@@ -13,6 +14,12 @@ function CommonFooter() {
     localStorage.removeItem('Authorization');
     setTempAuth(false);
     alert('로그아웃이 완료되었습니다!')
+
+    window.scrollTo({
+      top: 0
+    });
+  
+
   }
 
   // useEffect(()=>{
@@ -20,6 +27,7 @@ function CommonFooter() {
   // },[tempAuth])
 
   // console.log(tempAuth)
+  
   return (
     <>
       
@@ -27,10 +35,10 @@ function CommonFooter() {
             <div className='mainFooterCallIcon'>
               
               <div className='mainFooterCallIconSelect'>
-                <span class="material-icons-outlined">phone</span>
+                <span className="material-icons-outlined">phone</span>
               </div>
             
-            <div className='<span class="material-icons-outlined">phone</span>'>
+            <div className='<span className="material-icons-outlined">phone</span>'>
               <div>SSG.COM 고객센터 / 전자금융거래 분쟁처리</div>
               <div>1577-3419 / ssg@ssg.com</div>
             </div>
