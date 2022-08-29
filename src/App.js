@@ -30,6 +30,7 @@ import AuthStatusUpdate from './component/parts/commonsParts/AuthStatusUpdate';
 import Product from './pages/Product';
 import ScrollToTop from './utils/ScrollToTop';
 import KakaoAuth from './component/components/kakao/KakaoAuth';
+import MyShipaddress from './component/components/mypage/MyShipaddress';
 
 function App() {
 
@@ -53,6 +54,7 @@ function App() {
           <Route path="/product/:id" element={<Product/>}/>
 
           <Route path="/mypage" element={<MyPage/>}/>
+          <Route path="/mypage/shipaddress" element={<MyShipaddress/>}/>
           
           <Route path="/cart" element={<Cart/>}/>
 

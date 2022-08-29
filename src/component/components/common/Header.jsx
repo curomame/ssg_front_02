@@ -95,6 +95,13 @@ function Header({type}) {
               <div><h3>리뷰 작성</h3></div>
               <div></div>
             </div>
+            
+    case 'myship':
+      return <div className='loginHeaderLayout'>
+              <div><span className="material-icons-outlined" onClick={()=>navigate(-1)}>arrow_back</span></div>
+              <div><h3>배송지 관리</h3></div>
+              <div></div>
+            </div>
 
     case 'recent':
       return <div className='loginHeaderLayout'>
