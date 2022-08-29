@@ -31,7 +31,7 @@ function CategoryMainGrid() {
 
                       <div>
                         <div><img src={data.imgUrl} alt=""/></div>
-                        <div style={{"margin":"auto","textAlign":"center"}} ><h2>{data.name}</h2></div>
+                        <div className='categoryMainGridContainerIconTitle'><h2>{data.name}</h2></div>
                       </div>
                       <CategoryMainSelectSub
                         underId={data.id-1}

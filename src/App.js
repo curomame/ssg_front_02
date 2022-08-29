@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import Main from './pages/Main';
 
 import SearchModal from './component/components/common/SearchModal';
-import CategoryDetailTopAll from './component/components/category/CategoryDetailTopAll';
+import CategoryDetail from './component/components/category/CategoryDetail';
 
 import './assets/css/common.css'
 import Cart from './pages/Cart';
@@ -45,9 +45,12 @@ function App() {
           <Route path="/" element={<Main/>}/>
           
           <Route path="/category" element={<Category/>}/>
-          <Route path="/category/:id" element={<CategoryDetailTopAll/>}/>
+          <Route path="/category/:id" element={<CategoryDetail/>}/>
 
-          
+
+          <Route path="/product" element={<div>상품정보를 찾을 수 없습니다.</div>}/>
+          <Route path="/product/:id" element={<Product/>}/>
+
           <Route path="/mypage" element={<MyPage/>}/>
           
           <Route path="/cart" element={<Cart/>}/>
@@ -66,9 +69,6 @@ function App() {
           </Route>
           
           <Route path="/login" element={<Login/>}/>
-
-
-          <Route path="/product" element={<Product/>}/>
 
           <Route path="/signup" element={<SignUp/>}>
             <Route path="entry" element={<SignUpEntry/>}/>
