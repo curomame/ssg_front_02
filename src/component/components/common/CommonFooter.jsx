@@ -8,7 +8,7 @@ import ScrollToTop from '../../../utils/ScrollToTop';
 function CommonFooter() {
 
   const [tempAuth,setTempAuth] = useRecoilState(TempAuthState);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleLogout = () => {
 
@@ -17,9 +17,11 @@ function CommonFooter() {
 
     axios.post(process.env.REACT_APP_TEST_URL+'/logout')
       .then(res => console.log(res.data))
+      .catch(err => console.error(err))
 
-    alert('로그아웃이 완료되었습니다!')
+    alert('로그아웃이 완료되었습니다!');
 
+    navigate('/');
 
     window.scrollTo({
       top: 0

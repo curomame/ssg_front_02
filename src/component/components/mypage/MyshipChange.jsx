@@ -1,19 +1,17 @@
-import React from 'react'
-import MyShipAddrAPI from '../../parts/mypage/MyShipAddrAPI';
-import Header from '../common/Header'
-import DaumPostCode from 'react-daum-postcode';
-import { useState } from 'react';
-import axios from 'axios';
+import axios from 'axios'
+import React, { useState } from 'react'
 
-function MyshipAddAddress({setAddModal,setTempShip}) {
-
+function MyshipChange({setTempShip,setChangeModal,data}) {
+  
   const [addrDatas,setAddrDatas] = useState(
     {
-      "addrName" : "",
-      "recipient" : "",
-      "phoneNum" : "",
-      "phoneNumSelect" : "",
-      "addrStreet" : "",
+
+      "addrId":data.addrId,
+      "addrName" : data.addrName,
+      "recipient" : data.recipient,
+      "phoneNum" : data.phoneNum,
+      "phoneNumSelect" : data.phoneNumSelect,
+      "addrStreet" : data.addrStreet,
       "addrDetail" : "defaultAddr",
       "addrZipCode" : "12345", 
       "addrDefault" : false
@@ -25,7 +23,7 @@ const onChangeText = (e) => {
 }
 
   const handleCloseAddr = () => {
-    setAddModal((prev) => !prev)
+    setChangeModal((prev) => !prev)
   }
 
   const handleResetAddr = () => {
@@ -41,8 +39,8 @@ const onChangeText = (e) => {
 })
   }
 
-  const handleAddAddr =() => {
-    axios.post(process.env.REACT_APP_TEST_URL+'/user/addr/add',addrDatas,{
+  const handleEditAddr =() => {
+    axios.put(process.env.REACT_APP_TEST_URL+'/user/addr/mod',addrDatas,{
       headers:{
         "Authorization":localStorage.getItem("Authorization")
       }})
@@ -51,7 +49,7 @@ const onChangeText = (e) => {
       })
       
     handleResetAddr();
-    setAddModal(prev => !prev);
+    setChangeModal(prev => !prev);
   }
 
 
@@ -59,8 +57,8 @@ const onChangeText = (e) => {
     <>
     <div className='loginHeaderLayoutContainer'>
       <div className='loginHeaderLayout'>
-        <div><span className="material-icons-outlined" onClick={() => setAddModal((prev) => !prev)}>arrow_back</span></div>
-        <div><h3>배송지 관리</h3></div>
+        <div><span className="material-icons-outlined" onClick={() => setChangeModal((prev) => !prev)}>arrow_back</span></div>
+        <div><h3>배송지 수정</h3></div>
         <div></div>
       </div>
 
@@ -139,7 +137,7 @@ const onChangeText = (e) => {
       <div style={{"display":"flex","justifyContent":"space-between","height":"100px","lineHeight":"100px"}}>
         <div onClick={handleResetAddr}>초기화</div>
         <div onClick={handleCloseAddr}>취소</div>
-        <div onClick={handleAddAddr}>등록</div>
+        <div onClick={handleEditAddr}>수정완료</div>
       </div>
 
       </div>
@@ -148,4 +146,4 @@ const onChangeText = (e) => {
   )
 }
 
-export default MyshipAddAddress
+export default MyshipChange

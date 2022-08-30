@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 function CommonWishListParts({type,productId}) {
   
+  
 
   //type inner outer
   const url = process.env.REACT_APP_TEST_URL+"/user/wish/add"

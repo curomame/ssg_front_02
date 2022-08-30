@@ -11,6 +11,13 @@ import { TempAuthState } from '../recoil/atoms/TempAuthState'
 
 function Login() {
 
+  const tempAuth = useRecoilValue(TempAuthState);
+  const navigate = useNavigate();
+
+  if(tempAuth){
+    return navigate('/');
+  }
+
   return (
     <>
       <Header

@@ -6,32 +6,43 @@ import { useState } from 'react';
 import MyshipCards from '../../parts/mypage/MyshipCards';
 import axios from 'axios';
 import { useEffect } from 'react';
+import MyshipChange from './MyshipChange';
 
 function MyShipaddress() {
 
   const [tempShip,setTempShip] = useState(null);
   const [addModal,setAddModal] = useState(false);
 
-
-
-  useEffect(()=>
-
-    axios.get(process.env.REACT_APP_TEST_URL+'/user/addr/get',{
+  const getShipData = async () => {
+    const shipData = await axios.get(process.env.REACT_APP_TEST_URL+'/user/addr/get',{
       headers:{
         'Authorization':localStorage.getItem('Authorization')
       }
     })
-    .then(res => setTempShip(res.data.data))
+    .then(res => res)
     .catch(err => console.error(err))
+    setTempShip(shipData.data.data);
+    // console.log(shipData.data.data);
+  }
 
-  ,[addModal])
+  const handleChangeDefaultShip =() => {
+    
+  }
+
+  useEffect(()=> {
+    getShipData()    
+  }
+  ,[])
 
 
   return (
     <>
+
     
     <Header
       type={'myship'}/>
+
+
 
     <div className='myshipContainer'>
       
@@ -46,7 +57,8 @@ function MyShipaddress() {
       ? 
       
       tempShip.map((data,i) => (
-        <MyshipCards 
+        <MyshipCards
+        setTempShip={setTempShip}
         key={i}
         data={data}
         />
@@ -62,10 +74,17 @@ function MyShipaddress() {
       <div onClick={()=>setAddModal(!addModal)} className='myshipAddNew'>+ 새 배송지 추가</div>
     </div>
 
+    
     {addModal && 
     <MyshipAddAddress
     setAddModal={setAddModal}
+    setTempShip={setTempShip}
     />}
+
+    <div className='myshipThisTime'>
+      <div><p>이번만배송지 설정</p></div>
+      <div onClick={handleChangeDefaultShip}><p>기본 배송지 설정</p></div>
+    </div>
 
     <CommonFooter/>
 

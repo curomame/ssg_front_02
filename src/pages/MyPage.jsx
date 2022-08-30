@@ -14,7 +14,17 @@ import IsLogin from '../utils/IsLogin'
 
 function MyPage() {
   
-  // IsLogin();
+  const tempAuth = useRecoilValue(TempAuthState);
+  const navigate = useNavigate()
+
+  useEffect(() => {
+
+    if(!tempAuth){
+      navigate('/login')
+    }
+    
+  },[])
+  
 
   return (
     <>

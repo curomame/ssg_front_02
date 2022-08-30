@@ -13,6 +13,7 @@ function Cart() {
  
   const tempAuth = useRecoilValue(TempAuthState)
   const [cartDatas, setCartDatas] = useState(null);
+  const [totalPrice,setTotalPrice] = useState(0);
 
   useEffect(() => {
     
@@ -22,13 +23,43 @@ function Cart() {
       }
     })
       .then(res => {
-        // console.log(res.data.data.cartOutputDtoList)  
         setCartDatas(res.data.data.cartOutputDtoList)
       })
       .catch(err => console.error(err))
+
+      return () => {
+        
+      }
   },[])
 
-  // useEffect(()=>{},[cartDatas])
+
+    const calTotalPrice = () => {
+      let newPrice = 0;
+      if(cartDatas){
+        
+        for(let price of cartDatas){
+          newPrice = newPrice + (price.price * price.qty)
+        }
+        setTotalPrice(newPrice)
+      }
+      
+      return null;
+    } 
+
+
+    useEffect(() => {
+      calTotalPrice();
+    },[cartDatas])
+
+    const handleUpdateCart = () => {
+
+      axios.put(process.env.REACT_APP_TEST_URL+'/cart/mod',{
+        headers:{
+          "Authorization":localStorage.getItem("Authorization")
+        }
+      })
+
+    }
 
 
   return (
@@ -63,17 +94,17 @@ function Cart() {
               <div>결제 예정 금액</div>
               <div className='cartTotalPriceOrder'>
                 <div>주문금액</div>
-                <div>+178,000</div>
+                <div>{(totalPrice).toLocaleString()}원</div>
               </div>
 
               <div className='cartTotalPriceDiscount'>
                 <div>상품할인</div>
-                <div>-1,900</div>
+                <div>-1,900원</div>
               </div>
 
               <div className='cartTotalPriceShipping'>
                 <div>배송비</div>
-                <div>000</div>
+                <div>0원</div>
               </div>
 
               <div>
