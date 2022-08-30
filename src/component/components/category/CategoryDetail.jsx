@@ -10,6 +10,7 @@ import CategoryMainGrid from './CategoryMainGrid'
 import CommonSlider from '../common/CommonSlider'
 import CategoryUpperMenu from '../../layout/Category/CategoryUpperMenu'
 import { useLocation } from 'react-router-dom'
+import axios from 'axios'
 
 
 const dummys = [
@@ -65,6 +66,7 @@ const dummys = [
   
   ]
 
+
 function CategoryDetail() {
 
   return (
@@ -73,14 +75,7 @@ function CategoryDetail() {
 
       <CategoryUpperMenu/>
 
-
-      {/* 전체보기 카테고리 누르면 그 바로 아래를 기준으로 메뉴 드롭 com 1*/}
-      {/* 만약 전체보기라면 슬라이더 존재 */}
-      {/* <CommonSlider/> */}
       
-        {/* <div><h2>명품/수입의류</h2></div> */}
-      {/* <div>ul로 카테고리 넘어가는 부분은 넘어가도록 </div> */}
-
 
       <div style={{"display":"flex", "flexWrap":"wrap"}}>
         {dummys && 

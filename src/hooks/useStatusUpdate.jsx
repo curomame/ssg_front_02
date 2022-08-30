@@ -8,7 +8,7 @@ function useStatusUpdate() {
   // console.log('useSatusUpdate 발생')
   const tempToken = localStorage.getItem('Authorization');
   const [tempStatus, setTempStatus] = useRecoilState(TempAuthState);
-  const url = `${process.env.REACT_APP_TEST_URL}/user/mypage`
+  const url = `${process.env.REACT_APP_TEST_URL}/orders/mypage`
   // console.log(url)
 
   if(tempStatus === false){
@@ -21,8 +21,8 @@ function useStatusUpdate() {
           "Authorization":tempToken
         }
       }).then(res => {
-        console.log(tempToken);
-        console.log(res.data.data,'useToken data  내용')
+        // console.log(tempToken);
+        // console.log(res.data.data,'useToken data  내용')
         {res.data.data==='good' ? setTempStatus(true) : setTempStatus(false)}
       })
         .catch(err => console.error('axios auth token 에러 발생'+err))

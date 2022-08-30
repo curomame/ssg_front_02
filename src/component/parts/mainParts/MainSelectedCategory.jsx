@@ -13,7 +13,7 @@ function MainSelectedCategory() {
   
   const [itemDatas, setItemDatas] = useState('');
   const [isSelected, setIsSelected] = useState(0)
-  const [url, setUrl] = useState(`http://10.10.10.167:8080/productCtgList/list/1`)
+  const [url, setUrl] = useState(process.env.REACT_APP_TEST_URL+`/productCtgList/list/1`)
 
 
   // console.log(itemDatas)
@@ -27,7 +27,7 @@ function MainSelectedCategory() {
   },[url]);
 
   useEffect(()=> {
-    setUrl(`http://10.10.10.167:8080/productCtgList/list/${+isSelected+1}`)
+    setUrl(process.env.REACT_APP_TEST_URL+`/productCtgList/list/${+isSelected+1}`)
   },[isSelected])
 
 

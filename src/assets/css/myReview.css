@@ -61,11 +61,46 @@
 .myreviewCreateInputBox{
   display: flex;
   flex-direction: column;
-  margin: 0 16px;
+  margin: 24px 16px;
+}
+.myreviewCreateInputBox input{
+  width: 100%;
+  height: 300px;
+  vertical-align: top;
 }
 
 .myreviewCreateButton{
   margin: 10px 0px;
   text-align: center;
   border: 1px solid black;
+}
+
+
+/* 리뷰 작성 페이지 */
+
+.myReviewWriteProductInfoBox{
+  display: flex;
+  height: 100px;
+  line-height: 100px;
+}
+
+.myReviewWriteProductInfoBox img{
+ width: 100px;
+ height: 100px;
+}
+
+
+.myReviewWriteProductInfoBox div {
+  margin-right: 12px;
+  font-weight: 500;
+  letter-spacing: -0.6px;
+}
+
+.myReviewWriteProductInfoBox p {
+  color: #888;
+}
+
+
+.myreviewCreateStarBox{
+  text-align: center;
 }

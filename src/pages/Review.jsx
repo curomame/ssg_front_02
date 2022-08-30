@@ -21,16 +21,16 @@ function Review() {
 
   useEffect(()=>{
 
-    axios.get('http://10.10.10.167:8080/user/review/already/101',{
-      header:{
+    axios.get(process.env.REACT_APP_TEST_URL+'/user/review/already/1',{
+      headers:{
         'Authorization':localStorage.getItem('Authorization')
       }
     })
       .then(res => {
         setCantReview(res.data.data)
       })
-    axios.get('http://10.10.10.167:8080/user/review/notYet/101',{
-      header:{
+    axios.get(process.env.REACT_APP_TEST_URL+'/user/review/notYet/1/1',{
+      headers:{
         'Authorization':localStorage.getItem('Authorization')
       }
     })
@@ -42,8 +42,6 @@ function Review() {
 
   return (
     <>
-    {/* 헤더타입 바꾸기 */}
-
       <Header
         type={'myReviw'}/>
       <MainImgBanner

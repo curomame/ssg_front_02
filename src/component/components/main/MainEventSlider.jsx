@@ -4,12 +4,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import mainEventSliderDatas from "../../../assets/datas/mainDatas/mainEventSliderDatas.json"
 
-function MainEventSlider({datas, height, numbering, }) {
+function MainEventSlider() {
 
   const [current, setCurrent ] = useState(1);
-
   const settings = {
-
     state:{
       slideIndex: 0,
       updateCount: 0
@@ -23,17 +21,10 @@ function MainEventSlider({datas, height, numbering, }) {
     autoplaySpeed: 2000,
     pauseOnHover: true,
 
-    afterChange: () => {
-
-      if(current >= mainEventSliderDatas.length){
-        setCurrent(1);
-      } else{
-        setCurrent(current+1);
-      }
-      
+    afterChange: (e) => {
+      setCurrent(e+1);
     }
   }
-
 
   return (
     <>

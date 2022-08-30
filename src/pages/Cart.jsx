@@ -6,74 +6,30 @@ import { useState,useEffect } from 'react';
 import axios from 'axios';
 import { useRecoilValue } from 'recoil';
 import { TempAuthState } from '../recoil/atoms/TempAuthState';
+import CartItemCards from '../component/components/cart/CartItemCards';
 
 
 function Cart() {
-
-  const login = false;
-
+ 
   const tempAuth = useRecoilValue(TempAuthState)
   const [cartDatas, setCartDatas] = useState(null);
-  const [cartCount, setCartCount] = useState([])
 
   useEffect(() => {
-    axios.get('http://10.10.10.167:8080/cart/101')
-      .then(res => setCartDatas(res.data.data))
+    
+    axios.get(process.env.REACT_APP_TEST_URL+'/cart',{
+      headers:{
+        'Authorization':localStorage.getItem('Authorization')
+      }
+    })
+      .then(res => {
+        // console.log(res.data.data.cartOutputDtoList)  
+        setCartDatas(res.data.data.cartOutputDtoList)
+      })
+      .catch(err => console.error(err))
   },[])
 
+  // useEffect(()=>{},[cartDatas])
 
-  const handlePlusCount = (e) =>{
-    // console.log(cartDatas[+e.target.id-1])
-
-    axios.put('http://10.10.10.167:8080/cart/mod',{
-      "userId":1,
-      "cartId":+e.target.id,
-      "qty":cartDatas[+e.target.id-1].qty + 1
-    }).then(res => console.log(res.data))
-
-    setCartDatas((current) => {
-
-      let newCondition = [...current];
-      newCondition[+e.target.id-1].qty = cartDatas[+e.target.id-1].qty + 1;
-      return newCondition;
-
-    })
-
-  }
-  
-  const handleMinusCount = (e) => {
-
-    axios.put('http://10.10.10.167:8080/cart/mod',{
-      "userId":1,
-      "cartId":+e.target.id,
-      "qty":cartDatas[+e.target.id-1].qty - 1
-    })
-
-    setCartDatas((current) => {
-
-      let newCondition = [...current];
-      newCondition[+e.target.id-1].qty = cartDatas[+e.target.id-1].qty - 1 ;
-      return newCondition;
-
-    })
-
-  }
-
-
-  const handleRemoveCart = (e) => {
-
-    axios.delete(`http://10.10.10.167:8080/cart/del/${1}/${+e.target.id}`)
-      .then(res => console.log(res.data))
-
-    setCartDatas((current) => {
-
-      let newCondition = [...current];
-      newCondition.splice(+e.target.id-1,1);
-      return newCondition;
-
-    })
-
-  }
 
   return (
     <>
@@ -81,73 +37,24 @@ function Cart() {
         <Header
           type={'cart'}/>
         
-        {/* 로그인이 되어 있지 않다면? */}
-        {tempAuth ? null: <CartNotLogin/>}
+        {tempAuth 
+        ? <div>
+            <div>일반배송 정기배송 함께 장보기</div>
+            <div>주소별칭</div>
+          </div>
 
-        {/* 장바구니 아이템 나오는 부분 */}
+        : <CartNotLogin/>}
+
         {cartDatas ? 
         
         <div>
           <div>전체 선택 | 배송방법 바꾸기 | 품절삭제</div>
             
             
-            {/* 반복 분기 진행 */}
-            {cartDatas && cartDatas.map((item) => (
-              
-
-                <div key={item.productId} className='cartItemContainer'>
-                    {/* 왼쪽 */}
-                    <div className='cartItemImg'>이미지 부분</div>
-                    {/* 오른쪽 */}
-                    <div className='cartItemBox'>
-                      <div>
-                        <div className='cartItemTitleFunc'>
-                          <div>신세계몰 주식회사 플랫폼</div>
-
-                          <div className='cartItemTitleFuncIcons'>
-                            <div onClick={handleRemoveCart}>
-                              <span id={item.productId} className="material-icons-outlined">delete</span>
-                            </div>
-                          </div>
-
-                        </div>
-                      
-                        <div className='cartItemTitleTitleOption'>
-                          <div><p>{item.productName}</p></div>
-                          <div>옵션 : L</div>
-                        </div>
-
-                      </div>
-
-                      <div className='cartItemPrice'>
-                        <div><p>{(item.price * item.qty).toLocaleString()}원</p></div>
-                        <div className='cartItemPricePNM'>
-                          <div onClick={handleMinusCount}>
-                            <span id={item.productId} className="material-icons-outlined">remove</span>
-                          </div>
-                          
-                          <input type="number" 
-                                 value={ item.qty } />
-                          <div onClick={handlePlusCount} >
-                            <span id={item.productId} className="material-icons-outlined">add</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className='cartItemButton' >
-                        <div>옵션변경</div>
-                        <div>바로구매</div>
-                      </div>
-
-                    </div>
-                  </div>
-
-            ))}
-
-
-            
-            
-
+              <CartItemCards
+                cartDatas={cartDatas}
+                setCartDatas={setCartDatas}
+              />
 
 
 
@@ -175,6 +82,9 @@ function Cart() {
               </div>
 
             </div>
+
+
+
           </div>
 
           :

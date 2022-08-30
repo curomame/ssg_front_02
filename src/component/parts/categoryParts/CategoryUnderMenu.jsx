@@ -1,7 +1,17 @@
 import React from 'react'
+import { useEffect } from 'react';
 
-function CategoryUnderMenu({MDatas}) {
-  // console.log(MDatas);
+function CategoryUnderMenu({Mid,MDatas,setMDatas,LDatas}) {
+
+// console.log(Mid);
+
+
+useEffect(()=>{
+
+  setMDatas(LDatas[Mid-1].mcategoryList);
+
+},[Mid])
+
   return (
     <>
       <div className='categoryUnderMenuContainer'>

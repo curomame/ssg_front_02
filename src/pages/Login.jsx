@@ -3,7 +3,10 @@ import LoginFieldSet from '../component/parts/loginParts/LoginFieldSet'
 import Header from '../component/components/common/Header'
 import '../assets/css/login.css'
 import Footer from '../component/components/common/CommonFooter'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useRecoilValue } from 'recoil'
+import { TempAuthState } from '../recoil/atoms/TempAuthState'
 
 
 function Login() {

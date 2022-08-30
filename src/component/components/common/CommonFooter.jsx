@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react'
 import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
@@ -13,7 +14,12 @@ function CommonFooter() {
 
     localStorage.removeItem('Authorization');
     setTempAuth(false);
+
+    axios.post(process.env.REACT_APP_TEST_URL+'/logout')
+      .then(res => console.log(res.data))
+
     alert('로그아웃이 완료되었습니다!')
+
 
     window.scrollTo({
       top: 0

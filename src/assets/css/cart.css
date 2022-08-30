@@ -62,7 +62,12 @@
 }
 
 .cartItemImg{
-  background-color: red;
+  /* background-color: red; */
+  width: 85px;
+  height: 85px;
+}
+
+.cartItemImg img{
   width: 85px;
   height: 85px;
 }

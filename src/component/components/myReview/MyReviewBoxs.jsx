@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom'
 
 function MyReviewBoxs({datas}) {
 
-  const [reviewId, setReviewId] = useState(0)
+  console.log(datas)
+
+
 
   return (
     <>
     
+    
+
       {datas ? 
       datas.map((item)=> 
       
@@ -24,9 +28,19 @@ function MyReviewBoxs({datas}) {
         </div>
 
         <div className='myReviewBoxsWriteClick'>
-          {item.reviewId 
-          ? <Link to={`/review/update/${item.reviewId}`}><div>리뷰수정</div></Link> 
-          : <Link to={`/review/write/${item.orderId}`}><div>리뷰쓰기</div></Link>}
+          {item.reviewId
+           
+          ? <Link to={`/review/update`} 
+                  state={{"orderId":item.orderId, "productId":item.productId}}> 
+                  <div>리뷰수정</div>
+            </Link>
+
+          : <Link to={`/review/write`} 
+                  state={{"orderId":item.orderId, 
+                          "titleImgUrl":item.titleImgUrl, 
+                          "productName":item.productName }}>
+                  <div>리뷰쓰기</div>
+            </Link>}
           
         </div>
       </div>)

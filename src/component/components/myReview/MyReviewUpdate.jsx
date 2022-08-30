@@ -6,7 +6,7 @@ import Header from '../common/Header';
 
 function MyReviewUpdate() {
   
-  const pathid = useParams();
+
   const [contents, setContents] = useState();
 
   const [preview, setPreview] = useState([]);

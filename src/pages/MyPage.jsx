@@ -10,19 +10,11 @@ import { TokenVerifying } from '../context/TokenVerifying'
 import { useRecoilValue } from 'recoil'
 import { TempAuthState } from '../recoil/atoms/TempAuthState'
 import { useEffect } from 'react'
+import IsLogin from '../utils/IsLogin'
 
 function MyPage() {
   
-  const navigate = useNavigate()
-  const tempAuth = useRecoilValue(TempAuthState);
-
-  // useEffect(() => {
-  //   if(!tempAuth){
-  //     return navigate('/login')
-  //   }
-  // },[])
-
-  
+  // IsLogin();
 
   return (
     <>

@@ -6,15 +6,19 @@ function CommonWishListParts({type,productId}) {
   
 
   //type inner outer
-  const url = "http://10.10.10.167:8080/user/wish/add"
+  const url = process.env.REACT_APP_TEST_URL+"/user/wish/add"
   const [wish,setWish] = useState(false);
 
   const handleWishListToggle = () => {
   
     console.log('토글 작동');
-    axios.post(url,{
-        "userId":"101",
+    axios.post(url,
+      {
         "productId":productId
+    },{
+      headers:{
+        "Authorization":localStorage.getItem("Authorization")
+      }
     }).then(res => {
       console.log(res.data.data.isWish)
       setWish(res.data.data.isWish)

@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 
 function Test() {
 
-  const PhotoUrl = "http://10.10.10.167:8080/uploadAjax/product"
+  const PhotoUrl = process.env.REACT_APP_TEST_URL+"/uploadAjax/product"
 
   const [formdata, setFromdata] = useState(new FormData())
 
@@ -46,7 +46,7 @@ function Test() {
 
 
     if(testImg){
-      setInputImg(axios.get(`http://10.10.10.167:8080/display?fileName=${testImg}`,
+      setInputImg(axios.get(process.env.REACT_APP_TEST_URL+`/display?fileName=${testImg}`,
       {
       Headers:{
         'content-type':'image/png'
