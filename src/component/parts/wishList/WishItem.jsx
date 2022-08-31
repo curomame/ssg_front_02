@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-function CommonItem({datas,type}) {
+function WishItem({datas,type,editMode}) {
   
+  const [editSelect, setEditSelect] = useState([])
+
   const handleFindId = (e) => {
     console.log(e.target);
+  }
+
+  const selectArrCreate = () => {
+
+    //TODO 어...
+
   }
 
   return (<>
@@ -18,7 +26,9 @@ function CommonItem({datas,type}) {
           <div style={{"position":"relative"}}>
             <img style={{"width":"100%"}} 
             src={process.env.REACT_APP_DISPLAY_IMG_URL+`${item.titleImgUrl}`} alt="ㅠㅠ" />
-            {(type==='wishlist') && <div className='wishListDeleteIcon'><span class="material-icons-outlined">delete</span></div>}
+            {(type==='wishlist') && <div className='wishListDeleteIcon'>
+              {editMode ? <input type="checkbox"/> : null}
+            </div>}
           </div>
           
           <div className='categoryItemText'>
@@ -51,4 +61,4 @@ function CommonItem({datas,type}) {
   )
 }
 
-export default CommonItem
+export default WishItem

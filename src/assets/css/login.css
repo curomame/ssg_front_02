@@ -4,6 +4,11 @@
   justify-content: space-between;
   line-height: 45px;
   border-bottom: 1px solid #e2e2e2;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 99999;
 }
 
 .loginHeaderLayout div:last-child{
@@ -42,6 +47,11 @@
   height: 48px;
   border: 1px solid #c9c9c9;
   width: 100%;
+}
+
+.loginFieldIDPW input:focus{
+  border-color: #ff5b59;
+  outline: none;
 }
 
 .loginFieldSaveId{

@@ -2,56 +2,32 @@ import axios from 'axios';
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
+import WishListAddFolderModal from '../../parts/wishList/WishListAddFolderModal';
 
-function WishListUpperMenu({datas}) {
+function WishListUpperMenu({foldDatas,setFoldDatas}) {
 
-  const [folderName, setFolderName] = useState('')
+
   const [openNewFolder, setOpenNewFolder] = useState(false);
 
-
   const handleOpenNewFolder = () => {
-   
     setOpenNewFolder(true)
   }
-
-  const handleColseNewFolder = ( ) => {
-    setOpenNewFolder(false)
-  }
-
-  const handleCreateNewFolder = () => {
-
-    axios.post(process.env.REACT_APP_TEST_URL+'/user/wish/folderPack/add',
-    {
-      "name":folderName
-    },
-    {
-      headers:{
-        "Authorization":localStorage.getItem("Authorization")
-      }
-    }
-    )
-      .then(res => setFolderName(res.data.data))
-      .catch(err => console.error(err))
-
-      setOpenNewFolder(false)
-
-  }
-
-
-
+  
   return (
     <>
     <div className='wishListUppderMenuTop'>
             <div className='wishListUppderMenuContainer'>
           <div>
-            <div className='wishListUppderMenuIcon'></div>
+            <div className='wishListUppderMenuIcon'>
+              <span className="material-icons-outlined iconRed">favorite_border</span>
+            </div>
             <p>전체보기</p>
           </div>
 
-          {datas &&
+          {foldDatas &&
           
-          datas.map((folder) =>       
-            <div>
+          foldDatas.map((folder,i) =>       
+            <div key={i}>
               <div className='wishListUppderMenuIcon'></div>
               <p>{folder.name}</p>
             </div>)
@@ -59,21 +35,26 @@ function WishListUpperMenu({datas}) {
           }
 
           <div onClick={handleOpenNewFolder}>
-            <div className='wishListUppderMenuIcon'></div>
+            <div className='wishListUppderMenuIcon'>
+            <span className="material-icons-outlined">add</span>
+            </div>
             <p>새 폴더</p>
           </div>
           
-          {openNewFolder 
-          ? <div className='wishListOpenNewFolderBox'>
-              <div onClick={handleColseNewFolder}>XXX</div>
-              <div>새 폴더 만들기</div>
-              <input 
-                type="text" 
-                value={folderName} 
-                onChange={(e) => setFolderName(e.target.value)}/>
-              <div onClick={handleCreateNewFolder}>Create!</div>
+          <div>
+            <div className='wishListUppderMenuIcon'>
+            <span className="material-icons-outlined">folder</span>
             </div>
-          : null}
+            <p>폴더관리</p>
+          </div>
+
+
+          <WishListAddFolderModal
+          openNewFolder={openNewFolder}
+          setOpenNewFolder={setOpenNewFolder}
+          setFoldDatas={setFoldDatas}
+          />
+
 
         </div>
 

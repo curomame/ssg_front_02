@@ -3,10 +3,9 @@ import React from 'react'
 import { useState } from 'react'
 import MyshipChange from '../../components/mypage/MyshipChange';
 
-function MyshipCards({data,setTempShip}) {
+function MyshipCards({data,setTempShip,tempCheck,setTempCheck}) {
 
   const [changeModal,setChangeModal] = useState(false);
-
 
   const handleDeleteAddr = () => {
 
@@ -23,13 +22,17 @@ function MyshipCards({data,setTempShip}) {
     }
   }
 
-  console.log(data.addrDefault);
+  // console.log(data.addrDefault);
 
   return (
     <>
       <div className='myShipCardContainer'>
 
-        <input type="checkbox" id={data.addrId} checked={data.addrDefault}/>
+        <input 
+          type="checkbox" 
+          id={data.addrId} 
+          onChange={(e) => setTempCheck(e.target.id)} 
+          checked={Number(tempCheck)===Number(data.addrId) ? true : false}/>
 
         <div className='myShipCardAddressNameBox'>
           <div className='myShipCardAddressName'>

@@ -13,30 +13,39 @@ function CartItemCards({cartDatas,setCartDatas}) {
 
 
   const handleMinusCount = (e) => {
-    const newDatas = cartDatas;
-    newDatas.map((i) => {if(Number(e.target.id) === i.productId) (i.qty = i.qty-1)})
-    // console.log(newDatas)
-    setCartDatas([...newDatas]); 
+      const newDatas = cartDatas;
+      newDatas.map((i) => 
+        { if(Number(e.target.id) === i.productId){
+          if(i.qty < 2){
+            i.qty = 1
+            window.alert('수량을 1 아래로 줄일 수 없습니다.')
+          } else {
+            (i.qty = i.qty-1)
+          }
+        }})
+      setCartDatas([...newDatas]); 
   }
 
   const handleRemoveCart = (e) => {
 
-    const newCondition = [];
-    cartDatas.map((i) => {if(Number(e.target.id) !== i.cartId) newCondition.push(i)})
-
-    axios.delete(process.env.REACT_APP_TEST_URL+`/cart/del/${+e.target.id}`,{
-      headers:{
-        "Authorization":localStorage.getItem("Authorization")
-      }
-    })
-      .then(res => {
-        console.log(res.data);
+    if(window.confirm('정말로 삭제하시겠습니까?')){
+      const newCondition = [];
+      cartDatas.map((i) => {if(Number(e.target.id) !== i.cartId) newCondition.push(i)})
+  
+      axios.delete(process.env.REACT_APP_TEST_URL+`/cart/del/${+e.target.id}`,{
+        headers:{
+          "Authorization":localStorage.getItem("Authorization")
+        }
       })
-      .catch(err => console.error('카트 제거 에러',err))
-    
-
-      console.log(newCondition);
-      setCartDatas([...newCondition])
+        .then(res => {
+          console.log(res.data);
+        })
+        .catch(err => console.error('카트 제거 에러',err))
+      
+  
+        console.log(newCondition);
+        setCartDatas([...newCondition])
+    }
 
   }
 
@@ -48,10 +57,11 @@ function CartItemCards({cartDatas,setCartDatas}) {
             <div className='cartItemImg'>
               <img src={process.env.REACT_APP_DISPLAY_IMG_URL+item.titleImgUrl} alt="이미지" />
             </div>
+
             <div className='cartItemBox'>
-              <div>
+
                 <div className='cartItemTitleFunc'>
-                  <div>신세계몰 주식회사 플랫폼</div>
+                  <div>신세계몰 <p>{item.productName}</p></div>
 
                   <div className='cartItemTitleFuncIcons'>
                     <div onClick={handleRemoveCart} id={item.cartId}>
@@ -59,24 +69,21 @@ function CartItemCards({cartDatas,setCartDatas}) {
                     </div>
                   </div>
 
-                </div>
-              
-                <div className='cartItemTitleTitleOption'>
-                  <div><p>{item.productName}</p></div>
-                  <div>옵션 : L</div>
-                </div>
+
+  
 
               </div>
 
               <div className='cartItemPrice'>
-                <div><p>{(item.price * item.qty).toLocaleString()}원</p></div>
+                <div><p>{(item.price * item.qty).toLocaleString()}<span>원</span></p></div>
                 <div className='cartItemPricePNM'>
                   <div >
                     <span onClick={handleMinusCount} id={item.productId} className="material-icons-outlined">remove</span>
                   </div>
 
                   <input type="number" 
-                          value={ item.qty } />
+                          defaultValue={item.qty}
+                          value={item.qty} />
 
                   <div onClick={handlePlusCount} >
                     <span id={item.productId} className="material-icons-outlined">add</span>
@@ -84,12 +91,9 @@ function CartItemCards({cartDatas,setCartDatas}) {
                 </div>
               </div>
 
-              <div className='cartItemButton' >
-                <div>옵션변경</div>
-                <div>바로구매</div>
-              </div>
-
             </div>
+
+            
           </div>
     ))}
     </>

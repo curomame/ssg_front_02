@@ -65,24 +65,31 @@ margin: 10px 10px;
 }
 
 .signupInfoFieldContainer{
-  margin: 0px 20px;
+  margin: 0px 12px;
+  color: #777;
+}
+
+.signupInfoFieldContainer div{
+  margin: 10px 0px;
 }
 
 .signupInfoFieldBoxUnder{
   display: flex;
   height: 100%;
   justify-content: space-between;
+  line-height: 100%;
 }
 
 .signupInfoFieldBoxUnder input{
   height: 30px;
   border : 1px solid #777;
-  min-width: 270px;
+  min-width: 240px;
+
 }
 
-.signupInfoFieldBoxUnder{
+/* .signupInfoFieldBoxUnder{
   line-height: 30px;
-}
+} */
 
 .signupInfoFieldBoxUnder p::before{
 
@@ -140,4 +147,10 @@ margin: 10px 10px;
   width: 100%;
   height: 50px;
   line-height: 50px;
+}
+
+hr {
+  background-color:#666;
+  height:0.5px;
+  border:0;
 }

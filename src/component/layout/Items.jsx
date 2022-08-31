@@ -16,9 +16,9 @@ function Items({itemDatas,row}) {
     <>
       <div className="mainItemContainer" >
         
-        {itemDatas && itemDatas.map(item => 
+        {itemDatas && itemDatas.map((item,i) => 
 
-          <div className='mainItems'>
+          <div className='mainItems' key={i}>
             <div>
               <img 
             src={`http://10.10.10.167:8080/display?fileName=${item.titleImgUrl}`} 

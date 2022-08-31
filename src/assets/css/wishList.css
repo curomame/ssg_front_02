@@ -13,14 +13,24 @@
 }
 
 .wishListUppderMenuContainer div{
-  margin: 0px 6px;
+  margin: 6px 6px;
+}
+
+.wishListUppderMenuContainer p {
+  text-align: center;
 }
 
 .wishListUppderMenuIcon{
   width: 52px;
   height: 52px;
-  background-color: orange;
+  border: 1px solid lightgray;
   border-radius: 100%;
+  text-align: center;
+}
+
+.wishListUppderMenuIcon span{
+  line-height: 52px;
+  color: gray;
 }
 
 .wishListOpenNewFolderBox{
@@ -38,4 +48,32 @@
   top: 10px;
   right: 10px;
   color: gray;
+}
+.iconRed{
+  color: red !important;
+}
+
+
+/* 위시리스트 편집 */
+.wishListEditButton{
+  display: flex;
+  justify-content: right;
+  margin-right: 16px;
+  
+}
+
+.wishListEditButton div{
+  display: flex;
+  border: 1px solid lightgray;
+  padding: 2px 10px;
+  border-radius: 6px;
+}
+
+.wishListEditButton span{
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.wishListEditButton p {
+  font-size: 13px;
 }

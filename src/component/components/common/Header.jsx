@@ -6,9 +6,10 @@ import SearchModalState from '../../../recoil/atoms/SearchModalState';
 import Logo from '../../parts/commonsParts/Logo';
 import MyCart from '../../parts/commonsParts/MyCart';
 import SearchBar from '../../parts/commonsParts/SearchBar';
+import MainBlankSpace from '../../parts/mainParts/MainBlankSpace';
 
 
-function Header({type,text}) {
+function Header({type,text,func}) {
 
   const navigate = useNavigate();
 
@@ -19,15 +20,22 @@ function Header({type,text}) {
   switch(type){
 
     case 'text':
-      return <div className='loginHeaderLayout'>
-              <div><span className="material-icons-outlined" onClick={()=>navigate('/')}>arrow_back</span></div>
-              <div><h3>{text}</h3></div>
-              <div></div>
-            </div>
+      
+      return <>
+              <div className='loginHeaderLayout'>
+                      <div><span className="material-icons-outlined" onClick={()=>navigate('/')}>arrow_back</span></div>
+                      <div><h3>{text}</h3></div>
+                      <div></div>
+                    </div>
+              <MainBlankSpace px={100}/>
+              </>
 
     case 'cart':
       return <div className='cartHeaderLayout'>
-                <div><span className="material-icons-outlined" onClick={()=>navigate(-1)}>arrow_back</span></div>
+                <div><span className="material-icons-outlined" onClick={()=>{
+                  func()
+                  navigate(-1)
+                  }}>arrow_back</span></div>
                 <div><h2>장바구니</h2></div>
                 <div>
                   <span  className="material-icons-outlined">search</span>
@@ -36,11 +44,14 @@ function Header({type,text}) {
               </div>
     
     case 'login':
-      return <div className='loginHeaderLayout'>
+      return <>
+              <div className='loginHeaderLayout'>
                 <div><span className="material-icons-outlined" onClick={()=>navigate('/')}>arrow_back</span></div>
                 <div><h3>로그인</h3></div>
                 <div></div>
               </div>
+              <MainBlankSpace px={100}/>
+              </>
 
     case 'mypage':
       return <div className='mypageLayout'>
@@ -83,11 +94,15 @@ function Header({type,text}) {
             </div>
 
     case 'wish':
-      return <div className='loginHeaderLayout'>
-              <div><span className="material-icons-outlined" onClick={()=>navigate(-1)}>arrow_back</span></div>
-              <div><h3>좋아요</h3></div>
-              <div></div>
-            </div>
+      return <>
+              <div className='loginHeaderLayout'>
+                      <div><span className="material-icons-outlined" onClick={()=>navigate(-1)}>arrow_back</span></div>
+                      <div><h3>좋아요</h3></div>
+                      <div></div>
+                    </div>
+            <MainBlankSpace px={96}/>
+            </>
+
 
     case 'signup':
       return <div className='loginHeaderLayout'>

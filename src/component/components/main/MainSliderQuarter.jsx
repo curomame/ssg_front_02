@@ -36,8 +36,8 @@ function MainSliderQuarter() {
           
           {dummyDatas &&
           
-          dummyDatas.map((data) => (
-          <div style={{"marginRigth":"3px"}}>
+          dummyDatas.map((data,i) => (
+          <div key={i} style={{"marginRigth":"3px"}}>
             <div>
               <img style={{"width":"100%","background":"red", "borderRight":"10px solid white"}} src={data.src} alt=''/>
               <CommonTitleSub

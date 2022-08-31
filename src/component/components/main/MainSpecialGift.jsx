@@ -27,14 +27,15 @@ function MainSpecialGift() {
         <MainTitleSub title="Special Gift" sub="포장으로 마음을 담은 백화점 선물"/>
             <div style={{"display":"flex"}}>
             {
-                giftDatas && giftDatas.map(items => (
+                giftDatas && giftDatas.map((items,i) => (
                     <Items 
                         imgsrc={items.imgsrc}
                         alt={items.sub}
                         title={items.title}
                         sub={items.sub}
                         price={items.price}
-                        discount={items.discount} />
+                        discount={items.discount}
+                        key={i} />
             
             ))}
         </div>

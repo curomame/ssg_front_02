@@ -57,21 +57,21 @@ function MyPage() {
 
         <div>
           <Link to='/wishlist'>
-            <span class="material-icons-outlined">favorite_border</span>
+            <span className="material-icons-outlined">favorite_border</span>
             <p>좋아요</p>
           </Link>
         </div>
         
         <div>
           <Link to='shipaddress'>
-            <span class="material-icons-outlined">favorite_border</span>
+            <span className="material-icons-outlined">favorite_border</span>
             <p>배송지 관리</p>
           </Link>
         </div>
 
         <div>
           <Link to='#'>
-            <span class="material-icons-outlined">favorite_border</span>
+            <span className="material-icons-outlined">favorite_border</span>
             <p>알림함</p>
           </Link>
         </div>

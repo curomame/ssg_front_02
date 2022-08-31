@@ -12,8 +12,7 @@ function MyShipaddress() {
 
   const [tempShip,setTempShip] = useState(null);
   const [addModal,setAddModal] = useState(false);
-
-  const [tempCheck, setTempCheck] = useState(0);
+  const [tempCheck,setTempCheck] = useState('');
 
   const getShipData = async () => {
     const shipData = await axios.get(process.env.REACT_APP_TEST_URL+'/user/addr/get',{
@@ -28,12 +27,35 @@ function MyShipaddress() {
 
   const handleChangeDefaultShip =() => {
     
+    // eslint-disable-next-line no-lone-blocks
+    {window.confirm('기본 배송지를 변경하시겠습니까?') 
+    ? changeShipDefault()
+    : console.log('변경안함')}
+
+  }
+
+  const changeShipDefault = () => {
+    axios.put(`${process.env.REACT_APP_TEST_URL}/user/addr/modDefault/${tempCheck}`,{
+      headers:{
+        "Authorization":localStorage.getItem("Authorization")
+      }
+    }).then(res => console.log(res.data))
+      .catch(err => console.error(err))
   }
 
   useEffect(()=> {
-    getShipData()    
+    getShipData()
   }
   ,[])
+
+
+  useEffect(() => {
+    {tempShip && setTempCheck(tempShip[0].addrId)}
+  },[tempShip])
+
+
+  
+
 
 
   return (
@@ -59,6 +81,8 @@ function MyShipaddress() {
           setTempShip={setTempShip}
           key={i}
           data={data}
+          tempCheck={tempCheck}
+          setTempCheck={setTempCheck}
           />
         ))}
       </fieldset>

@@ -15,12 +15,12 @@ function ProductOptionDetail() {
       <div className='productOptionDetailContainer'>
       
         <div className='productBottomButtonOptionDown'>
-          <span class="material-icons-outlined">keyboard_arrow_down</span>
+          <span className="material-icons-outlined">keyboard_arrow_down</span>
         </div>
 
         <div className='productBottomButtonOptionSelect'>
           <h2>선택하세요.(색상)</h2>
-          <span class="material-icons-outlined">keyboard_arrow_up</span>
+          <span className="material-icons-outlined">keyboard_arrow_up</span>
         </div>
 
 

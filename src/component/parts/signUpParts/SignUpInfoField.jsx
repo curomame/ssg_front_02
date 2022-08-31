@@ -97,8 +97,6 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
         </div>
 
 
-
-
       </div>
 
       <hr />

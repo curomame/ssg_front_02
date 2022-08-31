@@ -452,3 +452,9 @@ font-size: 11px;
   color: red;
   /* background-color: red; */
 }
+
+.commonHeaderLayout{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}

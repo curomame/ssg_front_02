@@ -23,8 +23,8 @@ function RecentItem() {
           </Link>
 
           <div className='recentItemIcon'>
-            <div><span class="material-icons-outlined">shopping_cart</span></div>
-            <div><span class="material-icons-outlined">favorite_border</span></div>
+            <div><span className="material-icons-outlined">shopping_cart</span></div>
+            <div><span className="material-icons-outlined">favorite_border</span></div>
           </div>
         </div>
 

@@ -8,22 +8,65 @@ import { useRecoilValue } from 'recoil';
 import { TempAuthState } from '../recoil/atoms/TempAuthState';
 import CartItemCards from '../component/components/cart/CartItemCards';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import CartShipmentDefault from '../component/components/cart/CartShipmentDefault';
+import MainBlankSpace from '../component/parts/mainParts/MainBlankSpace';
 
 
 function Cart() {
  
   const navigate = useNavigate();
-  // const location = useLocation();
-
-  // console.log(location.pathname);
-
   const tempAuth = useRecoilValue(TempAuthState)
+
+
   const [cartDatas, setCartDatas] = useState(null);
   const [totalPrice,setTotalPrice] = useState(0);
-
   const [userTempStatus, setUserTempStatus] = useState('')
 
-  const [pushDatas,setPushDatas] = useState({});
+  const [newData, setNewData] =useState([])
+
+
+  
+
+  const calTotalPrice = () => {
+    let newPrice = 0;
+    if(cartDatas){
+      for(let price of cartDatas){
+        newPrice = newPrice + (price.price * price.qty)
+      }
+      setTotalPrice(newPrice)
+    }
+    return null;
+  } 
+
+
+  const makeNewArrTemp = () => {
+  
+    if(cartDatas){
+      let newArr = [];
+      for(let item of cartDatas){      
+        let newObj = {};
+        newObj["cartId"] = item.cartId
+        newObj["qty"] = item.qty
+        newArr.push(newObj);
+      }
+      setNewData(newArr)
+    }
+
+  }  
+
+  const applyTempCart = () => {
+
+    axios.put(process.env.REACT_APP_TEST_URL+'/cart/mod',newData,{
+      headers:{
+        "Authorization":localStorage.getItem("Authorization")
+      }
+    }).then(res => {
+      return res
+    })
+      .catch(err => console.error(err))
+
+  }
+
 
   useEffect(() => {
     
@@ -39,40 +82,19 @@ function Cart() {
         console.log(err.response.data.message);
         setUserTempStatus(err.response.data.message)
       })
-
-      return () => console.log('화면이동')
-
   },[])
 
+
   useEffect(() => {
-
     if(userTempStatus === "No permission"){
-      navigate('/signup/auth')
-    }
-
+      navigate('/signup/auth')}
   },[userTempStatus])
-
-
-    const calTotalPrice = () => {
-      let newPrice = 0;
-      if(cartDatas){
-        
-        for(let price of cartDatas){
-          newPrice = newPrice + (price.price * price.qty)
-        }
-        setTotalPrice(newPrice)
-      }
-      
-      return null;
-    } 
-
-
 
 
     useEffect(() => {
       calTotalPrice();
-
-    },[cartDatas])
+      makeNewArrTemp();
+    },[cartDatas]);
 
 
 
@@ -81,29 +103,24 @@ function Cart() {
     <>
         
         <Header
-          type={'cart'}/>
+          type={'cart'}
+          func={applyTempCart}/>
         
-        {tempAuth 
-        ? <div>
-            <div>일반배송 정기배송 함께 장보기</div>
-            <div>주소별칭</div>
-          </div>
+        <MainBlankSpace px={100}/>
 
+        {tempAuth 
+        ? <CartShipmentDefault/>
         : <CartNotLogin/>}
 
         {cartDatas ? 
         
         <div>
-          <div>전체 선택 | 배송방법 바꾸기 | 품절삭제</div>
-            
-            
+          {/* <div>전체 선택 | 배송방법 바꾸기 | 품절삭제</div> */}
               <CartItemCards
                 cartDatas={cartDatas}
                 setCartDatas={setCartDatas}
               />
 
-
-            {/* 금액부분 */}
             <div className='cartTotalPrice'>
               <div>결제 예정 금액</div>
               <div className='cartTotalPriceOrder'>
@@ -155,6 +172,9 @@ function Cart() {
             <li>오픈마켓 상품의 경우, ㈜에스에스지닷컴은 통신판매중개자로서 거래 당사자가 아니며, 입점 판매사가 등록한 상품정보 및 거래 등에 대해 책임을 지지 않습니다.</li>
           </ul>
         </div>
+
+
+        {cartDatas ? <div className='cartOrderButton'><h2>주문하기</h2></div> : null}
     </>
   )
 }

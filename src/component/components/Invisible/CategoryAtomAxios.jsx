@@ -13,14 +13,14 @@ function CategoryAtomAxios() {
   
   const [ categoryList, setCategoryList ] = useRecoilState(CategoryState);
 
-  console.log(categoryList)
+  // console.log(categoryList)
 
   useEffect(()=> {
     
     if(categoryList){
       console.log('카테고리 내용이 이미 있어요!')
     } else {
-    axios.get("http://10.10.10.167:8080/ProductCategory/findAll/mCtg")
+    axios.get(process.env.REACT_APP_TEST_URL+"/ProductCategory/findAll/mCtg")
     .then(res => setCategoryList(res.data))
     console.log('카테고리 셋팅이 요청 완료 되었습니다.')
     }

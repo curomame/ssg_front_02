@@ -53,7 +53,7 @@ function SignUpAuth() {
         <div className='signupAuthMethodParts'>
 
           <div>
-            <span class="material-icons-outlined">phone_iphone</span>
+            <span className="material-icons-outlined">phone_iphone</span>
             <div >휴대폰 인증</div>
           </div>
           
@@ -61,7 +61,7 @@ function SignUpAuth() {
         </div>
 
         <div className='signupAuthMethodParts'>
-          <div><span class="material-icons-outlined">email</span></div>
+          <div><span className="material-icons-outlined">email</span></div>
           <div onClick={handleEmailAuth}>이메일 인증</div>
         </div>
 

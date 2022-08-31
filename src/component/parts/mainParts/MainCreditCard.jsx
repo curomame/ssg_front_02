@@ -38,9 +38,9 @@ function MainCreditCard({numbering}) {
 <div className='mainCardsContainer' >
     {datas && 
     
-    datas.map((data) => (
+    datas.map((data,i) => (
       
-        <div className='mainCards' style={{"background":`${data.color}`}}>
+        <div key={i} className='mainCards' style={{"background":`${data.color}`}}>
           <div className='mainCardsBox'>
             <div className='upperCard'>
               <div><span style={{"fontSize":"20px"}}>~5</span>만원</div>

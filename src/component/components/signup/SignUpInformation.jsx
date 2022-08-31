@@ -44,17 +44,13 @@ function SignUpInformation() {
   }, [integrateInfo]);
 
   const handleSignUp = (e) => {
-    // console.log(signUpData);
     e.preventDefault();
 
-    axios
-      .post(url, integrateInfo)
-      .then((res) => {
-        {res.data.status = 200 && navigate('/signup/auth')}
-      })
-      .catch((err) => {
-        console.error(err, '에러발생')
-      });
+    console.log(integrateInfo);
+
+    axios.post(url, integrateInfo)
+      .then((res) => console.log(res.data.data))
+      .catch((err) => console.error(err));
   };
 
   return (

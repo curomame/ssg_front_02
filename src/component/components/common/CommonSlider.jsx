@@ -41,8 +41,8 @@ function CommonSlider() {
           
           {dummyDatas &&
           
-          dummyDatas.map((data) => (
-          <div>
+          dummyDatas.map((data,i) => (
+          <div key={i}>
             <div>
               <img style={{"width":"100%","background":"red", "borderRight":"10px solid white"}} src={data.src} alt=''/>
               <CommonTitleSub

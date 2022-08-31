@@ -32,12 +32,12 @@ function MainIcon({type,Indatas,Incolumn}) {
       {newArr[0] ?
         <div className={type} >
           
-          {newArr.map((grids) => (
+          {newArr.map((grids,i) => (
 
-          <div style={{"display":"flex","justifyContent":"space-between"}}>
-            {grids.map((grid) => (
+          <div key={i} style={{"display":"flex","justifyContent":"space-between"}}>
+            {grids.map((grid,k) => (
               
-              <div style={{"width":`${100/column}%`}}>
+              <div key={k} style={{"width":`${100/column}%`}}>
                 <Link to='/'>
                   <div><img style={{"width":"100%"}} src={grid.src} alt="" /></div>
                   <div style={{"textAlign":"center"}}><p>{grid.name}</p></div>
