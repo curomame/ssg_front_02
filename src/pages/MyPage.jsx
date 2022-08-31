@@ -4,27 +4,36 @@ import Header from '../component/components/common/Header'
 import BottomNav from '../component/layout/BottomNav'
 import '../assets/css/mypage.css'
 import { Link,Navigate, useNavigate } from 'react-router-dom'
-import useAuthToken from '../hooks/useAuthToken'
-import { useContext } from 'react'
-import { TokenVerifying } from '../context/TokenVerifying'
 import { useRecoilValue } from 'recoil'
 import { TempAuthState } from '../recoil/atoms/TempAuthState'
 import { useEffect } from 'react'
-import IsLogin from '../utils/IsLogin'
+import { useState } from 'react'
+import axios from 'axios'
 
 function MyPage() {
   
+  const [userInfo, setUserInfo] = useState({});
   const tempAuth = useRecoilValue(TempAuthState);
   const navigate = useNavigate()
+
+
 
   useEffect(() => {
 
     if(!tempAuth){
       navigate('/login')
+    } else {
+
+        axios.get(process.env.REACT_APP_TEST_URL+'/user/my',{
+          headers:{
+            "Authorization":localStorage.getItem("Authorization")
+          }
+        })
+          .then(res => setUserInfo(res.data.data))
+          .catch(err => console.error(err))
     }
     
   },[])
-  
 
   return (
     <>
@@ -35,10 +44,12 @@ function MyPage() {
         <div className='mypageProfileIcon'>
           <img src="//sui.ssgcdn.com/ui/m_ssg/img/@100x100.png" alt="" />
         </div>
-        <div className='mypageProfileDetail'>
-          <div>이형민 님 {'>'}</div>
-          <div><span>FRIENDS</span> 등급입니다.</div>
-        </div>
+        <Link to='setting'>
+          <div className='mypageProfileDetail'>
+            <div>{userInfo.name} 님 {'>'}</div>
+            <div><span>{userInfo.grade}</span> 등급입니다.</div>
+          </div>
+        </Link>
       </div>
 
 
@@ -59,7 +70,7 @@ function MyPage() {
         </div>
 
         <div>
-          <Link to='/wishlist'>
+          <Link to='#'>
             <span class="material-icons-outlined">favorite_border</span>
             <p>알림함</p>
           </Link>

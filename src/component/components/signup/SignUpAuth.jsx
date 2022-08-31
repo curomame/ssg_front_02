@@ -1,17 +1,42 @@
 import axios from 'axios'
 import React from 'react'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function SignUpAuth() {
 
-  const 이메일인증 = () => {
-    console.log('이메일인증 클릭')
-    axios.post('http://10.10.10.167:8080/email/authen',{
-      "userId":"test123123",
-      "email":"curomame@naver.com"
+  const navigate = useNavigate()
+
+  const [ userId , email, phoneNum] = ["ccossg2", "curomame@naver.com",""]
+
+  const [authModal, setAuthMoal] = useState(false)
+  const [authNumber, setAuthNumber] = useState('')
+
+  const handleEmailAuth = () => {
+    // console.log('handleEmailAuth 클릭')
+    setAuthMoal(true);
+    axios.post(process.env.REACT_APP_TEST_URL+'/auth/email',{
+      "userId":userId,
+      "email":email
     }).then(res => console.log(res.data))
       .catch(err => console.error(err))
   }
 
+  const handlePostAuthNumber = () => {
+    axios.post(process.env.REACT_APP_TEST_URL+'/auth/confirm',{
+
+        "email" : email,
+        "phoneNum" :phoneNum,
+        "userId": userId,
+        "key" : authNumber
+
+    }).then(res => console.log(res.data.data))
+      .catch(err => console.error(err))
+    
+    setAuthNumber("");
+    setAuthMoal(false);
+    navigate('/');
+  }
 
   return (
     <>
@@ -29,7 +54,7 @@ function SignUpAuth() {
 
           <div>
             <span class="material-icons-outlined">phone_iphone</span>
-            <div onClick={이메일인증}>휴대폰 인증</div>
+            <div >휴대폰 인증</div>
           </div>
           
           
@@ -37,7 +62,7 @@ function SignUpAuth() {
 
         <div className='signupAuthMethodParts'>
           <div><span class="material-icons-outlined">email</span></div>
-          <div>이메일 인증</div>
+          <div onClick={handleEmailAuth}>이메일 인증</div>
         </div>
 
       </div>
@@ -48,6 +73,16 @@ function SignUpAuth() {
         <div>NICE평가정보(주) 고객센터 : 1600-1522</div>
         <div>코리아크레딧뷰로(주) 고객센터 : 02-708-1000</div>
       </div>
+
+      {authModal 
+      ? 
+        <div>
+          <div>인증 번호를 입력해주세요</div>
+          <input type="number" value={authNumber} onChange={(e) => setAuthNumber(e.target.value)}/>
+          <div onClick={handlePostAuthNumber} >인증확인!</div>
+        </div>
+
+      : null}
 
     </div>
     </>

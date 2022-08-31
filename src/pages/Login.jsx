@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useRecoilValue } from 'recoil'
 import { TempAuthState } from '../recoil/atoms/TempAuthState'
+import LoginSNS from '../component/components/login/LoginSNS'
 
 
 function Login() {
@@ -32,6 +33,8 @@ function Login() {
             <span><Link to="/signup/entry">회원가입</Link></span>
         </div>
 
+      {/* 간편 로그인 */}
+      <LoginSNS/>
 
       <Footer/>
     </>

@@ -13,6 +13,8 @@ function CategoryAtomAxios() {
   
   const [ categoryList, setCategoryList ] = useRecoilState(CategoryState);
 
+  console.log(categoryList)
+
   useEffect(()=> {
     
     if(categoryList){

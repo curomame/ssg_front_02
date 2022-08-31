@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 function SignUpInformation() {
 
-  const url = "http://10.10.10.167:8080/user/signup";
+  const url = process.env.REACT_APP_TEST_URL+"/user/signup";
   const navigate = useNavigate();
 
 

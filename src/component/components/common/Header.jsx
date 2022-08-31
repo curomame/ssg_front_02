@@ -8,7 +8,7 @@ import MyCart from '../../parts/commonsParts/MyCart';
 import SearchBar from '../../parts/commonsParts/SearchBar';
 
 
-function Header({type}) {
+function Header({type,text}) {
 
   const navigate = useNavigate();
 
@@ -17,6 +17,14 @@ function Header({type}) {
   const [reModal, setReModal] = useRecoilState(SearchModalState);
 
   switch(type){
+
+    case 'text':
+      return <div className='loginHeaderLayout'>
+              <div><span className="material-icons-outlined" onClick={()=>navigate('/')}>arrow_back</span></div>
+              <div><h3>{text}</h3></div>
+              <div></div>
+            </div>
+
     case 'cart':
       return <div className='cartHeaderLayout'>
                 <div><span className="material-icons-outlined" onClick={()=>navigate(-1)}>arrow_back</span></div>

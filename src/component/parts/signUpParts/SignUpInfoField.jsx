@@ -3,24 +3,14 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import SignUpAddressPopup from "./SignUpAddressPopup";
 
-/* 모든 입력란에 대해 나눌 필요가 있으며,
-이 파일은 Layout으로 변경될 예정 */
 
-// 도로명 api = devU01TX0FVVEgyMDIyMDgyNjEzNDI1OTExMjkyMDk=
-
-
-/**
- * zoneCode : 우편번호
- * roadAddress : 도로명주소
- * detailAddress : 상세주소
- */
 
 function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
-  // 2개의 비밀번호 입력란 비교 결과값에 따라 출력되는 메시지를 저장
+
+  const [idValid, setIdValid] = useState(null);
+
   const [passwordValidate, setpasswordValidate] = useState("");
 
-  // Address Parts에서 주소 결과값을 저장
-  // const [addressValue, setAddressValue] = useState("");
 
   const [signUpData, setSignUpData] = useState({
     "userId": "",
@@ -45,82 +35,54 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
     });
   }, [signUpData]);
 
-  // 입력 값에 대한 제한 조건 검증을 위한 코드
+
   const handleChange = (e) => {
-    // 영문, 숫자 외 값의 입력을 방지하기 위한 정규표현식
-    let regex = /^[a-z0-9]*$/;
 
-    // 입력 중인 필드가 "비밀번호 확인란"일 경우 동작
-    if (e.target.name === "passwordCheck") {
-      handlePassWordCheck(e.target.value);
+    if(e.target.name === "userId"){
+      handleCheckId(e)
     }
 
-    // 전화번호 입력 시 적용될 정규표현식
-    if (e.target.name === "phoneNumber") {
-      regex = /^[0-9-]*$/;
-    }
-
-    // 이메일 주소 입력 시 적용될 정규표현식과 입력 중일 경우 검증 동작
-    if (e.target.name === "userEmail") {
-      regex = /^[@a-z0-9.]*$/;
-      handleEmailCheck(e.target.value);
-    }
-
-    // // 입력받은 문자열이 정규표현식을 만족여부를 판별하여 입력받음.
-    // if (regex.test(e.target.value)) {
-      
-    // }
     setSignUpData({ ...signUpData, [e.target.name]: e.target.value });
   };
 
   // 비밀번호 검증을 위한 코드
   const handlePassWordCheck = (chk) => {
     if (signUpData.password === chk) {
-      // console.log("비밀번호 검증 성공");
       setpasswordValidate("비밀번호가 일치합니다.");
     } else {
-      // console.log("비밀번호 검증 실패(불일치)");
       setpasswordValidate("비밀번호가 일치하지 않습니다.");
     }
   };
 
-  // 이메일 주소 형식 검증을 위한 코드(구현중)
-  const handleEmailCheck = (chk) => {
-    // 값이 정상적으로 들어오는지 확인을 위한 출력
-    // console.log(chk);
-  };
 
-  // 아이디 중복확인을 위한 코드(구현중)
-  const handleCheckId = (chk) => {
-    const url = "";
-    let result = "";
+  const handleCheckId = (e) => {
+    
+    axios.get(process.env.REACT_APP_TEST_URL+'/user/idcheck',
+    {
+      headers:{
+        "userId":e.target.value
+      }
+    })
+    .then(res => {
+      {res.data.data 
+        ? setIdValid("사용이 불가능한 아이디입니다 :-(")
+        : setIdValid("사용 가능한 아이디입니다 :-)")}
+    })
+    .catch(err => console.error(err))
 
-    axios
-      .get(url, {
-        userId: chk,
-      })
-      .then((Response) => {
-        console.log(Response);
-        console.log(result);
-
-        if (result === true) {
-          console.log("사용가능한 아이디입니다.");
-        } else {
-          console.log("사용할 수 없는 아이디입니다.");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+    
+    
+  }
 
   return (
+
+
     <div className="signupInfoFieldContainer">
 
       <div className="signupInfoFieldBox">
         <div className="signupInfoFieldBoxUnder">
-          <div>아이디</div>
-          <div>
+          <div><p>아이디</p></div>
+          <div className="signupInfoIdInput">
             <input
               type="text"
               name="userId"
@@ -129,10 +91,12 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
               onChange={handleChange}
               maxLength="20"
             />
+          {idValid ? <span>{idValid}</span> : ""}
           </div>
+          
         </div>
 
-        <button onClick={handleCheckId}>중복 확인</button>
+
 
 
       </div>
@@ -140,7 +104,7 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
       <hr />
 
       <div className="signupInfoFieldBoxUnder">
-        <div>비밀번호</div>
+        <div><p>비밀번호</p></div>
         <div>
           <input
             type="password"
@@ -165,14 +129,14 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
           <br />
 
           {/* 비밀번호 입력칸 */}
-          <p>{passwordValidate}</p>
+          <span>{passwordValidate}</span>
         </div>
       </div>
 
       <hr />
 
       <div className="signupInfoFieldBoxUnder">
-        <div>이름</div>
+        <div><p>이름</p></div>
         <input
           type="text"
           name="name"
@@ -183,19 +147,28 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
 
       <hr />
 
-      <div>
-        <SignUpAddressPopup
+
+        {/* <SignUpAddressPopup
           addressValue={signUpData}
           setAddressValue={setSignUpData}
+        /> */}
+
+      <div className="signupInfoFieldBoxUnder">
+        <div><p>주소</p></div>
+        <input
+          type="text"
+          name="detailAddress"
+          value={signUpData.detailAddress}
+          onChange={handleChange}
         />
       </div>
 
       <hr />
 
       <div className="signupInfoFieldBoxUnder">
-        <div>휴대폰 번호</div>
+        <div><p>휴대폰 번호</p></div>
         <input
-          type="text"
+          type="number"
           name="phoneNumber"
           value={signUpData.phoneNumber}
           onChange={handleChange}
@@ -205,7 +178,7 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
       <hr />
 
         <div className="signupInfoFieldBoxUnder">
-          <div> 이메일주소</div>
+          <div><p>이메일주소</p></div>
           <input
             type="text"
             name="email"

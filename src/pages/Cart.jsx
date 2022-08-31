@@ -7,13 +7,23 @@ import axios from 'axios';
 import { useRecoilValue } from 'recoil';
 import { TempAuthState } from '../recoil/atoms/TempAuthState';
 import CartItemCards from '../component/components/cart/CartItemCards';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 
 function Cart() {
  
+  const navigate = useNavigate();
+  // const location = useLocation();
+
+  // console.log(location.pathname);
+
   const tempAuth = useRecoilValue(TempAuthState)
   const [cartDatas, setCartDatas] = useState(null);
   const [totalPrice,setTotalPrice] = useState(0);
+
+  const [userTempStatus, setUserTempStatus] = useState('')
+
+  const [pushDatas,setPushDatas] = useState({});
 
   useEffect(() => {
     
@@ -25,12 +35,22 @@ function Cart() {
       .then(res => {
         setCartDatas(res.data.data.cartOutputDtoList)
       })
-      .catch(err => console.error(err))
+      .catch(err => {
+        console.log(err.response.data.message);
+        setUserTempStatus(err.response.data.message)
+      })
 
-      return () => {
-        
-      }
+      return () => console.log('화면이동')
+
   },[])
+
+  useEffect(() => {
+
+    if(userTempStatus === "No permission"){
+      navigate('/signup/auth')
+    }
+
+  },[userTempStatus])
 
 
     const calTotalPrice = () => {
@@ -47,19 +67,14 @@ function Cart() {
     } 
 
 
+
+
     useEffect(() => {
       calTotalPrice();
+
     },[cartDatas])
 
-    const handleUpdateCart = () => {
 
-      axios.put(process.env.REACT_APP_TEST_URL+'/cart/mod',{
-        headers:{
-          "Authorization":localStorage.getItem("Authorization")
-        }
-      })
-
-    }
 
 
   return (
@@ -86,7 +101,6 @@ function Cart() {
                 cartDatas={cartDatas}
                 setCartDatas={setCartDatas}
               />
-
 
 
             {/* 금액부분 */}

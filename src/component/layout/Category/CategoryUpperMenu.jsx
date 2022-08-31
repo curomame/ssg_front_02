@@ -15,6 +15,7 @@ function CategoryUpperMenu() {
   const [Lid, setLid] = useState(location.state.Lid)
   const [Mid, setMid] = useState(location.state.Mid)
 
+  console.log(Lid,Mid)
 
   const [LDatas, setLDatas] = useState(null);
   const [MDatas, setMDatas] = useState(null);
@@ -23,15 +24,14 @@ function CategoryUpperMenu() {
 
       setLDatas(categoryDatas[Lid-1].lcategoryList);
       categoryDatas[Lid-1].lcategoryList.filter((item,i)=> {if(item.id===Mid)
-        console.log(i);
+        // console.log(i);
         setMid(i)
         setMDatas(item.mcategoryList)
       });
 
   },[categoryDatas])
 
-  // console.log(categoryDatas[Lid-1].lcategoryList[Mid-1])
-  // console.log(Mid);
+console.log(categoryDatas[Lid-1].name);
 
   return (
     <>

@@ -13,6 +13,8 @@ function MyShipaddress() {
   const [tempShip,setTempShip] = useState(null);
   const [addModal,setAddModal] = useState(false);
 
+  const [tempCheck, setTempCheck] = useState(0);
+
   const getShipData = async () => {
     const shipData = await axios.get(process.env.REACT_APP_TEST_URL+'/user/addr/get',{
       headers:{
@@ -22,7 +24,6 @@ function MyShipaddress() {
     .then(res => res)
     .catch(err => console.error(err))
     setTempShip(shipData.data.data);
-    // console.log(shipData.data.data);
   }
 
   const handleChangeDefaultShip =() => {
@@ -43,28 +44,24 @@ function MyShipaddress() {
       type={'myship'}/>
 
 
-
     <div className='myshipContainer'>
-      
       <div className='myshipTop' >[MY배송지]</div>
-
       <div className='myshipList'>
         <h2>MY배송지</h2>
       </div>
 
+
       {tempShip 
-      
       ? 
-      
-      tempShip.map((data,i) => (
-        <MyshipCards
-        setTempShip={setTempShip}
-        key={i}
-        data={data}
-        />
-
-      ))
-
+      <fieldset>
+        {tempShip.map((data,i) => (
+          <MyshipCards
+          setTempShip={setTempShip}
+          key={i}
+          data={data}
+          />
+        ))}
+      </fieldset>
       : <div className='myshipNAN' >
           <img style={{"width":"90px"}} src="https://sui.ssgcdn.com/ui/m_ssg/img/cs/ico_myodr_nodata.png" alt="" />
           <div>등록된 My배송지가 없습니다.</div>

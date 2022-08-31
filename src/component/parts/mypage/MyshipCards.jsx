@@ -6,12 +6,10 @@ import MyshipChange from '../../components/mypage/MyshipChange';
 function MyshipCards({data,setTempShip}) {
 
   const [changeModal,setChangeModal] = useState(false);
-  //기본배송지인지
 
-  // console.log(data.addrId)
 
   const handleDeleteAddr = () => {
-    // console.log(data.addrId)
+
     const status = window.confirm('정말로 삭제하시겠습니까?')
     
     if(status){
@@ -25,13 +23,13 @@ function MyshipCards({data,setTempShip}) {
     }
   }
 
-  console.log(data.addrDefault)
+  console.log(data.addrDefault);
 
   return (
     <>
       <div className='myShipCardContainer'>
 
-        <div>{data.addrDefault ? <input type="radio" checked />: <input type="radio"/>}</div>
+        <input type="checkbox" id={data.addrId} checked={data.addrDefault}/>
 
         <div className='myShipCardAddressNameBox'>
           <div className='myShipCardAddressName'>

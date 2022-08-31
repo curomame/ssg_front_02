@@ -252,3 +252,15 @@
 .myshipThisTime div:last-child{
   background-color: #ff5b59;
 }
+
+.myShipToggleButton{
+  width: 15px;
+  height: 15px;
+  border: 1px solid gray;
+  border-radius: 100%;
+  margin: auto;
+}
+
+.defaultShip {
+  background-color: #ff5b59;
+}

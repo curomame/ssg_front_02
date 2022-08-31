@@ -65,24 +65,31 @@ margin: 10px 10px;
 }
 
 .signupInfoFieldContainer{
-
   margin: 0px 20px;
-}
-
-.signupInfoFieldBox{
-  display: flex;
-  justify-content: space-between;
 }
 
 .signupInfoFieldBoxUnder{
   display: flex;
+  height: 100%;
+  justify-content: space-between;
 }
 
-.signupInfoFieldBoxUnder div{
-  margin-right:10px;
-  width: 80px;
+.signupInfoFieldBoxUnder input{
+  height: 30px;
+  border : 1px solid #777;
+  min-width: 270px;
 }
 
+.signupInfoFieldBoxUnder{
+  line-height: 30px;
+}
+
+.signupInfoFieldBoxUnder p::before{
+
+  content: '*';
+  color: red;
+
+}
 
 
 .signupAuthMethodParts{
@@ -97,3 +104,40 @@ margin: 10px 10px;
   margin: 0px 20px;
 }
 
+
+.signupInfoIdInput{
+  display: flex;
+  flex-direction: column;
+}
+
+.myInfoSettingContainer div{
+  padding: 0px 16px;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid rgb(203, 203, 203);
+
+}
+
+.myInfoChangeModalContainer{
+  padding: 0px 16px;
+
+}
+
+.myInfoChangeModalContainer div{
+  display: flex;
+  margin: 12px 0px;
+  justify-content: space-between;
+}
+
+.myInfoChangeModalContainer div input{
+  width: 260px;
+}
+.myInfoChangeButton p{
+  font-weight: 600;
+  color: white;
+  background: #ff5b59;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+}
