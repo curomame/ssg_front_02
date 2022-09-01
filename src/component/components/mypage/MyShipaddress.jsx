@@ -3,7 +3,7 @@ import CommonFooter from '../common/CommonFooter'
 import Header from '../common/Header'
 import MyshipAddAddress from './MyshipAddAddress'
 import { useState } from 'react';
-import MyshipCards from '../../parts/mypage/MyshipCards';
+import MyshipCards from '../../parts/mypageParts/MyshipCards';
 import axios from 'axios';
 import { useEffect } from 'react';
 import MyshipChange from './MyshipChange';

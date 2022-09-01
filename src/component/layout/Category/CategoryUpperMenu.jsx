@@ -11,32 +11,35 @@ function CategoryUpperMenu() {
   const location = useLocation()
   const navigate = useNavigate();
   const categoryDatas = useRecoilValue(CategoryState);  
-  
-  const [Lid, setLid] = useState(location.state.Lid)
-  const [Mid, setMid] = useState(location.state.Mid)
 
-  console.log(Lid,Mid)
+  const [Lid, setLid] = useState(location.state.Lid)
+  const [Mid, setMid] = useState(location.state.Mid+1)
+
 
   const [LDatas, setLDatas] = useState(null);
   const [MDatas, setMDatas] = useState(null);
 
   useEffect(()=>{
 
-      setLDatas(categoryDatas[Lid-1].lcategoryList);
-      categoryDatas[Lid-1].lcategoryList.filter((item,i)=> {if(item.id===Mid)
-        // console.log(i);
+    if(categoryDatas[Lid-1]!==undefined){
+      
+      setLDatas(categoryDatas[Lid-1].lcategoryList)
+      categoryDatas[Lid-1].lcategoryList.filter((item,i) => {if(item.id===Mid)
         setMid(i)
         setMDatas(item.mcategoryList)
-      });
+      })
+    } else {
+      console.log('undefined')
+    }
+       
 
-  },[categoryDatas])
+  },[categoryDatas,Lid])
 
-console.log(categoryDatas[Lid-1].name);
-
-  return (
+  return ( 
     <>
 
     {MDatas && 
+    
 
     <div className='categoryUpperMenuContainer'>
           
@@ -55,8 +58,8 @@ console.log(categoryDatas[Lid-1].name);
             LDatas.map((data,i) => 
             { 
               return <div onClick={()=>{
-                setMid(i+1)}} key={i}>
-                    <p>{data.name}</p>
+                      setMid(i+1)}} key={i}>
+                      <p>{data.name}</p>
                     </div>}
             )
             }

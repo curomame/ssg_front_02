@@ -272,56 +272,7 @@
 }
 
 
-/* QNA */
 
-.productQNABubbleQuestionBox{
-  border: 1px solid #999;
-  border-radius: 4px;
-  padding: 15px;
-}
-
-.productQNABubbleQuestionBox div{
-
-  margin: 6px 0px;
-}
-
-.productQNABubbleQuestionInfo{
-  display: flex;
-  font-size: 11px;
-  color: #888;
-  line-height: 11px;
-}
-
-.productQNABubbleQuestionContent div:first-child{
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.productQNABubbleQuestionContent div:last-child{
-  font-size: 13px;
-  font-weight: 500;
-  color: #777;
-}
-
-.productQNABubbleQuestionInfo div{
- margin-right: 6px;
-}
-
-.productQNABubbleAnswerBox{
-  margin-top: 16px;
-  margin-left: 24px;
-  border-radius: 4px;
-  background-color: #f9f8eb;
-}
-
-
-.productQNABubbleAnswerBox div{
-  margin: 6px 0px;
-}
-
-.productQNABubbleAnswerInfo{
-  display: flex;
-}
 
 
 .categoryUpperMenuMContainer{
@@ -361,4 +312,15 @@
 
 .categoryUnderMenuContainer div{
   width: 33%;
+}
+
+.categoryItemTopContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.categoryItemContainer{
+  width: 49%;
+  margin-top: 10%;
 }

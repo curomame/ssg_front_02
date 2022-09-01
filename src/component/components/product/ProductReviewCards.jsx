@@ -1,6 +1,9 @@
 import React from 'react'
 
 function ProductReviewCards({datas}) {
+
+  // console.log(datas.reviewImageDTOList.map((item) => console.log(item.imageURL)));
+
   return (
     <>
       <div className='productReviewCard'>
@@ -12,10 +15,15 @@ function ProductReviewCards({datas}) {
         </div>
 
 
+        
+
         {datas.reviewImageDTOList[0] && 
-        <div className='productReviewCardImg'>    
-          <img src="https://simg.ssgcdn.com/trans.ssg?src=/uphoto/202208/20220825163428_1179977700_0_1.jpg&w=120&h=120&autoOrient=true&t=bfd9abc69cd6438f3acdc7e40311fcff871a7886" alt="" />
-        </div>
+
+        datas.reviewImageDTOList.map((img) => (
+            <div className='productReviewCardImg'>    
+              <img src={process.env.REACT_APP_DISPLAY_IMG_URL+img.imageURL} alt="" />
+            </div>
+        ))
       }
         
 

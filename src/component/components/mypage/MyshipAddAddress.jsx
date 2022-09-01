@@ -1,5 +1,5 @@
 import React from 'react'
-import MyShipAddrAPI from '../../parts/mypage/MyShipAddrAPI';
+import MyShipAddrAPI from '../../parts/mypageParts/MyShipAddrAPI';
 import Header from '../common/Header'
 import DaumPostCode from 'react-daum-postcode';
 import { useState } from 'react';

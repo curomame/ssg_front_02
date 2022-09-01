@@ -10,7 +10,6 @@ function ProductSlider({imgs}) {
   const [current, setCurrent ] = useState(1);
   const navigate = useNavigate();
 
-  // console.log(imgs)
 
   const settings = {
 

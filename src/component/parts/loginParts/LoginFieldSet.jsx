@@ -26,6 +26,7 @@ function LoginFieldSet() {
       pwd: ""
     })
 
+  // console.log(loginData);
 
   const handleChange = ( e ) => {
       setLoginData({...loginData, [e.target.name]: e.target.value })}
@@ -34,13 +35,16 @@ function LoginFieldSet() {
   const handleLogin = ( ) => {
       axios.post(process.env.REACT_APP_TEST_URL+"/user/login",loginData)
         .then(res => {
-        localStorage.setItem("Authorization",res.data.detail)
+        console.log(res.data)
+        localStorage.setItem("Authorization",res.data.access_token)
         setTempAuth(true);
         setLogin(true)
         alert('로그인이 성공적으로 완료되었습니다!')
         })
-        .catch(err => alert('회원 정보가 맞지 않습니다 :<'))
-        // .catch(error => alert('아이디와 비밀번호를 확인해주세요 :)'))
+        .catch(err => {
+          console.error(err)
+          alert('회원 정보가 맞지 않습니다 :<')
+        })
   }
 
 

@@ -10,10 +10,9 @@ import axios from 'axios'
 import { useEffect } from 'react'
 import ProductQNACards from '../component/components/product/ProductQNACards'
 import MainBlankSpace from '../component/parts/mainParts/MainBlankSpace'
+import CommonToHome from '../component/parts/commonsParts/CommonToHome'
 
 function Product() {
-
-
 
   const [allImg, setAllImg] = useState(false);
   const handleViewProductImg = () => {
@@ -29,24 +28,21 @@ function Product() {
   useEffect(() => {
     axios.get(`${url}/product/detail/${params.id}`)
     .then(res => {
-      // console.log(res.data);
       setDetailData(res.data)
     })
     .catch(err => console.error('상품을 받아오는 도중 에러발생'))
   },[])
   
-  console.log(detailData);
+  // console.log();
 
   return (
 
     
     <>
 
-    
+      <CommonToHome/>
       <Header
         type={"product"}/>
-
-      {/* 필수요소만 적어봄 */}
 
       {detailData && 
       
@@ -82,13 +78,13 @@ function Product() {
           <div><p>상세정보</p></div>
           <hr />
           <div className={allImg ? 'productDetailImgAfter': 'productDetailImgBefore'}>
-            {allImg || <span className='productDetailImgBlur'> </span>}
+            {allImg || <span className='productDetailImgBlur'></span>}
             <div onClick={handleViewProductImg}>{allImg ? '상세정보 접기 ▲' : '상세정보 펼쳐보기 ▼'}</div>
-            <img src="https://sstatic.ssgcdn.com/cmpt/edit/202101/29/162021012916430641268195539819_757.jpg" alt="" />
+            <img height="2000" src={process.env.REACT_APP_DISPLAY_IMG_URL+detailData.productGetDto.productImageDetailDTOList[0].imageURL} alt="" />
           </div>
         </div>
 
-
+      <div>
         <div className='productBottomReviewBox'>
           <div><h2>고객 리뷰</h2></div>
           <hr />
@@ -104,7 +100,7 @@ function Product() {
             <div>전체 리뷰</div>
             <div><Link to='reviews'>더보기({detailData.reviewDTOList.length}) {'>'}</Link></div>
           </div>
-
+      </div>
 
           {detailData.reviewDTOList.map((datas,i) =>
 
@@ -115,8 +111,10 @@ function Product() {
           
           }
           
+          
+
           <ProductQNACards
-            // datas={}
+            datas={detailData.productQnASetDtoList}
           />
 
           <MainBlankSpace px={160}/>
@@ -129,7 +127,6 @@ function Product() {
       </>
       
       }
-
 
     </>
   )

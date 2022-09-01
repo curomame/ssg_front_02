@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import categoryMainDatas from '../../../assets/datas/categoryDatas/categorymainDatas.json'
 import CategoryMainSelectSub from '../../parts/categoryParts/CategoryMainSelectSub';
-import axios from 'axios';
 import { useRecoilValue } from 'recoil';
 import CategoryState from '../../../recoil/atoms/CategoryState';
 

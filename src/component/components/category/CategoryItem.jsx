@@ -1,43 +1,93 @@
-import React from 'react'
+import axios from 'axios'
+import React, { Suspense, useState } from 'react'
+import { useEffect } from 'react'
 
-function CategoryItem({item}) {
+function CategoryItem({type,ctgId}) {
+
+  const [itemDatas, setItemDatas] = useState('');
+  const [tempId, setTempId] = useState('');
+  
+  const getTempDatas = () => {
+
+    axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/lCtg/${tempId}/1`)
+    .then(res => setItemDatas(res.data.productTitleDtoList))
+    .catch(err => console.error(err))  
+
+    return null;
+  }
+
+  useEffect(() => {
+
+    switch(type){
+
+      case('lCtg'):
+        setTempId(ctgId)
+        return null;
+
+      default:
+        return null;
+    }
+
+  },[])
+  
+  
+  useEffect(() => {
+
+    if(typeof tempId === "number"){
+      getTempDatas()
+    }
+    
+  },[tempId])
+
+
+
+ 
+  // console.log(itemDatas, tempId);
 
   return (
     <>
-      <div className="categoryItemContainer" style={{"width":"50%", "marginTop":"10px"}}>
-        {/* <div>
-          <div><p>SSG개런티</p></div>
-        </div> */}
 
-        <div>
-          <div><img style={{"width":"100%"}} src={item.src} alt="" /></div>
-          
-          <div className='categoryItemText'>
-          
-              <div><h3>{item.mall}</h3></div>
-              <div><h2>{item.title}</h2></div>
-              <div><p className='categoryItemSub'>{item.sub}</p></div>
-              <div><p className={`categoryItemPrice ${item.discount ? "categoryline" : null}`}>{(item.price).toLocaleString()}원</p></div>
-              {item.discount 
-                ? <div className='categoryItemDiscount'>
-                    <p>{(item.price * (100 - item.discount)/100).toLocaleString()}원</p>
-                    <p>{item.discount}%</p>
-                  </div> 
-                : null}
-              <div className='categoryItemStar'><p>★</p><p>{item.star}</p><p>|</p><p>{(item.reviewCount).toLocaleString()}건</p></div>
+<div className='categoryItemTopContainer'> 
+    {itemDatas[0] && 
+      itemDatas.map((item) => (
 
-            <div style={{display:"flex"}}>
-              
-              {item.import ? <div className='categoryAttBox'><p>해외직구</p></div> :null}
-              {item.freeShip ? <div className='categoryAttBox'><p>무료배송</p></div> :null}
-            </div>
-          </div>
+        // <div>hi</div>
+      <div key={item.productId} className="categoryItemContainer">
+      <div>
+        <div><img style={{"width":"100%"}} src={process.env.REACT_APP_DISPLAY_IMG_URL+item.titleImgUrl} alt="" /></div>
+        
+        <div className='categoryItemText'>
+        
+            <div><h3>신세계몰</h3></div>
+            <div><h2>{item.brandName}</h2></div>
+            <div><p className='categoryItemSub'>{item.productName}</p></div>
+            <div><p className={`categoryItemPrice ${item.discount ? "categoryline" : null}`}>{(item.price).toLocaleString()}원</p></div>
+            {item.discountRate
+              ? <div className='categoryItemDiscount'>
+                  <p>{(item.price * (100 - item.discountRate)/100).toLocaleString()}원</p>
+                  <p>{item.discountRate}%</p>
+                </div> 
+              : null}
+            <div className='categoryItemStar'><p>★</p><p>{item.avgStar}</p><p>|</p><p>{(item.productReviewCnt).toLocaleString()}건</p></div>
+  
+          <div style={{display:"flex"}}>
             
-      
-
-        </div>
+            {item.import ? <div className='categoryAttBox'><p>해외직구</p></div> :null}
+            {item.freeShip ? <div className='categoryAttBox'><p>무료배송</p></div> :null}
+                  </div>
+                </div>
       </div>
-    </>
+      </div>
+      ))
+    }
+</div>
+
+  
+
+
+
+      
+      </>
   )
 }
 

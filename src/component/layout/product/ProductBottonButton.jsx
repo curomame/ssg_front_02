@@ -5,7 +5,7 @@ import AddWishUtil from '../../../utils/AddWishUtil';
 import CommonCartParts from '../../parts/commonsParts/CommonCartParts';
 import CommonPresent from '../../parts/commonsParts/CommonPresent';
 import CommonWishListParts from '../../parts/commonsParts/CommonWishListParts';
-import ProductOptionSelect from '../../parts/product/ProductOptionSelect';
+import ProductOptionSelect from '../../parts/productParts/ProductOptionSelect';
 
 function ProductBottonButton() {
 
@@ -45,7 +45,6 @@ function ProductBottonButton() {
       ?
       <div className='productBottomButtonTwo'>
         <div onClick={handleWishToggle} className='productBottomButtonHeart'><span className="material-icons-outlined">favorite_border</span></div>
-        <div className='productBottomButtonPresent'><CommonPresent/></div>
       </div>
       :
       <div onClick={handleCartInput} className='productBottomButtonOne'>

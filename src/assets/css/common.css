@@ -458,3 +458,22 @@ font-size: 11px;
   top: 0;
   width: 100%;
 }
+
+/* 홈으로 가즈아 */
+
+.commonToHomeIcon{
+  background-color: lightgray;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  padding: 4px;
+  border-radius: 8px;
+  position: fixed;
+  right: 20px;
+  bottom: 9%;
+  z-index: 99999;
+}
+
+.commonToHomeIcon span{
+  margin: auto;
+}

@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 function AddCartUtil(productId) {
+
   //카트에 상품을 넣는 유틸
   const inputData = [{
     "productId": productId,
@@ -14,7 +15,9 @@ function AddCartUtil(productId) {
     headers:{
       "Authorization":localStorage.getItem("Authorization")
     }
-  }).then(res => console.log(res.data))
+  }).then(res => {
+    console.log(res.data)
+  })
     .catch(err => console.error('카트 상품 넣는 도중 에러 발생'+err));
 
   return null;

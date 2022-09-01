@@ -21,7 +21,7 @@ function Items({itemDatas,row}) {
           <div className='mainItems' key={i}>
             <div>
               <img 
-            src={`http://10.10.10.167:8080/display?fileName=${item.titleImgUrl}`} 
+            src={process.env.REACT_APP_TEST_URL+`/display?fileName=${item.titleImgUrl}`} 
             alt={'사진'}
             width="135px"
             height="135px"

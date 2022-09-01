@@ -42,11 +42,9 @@ function CartItemCards({cartDatas,setCartDatas}) {
         })
         .catch(err => console.error('카트 제거 에러',err))
       
-  
         console.log(newCondition);
         setCartDatas([...newCondition])
     }
-
   }
 
   return (

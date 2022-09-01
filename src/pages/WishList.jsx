@@ -7,7 +7,7 @@ import BottomNav from '../component/layout/BottomNav'
 import '../assets/css/wishList.css'
 import WishListUpperMenu from '../component/components/wishList/WishListUpperMenu'
 import MainBlankSpace from '../component/parts/mainParts/MainBlankSpace'
-import WishItem from '../component/parts/wishList/WishItem'
+import WishItem from '../component/parts/wishListParts/WishItem'
 
 function WishList() {
 
@@ -54,7 +54,11 @@ function WishList() {
             
           <div onClick={() => setEditMode((prev)=> !prev)} className='wishListEditButton'>
             <div>
-              <span className="material-icons-outlined">tune</span><p>편집</p>
+              {editMode 
+              ? <p>취소</p>
+              : <><span className="material-icons-outlined">tune</span><p>편집</p></>}
+              
+              
             </div>
           </div>
 

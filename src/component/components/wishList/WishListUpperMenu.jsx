@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
-import WishListAddFolderModal from '../../parts/wishList/WishListAddFolderModal';
+import WishListAddFolderModal from '../../parts/wishListParts/WishListAddFolderModal';
 
 function WishListUpperMenu({foldDatas,setFoldDatas}) {
 
