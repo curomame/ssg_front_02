@@ -49,7 +49,11 @@ function SignUpInformation() {
     console.log(integrateInfo);
 
     axios.post(url, integrateInfo)
-      .then((res) => console.log(res.data.data))
+      .then((res) => {
+        if(res.data.status === 200){
+          navigate('/signup/auth')
+        }
+      })
       .catch((err) => console.error(err));
   };
 

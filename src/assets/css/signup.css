@@ -154,3 +154,11 @@ hr {
   height:0.5px;
   border:0;
 }
+
+.ChangeModalTopContainer{
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  top: 0;
+  height: 100vh;
+}

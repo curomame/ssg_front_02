@@ -471,7 +471,7 @@ font-size: 11px;
   position: fixed;
   right: 20px;
   bottom: 9%;
-  z-index: 99999;
+  z-index: 8000;
 }
 
 .commonToHomeIcon span{

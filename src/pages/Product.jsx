@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Header from '../component/components/common/Header'
 import ProductBottonButton from '../component/layout/product/ProductBottonButton'
 import ProductSlider from '../component/layout/product/ProductSlider'
@@ -32,14 +32,14 @@ function Product() {
     })
     .catch(err => console.error('상품을 받아오는 도중 에러발생'))
   },[])
-  
-  // console.log();
+
+
 
   return (
 
     
     <>
-
+      <Suspense>
       <CommonToHome/>
       <Header
         type={"product"}/>
@@ -80,7 +80,11 @@ function Product() {
           <div className={allImg ? 'productDetailImgAfter': 'productDetailImgBefore'}>
             {allImg || <span className='productDetailImgBlur'></span>}
             <div onClick={handleViewProductImg}>{allImg ? '상세정보 접기 ▲' : '상세정보 펼쳐보기 ▼'}</div>
-            <img height="2000" src={process.env.REACT_APP_DISPLAY_IMG_URL+detailData.productGetDto.productImageDetailDTOList[0].imageURL} alt="" />
+            <img 
+              height="2000" 
+              src={detailData ? process.env.REACT_APP_DISPLAY_IMG_URL+detailData.productGetDto.titleImgUrl : null} alt="" 
+              // src='' alt=''
+              />
           </div>
         </div>
 
@@ -111,11 +115,11 @@ function Product() {
           
           }
           
-          
-
           <ProductQNACards
-            datas={detailData.productQnASetDtoList}
+            QNAdatas={detailData.productQnASetListDTO}
+            setDetailData={setDetailData}
           />
+
 
           <MainBlankSpace px={160}/>
         </div>
@@ -127,9 +131,10 @@ function Product() {
       </>
       
       }
-
+      </Suspense>
     </>
   )
 }
 
 export default Product
+

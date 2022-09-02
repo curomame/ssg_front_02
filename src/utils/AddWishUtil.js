@@ -11,7 +11,10 @@ function AddWishUtil (productId) {
       "Authorization":localStorage.getItem("Authorization")
     }
   }).then(res => {
-    console.log(res.data)
+    console.log(res.data.status)
+    if(res.data.status===200){
+      window.alert('좋아요가 완료되었습니다 :)')
+    }
   })
     .catch(err=> console.error(err))
 

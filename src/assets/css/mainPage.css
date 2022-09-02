@@ -463,3 +463,21 @@ h3 {
     white-space:nowrap;
 
 }
+
+.mainItemsImgs img {
+    width: 135px;
+    height: 135px;
+    position: relative;
+}
+
+.mainItemsContainer{
+    position: relative;
+}
+
+.mainItemWishIcon{
+    position: absolute;
+    z-index: 1000;
+    right: 8px;
+    top: 6px;
+}
+

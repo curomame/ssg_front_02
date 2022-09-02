@@ -1,42 +1,58 @@
 import React from 'react'
 import { useState } from 'react'
 
-function ProductQNAPart() {
+function ProductQNAPart({QNAdatas}) {
+
 
   const [viewQna, setViewQna] = useState(false);
 
+  const clickCheckFunc = (qnaId) => {}
+
+  console.log(QNAdatas);
+
   return (
     <>
-      
-      <div onClick={() => setViewQna(!viewQna)} className='productQNABubbleQuestionBox'>
-              
+
+      {QNAdatas && QNAdatas.productQnASetDtoList.map((qna)=>(
+
+        <div key={qna.qnaId} onClick={()=>clickCheckFunc(qna.qnaId)}>
+          <div className='productQNABubbleQuestionBox'>
+                        
           <div className='productQNABubbleQuestionInfo'>
-            <div>답변완료</div>
-            <div>날짜</div>
-            <div>아이디</div>
+            <div>{qna.answer ? "답변완료" : "답변중"}</div>
+            <div>date</div>
+            <div>{qna.userId}</div>
           </div>
 
           <div className='productQNABubbleQuestionContent'>
-            <div>질문 제목</div>
-            <div>질문 내용</div>
+            <div>{qna.qnAType}</div>
+            <div>{qna.userComment}</div>
           </div>
-        </div>
 
 
-      {viewQna &&
-      
-      <div className='productQNABubbleAnswerBox'>
-        <div className='productQNABubbleAnswerInfo'>
-          <div>A</div>
-          <div>답변일</div>
-          <div>날짜</div>
-        </div>
+          
+          </div>
 
-        <div className='productQNABubbleAnswerContent'>답변 내용</div>
-      </div>
+          {qna.answer && 
+          <div className= {viewQna ? 'productQNABubbleAnswerView': 'productQNABubbleAnswerNonView'} >
+            <div className='productQNABubbleAnswerBox' >
+              <div className='productQNABubbleAnswerInfo'>
+                <div>A아이콘</div>
+                <div>답변일</div>
+                <div>{qna.productQnAReplyDto.replyModDate}</div>
+              </div>
 
-      }
-      
+              <div className='productQNABubbleAnswerContent'>{qna.productQnAReplyDto.replyComment}</div>
+            </div>
+          </div>
+          }
+          
+          
+
+
+          </div>
+
+      ))}
 
     </>
   )

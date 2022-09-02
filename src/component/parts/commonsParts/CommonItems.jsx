@@ -1,43 +1,10 @@
-import axios from 'axios'
-import React, { Suspense, useState } from 'react'
-import { useEffect } from 'react'
+import React from 'react'
 
-function CategoryItem({type,ctgId,tempId,setTempId}) {
+function CommonItems({itemDatas}) {
 
-  const [itemDatas, setItemDatas] = useState('');
-  
-
-  // console.log(tempId);
-  const getTempDatas = () => {
-
-    axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/lCtg/${tempId}/1`)
-    .then(res => setItemDatas(res.data.productTitleDtoList))
-    .catch(err => console.error(err))  
-
-    return null;
-  }
-
-  useEffect(() => {
-
-    setTempId(ctgId)
-
-  },[])
-  
-  
-  useEffect(() => {
-
-    if(typeof tempId === "number"){
-      getTempDatas()
-    }
-    
-  },[tempId])
-
-  console.log(itemDatas);
-
+  console.log(itemDatas)
   return (
     <>
-
-<div className='categoryItemTopContainer'> 
     {itemDatas[0] && 
       itemDatas.map((item) => (
 
@@ -69,15 +36,8 @@ function CategoryItem({type,ctgId,tempId,setTempId}) {
       </div>
       ))
     }
-</div>
-
-  
-
-
-
-      
-      </>
+    </>
   )
 }
 
-export default CategoryItem
+export default CommonItems

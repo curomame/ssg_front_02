@@ -192,6 +192,7 @@
   background-color: white;
   line-height: 50px;
   text-align: center;
+  z-index: 8000;
 }
 
 .productBottomButtonTwo{
@@ -399,17 +400,73 @@ position: relative;
 
 
 .productQNABubbleAnswerBox{
-  margin-top: 16px;
+  margin-top: 10px;
   margin-left: 24px;
+  margin-bottom: 10px;
   border-radius: 4px;
   background-color: #f9f8eb;
+  border: 1px solid #e5e5e5;
 }
 
 
 .productQNABubbleAnswerBox div{
   margin: 6px 0px;
+  
 }
 
 .productQNABubbleAnswerInfo{
   display: flex;
+  
+}
+
+.productQNABubbleAnswerView{
+  display: block;
+}
+
+.productQNABubbleAnswerNonView{
+  display: none;
+}
+
+
+
+.productQuestionModalContainer{
+  position: fixed;
+  background-color: white;
+  top: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 10000;
+}
+
+
+.productQNABottom{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+  
+}
+
+.productQNABottom div{
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+}
+
+.productQNABottom div:first-child{
+  background-color: black;
+  color: white;
+}
+
+.productQNABottom div:last-child{
+  background-color: #8d9196;
+  color: white;
+}
+
+.productQuestionInputBox input{
+  width: 100wh;
 }

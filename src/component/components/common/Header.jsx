@@ -1,19 +1,14 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
-import { SearchModalContext } from '../../../context/SearchModalContext';
 import SearchModalState from '../../../recoil/atoms/SearchModalState';
 import Logo from '../../parts/commonsParts/Logo';
-import MyCart from '../../parts/commonsParts/MyCart';
 import SearchBar from '../../parts/commonsParts/SearchBar';
-import MainBlankSpace from '../../parts/mainParts/MainBlankSpace';
 
 
 function Header({type,text,func}) {
 
   const navigate = useNavigate();
-
-  // const {isModal,setIsModal} = useContext(SearchModalContext);
 
   const [reModal, setReModal] = useRecoilState(SearchModalState);
 
@@ -23,11 +18,11 @@ function Header({type,text,func}) {
       
       return <>
               <div className='loginHeaderLayout'>
-                      <div><span className="material-icons-outlined" onClick={()=>navigate('/')}>arrow_back</span></div>
+                      <div><span className="material-icons-outlined" onClick={func ? ()=>func(false) :()=>navigate(-1)}>arrow_back</span></div>
                       <div><h3>{text}</h3></div>
                       <div></div>
                     </div>
-              <MainBlankSpace px={100}/>
+              
               </>
 
     case 'cart':
@@ -50,7 +45,7 @@ function Header({type,text,func}) {
                 <div><h3>로그인</h3></div>
                 <div></div>
               </div>
-              <MainBlankSpace px={100}/>
+              
               </>
 
     case 'mypage':
@@ -100,7 +95,6 @@ function Header({type,text,func}) {
                       <div><h3>좋아요</h3></div>
                       <div></div>
                     </div>
-            <MainBlankSpace px={96}/>
             </>
 
 

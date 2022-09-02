@@ -22,6 +22,21 @@ function MyInfoSetting() {
   },[])
 
 
+  const handleDeleteUser = () => {
+
+    if(window.confirm('정말로 삭제하시겠어요? :_< ')){
+      axios.delete(process.env.REACT_APP_TEST_URL+'/user/delete',{
+        headers:{
+          "Authorization":localStorage.getItem("Authorization")
+        }
+      }).then(res => console.log(res.data))
+        .catch(err => console.error(err))
+    } else {
+      window.alert('사랑해요 :>')
+    }
+
+  }
+
   return (
     <>
     
@@ -31,7 +46,7 @@ function MyInfoSetting() {
 
     <div className='myInfoSettingContainer'>
       <div onClick={()=>setOpenModal(true)}><p>회원정보 변경</p></div>
-      <div><p>회원 탈퇴</p></div>
+      <div onClick={handleDeleteUser}><p>회원 탈퇴</p></div>
     </div>
 
 
@@ -39,6 +54,7 @@ function MyInfoSetting() {
     {openModal  
     ? <MYInfoChange
       userInfo={userInfo}
+      setOpenModal={setOpenModal}
       />
     : null}
 

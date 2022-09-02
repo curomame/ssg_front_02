@@ -25,8 +25,6 @@ function Cart() {
   const [newData, setNewData] =useState([])
 
 
-  
-
   const calTotalPrice = () => {
     let newPrice = 0;
     if(cartDatas){
@@ -55,7 +53,6 @@ function Cart() {
   }  
 
   const applyTempCart = () => {
-
     axios.put(process.env.REACT_APP_TEST_URL+'/cart/mod',newData,{
       headers:{
         "Authorization":localStorage.getItem("Authorization")
@@ -64,7 +61,6 @@ function Cart() {
       return res
     })
       .catch(err => console.error(err))
-
   }
 
 
@@ -72,14 +68,15 @@ function Cart() {
     
     axios.get(process.env.REACT_APP_TEST_URL+'/cart',{
       headers:{
-        'Authorization':localStorage.getItem('Authorization')
+        "Authorization":localStorage.getItem("Authorization")
       }
     })
       .then(res => {
+        console.log(res.data)
         setCartDatas(res.data.data.cartOutputDtoList)
       })
       .catch(err => {
-        console.log(err.response.data.message);
+        console.error(err);
         setUserTempStatus(err.response.data.message)
       })
   },[])
@@ -115,7 +112,6 @@ function Cart() {
         {cartDatas ? 
         
         <div>
-          {/* <div>전체 선택 | 배송방법 바꾸기 | 품절삭제</div> */}
               <CartItemCards
                 cartDatas={cartDatas}
                 setCartDatas={setCartDatas}

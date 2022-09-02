@@ -32,6 +32,11 @@ import ScrollToTop from './utils/ScrollToTop';
 import KakaoAuth from './component/components/kakao/KakaoAuth';
 import MyShipaddress from './component/components/mypage/MyShipaddress';
 import MyInfoSetting from './component/components/mypage/MyInfoSetting';
+import ProductAllReview from './component/components/product/ProductAllQNA';
+import ProductAllQNA from './component/components/product/ProductAllQNA';
+import SearchPage from './pages/SearchPage';
+
+import './assets/css/zMystyle.css'
 
 function App() {
 
@@ -50,9 +55,12 @@ function App() {
           <Route path="/category" element={<Category/>}/>
           <Route path="/category/detail" element={<CategoryDetail/>}/>
 
-
           <Route path="/product" element={<div>상품정보를 찾을 수 없습니다.</div>}/>
           <Route path="/product/:id" element={<Product/>}/>
+          {/* <Route path="/product/:id/reviews" element={<ProductAllReview/>}/> */}
+          <Route path="/product/:id/qnas" element={<ProductAllQNA/>}/>
+
+          <Route path="/search/:pageNum" element={<SearchPage/>}/>
 
           <Route path="/mypage" element={<MyPage/>}/>
           <Route path="/mypage/shipaddress" element={<MyShipaddress/>}/>
@@ -85,6 +93,7 @@ function App() {
 
           <Route path="/kakao/:params" element={<KakaoAuth/>}/>
 
+          <Route path="/404" element={<div>404</div>}/>
 
           <Route path="/test" element={<Test/>}/>
           <Route path="/emailtest" element={<EmailTest/>}/>

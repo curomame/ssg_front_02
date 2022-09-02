@@ -6,7 +6,7 @@ import { useRecoilValue } from 'recoil'
 import CategoryState from '../../../recoil/atoms/CategoryState'
 import CategoryUnderMenu from '../../parts/categoryParts/CategoryUnderMenu';
 
-function CategoryUpperMenu() {
+function CategoryUpperMenu({setTempStatus,setTempId}) {
 
   const location = useLocation()
   const navigate = useNavigate();
@@ -18,6 +18,12 @@ function CategoryUpperMenu() {
 
   const [LDatas, setLDatas] = useState(null);
   const [MDatas, setMDatas] = useState(null);
+
+  const changeIds =(i) => {
+    // console.log(i);
+    setMid(i+1)
+    setTempId(i+1)
+  }
 
   useEffect(()=>{
 
@@ -31,7 +37,6 @@ function CategoryUpperMenu() {
     } else {
       console.log('undefined')
     }
-       
 
   },[categoryDatas,Lid])
 
@@ -57,10 +62,14 @@ function CategoryUpperMenu() {
           
             LDatas.map((data,i) => 
             { 
-              return <div onClick={()=>{
-                      setMid(i+1)}} key={i}>
-                      <p>{data.name}</p>
-                    </div>}
+              // console.log(i)
+              return <div 
+              onClick={()=>{changeIds(i)}}
+              key={i}
+              className={Mid === i+1 ? "categoryLselected" : null}
+              >
+                <p >{data.name}</p>
+              </div>}
             )
             }
           

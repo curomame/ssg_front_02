@@ -3,7 +3,7 @@ import React from 'react'
 import { useState } from 'react'
 import Header from '../common/Header'
 
-function MYInfoChange({userInfo}) {
+function MYInfoChange({userInfo,setOpenModal}) {
 
 
   const [newUserInfo, setNewUserInfo] = useState({
@@ -12,6 +12,8 @@ function MYInfoChange({userInfo}) {
     "email":""
   })
 
+
+  
   console.log(newUserInfo)
 
   const handleChange = (e) => {
@@ -23,15 +25,17 @@ function MYInfoChange({userInfo}) {
       headers:{
         "Authorization":localStorage.getItem("Authorization")
       }
-    }).then(res => {return res})
+    }).then(res => console.log(res))
       .catch(err => console.error(err))
   }
 
   return (
     <>
+    <div className='ChangeModalTopContainer'>
       <Header
         type={"text"}
         text={"회원 정보 변경"}
+        func={setOpenModal}
         />
 
       <div className='myInfoChangeModalContainer'>
@@ -73,6 +77,8 @@ function MYInfoChange({userInfo}) {
         <div onClick={handleChangeMyInfo} className='myInfoChangeButton'><p>수정하기</p></div>
 
       </div>
+
+    </div>
     </>
   )
 }

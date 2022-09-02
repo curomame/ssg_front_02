@@ -1,0 +1,27 @@
+.searchBackArrow{
+
+  display: flex;
+  height: 46px;
+  text-align: center;
+  justify-content: space-between;
+  line-height: 46px;
+  border-bottom: 0.5px solid lightgray;
+}
+
+.searchBackArrow span{
+  line-height: 46px;
+}
+
+.searchBackArrow div:first-child {
+  margin: 0 10px;
+  width: 46px;
+}
+
+.searchBackArrow div:last-child {
+  margin: 0 10px;
+  width: 46px;
+}
+
+.searchBackArrow p {
+  font-weight: 600;
+}

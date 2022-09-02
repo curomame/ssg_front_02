@@ -34,6 +34,8 @@ function MyShipaddress() {
 
   }
 
+  console.log(tempCheck);
+
   const changeShipDefault = () => {
     axios.put(`${process.env.REACT_APP_TEST_URL}/user/addr/modDefault/${tempCheck}`,{
       headers:{
@@ -42,6 +44,7 @@ function MyShipaddress() {
     }).then(res => console.log(res.data))
       .catch(err => console.error(err))
   }
+
 
   useEffect(()=> {
     getShipData()

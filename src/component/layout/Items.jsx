@@ -1,6 +1,8 @@
 import { faCropSimple } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import AddWishUtil from '../../utils/AddWishUtil'
 import CommonTitleSub from '../parts/commonsParts/CommonTitleSub'
 import CommonWishListParts from '../parts/commonsParts/CommonWishListParts'
 import StarNReview from '../parts/commonsParts/StarNReview'
@@ -11,6 +13,12 @@ import MainTitleSub from '../parts/mainParts/MainTitleSub'
 
 function Items({itemDatas,row}) {
 
+  const handleWishFunc = (id) => {
+    AddWishUtil(id)
+  }
+
+  
+
   return (
 
     <>
@@ -18,19 +26,26 @@ function Items({itemDatas,row}) {
         
         {itemDatas && itemDatas.map((item,i) => 
 
+          
+
+        <div className='mainItemsContainer'>
+
+            <div onClick={()=>handleWishFunc(item.productId)} className='mainItemWishIcon'>
+              <span className="material-icons-outlined">favorite_border</span>
+            </div>
+
+        <Link to={'/product/'+item.productId}>
           <div className='mainItems' key={i}>
-            <div>
+            <div className='mainItemsImgs'>
               <img 
             src={process.env.REACT_APP_TEST_URL+`/display?fileName=${item.titleImgUrl}`} 
             alt={'사진'}
-            width="135px"
-            height="135px"
-            /></div>
+            />
 
-              <CommonWishListParts
-                type={'Inner'}
-                productId={item.productId}
-                />
+            </div>
+
+
+            
             <ul>
               <li>신세계몰</li>
               <li className='mainItemName'>{item.productName}</li>
@@ -44,8 +59,10 @@ function Items({itemDatas,row}) {
               </div> 
               : null}
           </div>
-          
-            
+        </Link>
+        
+        </div>  
+        
           )}
         
         </div>

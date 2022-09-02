@@ -37,9 +37,9 @@ function MainCategorySelect({isSelected,setIsSelected}) {
               className={colorIndex[i]===1
                 ? 'mainRankLinkList selected_red' 
                 : "mainRankLinkList"} 
-              key={data.id}
-              onClick={(e) => handleRank(e)}
-              id={i}>
+                key={data.id}
+                onClick={(e) => handleRank(e)}
+                id={i}>
                 {data.title}
             </li>
           ))}

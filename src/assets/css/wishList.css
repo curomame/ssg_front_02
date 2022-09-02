@@ -92,7 +92,7 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  z-index: 99999;
+  z-index: 10000;
 }
 
 .myWishEditBox div{
@@ -107,3 +107,177 @@
 .myWishEditBox div:last-child{
   background-color: #ff5b59;
 }
+
+
+.wishListItemsContainer{
+  width: 42%;
+  margin: 0px;
+  
+  margin: 16px 16px;
+  position: relative;
+}
+
+.wishListItemsContainer a {
+  width: 100%;
+}
+
+.wishListEditCheckToggle{
+  position: absolute;
+  top: -30px;
+}
+
+.wishListEditCheckToggle input {
+  font-size: 20px;
+  zoom: 1.5;
+  accent-color:#ff5b59;
+}
+
+
+.wishListNone{
+  text-align: center;
+  color: #777777;
+  letter-spacing: -0.6px;
+  border: 0.5 solid lightgray;
+}
+
+.wishListNone p {
+  margin: 30px 0;
+}
+
+.wishListEditButton{
+  margin-bottom: 24px;
+}
+
+.wishListEditContainer{
+  position: fixed;
+  width: 100%;
+  z-index: 13000;
+  bottom: 0;
+  
+}
+
+.wishListBack{
+  height: 100vh;
+  background-color: black;
+  opacity: 0.8;
+}
+
+.wishListEditTopBox{
+  display: flex;
+  justify-content: space-between;
+  height: 46px;
+
+  line-height: 46px;
+  font-size: 16px;
+  font-weight: 700;
+  border-bottom: 0.5px solid #77777744;
+  background-color: white; 
+}
+
+.wishListEditNewBox{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+.wishListEditTopBox div:not(:nth-child(2)){
+  
+  width: 46px;
+  text-align: center;
+  
+}
+
+.wishListEditNewBox p {
+  font-size: 18px;
+}
+
+.wishListEditNewBox div{
+  margin: 14px 0;
+}
+
+.wishListEditNewBox input{
+  
+  height: 50px;
+  padding: 15px 45px 15px 15px;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  font-size: 18px;
+  /* margin: 0 16px; */
+  width: 100%;
+}
+
+.wishListEditNewButton{
+  width: 96px;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 27px;
+  border-radius: 22px;
+  font-size: 16px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
+  background: #ff5b59;
+  font-weight: 500;
+}
+
+.inputNodata{
+  background-color: #e5e5e5;
+  color: black;
+}
+
+.wishListFolderEditSelectContainer{
+  background: white;
+  height: 250px;
+  overflow: scroll;
+  z-index: 15000;
+}
+
+.wishListFolderEditSelect{
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 16px;
+  background-color: white;
+}
+
+.wishListFolderEditSelect div:nth-child(2){
+  /* background: blue; */
+  width: 100%;
+  padding: 0 12px;
+  padding-top: 4px;
+}
+
+.wishListFolderEditSelect p{
+  /* background-color: red; */
+  width: 100%;
+  
+}
+
+.wishListFolderEditSelect div:last-child{
+  color: lightgray;
+}
+
+.iconChecked{
+  color: #ff5b59;
+}
+
+.wishListOkButton{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.wishListOkButton p {
+  background-color: #ff5b59;
+  text-align: center;
+  color: white;
+  padding: 10px 0px;
+  width: 100px;
+  border-radius: 30px;
+}
+
+.wishListEditFolderConfirmButton {
+  width: 40px;
+}
+
