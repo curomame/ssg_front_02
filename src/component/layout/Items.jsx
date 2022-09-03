@@ -11,7 +11,7 @@ import MainTitleSub from '../parts/mainParts/MainTitleSub'
 //상품 데이터 받아오기 필요
 //여기서 상품 데이터 받아오기 진행해보기
 
-function Items({itemDatas,row}) {
+function Items({itemDatas}) {
 
   const handleWishFunc = (id) => {
     AddWishUtil(id)
@@ -28,7 +28,7 @@ function Items({itemDatas,row}) {
 
           
 
-        <div className='mainItemsContainer'>
+        <div key={i} className='mainItemsContainer'>
 
             <div onClick={()=>handleWishFunc(item.productId)} className='mainItemWishIcon'>
               <span className="material-icons-outlined">favorite_border</span>

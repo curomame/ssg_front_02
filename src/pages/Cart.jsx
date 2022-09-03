@@ -170,7 +170,7 @@ function Cart() {
         </div>
 
 
-        {cartDatas ? <div className='cartOrderButton'><h2>주문하기</h2></div> : null}
+        {cartDatas ? <div onClick={()=>navigate('/order')} className='cartOrderButton'><h2>주문하기</h2></div> : null}
     </>
   )
 }

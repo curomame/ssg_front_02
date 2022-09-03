@@ -35,6 +35,7 @@ function WishListUpperMenu(
     setTempPackId('')
   }
 
+
   const handleShowThisFolder = (folderId) => {
     
     setTempPackId(folderId);
@@ -44,7 +45,6 @@ function WishListUpperMenu(
         "Authorization":localStorage.getItem("Authorization")
       }
     }).then(res => {
-      // console.log(res.data.data)
 
       if(res.data.data.length === undefined){
         setItemDatas(res.data.data.wishListOutputDtoList)
@@ -58,6 +58,7 @@ function WishListUpperMenu(
     })
       .catch(err => console.error(err))
   }
+
 
   return (
     <>
@@ -74,7 +75,7 @@ function WishListUpperMenu(
           
           foldDatas.map((folder) =>       
 
-            { 
+            { console.log(folder);
               return <div
                       onClick={() => handleShowThisFolder(folder.wishFolderPackId)}
                       key={folder.wishFolderPackId} >

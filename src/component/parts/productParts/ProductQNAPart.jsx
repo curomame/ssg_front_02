@@ -8,7 +8,7 @@ function ProductQNAPart({QNAdatas}) {
 
   const clickCheckFunc = (qnaId) => {}
 
-  console.log(QNAdatas);
+  // console.log(QNAdatas);
 
   return (
     <>

@@ -19,8 +19,8 @@ function ProductReviewCards({datas}) {
 
         {datas.reviewImageDTOList[0] && 
 
-        datas.reviewImageDTOList.map((img) => (
-            <div className='productReviewCardImg'>    
+        datas.reviewImageDTOList.map((img,i) => (
+            <div className='productReviewCardImg' key={i}>    
               <img src={process.env.REACT_APP_DISPLAY_IMG_URL+img.imageURL} alt="" />
             </div>
         ))

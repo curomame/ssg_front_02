@@ -17,9 +17,7 @@ function WishList() {
 
 
   const [editMode, setEditMode] = useState(false);
-
   const [checkItems, setCheckItems] = useState(true)
-
   const [tempPcakId, setTempPackId] = useState('')
 
   useEffect(() => {
@@ -74,7 +72,9 @@ function WishList() {
         <div>
           {editMode 
           ? <p>취소</p>
-          : <><span className="material-icons-outlined">tune</span><p>편집</p></>}
+          : <>
+              <span className="material-icons-outlined">tune</span><p>편집</p>
+            </>}
           
           
         </div>
@@ -86,11 +86,12 @@ function WishList() {
             datas={itemDatas}
             type={'wishlist'}
             editMode={editMode}
-            setWishDatas={setWishDatas}
             setEditMode={setEditMode}
+            setWishDatas={setWishDatas}
             foldDatas={foldDatas}
             setFoldDatas={setFoldDatas}
             tempPcakId={tempPcakId}
+            
           />
           
           </div>

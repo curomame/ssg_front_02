@@ -65,44 +65,61 @@ function WishItem(
 
   const handleRemoveList = () => {
 
-    if(window.confirm('정말로 삭제하시겠습니까?')){
+    console.log(tempPcakId)
+    console.log(editSelect)
 
-      const pushArr = []
-      for(let j of editSelect ){
-        pushArr.push(Number(j))
-      }
-  
-      axios.delete(process.env.REACT_APP_TEST_URL+'/user/wish/delResponse',{
-        data:{
-          "wishIdList":pushArr
-        },
-        headers:{
-          "Authorization":localStorage.getItem("Authorization")
+    if(editSelect[0] === undefined){
+      window.alert('삭제할 상품을 선택해주세요 :)')
+    } else {
+      if(window.confirm('정말로 삭제하시겠습니까?')){
+
+        const pushArr = []
+        for(let j of editSelect ){
+          pushArr.push(Number(j))
         }
-        
+    
+        let url = '';
+
+        if(tempPcakId===''){
+          url = process.env.REACT_APP_TEST_URL+'/user/wish/delResponse'
+        } else {
+          url = process.env.REACT_APP_TEST_URL+'/user/wish/folder/del'
+        }
+
+        axios.delete(url,{
+          data:{
+            "wishIdList":pushArr
+          },
+          headers:{
+            "Authorization":localStorage.getItem("Authorization")
+          }
+          
+        }
+        ).then(res => setWishDatas(res.data.data))
+          .catch(err => console.error(err))
+    
+        setEditSelect([])
+        setCheckArr([])
+        setEditMode(false)
       }
-      ).then(res => setWishDatas(res.data.data))
-        .catch(err => console.error(err))
-  
-      setEditSelect([])
-      setCheckArr([])
-      setEditMode(false)
     }
+
+
 
   }
 
   useEffect(() => {
-    {datas &&
-      setCheckArr(new Array(datas.length))
-    }
+    {datas &&setCheckArr(new Array(datas.length))}
   },[datas])
 
 
   useEffect(() => {
-
     setTempArr([...checkArr])
-
   },[checkArr])
+
+  useEffect(()=> {
+    setEditSelect([]);
+  },[editMode,tempPcakId])
 
 
   return (<>
@@ -164,7 +181,7 @@ function WishItem(
     {editMode 
     ? <div className='myWishEditBox'>
         <div onClick={()=> handleInputFolderModalFunc()}><p>폴더에 추가</p></div>
-        <div onClick={handleRemoveList} ><p>삭제</p></div>
+        <div onClick={()=>handleRemoveList()} ><p>삭제</p></div>
       </div>
     : null}
     
@@ -179,8 +196,6 @@ function WishItem(
       />
     }
 
-    {/* 폴더에 추가 클릭 -> 모달등장 ->  모달에서 선택 -> 해당 키값 받아서 넣기*/}
-    {/* 여기 하고 있었음! */}
     
     </>
   )

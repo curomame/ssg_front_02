@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import AddCartUtil from '../../../utils/AddCartUtil';
 import AddWishUtil from '../../../utils/AddWishUtil';
 import CommonCartParts from '../../parts/commonsParts/CommonCartParts';
 import CommonPresent from '../../parts/commonsParts/CommonPresent';
 import CommonWishListParts from '../../parts/commonsParts/CommonWishListParts';
-import ProductOptionSelect from '../../parts/productParts/ProductOptionSelect';
+import ProductOptionSelect from '../../components/product/ProductOptionSelect';
 
-function ProductBottonButton() {
+function ProductBottonButton({detailData}) {
+
+console.log(detailData);
 
   const params = useParams(); 
-
+  const navigate = useNavigate();
 
   const [purchaseCondition, setPurchaseCondition] = useState(true);
 
@@ -19,12 +21,23 @@ function ProductBottonButton() {
   }
 
   const handleOpenOptionSelect = () => {
-    setPurchaseCondition(false);
+
+    if(!purchaseCondition){
+      navigate('/order')
+    } else {
+      setPurchaseCondition(false);
+    }
+
+    
   }
 
   const handleCloseOptionSelect = () => {
-    setPurchaseCondition(true);
+
+      setPurchaseCondition(true);
+
   }
+
+  
 
   const handleWishToggle = () => {
     AddWishUtil(params.id);
@@ -37,6 +50,7 @@ function ProductBottonButton() {
     {purchaseCondition 
     || 
     <ProductOptionSelect
+      detailData={detailData}
       handleCloseOptionSelect={handleCloseOptionSelect}
       setPurchaseCondition={setPurchaseCondition}
     />

@@ -32,18 +32,17 @@ import ScrollToTop from './utils/ScrollToTop';
 import KakaoAuth from './component/components/kakao/KakaoAuth';
 import MyShipaddress from './component/components/mypage/MyShipaddress';
 import MyInfoSetting from './component/components/mypage/MyInfoSetting';
-import ProductAllReview from './component/components/product/ProductAllQNA';
 import ProductAllQNA from './component/components/product/ProductAllQNA';
 import SearchPage from './pages/SearchPage';
 
 import './assets/css/zMystyle.css'
+import Order from './pages/Order';
 
 function App() {
 
   return (
     <RecoilRoot>
       <BrowserRouter>
-      
       <CategoryAtomAxios/>
       <AuthStatusUpdate/>
       <ScrollToTop/>
@@ -72,6 +71,8 @@ function App() {
           <Route path="/review/write" element={<MyReviewCreate/>}>
             <Route path=':id' element={<MyReviewCreate />} />
           </Route>
+
+          <Route path="/order" element={<Order/>}/>
 
           <Route path="/recent" element={<Recent/>}/>
 

@@ -33,8 +33,6 @@ function Product() {
     .catch(err => console.error('상품을 받아오는 도중 에러발생'))
   },[])
 
-
-
   return (
 
     
@@ -126,7 +124,8 @@ function Product() {
 
       </div>
 
-      <ProductBottonButton/>
+      <ProductBottonButton
+        detailData={detailData}/>
             
       </>
       
