@@ -335,3 +335,55 @@
   margin-top: 10%;
 }
 
+
+.categoryFilterContainer {
+  position: relative;
+}
+
+
+.categoryFilterBox{
+  height: 52px;
+  display: flex;
+  justify-content: right;
+  margin-right: 16px;
+}
+
+.categoryFilterBox p {
+  line-height: 52px;
+}
+
+.categoryFilterBox span {
+  line-height: 52px;
+}
+
+.categoryFilterGray{
+  height: 12px;
+  background-color: #f5f5f5;
+  
+}
+
+.categoryFilterUnder{
+  border-bottom: 0.5px solid #77777740;
+}
+
+.categoryFilterModalBoxMini{
+  width: 100px;
+  height: 40px;
+  border: 0.5px solid lightgray;
+
+  background: white;
+}
+.filterChecked{
+  color: white;
+  background: black;
+}
+
+.categoryFilterModalBoxMini p {
+  line-height: 40px;
+  padding-left: 8px;
+}
+
+.categoryFilterModalContainer{
+  position: absolute;
+  right: 12px;
+}

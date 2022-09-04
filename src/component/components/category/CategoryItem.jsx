@@ -1,30 +1,55 @@
 import axios from 'axios'
 import React, { Suspense, useState } from 'react'
 import { useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom';
+import CategoryFilter from '../../parts/categoryParts/CategoryFilter';
 
 function CategoryItem({type,ctgId,tempId,setTempId}) {
 
-  let offset = 1;
+  const filterCategory = [
+
+    {
+      "id":1,
+      "sort":"cnt",
+      "desc":"리뷰 많은 순"
+    },
+    {
+      "id":2,
+      "sort":"regDate",
+      "desc":"신 상품순"
+    },
+    {
+      "id":3,
+      "sort":"prcdsc",
+      "desc":"가격 높은 순"
+    },
+    {
+      "id":4,
+      "sort":"prcasc",
+      "desc":"가격 낮은 순"
+    }
+  ]
+  const [tempFilter, setTempFilter] = useState(filterCategory[1])
+
+  const [offset, setOffset] = useState(1)
 
   const [itemDatas, setItemDatas] = useState([]);
   
+
+
   const getTempDatas = () => {
 
-    axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/lCtg/${tempId}/${offset}`)
+    axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/lCtg/${tempId}/${offset}?sort=${tempFilter.sort}`)
     .then(res => {
       console.log(res.data.productTitleDtoList);
       setItemDatas((prev) => [...prev,...res.data.productTitleDtoList])
     })
     .catch(err => console.error(err))  
-    offset+=1
+    setOffset(offset+1)
     return null;
   }
 
   const handleScroll = (e) => {
-    // console.log(e.target.documentElement.scrollTop);
-    // console.log(window.innerHeight);
-    // console.log(e.target.documentElement.scrollHeight);
-
     if(window.innerHeight + e.target.documentElement.scrollTop +1 >= e.target.documentElement.scrollHeight){
       getTempDatas()
     }
@@ -36,20 +61,31 @@ function CategoryItem({type,ctgId,tempId,setTempId}) {
       getTempDatas()
       window.addEventListener("scroll",handleScroll)
     } 
-
   },[tempId])
   
 
-  console.log(itemDatas);
+  useEffect(() => {
+    setItemDatas([])
+    getTempDatas()
+    setOffset(1)
+
+  },[tempFilter])
+
+
+  // console.log(itemDatas);
 
   return (
     <>
+  <CategoryFilter
+  tempFilter={tempFilter}
+  setTempFilter={setTempFilter}
+  filterCategory={filterCategory}/>
 
-<div className='categoryItemTopContainer'> 
+  <div className='categoryItemTopContainer'> 
     {itemDatas[0] && 
       itemDatas.map((item,idx) => (
 
-      <div key={item.productId} className="categoryItemContainer">
+      <div key={idx} className="categoryItemContainer">
       <div>
         <div><img style={{"width":"100%"}} src={process.env.REACT_APP_DISPLAY_IMG_URL+item.titleImgUrl} alt="" /></div>
         

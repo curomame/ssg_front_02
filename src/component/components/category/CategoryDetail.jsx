@@ -8,6 +8,7 @@ import CategoryUpperMenu from '../../layout/Category/CategoryUpperMenu'
 import { useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import CategoryFilter from '../../parts/categoryParts/CategoryFilter'
 
 function CategoryDetail() {
   
@@ -15,6 +16,7 @@ function CategoryDetail() {
 
   const [tempStatus,setTempStatus] = useState('')
   const [tempId,setTempId] = useState('')
+
 
   useEffect(() => {
 
@@ -27,14 +29,10 @@ function CategoryDetail() {
     <>
       <Header/>
 
-      
-
       <CategoryUpperMenu
       setTempStatus={setTempStatus}
       setTempId={setTempId}
       />
-
-      <div>배열</div>
 
       <CategoryItem
         type={tempStatus}
