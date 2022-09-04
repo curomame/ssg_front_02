@@ -7,13 +7,21 @@ import CategoryItem from './CategoryItem'
 import CategoryUpperMenu from '../../layout/Category/CategoryUpperMenu'
 import { useLocation } from 'react-router-dom'
 import { useState } from 'react'
+import { useEffect } from 'react'
 
 function CategoryDetail() {
   
   const location = useLocation()
 
-  const [tempStatus,setTempStatus] = useState(location.state.tempStatus)
-  const [tempId,setTempId] = useState(location.state.Mid)
+  const [tempStatus,setTempStatus] = useState('')
+  const [tempId,setTempId] = useState('')
+
+  useEffect(() => {
+
+    setTempStatus(location.state.tempStatus)
+    setTempId(location.state.Mid)
+
+  },[])
 
   return (
     <>

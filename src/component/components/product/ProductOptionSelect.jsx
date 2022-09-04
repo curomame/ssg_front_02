@@ -3,7 +3,7 @@ import ProductOptionDetail from '../../parts/productParts/ProductOptionDetail'
 import { useState } from 'react';
 import ProductOptionSurface from './ProductOptionSurface';
 
-function ProductOptionSelect({handleCloseOptionSelect,setPurchaseCondition,detailData}) {
+function ProductOptionSelect({handleCloseOptionSelect,setPurchaseCondition,detailData,setProductOptId}) {
 
   //1. 아래 적혀있는 옵션에 맞춰서 메뉴 바 만들기(map)  /po/comOption/{optionAId}
   //2. 해당 메뉴 누르고 다음 메뉴 누를때마다 옵션 호출하기   /po/comOption/{optionAId}/{optionBId}
@@ -22,7 +22,8 @@ function ProductOptionSelect({handleCloseOptionSelect,setPurchaseCondition,detai
       </div>
 
       <ProductOptionSurface
-        detailData={detailData}/>
+        detailData={detailData}
+        setProductOptId={setProductOptId}/>
       
 
 

@@ -74,7 +74,7 @@ function Main() {
       <MainLifeMegazine/>
       <hr />
       <MainBestItems/> */}
-      <hr />
+      {/* <hr /> */}
       <MainFooter/>
       <hr />
       <MainBlankSpace px={100}/>

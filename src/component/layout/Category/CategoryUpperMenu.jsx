@@ -35,7 +35,7 @@ function CategoryUpperMenu({setTempStatus,setTempId}) {
         setMDatas(item.mcategoryList)
       })
     } else {
-      console.log('undefined')
+      console.log('category data is undefined')
     }
 
   },[categoryDatas,Lid])

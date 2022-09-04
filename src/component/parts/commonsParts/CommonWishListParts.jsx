@@ -22,7 +22,15 @@ function CommonWishListParts({type,productId}) {
       }
     }).then(res => {
       console.log(res.data.data.isWish)
-      setWish(res.data.data.isWish)
+      if(res.data.data.isWish){
+        window.alert('위시리스트에서 제품을 제거했습니다.')
+        setWish(res.data.data.isWish)
+      } else {
+        window.alert('위시리스트에 제품을 담았습니다!')
+        setWish(res.data.data.isWish)
+      }
+      
+      
     })
       .catch(err => console.error('wish list error',err))
 

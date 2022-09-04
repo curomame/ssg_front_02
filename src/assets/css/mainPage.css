@@ -39,6 +39,10 @@ h3 {
     display: none;
 }
 
+.menuChecked{
+    border-bottom: 3px solid black;
+}
+
 .upperCategory {
     
     display: flex;
@@ -478,6 +482,56 @@ h3 {
     position: absolute;
     z-index: 1000;
     right: 8px;
-    top: 6px;
+    bottom: 90px;
+    color: #777777;
+
 }
 
+
+
+/* slider 슬라이더 메인 */
+
+.mainEventSliderContainer{
+    width: 100%;
+    position: relative;
+}
+
+.mainEventSliderBox{
+    z-index: 100;
+    position: absolute;
+    bottom: 140px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 16px;
+    letter-spacing: -0.5px;
+}
+
+.mainEventSliderStop{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    
+}
+
+.mainSliderQuarterContainer{
+    letter-spacing: -1px;
+}
+
+.mainSliderQuarterContainer img{
+    width: 98%; 
+    
+}
+
+
+.mainSliderQuarterContainer h2{
+    margin-top: 6px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+.mainSliderQuarterContainer p {
+    color: #777777;
+}

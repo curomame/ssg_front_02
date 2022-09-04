@@ -3,15 +3,21 @@ import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import mainEventSliderDatas from "../../../assets/datas/mainDatas/mainEventSliderDatas.json"
+import { useEffect } from 'react';
 
 function MainEventSlider() {
 
   const [current, setCurrent ] = useState(1);
-  const settings = {
+
+  const [pause, setPause] = useState(false)
+
+  const [settings,setSettings] = useState({
+
     state:{
       slideIndex: 0,
-      updateCount: 0
+      updateCount: 0,
     },
+
     dots: false,
     infinite: true,
     speed: 500,
@@ -24,14 +30,31 @@ function MainEventSlider() {
     afterChange: (e) => {
       setCurrent(e+1);
     }
+
+  })
+
+  const handlePause = () => {
+    
+    if(!pause){
+      setSettings({...settings,autoplay:false})
+    } else {
+      setSettings({...settings,autoplay:true})
+    }
+
+    setPause(!pause);
+    
   }
+
+  useEffect(()=>{
+    console.log(1)
+  },[settings])
 
   return (
     <>
     
-    <div style={{"width":"100%", "height":"60%", "position":"relative"}}>
+    <div className='mainEventSliderContainer' >
 
-      <p style={{"zIndex":"100" ,"position":"absolute","top":"63%",color:"white",fontSize:"14px","fontWeight":"600","marginLeft":"15px","letterSpacing":"-1px"}}>{current} - {mainEventSliderDatas.length}</p>
+      <p className='mainEventSliderBox' >{current} - {mainEventSliderDatas.length}</p>
 
       <Slider className="mainUpperSlider" {...settings}>
         
@@ -46,7 +69,16 @@ function MainEventSlider() {
           </div>
         ))
         :""}
+
       </Slider>
+
+      
+      <div onClick={()=>handlePause()} className='mainEventSliderStop'>
+          {pause 
+          ? <span className="material-icons">play_arrow</span>
+          : <span className="material-icons-outlined">pause</span>}
+      </div>
+    
     </div>
 
     </>

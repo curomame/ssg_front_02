@@ -4,33 +4,41 @@ import { useEffect } from 'react'
 
 function CategoryItem({type,ctgId,tempId,setTempId}) {
 
-  const [itemDatas, setItemDatas] = useState('');
-  
+  let offset = 1;
 
-  // console.log(tempId);
+  const [itemDatas, setItemDatas] = useState([]);
+  
   const getTempDatas = () => {
 
-    axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/lCtg/${tempId}/1`)
-    .then(res => setItemDatas(res.data.productTitleDtoList))
+    axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/lCtg/${tempId}/${offset}`)
+    .then(res => {
+      console.log(res.data.productTitleDtoList);
+      setItemDatas((prev) => [...prev,...res.data.productTitleDtoList])
+    })
     .catch(err => console.error(err))  
-
+    offset+=1
     return null;
+  }
+
+  const handleScroll = (e) => {
+    // console.log(e.target.documentElement.scrollTop);
+    // console.log(window.innerHeight);
+    // console.log(e.target.documentElement.scrollHeight);
+
+    if(window.innerHeight + e.target.documentElement.scrollTop +1 >= e.target.documentElement.scrollHeight){
+      getTempDatas()
+    }
   }
 
   useEffect(() => {
 
-    setTempId(ctgId)
-
-  },[])
-  
-  
-  useEffect(() => {
-
-    if(typeof tempId === "number"){
+    if(tempId===1){
       getTempDatas()
-    }
-    
+      window.addEventListener("scroll",handleScroll)
+    } 
+
   },[tempId])
+  
 
   console.log(itemDatas);
 
@@ -39,7 +47,7 @@ function CategoryItem({type,ctgId,tempId,setTempId}) {
 
 <div className='categoryItemTopContainer'> 
     {itemDatas[0] && 
-      itemDatas.map((item) => (
+      itemDatas.map((item,idx) => (
 
       <div key={item.productId} className="categoryItemContainer">
       <div>

@@ -1,10 +1,12 @@
 import axios from 'axios';
 
-function AddCartUtil(productId) {
+function AddCartUtil(productOptId) {
+
+  console.log(productOptId[0]);
 
   //카트에 상품을 넣는 유틸
   const inputData = [{
-    "productOptionId": productId,
+    "productOptionId": productOptId[0],
     "qty" : 1}]
 
 

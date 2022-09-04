@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductCombOpt from '../../parts/productParts/ProductCombOpt';
 
-function ProductOptionSurface({detailData}) {
+function ProductOptionSurface({detailData,setProductOptId}) {
 
   const productType = detailData.productGetDto.optionType
   
@@ -21,7 +21,8 @@ function ProductOptionSurface({detailData}) {
       
     case 'COMBINATION_TYPE':
       return <ProductCombOpt
-              detailData={detailData}/>
+              detailData={detailData}
+              setProductOptId={setProductOptId}/>
     
       
     case 'ALL_TYPE':

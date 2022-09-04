@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import ProductCombOptDetail from './ProductCombOptDetail';
 import ProductSelectedOptItem from './ProductSelectedOptItem';
 
-function ProductCombOpt({detailData}) {
+function ProductCombOpt({detailData,setProductOptId}) {
 
   const optDatas = detailData.comOptionAGetDTO.comOptionNameDTOList;
   const params = useParams();
@@ -24,11 +24,11 @@ function ProductCombOpt({detailData}) {
   const [output,setOutput] = useState('');
 
 
-  const [fullItem,setFullItem] = useState({});
+  const [fullItem,setFullItem] = useState([]);
 
-    // console.log(detailData.comOptionAGetDTO.comOptionADTOList);
+  // console.log(detailData.comOptionAGetDTO.comOptionADTOList);
   
-// console.log(fullItem);
+  // console.log(fullItem);
 
     useEffect(() => {
 
@@ -100,7 +100,11 @@ function ProductCombOpt({detailData}) {
 
   const handleCallCombOutput = () => {
     axios.get(process.env.REACT_APP_TEST_URL+`/po/comOption/${opt1.id}/${opt2.id}/${opt3.id}`)
-      .then(res => {setFullItem(res.data)})
+      .then(res => {
+        console.log(res.data);
+        setProductOptId((prev) => ([...prev,res.data.productOptionId]))
+        setFullItem([...fullItem,res.data])
+      })
       .catch(err => console.error(err))
 
   }

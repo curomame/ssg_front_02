@@ -104,14 +104,18 @@ function Product() {
           </div>
       </div>
 
-          {detailData.reviewDTOList.map((datas,i) =>
+          {detailData.reviewDTOList.slice(0,5).map((datas,i) =>
 
-          <ProductReviewCards
-            key={i}
-            datas={datas}
-          />)
+            
+
+          { 
+            return <ProductReviewCards
+                key={i}
+                datas={datas}
+              />}
+
+          )}
           
-          }
           
           <ProductQNACards
             QNAdatas={detailData.productQnASetListDTO}

@@ -1,11 +1,14 @@
 import React from 'react'
-import CartIcon from '../commonsParts/CartIcon'
-import HeartIcon from '../commonsParts/HeartIcon'
+import CommonCartParts from '../commonsParts/CommonCartParts'
+import CommonWishListParts from '../commonsParts/CommonWishListParts'
 
-function MainNowBuying({}) {
+
+function MainNowBuying({productId}) {
   
   // 상품정보 받아오기
   // 
+
+  console.log(productId)
   
   return (
     <>
@@ -14,8 +17,8 @@ function MainNowBuying({}) {
         <div className='mainNowBuyingBox'>3,408개 구매중</div>
 
         <div className="nowBuyingIcons" style={{"display":"flex"}}>
-          <div><HeartIcon/></div>
-          <div><CartIcon/></div>
+          <div><CommonWishListParts productId={productId}/></div>
+          <div><CommonCartParts productId={productId}/></div>
         </div>
 
       </div>

@@ -1,17 +1,28 @@
+import axios from 'axios'
 import React from 'react'
+import { useEffect } from 'react'
+import { useState } from 'react'
 import CommonTitleSub from '../../parts/commonsParts/CommonTitleSub'
-import MainFourCard from '../../parts/mainParts/MainFourCard'
 import MainFourCardSet from '../../parts/mainParts/MainFourCardSet'
-import MainNowBuying from '../../parts/mainParts/MainNowBuying'
-import MainTitleSub from '../../parts/mainParts/MainTitleSub'
+
 
 
 function MainItemsRight() {
 
   //해당 메인 아이템 이미지 들고오기
+  const [cardDatas, setCardDatas] = useState('')
+
+  useEffect(() => {
+
+    axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/lCtg/1/1`)
+    .then(res => setCardDatas(res.data.productTitleDtoList.slice(0,3)))
+    .catch(err => console.error(err))
+
+  },[])
 
   return (
     <>
+    
       <CommonTitleSub
         title="Happy Lounge"
         sub="당신의 쇼핑이 특별해지는, 매일 오전 9시"
@@ -21,14 +32,12 @@ function MainItemsRight() {
       
       <div className='mainFourCard'>
 
-        {/* 반복되는 부분 */}
+      {cardDatas && cardDatas.map((item,idx) => {
+        return <MainFourCardSet
+                  key={idx}
+                  data={item}/>
+      })}
 
-        
-
-        <MainFourCardSet/>
-        <MainFourCardSet/>
-        <MainFourCardSet/>
-      
       
       </div>
 

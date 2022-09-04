@@ -9,6 +9,7 @@ function ProductQNACards({QNAdatas,setDetailData}) {
 
   const [QModal,setQModal] = useState(false);
 
+
   return (
     <>
       <div>

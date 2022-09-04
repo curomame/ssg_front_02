@@ -55,7 +55,7 @@
 
 
 .cartItemContainer{
-  height: 110px;
+  height: 150px;
   display: flex;
   padding: 8px 16px;
   border-bottom: 0.5px solid gray;

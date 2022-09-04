@@ -52,8 +52,9 @@ function Cart() {
 
   }  
 
-  const applyTempCart = () => {
-    axios.put(process.env.REACT_APP_TEST_URL+'/cart/mod',newData,{
+  const applyTempCart =  async () => {
+    
+    await axios.put(process.env.REACT_APP_TEST_URL+'/cart/mod',newData,{
       headers:{
         "Authorization":localStorage.getItem("Authorization")
       }
@@ -63,6 +64,10 @@ function Cart() {
       .catch(err => console.error(err))
   }
 
+  const handlePushOrder = async () => {
+    await applyTempCart()
+    navigate('/order')
+  }
 
   useEffect(() => {
     
@@ -170,7 +175,7 @@ function Cart() {
         </div>
 
 
-        {cartDatas ? <div onClick={()=>navigate('/order')} className='cartOrderButton'><h2>주문하기</h2></div> : null}
+        {cartDatas ? <div onClick={()=>{handlePushOrder()}} className='cartOrderButton'><h2>주문하기</h2></div> : null}
     </>
   )
 }

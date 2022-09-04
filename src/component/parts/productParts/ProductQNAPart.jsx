@@ -13,7 +13,7 @@ function ProductQNAPart({QNAdatas}) {
   return (
     <>
 
-      {QNAdatas && QNAdatas.productQnASetDtoList.map((qna)=>(
+      {QNAdatas && QNAdatas.productQnASetDtoList.slice(0,5).map((qna)=>(
 
         <div key={qna.qnaId} onClick={()=>clickCheckFunc(qna.qnaId)}>
           <div className='productQNABubbleQuestionBox'>

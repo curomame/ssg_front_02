@@ -9,15 +9,25 @@ import ProductOptionSelect from '../../components/product/ProductOptionSelect';
 
 function ProductBottonButton({detailData}) {
 
-console.log(detailData);
+// console.log(detailData);
 
   const params = useParams(); 
   const navigate = useNavigate();
 
   const [purchaseCondition, setPurchaseCondition] = useState(true);
+  const [productOptId, setProductOptId] = useState([])
+
+// console.log(productOptId);
 
   const handleCartInput = () => {
-    AddCartUtil(params.id)
+
+    if(productOptId[0] === undefined){
+      window.alert('옵션을 선택해주세요!')
+    } else { 
+      AddCartUtil(productOptId)
+    }
+
+    
   }
 
   const handleOpenOptionSelect = () => {
@@ -53,6 +63,7 @@ console.log(detailData);
       detailData={detailData}
       handleCloseOptionSelect={handleCloseOptionSelect}
       setPurchaseCondition={setPurchaseCondition}
+      setProductOptId={setProductOptId}
     />
   }
     <div className='productBottomButtonContainer'>
