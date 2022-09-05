@@ -8,7 +8,7 @@ function MainNowBuying({productId}) {
   // 상품정보 받아오기
   // 
 
-  console.log(productId)
+  // console.log(productId)
   
   return (
     <>

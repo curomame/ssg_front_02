@@ -21,7 +21,10 @@ function CategoryAtomAxios() {
       console.log('카테고리 내용이 이미 있어요!')
     } else {
     axios.get(process.env.REACT_APP_TEST_URL+"/ProductCategory/findAll/mCtg")
-    .then(res => setCategoryList(res.data))
+    .then(res => {
+      console.log(res)
+      setCategoryList(res.data)
+    })
     console.log('카테고리 셋팅이 요청 완료 되었습니다.')
     }
 

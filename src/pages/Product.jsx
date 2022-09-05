@@ -33,6 +33,8 @@ function Product() {
     .catch(err => console.error('상품을 받아오는 도중 에러발생'))
   },[])
 
+  console.log(detailData.reviewDTOList)
+
   return (
 
     
@@ -90,32 +92,41 @@ function Product() {
         <div className='productBottomReviewBox'>
           <div><h2>고객 리뷰</h2></div>
           <hr />
-          <div><h4>★★★★★ 별점</h4></div>
-          <div><h3>{detailData.reviewDTOList.length}건 리뷰</h3></div>
 
-          <div className='productReviewCardImgAll'>
-            <div>포토{'&'}동영상 리뷰</div>
-            <div>더보기{'>'}</div>
-          </div>
+          {detailData.reviewDTOList.length === 0
+            ? <div>아직 등록된 리뷰가 없습니다.</div>
+            :        <div>
+            <div><h4>★★★★★ 별점</h4></div>
+            <div><h3>{detailData.reviewDTOList.length}건 리뷰</h3></div>
+  
+            <div className='productReviewCardImgAll'>
+              <div>포토{'&'}동영상 리뷰</div>
+              <div>더보기{'>'}</div>
+            </div>
+          </div> }
+
 
           <div className='productBottomReviewAllTitle'>
             <div>전체 리뷰</div>
             <div><Link to='reviews'>더보기({detailData.reviewDTOList.length}) {'>'}</Link></div>
           </div>
-      </div>
 
           {detailData.reviewDTOList.slice(0,5).map((datas,i) =>
+            { 
+              return <ProductReviewCards
+                  key={i}
+                  datas={datas}
+                />}
+            )}
 
-            
+      </div>
 
-          { 
-            return <ProductReviewCards
-                key={i}
-                datas={datas}
-              />}
 
-          )}
+
+
           
+
+
           
           <ProductQNACards
             QNAdatas={detailData.productQnASetListDTO}

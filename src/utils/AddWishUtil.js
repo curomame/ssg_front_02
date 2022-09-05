@@ -1,6 +1,9 @@
 import axios from 'axios';
+import { useState } from 'react';
 
 function AddWishUtil (productId) {
+
+  // const [output,setOutput] =useState(false);
 
   axios.post(process.env.REACT_APP_TEST_URL+`/user/wish/add`,
   
@@ -11,15 +14,18 @@ function AddWishUtil (productId) {
       "Authorization":localStorage.getItem("Authorization")
     }
   }).then(res => {
-    console.log(res.data.status)
-    if(res.data.status===200){
+    if(res.data.data.isWish===true){
       window.alert('좋아요가 완료되었습니다 :)')
+    } else {
+      window.alert('좋아요가 취소되었습니다.')
     }
   })
-    .catch(err=> console.error(err))
+    .catch(err=> {
+      console.error(err)
+    })
 
 
-  return ;
+  return;
 }
 
 export default AddWishUtil

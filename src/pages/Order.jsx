@@ -18,12 +18,12 @@ function Order() {
   useEffect(() => {
 
     // 일단 이거 지금 안댐
-    // axios.get(process.env.REACT_APP_TEST_URL+'/orders/ordersPage',{
-    //   headers:{
-    //     "Authorization":localStorage.getItem("Authorization")
-    //   }
-    // }).then(res => console.log(res.data))
-    //   .catch(err=>console.log(err))
+    axios.get(process.env.REACT_APP_TEST_URL+'/orders/ordersPage',{
+      headers:{
+        "Authorization":localStorage.getItem("Authorization")
+      }
+    }).then(res => console.log(res.data))
+      .catch(err=>console.log(err))
 
     axios.get(process.env.REACT_APP_TEST_URL+'/cart',{
       headers:{

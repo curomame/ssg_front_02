@@ -482,7 +482,7 @@ h3 {
     position: absolute;
     z-index: 1000;
     right: 8px;
-    bottom: 90px;
+    bottom: 70px;
     color: #777777;
 
 }
@@ -534,4 +534,9 @@ h3 {
 
 .mainSliderQuarterContainer p {
     color: #777777;
+}
+
+
+.hearChecked{
+    color: red;
 }

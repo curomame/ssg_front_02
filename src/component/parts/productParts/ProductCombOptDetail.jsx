@@ -5,15 +5,30 @@ function ProductCombOptDetail(
     optBoxSelect,
     selected,
     setSelected,
-    detailType}) {
+    detailType,
+    fullItem,
+    setFullItem,
+    setProductOptId}) {
 
-      console.log(optBoxSelect)
+      // console.log(optBoxSelect)
+  
 
-  const handleSetSelcetd = (id,desc) => {
-    console.log(id,desc);
+
+  const handleSetSelcetd = (id,desc,optId,opt) => {
+    console.log('here',optId)
+    if(optId){
+      setFullItem((prev) => [...prev,opt])
+      setProductOptId((prev) => {
+      console.log(prev)
+        return [...prev,opt.productOptionId]
+      })
+    }
     setSelected({...{id,desc}})
     setOpenDetail(false)
   }
+
+
+  console.log(optBoxSelect,selected)
 
   return (
     <>
@@ -36,6 +51,12 @@ function ProductCombOptDetail(
             tempId = opt.comOptionCId
           }
           
+          if(opt.optionBName){
+            return <div onClick={()=>handleSetSelcetd(tempId,opt.optionBName,opt.productOptionId,opt)} key={i} className='productOptBox'>
+                    <div><p>{opt.optionBName}</p></div>
+                  </div>
+          }
+
 
           return <div onClick={()=>handleSetSelcetd(tempId,opt.description)} key={i} className='productOptBox'>
                   <div><p>{opt.description}</p></div>

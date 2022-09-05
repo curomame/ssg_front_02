@@ -24,8 +24,9 @@ function CategoryMainGrid() {
           && 
           <>
             {atomCategoryDatas.map((data) => 
-                  (
-                    <div onClick={() => ClickFunc(data.id-1)} key={data.id} className='categoryMainGridContainerIconBox' >
+                  {
+                    console.log(data);
+                    return <div onClick={() => ClickFunc(data.id-1)} key={data.id} className='categoryMainGridContainerIconBox' >
 
                       <div>
                         <div><img src={data.imgUrl} alt=""/></div>
@@ -39,7 +40,7 @@ function CategoryMainGrid() {
                     </div>
                     
                     
-                    )   
+                  }   
                   )}
                   
 

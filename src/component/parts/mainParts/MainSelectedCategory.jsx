@@ -12,30 +12,22 @@ function MainSelectedCategory() {
   
   const [itemDatas, setItemDatas] = useState('');
   const [isSelected, setIsSelected] = useState(0)
-  const [url, setUrl] = useState(process.env.REACT_APP_TEST_URL+`/productCtgList/list/1`)
+  const [url, setUrl] = useState(process.env.REACT_APP_TEST_URL+`/productCtgList/lCtg/1/1`)
 
 
-
-  // console.log(itemDatas)
-
-  useEffect(() => {
-    { url && 
-      axios.get(url,{
-        headers:{
-          "Authorization":localStorage.getItem("Authorization")
-        }
-      })
-      .then(res => {
-        console.log(res.data);
-        setItemDatas(res.data)
-      })
-      .catch(err => console.error(err))
-    }
-    
-  },[url]);
 
   useEffect(()=> {
-    setUrl(process.env.REACT_APP_TEST_URL+`/productCtgList/list/${+isSelected+1}`)
+    
+    axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/lCtg/1/${isSelected+1}`,{ 
+            headers:{
+              "Authorization":localStorage.getItem("Authorization")
+            }
+      })
+      .then(res=> {
+        setItemDatas(res.data.productTitleDtoList)
+      })
+      .catch(err => console.error(err))
+
   },[isSelected])
 
 

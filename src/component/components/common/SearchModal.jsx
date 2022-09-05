@@ -49,10 +49,8 @@ function SearchModal() {
   const handleSearchFunc = () => {
     navigate(`/search/1?query=${searchTerm}`)
     setReModal(false);
-
-    localStorage.setItem("latest",JSON.stringify([...lastestTerm,...searchTerm]));
+    localStorage.setItem("latest",JSON.stringify([...lastestTerm,searchTerm]));
     setLatestTerm(JSON.parse(localStorage.getItem("latest")))
-
 
   }
 
@@ -94,15 +92,18 @@ function SearchModal() {
           
         </div>
           
-        {lastestTerm === []
+        {lastestTerm[0] === undefined
             ? <div className='searchRecentKeyword'>
                 <div><span className="material-icons-outlined">error_outline</span></div>
                 <div><p>최근 검색어가 없습니다</p></div>
               </div> 
             : 
             <Suspense fallback={<div>최근 검색어 가져오는 중</div>}>
+              
               <CommonLatestSearch
-              lastestTerm={lastestTerm}/>
+              lastestTerm={lastestTerm}
+              setLatestTerm={setLatestTerm}
+              setReModal={setReModal}/>
             </Suspense>
             }
           

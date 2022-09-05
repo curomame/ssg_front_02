@@ -26,9 +26,9 @@ function ProductCombOpt({detailData,setProductOptId}) {
 
   const [fullItem,setFullItem] = useState([]);
 
-  // console.log(detailData.comOptionAGetDTO.comOptionADTOList);
+  // console.log(detailData.comOptionAGetDTO.comOptionNameDTOList);
   
-  // console.log(fullItem);
+  console.log(fullItem);
 
     useEffect(() => {
 
@@ -68,6 +68,7 @@ function ProductCombOpt({detailData,setProductOptId}) {
     setDetailType("opt1");
     setOpt2({desc:'선택하세요'})
     setOpt3({desc:'선택하세요'})
+    // console.log(detailData.comOptionAGetDTO.comOptionADTOList);
     setOptBoxSelect(detailData.comOptionAGetDTO.comOptionADTOList)
     setOpenDetail(true);
   }
@@ -118,9 +119,8 @@ function ProductCombOpt({detailData,setProductOptId}) {
   return (
     <>
             {optDatas.map((opt,i)=>{
-        
-            return <div onClick={() => FuncArray[opt.idx](opt.idx)} className='productOptBox' key={opt.idx}> 
-                      <div><p>{DefaultOpt[opt.idx].desc}({opt.comOptionName})</p></div>
+            return <div onClick={() => FuncArray[i](opt.idx)} className='productOptBox' key={opt.idx}> 
+                      <div><p>{DefaultOpt[i].desc}({opt.comOptionName})</p></div>
                       <div><span className="material-icons-outlined">keyboard_arrow_down</span></div>
                     </div>
             })} 
@@ -137,7 +137,12 @@ function ProductCombOpt({detailData,setProductOptId}) {
                 selected={selected}
                 setSelected={setSelected}
                 
-                detailType={detailType}/>
+                detailType={detailType}
+                
+                fullItem={fullItem}
+                setFullItem={setFullItem}
+                
+                setProductOptId={setProductOptId}/>
 
             : null }  
           

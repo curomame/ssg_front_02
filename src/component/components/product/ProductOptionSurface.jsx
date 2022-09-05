@@ -12,7 +12,7 @@ function ProductOptionSurface({detailData,setProductOptId}) {
   // NOTHING(없음)
 
 
-
+  // console.log(productType);
 
 
   switch (productType) {

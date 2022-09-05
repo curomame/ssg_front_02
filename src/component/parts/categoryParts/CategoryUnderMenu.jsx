@@ -16,9 +16,9 @@ useEffect(()=>{
     <>
       <div className='categoryUnderMenuContainer'>
         {MDatas.map((data,i) => 
-        (
-          <div key={i}>{data.name}</div>
-        ))}
+        {
+          return <div key={i}><p>{data.name}</p></div>
+          })}
       </div>
     </>
   )

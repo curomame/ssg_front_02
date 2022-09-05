@@ -9,7 +9,7 @@ import ProductOptionSelect from '../../components/product/ProductOptionSelect';
 
 function ProductBottonButton({detailData}) {
 
-// console.log(detailData);
+console.log(detailData);
 
   const params = useParams(); 
   const navigate = useNavigate();
@@ -20,6 +20,7 @@ function ProductBottonButton({detailData}) {
 // console.log(productOptId);
 
   const handleCartInput = () => {
+    console.log(productOptId);
 
     if(productOptId[0] === undefined){
       window.alert('옵션을 선택해주세요!')

@@ -25,7 +25,7 @@
 
 .categoryline {
   text-decoration: line-through;
-  color: gray;
+  color: gray !important;
   font-weight: 500 !important;
   font-size: 13px !important;
 }
@@ -322,6 +322,13 @@
 
 .categoryUnderMenuContainer div{
   width: 33%;
+  height: 46px;
+  border: 0.5px solid #77777740;
+}
+
+.categoryUnderMenuContainer p {
+  line-height: 46px;
+  padding-left: 12px;
 }
 
 .categoryItemTopContainer{

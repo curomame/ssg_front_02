@@ -6,7 +6,7 @@ import MainNowBuying from './MainNowBuying';
 function MainFourCardSet({data}) {
 
 
-  console.log(data)
+  // console.log(data)
   return (
     <>
     <div>

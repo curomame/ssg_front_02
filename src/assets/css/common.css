@@ -477,3 +477,41 @@ font-size: 11px;
 .commonToHomeIcon span{
   margin: auto;
 }
+
+/* 서치모달 */
+.commonLatestSearchContainer{
+  margin: 0px 16px;
+}
+
+.commonLatestSearchTop{
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.commonLatestSearchBoxWrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.commonLatestSearchBox {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.commonLatestSearchKeyBox{
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0px;
+}
+
+.commonLatestSearchKeyBox div:last-child{
+  color: #606066;
+}
+
+.commonLatestUnderLine{
+  border-bottom: 0.5px solid #b4b4b4;
+}
