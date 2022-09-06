@@ -67,7 +67,7 @@ function CartItemCards({cartDatas,setCartDatas}) {
 
   }
 
-  // console.log(cartDatas);
+  // console.log(typeofcartDatas);
 
   return (
     <>

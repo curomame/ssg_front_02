@@ -264,3 +264,55 @@
 .defaultShip {
   background-color: #ff5b59;
 }
+
+.myPagePointBoxContainer{
+  position: relative;
+  margin-top: 15px;
+  border: 1px solid #222;
+  border-radius: 8px;
+  margin: 16px 16px;
+  padding: 12px 12px;
+}
+
+.myPagePointBoxContainer p {
+  text-align: right;
+}
+.mypageOrderBoxContainer{
+  margin: 20px 16px 0px;
+}
+
+.mypageOrderBoxContainer h2{
+  
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 21px;
+  color: #222;
+
+}
+
+.mypageOrderBoxContainer p{
+  text-align: center;
+  
+}
+
+.mypageOrderBoxContainer div{
+  margin: 24px 0px;
+}
+
+.mypageOrderStatusBox{
+  display: flex;
+  justify-content: space-between;
+}
+
+.mypageOrderStatusButton div{
+  border: 1px solid black;
+  height: 25px;
+}
+
+.mypageOrderStatusBox{
+  margin-bottom: 16px;
+}
+
+.categoryUpperMenuTitle{
+  display: flex;
+}

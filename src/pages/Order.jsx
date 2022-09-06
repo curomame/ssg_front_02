@@ -12,17 +12,17 @@ import OrderShipment from '../component/components/order/OrderShipment'
 
 function Order() {
 
-  const [userData, setUserDatas] = useState(null);
+  const [userDatas, setUserDatas] = useState(null);
   const [productDatas, setProductDatas] = useState(null);
 
   useEffect(() => {
 
     // 일단 이거 지금 안댐
-    axios.get(process.env.REACT_APP_TEST_URL+'/orders/ordersPage',{
+    axios.get(process.env.REACT_APP_TEST_URL+'/orders/orderspage',{
       headers:{
         "Authorization":localStorage.getItem("Authorization")
       }
-    }).then(res => console.log(res.data))
+    }).then(res => setUserDatas(res.data.data))
       .catch(err=>console.log(err))
 
     axios.get(process.env.REACT_APP_TEST_URL+'/cart',{
@@ -53,7 +53,9 @@ function Order() {
         productDatas={productDatas}/>
     
       <OrderFooter/>
+
       <OrderButton
+        userDatas={userDatas}
         productDatas={productDatas}
       />
 

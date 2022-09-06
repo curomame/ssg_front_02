@@ -2,12 +2,20 @@ import axios from 'axios';
 import React from 'react'
 import { useState } from 'react';
 
-function WishListItemToFolder({setAddItemToFolderModal,foldDatas,setFoldDatas,editSelect,setEditSelect,setEditMode}) {
+function WishListItemToFolder(
+  {setAddItemToFolderModal,
+    foldDatas,
+    setFoldDatas,
+    editSelect,
+    setEditSelect,
+    setEditMode,
+    tempPcakId}) {
 
 
   const [moveFolderList, setMoveFolderList] = useState([])
   const [FolderIdList, setFolderIdList] = useState([]);
 
+  
   // console.log(moveFolderList);
 
   const handleSetInputList = (wishFolderId, idx) => {
@@ -30,29 +38,59 @@ function WishListItemToFolder({setAddItemToFolderModal,foldDatas,setFoldDatas,ed
 
   const handlePushFolderItems = () => {
 
-    // 리스트 형태로 넣을 수 이도록 진행 TODO
-    const pushObj = {
-      "wishFolderPackIdList": [],
-      "wishIdList":[]
-    };
 
-    pushObj.wishFolderPackIdList = FolderIdList.filter((item) => item !== undefined)
-    pushObj.wishIdList = editSelect.map(item => +item)
+    if(tempPcakId!==''){
 
-    console.log(pushObj);
+      const pushObj = {
+        "wishFolderPackIdList": tempPcakId,
+        "newWishFolderPackIdList":[],
+        "wishIdList":[]
+      };
+  
+      pushObj.newWishFolderPackIdList = FolderIdList.filter((item) => item !== undefined)
+      pushObj.wishIdList = editSelect.map(item => +item)
 
-    axios.post(process.env.REACT_APP_TEST_URL+'/user/wish/folder/add',
-    pushObj,{      
-      headers:{
-        "Authorization":localStorage.getItem("Authorization")
-      }
-    }).then(res => {
-      res.data.status===200 && window.alert('성공적으로 폴더에 아이템이 담겼습니다!')
-      setAddItemToFolderModal(false);
-      setEditSelect('')
-      setEditMode(false)
-    })
-      .catch(err => console.error(err))
+      console.log(pushObj);
+
+      axios.post(process.env.REACT_APP_TEST_URL+'/user/wish/folder/mod',
+      pushObj,{      
+        headers:{
+          "Authorization":localStorage.getItem("Authorization")
+        }
+      }).then(res => {
+        console.log(res.data);
+        res.data.status===200 && window.alert('성공적으로 폴더에 아이템이 옮겨졌습니다!')
+        setAddItemToFolderModal(false);
+        setEditSelect('')
+        setEditMode(false)
+      })
+        .catch(err => console.error(err))
+    } else {
+
+      const pushObj = {
+        "wishFolderPackIdList": [],
+        "wishIdList":[]
+      };
+  
+      pushObj.wishFolderPackIdList = FolderIdList.filter((item) => item !== undefined)
+      pushObj.wishIdList = editSelect.map(item => +item)
+
+
+      axios.post(process.env.REACT_APP_TEST_URL+'/user/wish/folder/add',
+      pushObj,{      
+        headers:{
+          "Authorization":localStorage.getItem("Authorization")
+        }
+      }).then(res => {
+        res.data.status===200 && window.alert('성공적으로 폴더에 아이템이 담겼습니다!')
+        setAddItemToFolderModal(false);
+        setEditSelect('')
+        setEditMode(false)
+      })
+        .catch(err => console.error(err))
+    }
+
+
 
   }
 
@@ -71,7 +109,11 @@ function WishListItemToFolder({setAddItemToFolderModal,foldDatas,setFoldDatas,ed
 
         <div className='wishListFolderEditSelectContainer'>
         {foldDatas.map((fold,idx) => {
-          // console.log(fold)
+
+          if(fold.wishFolderPackId === tempPcakId){
+            return null;
+          }
+
           return <div key={fold.wishFolderPackId} className='wishListFolderEditSelect'>
                   <div>
                     <span onClick={() => handleSetInputList(fold.wishFolderPackId,idx)} 

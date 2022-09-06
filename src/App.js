@@ -37,6 +37,7 @@ import SearchPage from './pages/SearchPage';
 
 import './assets/css/zMystyle.css'
 import Order from './pages/Order';
+import Error404 from './pages/Error404';
 
 function App() {
 
@@ -54,7 +55,7 @@ function App() {
           <Route path="/category" element={<Category/>}/>
           <Route path="/category/detail" element={<CategoryDetail/>}/>
 
-          <Route path="/product" element={<div>상품정보를 찾을 수 없습니다.</div>}/>
+          <Route path="/product" element={<Error404/>}/>
           <Route path="/product/:id" element={<Product/>}/>
           {/* <Route path="/product/:id/reviews" element={<ProductAllReview/>}/> */}
           <Route path="/product/:id/qnas" element={<ProductAllQNA/>}/>
@@ -94,14 +95,12 @@ function App() {
 
           <Route path="/kakao/:params" element={<KakaoAuth/>}/>
 
-          <Route path="/404" element={<div>404</div>}/>
-
           <Route path="/test" element={<Test/>}/>
           <Route path="/emailtest" element={<EmailTest/>}/>
           <Route path="/testStorage" element={<LocalStorage/>}/>
           
 
-          <Route path="/*" element={<Wrong/>}/>
+          <Route path="/*" element={<Error404/>}/>
         </Routes>
       </BrowserRouter>
 

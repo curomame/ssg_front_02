@@ -43,6 +43,8 @@ function WishList() {
 
   },[wishDatas])
 
+  // console.log(foldDatas);
+
   return (
     <>
       <Header
@@ -95,7 +97,7 @@ function WishList() {
           />
           
           </div>
-          : <div>폴더에 원하는 항목을 추가해보세요!</div> }
+          : <div className='wishListNoItems'>폴더에 원하는 항목을 추가해보세요!</div> }
           
 
       </div>

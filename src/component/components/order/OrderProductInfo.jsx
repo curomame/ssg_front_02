@@ -20,7 +20,7 @@ function OrderProductInfo({productDatas}) {
           <div>{item.brandName} {item.productName}</div>
           <div>옵션 : {item.optionDescription}</div>
           <div>
-            <div>{item.totalPrice}원</div>
+            <div>{(item.totalPrice).toLocaleString()}원</div>
             <div>수량{item.qty}개</div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 
-function WishListAddFolderModal({openNewFolder,setOpenNewFolder}) {
+function WishListAddFolderModal({openNewFolder,setOpenNewFolder,setFoldDatas,tempPcakId}) {
 
   const [folderName, setFolderName] = useState('')
 
@@ -22,8 +22,9 @@ function WishListAddFolderModal({openNewFolder,setOpenNewFolder}) {
     }
     )
       .then(res => {
-        
-        setFolderName(res.data.data)
+        // setFoldDatas((prev) => console.log(prev))
+        setFoldDatas([...res.data.data]);
+        // setFolderName(res.data.data)
       })
       .catch(err => console.error(err))
 
@@ -31,6 +32,7 @@ function WishListAddFolderModal({openNewFolder,setOpenNewFolder}) {
 
   }
 
+  
   return (
 
     
@@ -39,13 +41,23 @@ function WishListAddFolderModal({openNewFolder,setOpenNewFolder}) {
     
     ? 
     <div className='wishListOpenNewFolderBox'>
-      <div onClick={handleColseNewFolder}>XXX</div>
-      <div>새 폴더 만들기</div>
-      <input 
-        type="text" 
-        value={folderName} 
-        onChange={(e) => setFolderName(e.target.value)}/>
-      <div onClick={handleCreateNewFolder}>Create!</div>
+      <div className='wishListOpenNewFolderTop'>
+        <div></div>
+        <div>새 폴더</div>
+        <div onClick={handleColseNewFolder}>X</div>
+      </div>
+      <div className='wishListOpenNewFolderLine'></div>
+      <div className='wishListOpenNewFolderUnder'>
+        <div><p>폴더를 추가하여 좋아요를 내맘대로 관리해보세요!</p></div>
+        <div>
+          <input 
+            type="text" 
+            value={folderName} 
+            onChange={(e) => setFolderName(e.target.value)}
+            placeholder={"폴더명을 입력해주세요."}/>
+        </div>
+        <div className={folderName ? 'nameChecked': null} onClick={handleCreateNewFolder}><p>만들기</p></div>
+      </div>
     </div>
 
     : null}

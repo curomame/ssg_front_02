@@ -28,7 +28,10 @@ function AddCartUtil(productOptId) {
     
 
   })
-    .catch(err => console.error('카트 상품 넣는 도중 에러 발생'+err));
+    .catch(err => {
+      window.alert('옵션 선택이 필요한 상품입니다 :-)')
+      console.error('카트 상품 넣는 도중 에러 발생'+err)
+    });
 
   return null;
 }

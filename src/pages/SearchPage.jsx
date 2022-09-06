@@ -19,7 +19,10 @@ function SearchPage() {
   const getItemDatas = () => {
 
     axios.get(process.env.REACT_APP_TEST_URL+`/search/1?query=${query}`)
-      .then(res => setSearchDatas(res.data.searchProductList))
+      .then(res => {
+        // console.log(res.data);
+        setSearchDatas(res.data.productTitleDtoList)
+      })
       .catch(err => console.error(err))
 
   }
@@ -48,6 +51,8 @@ function SearchPage() {
         />
     }
     </div>
+
+    <div style={{"marginBottom":"60px"}}></div>
 
     <BottomNav/>
     

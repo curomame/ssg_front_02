@@ -6,6 +6,13 @@
   display: none;
 }
 
+.wishListNoItems{
+  margin-top: 60px;
+  text-align: center;
+  color: #777777;
+  letter-spacing: -0.5px;
+}
+
 
 .wishListUppderMenuContainer{
   display: flex;
@@ -41,6 +48,57 @@
   background-color: white;
   width: 100%;
   text-align: center;
+}
+
+.wishListOpenNewFolderTop{
+  display: flex;
+  justify-content: space-between;
+  height: 42px;
+  line-height: 42px;
+  font-size: 16px;
+}
+
+.wishListOpenNewFolderTop div{
+  margin: 0 8px;
+}
+
+.wishListOpenNewFolderLine{
+  border-bottom: 1px solid #77777744;
+  margin-bottom: 10px;
+}
+
+.wishListOpenNewFolderUnder div:first-child p{
+  padding: 0 100px;
+  font-size: 16px;
+  margin-bottom: 12px;
+
+}
+
+.wishListOpenNewFolderUnder div:nth-child(2){
+  margin: 0 24px;
+}
+
+.wishListOpenNewFolderUnder input{
+  height: 50px;
+  width: 100%;
+  border: 1px solid lightgray;
+  margin-bottom: 24px;
+}
+
+.wishListOpenNewFolderUnder div:nth-child(3){
+  background: #e5e5e5;
+  width: 84px;
+  height: 44px;
+  line-height: 44px;
+  /* padding: 0 27px; */
+  border-radius: 22px;
+  font-size: 16px;
+  margin: auto;
+}
+
+.nameChecked{
+  background: #ff5b59 !important;
+  color: white;
 }
 
 .wishListDeleteIcon{
@@ -110,10 +168,10 @@
 
 
 .wishListItemsContainer{
-  width: 42%;
+  width: 50%;
   margin: 0px;
   
-  margin: 16px 16px;
+  margin: 16px 0px;
   position: relative;
 }
 

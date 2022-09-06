@@ -6,7 +6,7 @@ import { useRecoilValue } from 'recoil'
 import CategoryState from '../../../recoil/atoms/CategoryState'
 import CategoryUnderMenu from '../../parts/categoryParts/CategoryUnderMenu';
 
-function CategoryUpperMenu({setTempStatus,setTempId}) {
+function CategoryUpperMenu({tempStatus,setTempStatus,setTempId,tempId}) {
 
   const location = useLocation()
   const navigate = useNavigate();
@@ -15,6 +15,7 @@ function CategoryUpperMenu({setTempStatus,setTempId}) {
   const [Lid, setLid] = useState(location.state.Lid)
   const [Mid, setMid] = useState(location.state.Mid+1)
 
+  // console.log(location);
 
   const [LDatas, setLDatas] = useState(null);
   const [MDatas, setMDatas] = useState(null);
@@ -23,7 +24,10 @@ function CategoryUpperMenu({setTempStatus,setTempId}) {
     // console.log(i);
     setMid(i+1)
     setTempId(i+1)
+    setTempStatus('lCtg')
   }
+  // console.log(Mid, tempId)
+
 
   useEffect(()=>{
 
@@ -40,6 +44,8 @@ function CategoryUpperMenu({setTempStatus,setTempId}) {
 
   },[categoryDatas,Lid])
 
+// console.log(categoryDatas[Lid-1],'here');
+
   return ( 
     <>
 
@@ -47,13 +53,21 @@ function CategoryUpperMenu({setTempStatus,setTempId}) {
     
 
     <div className='categoryUpperMenuContainer'>
-          
+            
     <div className='categoryUpperMenuTop'>
       <div className='categoryUpperMenuTopBack' onClick={() => navigate(-1)}>
         <span className="material-icons-outlined">arrow_back</span>
-      </div>
+    </div>
+  
+    <div className='categoryUpperMenuTitle'> 
+      {categoryDatas !== '' && <div>{categoryDatas[Lid-1].name}{' > '}</div>}
+      {categoryDatas[Lid-1].lcategoryList[Mid-1] && <div><span>{categoryDatas[Lid-1].lcategoryList[Mid-1].name}</span></div>}
+    </div>  
 
-      <div>{categoryDatas[Lid-1].name}{' > '} <span>{categoryDatas[Lid-1].lcategoryList[Mid-1].name}</span></div>
+
+    
+
+      
     </div>
 
       <div className='categoryUpperMenuMContainer'>
@@ -73,10 +87,12 @@ function CategoryUpperMenu({setTempStatus,setTempId}) {
             )
             }
           
-        </div>
+        </div> 
       </div>
 
       <CategoryUnderMenu
+        setTempStatus={setTempStatus}
+        setTempId={setTempId}
         setMDatas={setMDatas}
         MDatas={MDatas}
         LDatas={LDatas}

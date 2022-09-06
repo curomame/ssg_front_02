@@ -8,8 +8,11 @@ import '../assets/css/myReview.css'
 import MyReviewBoxs from '../component/components/myReview/MyReviewBoxs'
 import BottomNav from '../component/layout/BottomNav'
 import MainImgBanner from '../component/parts/mainParts/MainImgBanner'
+import { useNavigate } from 'react-router-dom'
 
 function Review() {
+
+  const navigate = useNavigate()
 
   const [ableReview,setAbleReview] = useState(null);
   const [cantReview,setCantReview] = useState(null);
@@ -43,7 +46,10 @@ function Review() {
   return (
     <>
       <Header
-        type={'myReviw'}/>
+        type={'text'}
+        text='리뷰 작성'
+        func={() => navigate('/mypage')}
+        />
       <MainImgBanner
         src={"https://sui.ssgcdn.com/cmpt/banner/202207/2022072820481302228584678858_897.jpg"}
       />
@@ -54,7 +60,7 @@ function Review() {
         </div>
 
         <div onClick={(e)=>handleChangeClicked(e)} className={'myReviewSelectBox_'+`${!isClicked}`}>
-          작성한 리뷰
+          작성한 리뷰 {ableReview && cantReview.length}건
         </div>
 
       </div>

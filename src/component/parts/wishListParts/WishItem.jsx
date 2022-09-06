@@ -186,7 +186,9 @@ function WishItem(
     : null}
     
     {addItemToFolderModal &&
+    
       <WishListItemToFolder
+      tempPcakId={tempPcakId}
       setAddItemToFolderModal={setAddItemToFolderModal}
       foldDatas={foldDatas}
       setFoldDatas={setFoldDatas}

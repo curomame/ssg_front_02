@@ -50,7 +50,7 @@
   padding: 0px 20px ;
   font-size: 12px;
   color: #888;
-  margin-bottom: 60px;
+  margin-bottom: 100px;
 }
 
 
@@ -225,4 +225,11 @@
   background-color: #ff3e3e;
   color: #fff;
   
+}
+
+.cartNone{
+  margin: 60px 0px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
 }

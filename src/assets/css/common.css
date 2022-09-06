@@ -154,6 +154,7 @@
   letter-spacing: -0.8px;
   padding: 0 20px;
   overflow: auto;
+  z-index: 10000;
 }
 
 .mainFooterContainer h5{
@@ -428,7 +429,7 @@ font-size: 11px;
 
 .searchModalMiddleProps input{
   line-height: 40px;
-  min-width: 340px;
+  width: 80vw;
   border: none;
 }
 

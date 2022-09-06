@@ -3,14 +3,14 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-function WishListEditFolderModal({handleEditFolder,setEditModalFolder,foldDatas,setFoldDatas}) {
+function WishListEditFolderModal({handleEditFolder,setEditModalFolder,foldDatas,setFoldDatas,tempPcakId}) {
 
   const [newFolderName, setNewFolderName] = useState('')
 
   const [folderLength, setFolderLength] = useState(0)
 
   const [editName,setEditName] = useState('')
-  const [editInputOpen,setEditInputOpen] = useState(false);
+  // const [editInputOpen,setEditInputOpen] = useState(false);
 
   const [tempClick, setTempClick] = useState('')
 
@@ -85,7 +85,6 @@ function WishListEditFolderModal({handleEditFolder,setEditModalFolder,foldDatas,
 
   },[foldDatas])
 
-  
 
   return (
     <>

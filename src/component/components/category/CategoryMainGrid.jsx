@@ -25,7 +25,7 @@ function CategoryMainGrid() {
           <>
             {atomCategoryDatas.map((data) => 
                   {
-                    console.log(data);
+                    
                     return <div onClick={() => ClickFunc(data.id-1)} key={data.id} className='categoryMainGridContainerIconBox' >
 
                       <div>

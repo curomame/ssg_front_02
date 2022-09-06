@@ -18,7 +18,7 @@ function WishListUpperMenu(
 
   const [openNewFolder, setOpenNewFolder] = useState(false);
   const [editModalFolder, setEditModalFolder] = useState(false);
-  
+  // const [tempFolderName,setTempFolderName] = useState('')
 
 
   const handleOpenNewFolder = () => {
@@ -59,7 +59,6 @@ function WishListUpperMenu(
       .catch(err => console.error(err))
   }
 
-
   return (
     <>
     <div  className='wishListUppderMenuTop'>
@@ -75,7 +74,8 @@ function WishListUpperMenu(
           
           foldDatas.map((folder) =>       
 
-            { console.log(folder);
+            { 
+              // console.log(folder);
               return <div
                       onClick={() => handleShowThisFolder(folder.wishFolderPackId)}
                       key={folder.wishFolderPackId} >
@@ -102,6 +102,7 @@ function WishListUpperMenu(
         </div>
         
         <WishListAddFolderModal
+        tempPcakId={tempPcakId}
           openNewFolder={openNewFolder}
           setOpenNewFolder={setOpenNewFolder}
           setFoldDatas={setFoldDatas}

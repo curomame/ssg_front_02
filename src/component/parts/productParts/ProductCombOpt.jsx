@@ -26,6 +26,8 @@ function ProductCombOpt({detailData,setProductOptId}) {
 
   const [fullItem,setFullItem] = useState([]);
 
+  const [totalPrice,setTotalprice] = useState(0);
+
   // console.log(detailData.comOptionAGetDTO.comOptionNameDTOList);
   
   console.log(fullItem);
@@ -120,8 +122,8 @@ function ProductCombOpt({detailData,setProductOptId}) {
     <>
             {optDatas.map((opt,i)=>{
             return <div onClick={() => FuncArray[i](opt.idx)} className='productOptBox' key={opt.idx}> 
-                      <div><p>{DefaultOpt[i].desc}({opt.comOptionName})</p></div>
-                      <div><span className="material-icons-outlined">keyboard_arrow_down</span></div>
+                      <div ><p>{DefaultOpt[i].desc}({opt.comOptionName})</p></div>
+                      <div ><span className="material-icons-outlined">keyboard_arrow_down</span></div>
                     </div>
             })} 
 
@@ -142,7 +144,8 @@ function ProductCombOpt({detailData,setProductOptId}) {
                 fullItem={fullItem}
                 setFullItem={setFullItem}
                 
-                setProductOptId={setProductOptId}/>
+                setProductOptId={setProductOptId}
+                />
 
             : null }  
           
@@ -151,6 +154,7 @@ function ProductCombOpt({detailData,setProductOptId}) {
             ? <ProductSelectedOptItem
               fullItem={fullItem}
               setFullItem={setFullItem}
+              setTotalprice={setTotalprice}
               />
               
             : null}

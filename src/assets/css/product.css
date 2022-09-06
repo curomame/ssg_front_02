@@ -491,3 +491,36 @@ position: relative;
 .productOptBox span{
   line-height: 16px;
 }
+
+.productSelectedOptItemContainer{
+  margin: 0px !important;
+  border: 1px solid #222;
+  border-radius: 8px;
+ 
+}
+
+.productSelectedOptItemContainer div{
+  margin: 0 !important; 
+  padding: 6px 6px;
+}
+
+.productSelectedOptItemTitle{
+  text-align: left;
+  margin: 0 !important;
+}
+
+.productSelectedOptItemPrice{
+  margin: 0 !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+.productSelectedOptItemPriceInput{
+  display: flex;
+}
+
+.productSelectedOptItemPriceInput input{
+  width: 34px;
+  height: 34px;
+  text-align: center;
+}

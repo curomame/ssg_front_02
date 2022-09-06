@@ -3,12 +3,15 @@ import Footer from '../component/components/common/CommonFooter'
 import Header from '../component/components/common/Header'
 import BottomNav from '../component/layout/BottomNav'
 import '../assets/css/mypage.css'
-import { Link,Navigate, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useRecoilValue } from 'recoil'
 import { TempAuthState } from '../recoil/atoms/TempAuthState'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
+import MyPagePointBox from '../component/components/mypage/MyPagePointBox'
+import MyPageOrderBox from '../component/components/mypage/MyPageOrderBox'
+import MypageReviewBox from '../component/components/mypage/MypageReviewBox'
 
 function MyPage() {
   
@@ -75,16 +78,14 @@ function MyPage() {
             <p>알림함</p>
           </Link>
         </div>
+        </div>
 
+        <MyPagePointBox/>
         
-        </div>
+        <MyPageOrderBox/>
+        <MypageReviewBox/>
 
-        <div className='mypageReviewBox'>
-          <Link to='/review'>
-            <div><p>지금 작성 가능한 리뷰</p></div>
-            <div><p>일반 0 | 스페셜 0</p></div>
-          </Link>
-        </div>
+
           
       <Footer/>
       <BottomNav/>

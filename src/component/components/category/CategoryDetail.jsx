@@ -17,7 +17,6 @@ function CategoryDetail() {
   const [tempStatus,setTempStatus] = useState('')
   const [tempId,setTempId] = useState('')
 
-
   useEffect(() => {
 
     setTempStatus(location.state.tempStatus)
@@ -25,17 +24,20 @@ function CategoryDetail() {
 
   },[])
 
+
   return (
     <>
       <Header/>
 
       <CategoryUpperMenu
+      tempStatus={tempStatus}
       setTempStatus={setTempStatus}
+      tempId={tempId}
       setTempId={setTempId}
       />
 
       <CategoryItem
-        type={tempStatus}
+        tempStatus={tempStatus}
         tempId={tempId}
         setTempId={setTempId}
       />

@@ -17,20 +17,19 @@ function MyReviewCreate() {
   console.log(productName)
 
   const handleWriteReview = () => {
+
+      console.log(orderId);
+      console.log(contents);
       axios.post(process.env.REACT_APP_TEST_URL+'/user/review/add',{
         "orderId": orderId,
         "comment": contents,
         "star": 4,
-        "size": 1,
-        "color": 1,
-        "thickness": 1, 
-        "fit": 1,
         "reviewImgList":[
             {
               // 해당값 사진 등록시 받아옴
-                "name": "imageName",
-                "path": "pathName",
-                "uuid":"uuid"
+                "fileName": "imageName",
+                "uuid": "pathName",
+                "folderPath":"uuid"
             }]
   
       },{

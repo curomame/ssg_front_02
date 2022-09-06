@@ -95,6 +95,7 @@
   letter-spacing: -0.3px;
   color: #888;
   margin: 0 16px;
+  margin-bottom: 60px;
 }
 
 .orderButton{
@@ -110,7 +111,6 @@
   font-weight: normal;
   background-color: #ff3e3e;
   color: #fff;
-
 }
 
 .orderButton p {

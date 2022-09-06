@@ -99,8 +99,7 @@ function Cart() {
     },[cartDatas]);
 
 
-
-
+// console.log(cartDatas);
   return (
     <>
         
@@ -151,7 +150,7 @@ function Cart() {
           </div>
 
           :
-          null
+          <div className='cartNone'><p>장바구니에 담긴 상품이 없습니다.</p></div>
         }
 
           
@@ -173,7 +172,6 @@ function Cart() {
             <li>오픈마켓 상품의 경우, ㈜에스에스지닷컴은 통신판매중개자로서 거래 당사자가 아니며, 입점 판매사가 등록한 상품정보 및 거래 등에 대해 책임을 지지 않습니다.</li>
           </ul>
         </div>
-
 
         {cartDatas ? <div onClick={()=>{handlePushOrder()}} className='cartOrderButton'><h2>주문하기</h2></div> : null}
     </>

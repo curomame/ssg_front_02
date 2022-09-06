@@ -480,9 +480,9 @@ h3 {
 
 .mainItemWishIcon{
     position: absolute;
-    z-index: 1000;
-    right: 8px;
-    bottom: 70px;
+    z-index: 100;
+    right: 10px;
+    bottom: 90px;
     color: #777777;
 
 }

@@ -1,0 +1,43 @@
+.errorContainer{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50%;
+  
+}
+
+.errorContainer div{
+  align-items: center;
+}
+
+.errorIcon img{
+  width: 200px;
+  height: 200px;
+  
+}
+
+.errorContainer h2 {
+  margin: 6px 36px;
+}
+
+.errorContainer p{
+  padding-top: 8px;
+  font-size: 13px;
+  color: #777;
+  letter-spacing: -0.3px;
+}
+
+.errorBackButton {
+  display: block;
+    width: 260px;
+    margin: 0 auto;
+    margin-top: 36px;
+    padding: 14px 0;
+    background: #222;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}

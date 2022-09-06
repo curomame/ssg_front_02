@@ -17,13 +17,27 @@ function MyShipaddress() {
   const getShipData = async () => {
     const shipData = await axios.get(process.env.REACT_APP_TEST_URL+'/user/addr/get',{
       headers:{
-        'Authorization':localStorage.getItem('Authorization')
+        "Authorization":localStorage.getItem("Authorization")
       }
     })
     .then(res => res)
     .catch(err => console.error(err))
+    
     setTempShip(shipData.data.data);
   }
+
+
+  // console.log(tempShip)
+
+  const changeShipDefault = () => {
+    axios.put(process.env.REACT_APP_TEST_URL+'/user/addr/modDefault/'+tempCheck,{},{
+      headers:{
+        "Authorization":localStorage.getItem("Authorization")
+      }
+    }).then(res => setTempShip(res.data.data))
+      .catch(err => console.error(err))
+  }
+
 
   const handleChangeDefaultShip =() => {
     
@@ -33,18 +47,6 @@ function MyShipaddress() {
     : console.log('변경안함')}
 
   }
-
-  console.log(tempCheck);
-
-  const changeShipDefault = () => {
-    axios.put(`${process.env.REACT_APP_TEST_URL}/user/addr/modDefault/${tempCheck}`,{
-      headers:{
-        "Authorization":localStorage.getItem("Authorization")
-      }
-    }).then(res => console.log(res.data))
-      .catch(err => console.error(err))
-  }
-
 
   useEffect(()=> {
     getShipData()

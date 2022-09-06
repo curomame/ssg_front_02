@@ -12,18 +12,20 @@ function MainSelectedCategory() {
   
   const [itemDatas, setItemDatas] = useState('');
   const [isSelected, setIsSelected] = useState(0)
-  const [url, setUrl] = useState(process.env.REACT_APP_TEST_URL+`/productCtgList/lCtg/1/1`)
 
 
 
   useEffect(()=> {
     
+    console.log(typeof localStorage.getItem("Authorization"));
+
     axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/lCtg/1/${isSelected+1}`,{ 
             headers:{
               "Authorization":localStorage.getItem("Authorization")
             }
       })
       .then(res=> {
+        console.log(res)
         setItemDatas(res.data.productTitleDtoList)
       })
       .catch(err => console.error(err))

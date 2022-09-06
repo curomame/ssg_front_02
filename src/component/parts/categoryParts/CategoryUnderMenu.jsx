@@ -1,23 +1,39 @@
 import React from 'react'
 import { useEffect } from 'react';
 
-function CategoryUnderMenu({Mid,MDatas,setMDatas,LDatas}) {
+function CategoryUnderMenu(
+  {Mid,
+  MDatas,
+  setMDatas,
+  LDatas,
+  setTempStatus,
+  setTempId}
+  ) {
 
 // console.log(Mid);
 
+const handleChangeStatus = (i) => {
+  
+  const id = i+1;
+
+  setTempStatus('mCtg')
+  setTempId(id)
+}
 
 useEffect(()=>{
 
-  setMDatas(LDatas[Mid-1].mcategoryList);
+  {LDatas[Mid-1] && 
+    setMDatas(LDatas[Mid-1].mcategoryList)
+  }
 
-},[Mid])
+},[Mid]) 
 
   return (
     <>
       <div className='categoryUnderMenuContainer'>
         {MDatas.map((data,i) => 
         {
-          return <div key={i}><p>{data.name}</p></div>
+          return <div onClick={()=>handleChangeStatus(i)} key={i}><p>{data.name}</p></div>
           })}
       </div>
     </>
