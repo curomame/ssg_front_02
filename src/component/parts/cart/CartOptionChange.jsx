@@ -14,8 +14,12 @@ function CartOptionChange({itemOptData,setOptChange,setCartDatas}) {
 
   useEffect(() => {
 
-    if(itemOptData.comOptionBDTO){
+    if(itemOptData.productOptionType === 'COMBINATION_TYPE'){
+
+      // console.log(itemOptData);
+      
       let optObj = {}
+
       optObj.optionAName = itemOptData.comOptionADTO[0].name
       optObj.optionADesc = itemOptData.comOptionADTO[0].description
 
@@ -27,16 +31,35 @@ function CartOptionChange({itemOptData,setOptChange,setCartDatas}) {
 
       optObj.productOptionId = itemOptData.productOptionId
       setOptionId({...optObj})
+
+
+    } else if (itemOptData.productOptionType === 'STANDARD_TYPE'){
+
+      let optObj = {}
+      optObj.standardName = itemOptData.standardOptionDTO[0].name
+      optObj.productOptionId = itemOptData.productOptionId;
+      setOptionId({...optObj})
     }
 
   },[itemOptData]) 
 
+  const handleStdOpt = (id) => {
+    console.log(optionId)
+    console.log(id);
+    console.log(itemOptData.productOptionId);
+  }
+  
 
   const handleOpenChangeB = () => {
     setOptChangeMiniModal(true)
-    axios.get(process.env.REACT_APP_TEST_URL+`/po/comOption/${optionId.optionAId}`)
-      .then(res=>setTempModalDatas(res.data.comOptionBDTOList))
+
+    if(itemOptData.productOptionType === 'COMBINATION_TYPE'){
+      axios.get(process.env.REACT_APP_TEST_URL+`/po/comOption/${optionId.optionAId}`)
+      .then(res=>{
+          setTempModalDatas(res.data.comOptionBDTOList)
+      })
       .then(err=>console.error(err))
+    } 
       
   }
 
@@ -55,10 +78,10 @@ function CartOptionChange({itemOptData,setOptChange,setCartDatas}) {
     setOptChangeMiniModal(false)
   }
   
-  console.log(itemOptData);
-  
+
   const handleChangeOption = () => {
-    // console.log(itemOptData.cartId,itemOptData.productOptionId,optionId.productOptionId);
+    console.log(itemOptData.cartId,itemOptData.productOptionId,optionId.productOptionId);
+
     axios.put(process.env.REACT_APP_TEST_URL+'/cart/option/mod',
     {
           "cartId" : itemOptData.cartId,
@@ -77,6 +100,10 @@ function CartOptionChange({itemOptData,setOptChange,setCartDatas}) {
   }
 
 
+  // console.log(itemOptData.standardOptionDTO)
+    // console.log(itemOptData.cartId)
+    
+
   return (
     <>
       <div className='cartOptChangeContainer'>
@@ -93,7 +120,10 @@ function CartOptionChange({itemOptData,setOptChange,setCartDatas}) {
         <hr />
 
         
-          {optionId!==undefined && 
+        {itemOptData.productOptionType === 'COMBINATION_TYPE' && 
+        
+        <>
+        {optionId!==undefined && 
           <div >
             <div className='cartOptionChangeBox'>
               <div>{optionId.optionAName}</div>
@@ -106,7 +136,23 @@ function CartOptionChange({itemOptData,setOptChange,setCartDatas}) {
             </div>
           </div>
           }
+        </>
+        }
+
+        
+      {itemOptData.productOptionType === 'STANDARD_TYPE' && 
+        <>
+          {itemOptData.standardOptionDTO.map((item) => {
+
+            console.log(itemOptData);
+            return <div onClick={()=>handleStdOpt(item.standardOptionId)} key={item.standardOptionId}>{item.standardOptionId}</div>
+
+
+          })}
+        </>
+        }
           
+
         
           {optChangeMiniModal 
           ? <div>

@@ -12,9 +12,14 @@ function CountCart () {
         "Authorization":localStorage.getItem("Authorization")
       }
     }).then(res => setCount(res.data.data.cartOutputDtoList.length))
-      .catch(err => console.error(err))
+      .catch(err => {
+        // console.error(err)
+        return 0;
+      })
 
       return count;
+  } else {
+    return 0;
   }
 
   

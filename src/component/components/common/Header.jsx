@@ -139,7 +139,7 @@ function Header({type,text,func}) {
                   <SearchBar/>
                   <div className='headerLayoutRightCart'>
                     <span className="material-icons-outlined"><Link to='/cart'>shopping_cart</Link></span>
-                    <div className='headerLayoutRightCartCount'><span >{count}</span></div>
+                    {count!==0 && <div className='headerLayoutRightCartCount'><span >{count}</span></div> }
                   </div>
                 </div>
 

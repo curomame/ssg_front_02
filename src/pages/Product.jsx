@@ -33,7 +33,7 @@ function Product() {
     .catch(err => console.error('상품을 받아오는 도중 에러발생'))
   },[])
 
-  console.log(detailData.reviewDTOList)
+  // console.log(detailData.reviewDTOList)
 
   return (
 

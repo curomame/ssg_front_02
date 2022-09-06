@@ -118,11 +118,3 @@
   line-height: 52px;
 }
 
-.productCombOptContainer{
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-  background-color: white;
-  margin: 0 !important;
-  height: 500px;
-}

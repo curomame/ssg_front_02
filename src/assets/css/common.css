@@ -504,20 +504,24 @@ font-size: 11px;
 /* 홈으로 가즈아 */
 
 .commonToHomeIcon{
+
   background-color: lightgray;
-  width: 24px;
-  height: 24px;
-  line-height: 24px;
+  width: 30px;
+  height: 30px;
+  
   padding: 4px;
   border-radius: 8px;
   position: fixed;
   right: 20px;
   bottom: 9%;
   z-index: 8000;
+  text-align: center;
 }
 
 .commonToHomeIcon span{
+  line-height: 30px;
   margin: auto;
+  color: white;
 }
 
 /* 서치모달 */

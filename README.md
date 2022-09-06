@@ -148,7 +148,7 @@ project
 <br>
 
 ### 💻 F / E 사용 기술
-<br>
+<br style={display:flex}>
   <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=black"> 
   <img src="https://img.shields.io/badge/React-87CEFA?style=flat&logo=React&logoColor=white">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white"/>

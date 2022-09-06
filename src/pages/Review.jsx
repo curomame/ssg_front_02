@@ -63,7 +63,7 @@ function Review() {
         </div>
 
         <div onClick={(e)=>handleChangeClicked(e)} className={'myReviewSelectBox_'+`${!isClicked}`}>
-          작성한 리뷰 {ableReview && cantReview.length}건
+          작성한 리뷰 {ableReview && <>{typeof cantReview==='string' ? 0 : cantReview.length} </>}건
         </div>
 
       </div>

@@ -81,7 +81,7 @@
 .myReviewWriteProductInfoBox{
   display: flex;
   height: 100px;
-  line-height: 100px;
+  
 }
 
 .myReviewWriteProductInfoBox img{
@@ -98,6 +98,7 @@
 
 .myReviewWriteProductInfoBox p {
   color: #888;
+  line-height: 35px;
 }
 
 

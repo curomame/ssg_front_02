@@ -10,12 +10,10 @@ function MyReviewBoxs({datas,type}) {
   return (
     <>
     
-    
-
-      {datas ?
+      {(datas !== null) && (datas !== '작성 한 리뷰가 존재하지 않음')?
       datas.map((item)=> 
-      
-      <div key={item.orderId || item.reviewId} className='myReviewBoxsContainer'>
+      {
+        return <div key={item.orderId || item.reviewId} className='myReviewBoxsContainer'>
         <div className='myReviewBoxsdate'>{item.orderDate|| item.regDate}</div>
 
         <div className='myReviewBoxsUnder' >
@@ -45,25 +43,14 @@ function MyReviewBoxs({datas,type}) {
             </Link>}
           
         </div>
-      </div>)
-
-
+      </div>})
 
       :
 
-      type ? 
-      
       <div>
         <p>최근 3개월간 구매 내역이 없습니다.</p>
 
         <p>SSG.COM이 준비한 상품들을 구매하시고</p>
-        <p>리뷰를 작성하시면 다양한 혜택을 받을 수 있습니다.</p>
-      </div>
-      
-      : 
-      <div>
-        <p>최근 3개월간 작성한 리뷰 내역이 없습니다.</p>
-
         <p>리뷰를 작성하시면 다양한 혜택을 받을 수 있습니다.</p>
       </div>
       

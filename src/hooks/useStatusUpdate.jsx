@@ -21,7 +21,9 @@ function useStatusUpdate() {
     axios.post(process.env.REACT_APP_TEST_URL+'/auth/refresh',{
       "refreshToken":refreshToken
     }
-    ).then(res => console.log(res))
+    ).then(res => {return res
+      // console.log(res)
+    })
       .catch(err => console.error(err))
 
   }
@@ -43,7 +45,7 @@ function useStatusUpdate() {
         }
       }).then(res => {
         // console.log(tempToken);
-        console.log(res.data,'useToken data  내용')
+        // console.log(res.data,'useToken data  내용')
         {res.data.status===200 ? setTempStatus(true) : setTempStatus(false)}
       })
         .catch(err => {if(err.response.data.code === "JT001"){

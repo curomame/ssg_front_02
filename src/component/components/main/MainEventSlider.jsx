@@ -36,18 +36,17 @@ function MainEventSlider() {
   const handlePause = () => {
     
     if(!pause){
-      setSettings({...settings,autoplay:false})
+      setSettings((prev) => ({...prev,...{"autoplay":false}}))
     } else {
-      setSettings({...settings,autoplay:true})
+      setSettings((prev) => ({...prev,...{"autoplay":true}}))
     }
 
     setPause(!pause);
     
   }
 
-  useEffect(()=>{
-    console.log(1)
-  },[settings])
+  // useEffect(()=>{
+  // },[settings])
 
   return (
     <>
