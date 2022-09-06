@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import BottomNav from '../../layout/BottomNav';
 import Header from '../common/Header';
 
 function MyReviewUpdate() {
   
+  const location = useLocation();
 
   const [contents, setContents] = useState();
 
@@ -14,6 +15,12 @@ function MyReviewUpdate() {
   const [landingImg, setLandingImg] = useState([]);
   const [formImgs, setFormImgs] = useState('')
 
+  
+  
+  console.log(location.state.orderId)
+
+
+
   const handleUpdateReview = async (e) => {
 
     e.preventDefault()
@@ -21,23 +28,25 @@ function MyReviewUpdate() {
     pushImg()
 
 
-    // console.log(landingImg)
-    // await axios.put('http://10.10.10.108:8080/user/review/mod',{
-    //   "userId": 1,
-    //   "reviewId": pathid.id,
-    //   "comment": contents,
-    //   "star": 4,
-    //   "size": 1,
-    //   "color": 1,
-    //   "thickness": 1, 
-    //   "fit": 1,
-    //   "reviewImgList":[
-    //       {
-    //           "name": "imageName",
-    //           "path": "pathName"
-    //       }]
+    console.log(landingImg)
+    await axios.put('http://10.10.10.108:8080/user/review/mod',{
+      "userId": 1,
+      "reviewId":"",
+      "comment": contents,
+      "star": 4,
+      "size": 1,
+      "color": 1,
+      "thickness": 1, 
+      "fit": 1,
+      "reviewImgList":[
+          {
+              "name": "imageName",
+              "path": "pathName"
+          }]
 
-    // }).then(res => console.log(res))
+    }).then(res => console.log(res))
+
+
 }
 
 
@@ -54,6 +63,8 @@ function MyReviewUpdate() {
   }
 
 
+
+
 const pushImg = () => {
 
 
@@ -64,6 +75,7 @@ const pushImg = () => {
   //     "uploadFiles":[].concat(...formImgs)[1],
   //     "entityName":"review"
   // }
+
 
 
   const config = {

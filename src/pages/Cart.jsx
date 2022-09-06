@@ -107,7 +107,7 @@ function Cart() {
           type={'cart'}
           func={applyTempCart}/>
         
-        <MainBlankSpace px={100}/>
+        
 
         {tempAuth 
         ? <CartShipmentDefault/>
@@ -116,6 +116,7 @@ function Cart() {
         {cartDatas ? 
         
         <div>
+          
               <CartItemCards
                 cartDatas={cartDatas}
                 setCartDatas={setCartDatas}

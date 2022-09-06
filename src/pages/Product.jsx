@@ -95,15 +95,20 @@ function Product() {
 
           {detailData.reviewDTOList.length === 0
             ? <div>아직 등록된 리뷰가 없습니다.</div>
-            :        <div>
-            <div><h4>★★★★★ 별점</h4></div>
-            <div><h3>{detailData.reviewDTOList.length}건 리뷰</h3></div>
-  
-            <div className='productReviewCardImgAll'>
-              <div>포토{'&'}동영상 리뷰</div>
-              <div>더보기{'>'}</div>
-            </div>
-          </div> }
+            : <div >
+                <div className='productBottomReviewTop'>
+                  <div className='productBottomReviewBig'>{(detailData.avgStar).toFixed(1)}</div>
+                    <div>
+                  <div><h4>★★★★★</h4></div>
+                  <div><h3>{detailData.reviewDTOList.length}건 리뷰</h3></div>
+                  </div>
+                </div>
+
+                {/* <div className='productReviewCardImgAll'>
+                  <div>포토{'&'}동영상 리뷰</div>
+                  <div>더보기{'>'}</div>
+                </div> */}
+              </div> }
 
 
           <div className='productBottomReviewAllTitle'>

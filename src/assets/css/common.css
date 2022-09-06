@@ -377,11 +377,52 @@ font-size: 11px;
 
 .headerLayoutRightCart {
   margin-left: 8px;
+  position: relative;
   
 }
 
 .headerLayoutRightCart span{
   line-height: 40px;
+}
+
+.headerLayoutRightCartCount{
+  background-color: #ff5b59;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  position: absolute;
+  color: white;
+  border-radius: 100%;
+  text-align: center;
+  top: 3px;
+  right:-10px;
+}
+
+.headerLayoutRightCartCount span{
+  line-height: 18px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mypageCartCount{
+  background-color: #ff5b59;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  position: absolute;
+  color: white;
+  border-radius: 100%;
+  text-align: center;
+  top: 3px;
+  right:30px;
+}
+
+.mypageCartCount span{
+  text-align: center;
+  line-height: 18px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0;
 }
 
 .headerSearchBar{

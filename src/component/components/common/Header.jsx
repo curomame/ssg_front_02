@@ -4,10 +4,11 @@ import { useRecoilState } from 'recoil';
 import SearchModalState from '../../../recoil/atoms/SearchModalState';
 import Logo from '../../parts/commonsParts/Logo';
 import SearchBar from '../../parts/commonsParts/SearchBar';
-
+import CountCart from '../../../utils/CountCart';
 
 function Header({type,text,func}) {
 
+  const count = CountCart()
   const navigate = useNavigate();
 
   const [reModal, setReModal] = useRecoilState(SearchModalState);
@@ -15,7 +16,7 @@ function Header({type,text,func}) {
   switch(type){
 
     case 'text':
-      
+       
       return <>
               <div className='loginHeaderLayout'>
                       <div><span className="material-icons-outlined" onClick={func ? ()=>func(false) :()=>navigate(-1)}>arrow_back</span></div>
@@ -56,6 +57,7 @@ function Header({type,text,func}) {
                 
                 <div className='mypageLayoutRight'>
                   <div><span className="material-icons-outlined"><Link to='/cart'>shopping_cart</Link></span></div>
+                  <div className='mypageCartCount'><span >{count}</span></div>
                   <div><span className="material-icons-outlined"><Link to='/'>home</Link></span></div>
                 </div>
                 
@@ -73,7 +75,6 @@ function Header({type,text,func}) {
                           <span className="material-icons-outlined">search</span>
                         </div>
                       </div>
-
                       <div className='searchModalCart'><span className="material-icons-outlined"><Link to='/cart'>shopping_cart</Link></span></div>
                     </div>
                   
@@ -129,13 +130,17 @@ function Header({type,text,func}) {
 
 
     default:
+
       return <>
               <div className='headerLayout'>
                 <Logo/>
                 
                 <div className='headerLayoutRight'>
                   <SearchBar/>
-                  <div className='headerLayoutRightCart'><span className="material-icons-outlined"><Link to='/cart'>shopping_cart</Link></span></div>
+                  <div className='headerLayoutRightCart'>
+                    <span className="material-icons-outlined"><Link to='/cart'>shopping_cart</Link></span>
+                    <div className='headerLayoutRightCartCount'><span >{count}</span></div>
+                  </div>
                 </div>
 
               </div>

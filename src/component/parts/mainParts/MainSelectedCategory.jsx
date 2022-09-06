@@ -17,18 +17,33 @@ function MainSelectedCategory() {
 
   useEffect(()=> {
     
-    console.log(typeof localStorage.getItem("Authorization"));
+    const tempToken = localStorage.getItem("Authorization")
 
-    axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/lCtg/1/${isSelected+1}`,{ 
-            headers:{
-              "Authorization":localStorage.getItem("Authorization")
-            }
-      })
+    if(tempToken !== null){
+
+      axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/lCtg/${isSelected+1}/1`,{ 
+        headers:{
+          "Authorization":localStorage.getItem("Authorization")
+        }
+  })
+  .then(res=> {
+    console.log(res)
+    setItemDatas(res.data.productTitleDtoList)
+  })
+  .catch(err => console.error(err))
+
+    } else {
+
+      axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/lCtg/${isSelected+1}/1`)
       .then(res=> {
         console.log(res)
         setItemDatas(res.data.productTitleDtoList)
       })
       .catch(err => console.error(err))
+
+    }
+
+
 
   },[isSelected])
 

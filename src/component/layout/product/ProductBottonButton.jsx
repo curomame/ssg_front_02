@@ -11,16 +11,21 @@ function ProductBottonButton({detailData}) {
 
 console.log(detailData);
 
+
   const params = useParams(); 
   const navigate = useNavigate();
 
   const [purchaseCondition, setPurchaseCondition] = useState(true);
   const [productOptId, setProductOptId] = useState([])
+  
+  
+  console.log(productOptId)
+
 
 // console.log(productOptId);
 
   const handleCartInput = () => {
-    console.log(productOptId);
+    console.log(productOptId,productOptId);
 
     if(productOptId[0] === undefined){
       window.alert('옵션을 선택해주세요!')

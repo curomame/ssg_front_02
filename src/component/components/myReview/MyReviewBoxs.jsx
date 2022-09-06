@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-function MyReviewBoxs({datas}) {
+function MyReviewBoxs({datas,type}) {
 
   console.log(datas)
 
@@ -12,14 +12,16 @@ function MyReviewBoxs({datas}) {
     
     
 
-      {datas ? 
+      {datas ?
       datas.map((item)=> 
       
       <div key={item.orderId || item.reviewId} className='myReviewBoxsContainer'>
         <div className='myReviewBoxsdate'>{item.orderDate|| item.regDate}</div>
 
         <div className='myReviewBoxsUnder' >
-          <div className='myReviewBoxsUnderImg' style={{"backgroundColor":"gray",color:"white"}}>이미지 위치</div>
+          <div className='myReviewBoxsUnderImg'>
+            <img src={process.env.REACT_APP_DISPLAY_IMG_URL+item.titleImgUrl} alt="" />
+          </div>
           <div className='myReviewBoxsDetailInfo' >
             <div>신세계몰</div>
             <div>{item.productName} {item.qty>2 ? `외 ${item.qty-1}건` : ""}</div>
@@ -44,13 +46,27 @@ function MyReviewBoxs({datas}) {
           
         </div>
       </div>)
+
+
+
       :
+
+      type ? 
+      
       <div>
         <p>최근 3개월간 구매 내역이 없습니다.</p>
 
         <p>SSG.COM이 준비한 상품들을 구매하시고</p>
         <p>리뷰를 작성하시면 다양한 혜택을 받을 수 있습니다.</p>
       </div>
+      
+      : 
+      <div>
+        <p>최근 3개월간 작성한 리뷰 내역이 없습니다.</p>
+
+        <p>리뷰를 작성하시면 다양한 혜택을 받을 수 있습니다.</p>
+      </div>
+      
       }
       
     </>

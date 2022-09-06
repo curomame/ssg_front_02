@@ -37,6 +37,8 @@
   font-weight: 400;
 }
 
+
+
 .productTopReviewBox{
   display: flex;
   margin-bottom: 20px;
@@ -44,6 +46,23 @@
 
 .productTopReviewBox div {
   margin-right: 8px;
+}
+
+.productBottomReviewTop{
+  display: flex;
+  justify-content: center;
+  margin: 32px 0px;
+}
+
+.productBottomReviewBig{
+  display: inline-block;
+  margin-top: -3px;
+  margin-right: 20px;
+  color: #222;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 49px;
+  vertical-align: middle;
 }
 
 .productDetailBox{
@@ -114,8 +133,8 @@
 }
 
 .productBottomReviewBox h3{
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 550;
   margin-bottom: 12px;
   
 }
@@ -297,6 +316,10 @@
 
 .noBoder{
   border: none;
+}
+
+.productReviewTop{
+  
 }
 
 
@@ -508,6 +531,8 @@ position: relative;
   text-align: left;
   margin: 0 !important;
 }
+
+
 
 .productSelectedOptItemPrice{
   margin: 0 !important;

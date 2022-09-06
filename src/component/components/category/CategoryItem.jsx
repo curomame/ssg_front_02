@@ -40,49 +40,89 @@ function CategoryItem({tempStatus,ctgId,tempId,setTempId}) {
 
   const [tempHeart,setTempHeart] = useState([])
 
+  
+
   const getTempDatas = (newoffset) => {
-
-    console.log(tempId, offset, tempStatus);
-
+    const tempToken = localStorage.getItem("Authorization")
+    // console.log(tempId, offset, tempStatus);
+    
     if(tempStatus && newoffset===1){
 
-      console.log('something change');
-      console.log(tempStatus, tempId);
+      // console.log('something change');
+      // console.log(tempStatus, tempId);
 
-      axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/${tempStatus}/${tempId}/${newoffset}?sort=${tempFilter.sort}`,{
-        headers:{
-          "Authorization":localStorage.getItem("Authorization")
-        }
-      })
-      .then(res => {
-        
-        setItemDatas([...res.data.productTitleDtoList])
-      })
-      .catch(err => console.error(err))  
-      setOffset(newoffset+1)
-      return null;
+      if(tempToken !== null ){
+        axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/${tempStatus}/${tempId}/${newoffset}?sort=${tempFilter.sort}`,{
+          headers:{
+            "Authorization":localStorage.getItem("Authorization")
+          }
+        })
+        .then(res => {
+          
+          setItemDatas([...res.data.productTitleDtoList])
+        })
+        .catch(err => console.error(err))  
+        setOffset(newoffset+1)
+        return null;
+      } else {
+        axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/${tempStatus}/${tempId}/${newoffset}?sort=${tempFilter.sort}`)
+        .then(res => {
+          
+          setItemDatas([...res.data.productTitleDtoList])
+        })
+        .catch(err => console.error(err))  
+        setOffset(newoffset+1)
+        return null;
+      }
+      
+
+      
+
+
+
+
 
     } else if (tempStatus){
 
-      console.log('scroll');
+      // console.log('scroll');
 
-      axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/${tempStatus}/${tempId}/${offset}?sort=${tempFilter.sort}`,{
-        headers:{
-          "Authorization":localStorage.getItem("Authorization")
-        }
-      })
-      .then(res => {
+      const tempToken = localStorage.getItem("Authorization")
 
-        console.log(itemDatas);
-        console.log(res.data.productTitleDtoList)
+      if(tempToken !== null){
+        axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/${tempStatus}/${tempId}/${offset}?sort=${tempFilter.sort}`,{
+          headers:{
+            "Authorization":localStorage.getItem("Authorization")
+          }
+        })
+        .then(res => {
+  
+          // console.log(itemDatas);
+          // console.log(res.data.productTitleDtoList)
+  
+          setItemDatas((prev) => {
+            // console.log(prev)
+            return [...prev,...res.data.productTitleDtoList]})
+        })
+        .catch(err => console.error(err))  
+        setOffset(offset+1)
+        return null;
+      } else {
+        axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/${tempStatus}/${tempId}/${offset}?sort=${tempFilter.sort}`)
+        .then(res => {
+  
+          console.log(itemDatas);
+          console.log(res.data.productTitleDtoList)
+  
+          setItemDatas((prev) => {
+            // console.log(prev)
+            return [...prev,...res.data.productTitleDtoList]})
+        })
+        .catch(err => console.error(err))  
+        setOffset(offset+1)
+        return null;
+      }
+      
 
-        setItemDatas((prev) => {
-          console.log(prev)
-          return [...prev,...res.data.productTitleDtoList]})
-      })
-      .catch(err => console.error(err))  
-      setOffset(offset+1)
-      return null;
     }
 
     
@@ -176,10 +216,10 @@ function CategoryItem({tempStatus,ctgId,tempId,setTempId}) {
             <div><h3>신세계몰</h3></div>
             <div><h2>{item.brandName}</h2></div>
             <div><p className='categoryItemSub'>{item.productName}</p></div>
-            <div><p className={item.discountRate ? "categoryItemPrice categoryline" : 'categoryItemPrice'}>{(item.price).toLocaleString()}원</p></div>
+            <div><p className={item.discountRate ? "categoryItemPrice categoryline" : 'categoryItemPrice'}>{(+(item.price).toFixed()).toLocaleString()}원</p></div>
             {item.discountRate
               ? <div className='categoryItemDiscount'>
-                  <p>{(item.price * (100 - item.discountRate)/100).toLocaleString()}원</p>
+                  <p>{(+(item.price * (100 - item.discountRate)/100).toFixed()).toLocaleString()}원</p>
                   <p>{item.discountRate}%</p>
                 </div> 
               : null}

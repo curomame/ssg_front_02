@@ -39,7 +39,7 @@ function ProductReviewCards({datas}) {
           <div><p>{'>'}</p></div>  
         </div>
 
-        <hr />
+        
       </div>
     </>
   )

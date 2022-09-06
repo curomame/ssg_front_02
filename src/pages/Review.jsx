@@ -42,6 +42,9 @@ function Review() {
 
   },[]);
 
+  console.log(ableReview);
+  console.log(cantReview);
+
 
   return (
     <>
@@ -67,6 +70,7 @@ function Review() {
       
       <MyReviewBoxs
         datas={isClicked ? ableReview : cantReview}
+        type={isClicked ? true : false}
         />
 
       <CommonFooter/>

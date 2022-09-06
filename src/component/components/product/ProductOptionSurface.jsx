@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductCombOpt from '../../parts/productParts/ProductCombOpt';
+import ProductStandardOpt from '../../parts/productParts/ProductStandardOpt';
 
 function ProductOptionSurface({detailData,setProductOptId}) {
 
@@ -17,7 +18,9 @@ function ProductOptionSurface({detailData,setProductOptId}) {
 
   switch (productType) {
     case 'STANDARD_TYPE':
-      return (<div>단독타입</div>)
+      return <ProductStandardOpt
+              detailData={detailData}
+              setProductOptId={setProductOptId}/>
       
     case 'COMBINATION_TYPE':
       return <ProductCombOpt

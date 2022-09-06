@@ -42,7 +42,7 @@ function WishListItemToFolder(
     if(tempPcakId!==''){
 
       const pushObj = {
-        "wishFolderPackIdList": tempPcakId,
+        "wishFolderPackId": tempPcakId,
         "newWishFolderPackIdList":[],
         "wishIdList":[]
       };

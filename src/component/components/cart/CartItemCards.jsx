@@ -80,6 +80,8 @@ function CartItemCards({cartDatas,setCartDatas}) {
 
             <div className='cartItemBox'>
 
+
+
                 <div className='cartItemTitleFunc'>
                   <div> 
                     <div> 신세계몰 <p>{item.productName}</p></div>
@@ -129,6 +131,8 @@ function CartItemCards({cartDatas,setCartDatas}) {
     ))}
     {optChange 
           ? <CartOptionChange 
+          setCartDatas={setCartDatas}
+          setOptChange={setOptChange}
           itemOptData={itemOptData}/> 
           : null}
 

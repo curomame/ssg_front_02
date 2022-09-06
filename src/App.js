@@ -25,7 +25,6 @@ import SignUp from './pages/SignUp';
 import SignUpEntry from './component/components/signup/SignUpEntry';
 import SignUpInformation from './component/components/signup/SignUpInformation';
 import SignUpAuth from './component/components/signup/SignUpAuth';
-import Wrong from './pages/Wrong';
 import AuthStatusUpdate from './component/parts/commonsParts/AuthStatusUpdate';
 import Product from './pages/Product';
 import ScrollToTop from './utils/ScrollToTop';
