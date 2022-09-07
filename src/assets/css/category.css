@@ -322,7 +322,7 @@
 }
 
 .categoryUnderMenuContainer div{
-  width: 32%;
+  width: 33%;
   height: 46px;
   border: 0.5px solid #77777740;
 }
@@ -343,7 +343,6 @@
   margin-top: 10%;
   position: relative;
 }
-
 
 .categoryFilterContainer {
   position: relative;

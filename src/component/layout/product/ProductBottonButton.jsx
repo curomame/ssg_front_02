@@ -19,13 +19,10 @@ function ProductBottonButton({detailData}) {
   const [purchaseCondition, setPurchaseCondition] = useState(true);
   const [productOptId, setProductOptId] = useState([])
   const [tempHeart, setTempHeart] = useState();
- 
 
   useEffect(() => {    
     setTempHeart(detailData.wishList)
   },[])
-
-  console.log(productOptId)
 
 
   const handleCartInput = () => {

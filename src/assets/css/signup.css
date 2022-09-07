@@ -59,10 +59,7 @@ margin: 10px 10px;
   text-align: center;
 }
 
-.signupAuthMethod{
-  display: flex;
-  justify-content: center;
-}
+
 
 .signupInfoFieldContainer{
   margin: 0px 12px;
@@ -98,11 +95,19 @@ margin: 10px 10px;
 
 }
 
+.signupAuthMethod{
+  display: flex;
+  justify-content: center;
+}
 
 .signupAuthMethodParts{
-  background-color: red;
+  /* background-color: red; */
+  margin: 20px 4px;
+  padding-top: 8px;
+  border: 0.5px solid #77777780;
   width: 40%;
   height: 100px;
+  line-height: 50px;
 }
 
 
@@ -161,4 +166,48 @@ hr {
   background-color: white;
   top: 0;
   height: 100vh;
+}
+
+.signupAuthModalContainer{
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.658);
+  
+}
+.signupAuthModalBox{
+  border-radius: 10px;
+  width: 240px;
+  height: 140px;
+  margin-top: 40vh;
+  background: white;
+}
+
+.signupAuthModalBox > div{
+  padding-top: 18px;
+}
+
+.signupAuthModalBox > div div{
+  margin: 4px 0px;
+}
+
+.signupAuthModalBox > div div:last-child{
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 8px;
+  margin: 10px auto;
+  background-color: #777;
+  color: white;
+  font-weight: 500;
+  
+}
+
+.buttonChecked{
+  background-color: #ff5b59 !important;
+
+  color: white;
 }

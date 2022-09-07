@@ -9,8 +9,9 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
 
   const [idValid, setIdValid] = useState(null);
 
+  const [fristCheck, setFirstCheck] = useState("");
   const [passwordValidate, setpasswordValidate] = useState("");
-
+  
 
   const [signUpData, setSignUpData] = useState({
     "userId": "",
@@ -33,6 +34,9 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
       ...integrateInfo,
       ...signUpData
     });
+
+    handlePassWordCheck()
+    handleVaildPwdCheck()
   }, [signUpData]);
 
 
@@ -47,13 +51,25 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
 
   // 비밀번호 검증을 위한 코드
   const handlePassWordCheck = (chk) => {
-    if (signUpData.password === chk) {
+    if (signUpData.pwd === signUpData.pwdCheck) {
       setpasswordValidate("비밀번호가 일치합니다.");
     } else {
       setpasswordValidate("비밀번호가 일치하지 않습니다.");
     }
   };
 
+  const handleVaildPwdCheck = () => {
+    
+    const reg = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/
+    
+    if(reg.test(signUpData.pwd)){
+      setFirstCheck("")
+      console.log('ㄱㅊㄱㅊ',signUpData.pwd)
+    } else {
+      setFirstCheck("비밀번호 양식에 맞지 않습니다.")
+      console.log('nono')
+    }
+  }
 
   const handleCheckId = (e) => {
     
@@ -107,13 +123,14 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
           <input
             type="password"
             name="pwd"
-            placeholder="영문, 숫자 조합 8~20자리"
+            placeholder="영문, 숫자, 특수문자를 포함한 8~20자리"
             value={signUpData.pwd}
             onChange={handleChange}
             maxLength="20"
           />
-
+          
           <br />
+          
           {/* 비밀번호 재입력칸 */}
           <input
             type="password"
@@ -127,6 +144,8 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
           <br />
 
           {/* 비밀번호 입력칸 */}
+          <span>{fristCheck}</span>
+          <br />
           <span>{passwordValidate}</span>
         </div>
       </div>

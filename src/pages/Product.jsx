@@ -37,7 +37,8 @@ function Product() {
     .catch(err => console.error('상품을 받아오는 도중 에러발생'+err))
   },[])
 
-  // console.log(detailData.reviewDTOList)
+  // console.log(detailData.productGetDto.discountRate)
+  // console.log(detailData.productGetDto.discountRate)
 
   return (
 
@@ -69,7 +70,8 @@ function Product() {
         </div>
 
         <div className='productPriceBox'>
-          <div><h3>{(detailData.productGetDto.price).toLocaleString()}<span>원</span></h3></div>
+          <div><p>{detailData.productGetDto.discountRate!==0 && (detailData.productGetDto.price).toLocaleString()}원</p></div>
+          <div><h3>{(+(detailData.productGetDto.price * ((100 - detailData.productGetDto.discountRate)/100)).toFixed(0)).toLocaleString()}<span>원</span></h3></div>
         </div>
 
         <div className='productTopReviewBox'>
@@ -86,7 +88,8 @@ function Product() {
             <div onClick={handleViewProductImg}>{allImg ? '상세정보 접기 ▲' : '상세정보 펼쳐보기 ▼'}</div>
             <img 
               height="2000" 
-              src={detailData ? process.env.REACT_APP_DISPLAY_IMG_URL+detailData.productGetDto.titleImgUrl : null} alt="" 
+              // src={detailData ? process.env.REACT_APP_DISPLAY_IMG_URL+detailData.productGetDto.titleImgUrl : null} alt=""
+              src={`${process.env.PUBLIC_URL}/img/detailDummys.jpg`} alt=""
               // src='' alt=''
               />
           </div>
@@ -108,10 +111,6 @@ function Product() {
                   </div>
                 </div>
 
-                {/* <div className='productReviewCardImgAll'>
-                  <div>포토{'&'}동영상 리뷰</div>
-                  <div>더보기{'>'}</div>
-                </div> */}
               </div> }
 
 
@@ -129,13 +128,6 @@ function Product() {
             )}
 
       </div>
-
-
-
-
-          
-
-
           
           <ProductQNACards
             QNAdatas={detailData.productQnASetListDTO}

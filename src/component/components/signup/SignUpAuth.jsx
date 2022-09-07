@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React from 'react'
+import { useEffect } from 'react'
 import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
@@ -13,13 +14,18 @@ function SignUpAuth() {
   const [authModal, setAuthMoal] = useState(false)
   const [authNumber, setAuthNumber] = useState('')
 
+  const [count, setCount] = useState(60); 
+
+
+
   const handleEmailAuth = () => {
     // console.log('handleEmailAuth 클릭')
+
     setAuthMoal(true);
     axios.post(process.env.REACT_APP_TEST_URL+'/auth/email',{
       "userId":userId,
       "email":email
-    }).then(res => console.log(res.data))
+    }).then(res => console.log(res.data.status))
       .catch(err => console.error(err))
   }
 
@@ -31,12 +37,17 @@ function SignUpAuth() {
         "userId": userId,
         "key" : authNumber
 
-    }).then(res => console.log(res.data.data))
-      .catch(err => console.error(err))
+    }).then(res => {if(res.data.data ){
+      window.alert('가입이 정상적으로 완료되었습니다 :->')
+      setAuthNumber("");
+      setAuthMoal(false);
+      navigate('/');
+    } else {
+      window.alert(`인증번호가 올바르지 않습니다. :-(`)
+    }})
+    .catch(err => console.error(err))
     
-    setAuthNumber("");
-    setAuthMoal(false);
-    navigate('/');
+    
   }
 
   const handleSMSAuth = () => {
@@ -49,6 +60,25 @@ function SignUpAuth() {
 
 
   }
+
+  // const counting = () => {
+  //   setCount(count => count-1)
+  // }
+
+  // useEffect(() => {
+  //   if(authModal===true){
+  //     setInterval(() => {
+
+  //       if(count<0){
+  //         clearInterval()
+  //       }
+
+  //       counting()
+
+  //     }, 1000);
+  //   }
+
+  // },[authModal])
 
   return (
     <>
@@ -64,17 +94,17 @@ function SignUpAuth() {
 
         <div className='signupAuthMethodParts'>
 
-          <div>
+          <div onClick={handleSMSAuth}>
             <span className="material-icons-outlined">phone_iphone</span>
-            <div onClick={handleSMSAuth}>휴대폰 인증</div>
+            <div >휴대폰 인증</div>
           </div>
           
           
         </div>
 
-        <div className='signupAuthMethodParts'>
+        <div onClick={handleEmailAuth} className='signupAuthMethodParts'>
           <div><span className="material-icons-outlined">email</span></div>
-          <div onClick={handleEmailAuth}>이메일 인증</div>
+          <div >이메일 인증</div>
         </div>
 
       </div>
@@ -88,10 +118,15 @@ function SignUpAuth() {
 
       {authModal 
       ? 
-        <div>
-          <div>인증 번호를 입력해주세요</div>
-          <input type="number" value={authNumber} onChange={(e) => setAuthNumber(e.target.value)}/>
-          <div onClick={handlePostAuthNumber} >인증확인!</div>
+        <div className='signupAuthModalContainer'>
+          <div className='signupAuthModalBox'>
+            <div>
+              <div>인증 번호를 입력해주세요</div>
+              {/* <div>남은시간 : {count} 초</div> */}
+              <div><input type="number" value={authNumber} onChange={(e) => setAuthNumber(e.target.value)}/></div>
+              <div className={authNumber ? "buttonChecked": null} onClick={handlePostAuthNumber} >인증확인</div>
+            </div>
+          </div>
         </div>
 
       : null}
