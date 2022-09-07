@@ -4,6 +4,11 @@ function AddCartUtil(productOptId) {
 
   const tempToken = localStorage.getItem("Authorization")
 
+  if(typeof productOptId === 'number'){
+    window.alert('옵션선택이 필요한 상품입니다!')
+    return null
+  }
+
   console.log(productOptId);
 
 

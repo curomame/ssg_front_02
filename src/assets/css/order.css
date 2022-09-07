@@ -84,7 +84,7 @@
   width: 100%;
 }
 
-.orderProductInfoDetail div{
+.orderProductInfoDetail > div{
   display: flex;
   justify-content: space-between;
 }
@@ -108,7 +108,7 @@
   height: 52px;
 
   font-size: 17px;
-  font-weight: normal;
+  font-weight: 600;
   background-color: #ff3e3e;
   color: #fff;
 }
@@ -138,4 +138,29 @@
 .orderPriceDetailContainer hr{
   border-bottom: 0.3px solid lightgray;
   width: 100%;
+}
+
+.orderProductInfoContainer >div:first-child{
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.orderProductInfoDetailDC{
+  line-height: 20px;
+  font-size: 12px;
+  text-decoration: line-through;
+  color: #888;
+}
+
+.orderProductInfoDetailBox{
+  display: flex;
+}
+
+.cartOptStdBox {
+  border: 1px solid gray;
+  height: 40px;
+  line-height: 40px;
+  margin: 12px 16px;
+
 }

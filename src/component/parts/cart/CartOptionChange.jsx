@@ -109,7 +109,7 @@ function CartOptionChange({itemOptData,setOptChange,setCartDatas}) {
 
 
   // console.log(itemOptData.standardOptionDTO)
-    // console.log(itemOptData.cartId)
+    console.log(itemOptData)
     
     console.log(optionId);
 
@@ -151,8 +151,9 @@ function CartOptionChange({itemOptData,setOptChange,setCartDatas}) {
         
       {itemOptData.productOptionType === 'STANDARD_TYPE' && 
         <>
+          <div style={{"marginLeft":"16px","fontWeight":"600"}}>{optionId.standardName} 변경</div>
           {itemOptData.standardOptionDTO.map((item) => {
-            return <div onClick={()=>handleStdOpt(item.productOptionId)} key={item.standardOptionId}>{item.standardOptionId}</div>
+            return <div className='cartOptStdBox' onClick={()=>handleStdOpt(item.productOptionId)} key={item.standardOptionId}>{item.standardOptionId}</div>
 
 
           })}

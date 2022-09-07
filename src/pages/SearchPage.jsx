@@ -18,7 +18,11 @@ function SearchPage() {
   
   const getItemDatas = () => {
 
-    axios.get(process.env.REACT_APP_TEST_URL+`/search/1?query=${query}`)
+    axios.get(process.env.REACT_APP_TEST_URL+`/search/1?query=${query}`,{
+      headers:{
+        "Authorization":localStorage.getItem("Authorization")
+      }
+    })
       .then(res => {
         // console.log(res.data);
         setSearchDatas(res.data.productTitleDtoList)

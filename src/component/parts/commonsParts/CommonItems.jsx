@@ -14,6 +14,8 @@ function CommonItems({itemDatas}) {
 
   const handleWishFunc = (id,i) => {
 
+    console.log(id,i)
+
     const prevHeart = tempHeart.slice()
     if(prevHeart[i] === true){
       prevHeart[i]= false;
@@ -25,9 +27,13 @@ function CommonItems({itemDatas}) {
     AddWishUtil(id)
   }
 
+  
+
   useEffect(() => {
 
     const newheartArr = [];
+
+    console.log(itemDatas);
     {itemDatas && 
       itemDatas.map((item) => newheartArr.push(item.wishList))
       setTempHeart([...newheartArr])
