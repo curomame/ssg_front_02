@@ -167,8 +167,8 @@ function SignUpInfoField({ integrateInfo, setIntegrateInfo }) {
         <div><p>휴대폰 번호</p></div>
         <input
           type="number"
-          name="phoneNumber"
-          value={signUpData.phoneNumber}
+          name="phoneNum"
+          value={signUpData.phoneNum}
           onChange={handleChange}
         />
       </div>

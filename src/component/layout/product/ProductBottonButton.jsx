@@ -6,6 +6,7 @@ import CommonCartParts from '../../parts/commonsParts/CommonCartParts';
 import CommonPresent from '../../parts/commonsParts/CommonPresent';
 import CommonWishListParts from '../../parts/commonsParts/CommonWishListParts';
 import ProductOptionSelect from '../../components/product/ProductOptionSelect';
+import { useEffect } from 'react';
 
 function ProductBottonButton({detailData}) {
 
@@ -17,10 +18,14 @@ function ProductBottonButton({detailData}) {
 
   const [purchaseCondition, setPurchaseCondition] = useState(true);
   const [productOptId, setProductOptId] = useState([])
-  
-  
-  console.log(productOptId)
+  const [tempHeart, setTempHeart] = useState();
+ 
 
+  useEffect(() => {    
+    setTempHeart(detailData.wishList)
+  },[])
+
+  console.log(productOptId)
 
 
   const handleCartInput = () => {
@@ -40,6 +45,12 @@ function ProductBottonButton({detailData}) {
     if(!purchaseCondition){
       navigate('/order')
     } else {
+
+      if((detailData.productGetDto.optionType === 'STANDARD_TYPE') && (detailData.standardOptionDTOList.length === 1)){
+        console.log(detailData.standardOptionDTOList[0]);
+        setProductOptId([detailData.standardOptionDTOList[0].productOptionId])
+      }
+
       setPurchaseCondition(false);
     }
 
@@ -47,16 +58,14 @@ function ProductBottonButton({detailData}) {
   }
 
   const handleCloseOptionSelect = () => {
-
       setPurchaseCondition(true);
-
   }
 
   
 
   const handleWishToggle = () => {
+    setTempHeart((prev) => (!prev))
     AddWishUtil(params.id);
-    alert('위시리스트에 저장되었습니다.')
   }
 
   return (
@@ -75,7 +84,12 @@ function ProductBottonButton({detailData}) {
       {purchaseCondition 
       ?
       <div className='productBottomButtonTwo'>
-        <div onClick={handleWishToggle} className='productBottomButtonHeart'><span className="material-icons-outlined">favorite_border</span></div>
+        <div onClick={handleWishToggle} className='productBottomButtonHeart'>
+          {tempHeart 
+          ? <span className="material-icons hearChecked">favorite</span>
+          : <span className="material-icons-outlined">favorite_border</span>}
+          
+          </div>
       </div>
       :
       <div onClick={handleCartInput} className='productBottomButtonOne'>

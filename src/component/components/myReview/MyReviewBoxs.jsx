@@ -1,22 +1,22 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function MyReviewBoxs({datas,type}) {
 
-  console.log(datas)
+  const navigate = useNavigate()
 
 
 
   return (
     <>
     
-      {(datas !== null) && (datas !== '작성 한 리뷰가 존재하지 않음')?
+      {(datas !== null) && (datas !== '작성 한 리뷰가 존재하지 않음') && (datas !== '작성 가능한 리뷰가 존재하지 않음')?
       datas.map((item)=> 
       {
-        return <div key={item.orderId || item.reviewId} className='myReviewBoxsContainer'>
+        return <div  key={item.orderId || item.reviewId} className='myReviewBoxsContainer'>
         <div className='myReviewBoxsdate'>{item.orderDate|| item.regDate}</div>
 
-        <div className='myReviewBoxsUnder' >
+        <div onClick={() => navigate(`/product/${item.productId}`)} className='myReviewBoxsUnder' >
           <div className='myReviewBoxsUnderImg'>
             <img src={process.env.REACT_APP_DISPLAY_IMG_URL+item.titleImgUrl} alt="" />
           </div>

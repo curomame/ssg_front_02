@@ -16,7 +16,7 @@ function CartOptionChange({itemOptData,setOptChange,setCartDatas}) {
 
     if(itemOptData.productOptionType === 'COMBINATION_TYPE'){
 
-      // console.log(itemOptData);
+      console.log(itemOptData);
       
       let optObj = {}
 

@@ -68,16 +68,16 @@ function MyPage() {
         
         <div>
           <Link to='shipaddress'>
-            <span className="material-icons-outlined">favorite_border</span>
+            <span className="material-icons-outlined">shopping_cart</span>
             <p>배송지 관리</p>
           </Link>
         </div>
 
         <div>
-          <Link to='#'>
-            <span className="material-icons-outlined">favorite_border</span>
+          <p onClick={()=>window.alert('서비스 준비중입니다 :>')}>
+            <span className="material-icons-outlined">notifications</span>
             <p>알림함</p>
-          </Link>
+          </p>
         </div>
         </div>
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import CommonCartParts from '../commonsParts/CommonCartParts'
 import CommonWishListParts from '../commonsParts/CommonWishListParts'
-
+import AddCartUtil from '../../../utils/AddCartUtil'
 
 function MainNowBuying({productId}) {
   
@@ -18,7 +18,7 @@ function MainNowBuying({productId}) {
 
         <div className="nowBuyingIcons" style={{"display":"flex"}}>
           <div><CommonWishListParts productId={productId}/></div>
-          <div><CommonCartParts productId={productId}/></div>
+          <div onClick={()=>AddCartUtil(productId)}><CommonCartParts productId={productId}/></div>
         </div>
 
       </div>

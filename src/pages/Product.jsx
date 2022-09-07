@@ -26,11 +26,15 @@ function Product() {
   const url = `${process.env.REACT_APP_TEST_URL}`
   
   useEffect(() => {
-    axios.get(`${url}/product/detail/${params.id}`)
+    axios.get(`${url}/product/detail/${params.id}`,{
+      headers:{
+        "Authorization":localStorage.getItem("Authorization")
+      }
+    })
     .then(res => {
       setDetailData(res.data)
     })
-    .catch(err => console.error('상품을 받아오는 도중 에러발생'))
+    .catch(err => console.error('상품을 받아오는 도중 에러발생'+err))
   },[])
 
   // console.log(detailData.reviewDTOList)

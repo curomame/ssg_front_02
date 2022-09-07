@@ -1,13 +1,14 @@
 import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 function SignUpAuth() {
 
   const navigate = useNavigate()
+  const location = useLocation()
 
-  const [ userId , email, phoneNum] = ["ccossg2", "curomame@naver.com",""]
+  const [ userId , email, phoneNum] = [location.state.userId, location.state.email,location.state.phoneNum]
 
   const [authModal, setAuthMoal] = useState(false)
   const [authNumber, setAuthNumber] = useState('')
@@ -38,6 +39,17 @@ function SignUpAuth() {
     navigate('/');
   }
 
+  const handleSMSAuth = () => {
+    setAuthMoal(true);
+    axios.post(process.env.REACT_APP_TEST_URL+'/auth/sms',{
+        "phoneNum" : phoneNum,
+         "userId": userId
+    }).then(res => console.log(res))
+      .catch(err => console.error(err))
+
+
+  }
+
   return (
     <>
       <div className='signupTopHead'>본인인증</div>
@@ -54,7 +66,7 @@ function SignUpAuth() {
 
           <div>
             <span className="material-icons-outlined">phone_iphone</span>
-            <div >휴대폰 인증</div>
+            <div onClick={handleSMSAuth}>휴대폰 인증</div>
           </div>
           
           

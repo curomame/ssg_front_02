@@ -28,7 +28,7 @@ import SignUpAuth from './component/components/signup/SignUpAuth';
 import AuthStatusUpdate from './component/parts/commonsParts/AuthStatusUpdate';
 import Product from './pages/Product';
 import ScrollToTop from './utils/ScrollToTop';
-import KakaoAuth from './component/components/kakao/KakaoAuth';
+import KakaoAuth from './component/components/kakao/Oauth';
 import MyShipaddress from './component/components/mypage/MyShipaddress';
 import MyInfoSetting from './component/components/mypage/MyInfoSetting';
 import ProductAllQNA from './component/components/product/ProductAllQNA';
@@ -37,6 +37,7 @@ import SearchPage from './pages/SearchPage';
 import './assets/css/zMystyle.css'
 import Order from './pages/Order';
 import Error404 from './pages/Error404';
+import Oauth from './component/components/kakao/Oauth';
 
 function App() {
 
@@ -92,7 +93,7 @@ function App() {
           </Route>
 
 
-          <Route path="/kakao/:params" element={<KakaoAuth/>}/>
+          <Route path="/Oauth/:params" element={<Oauth/>}/>
 
           <Route path="/test" element={<Test/>}/>
           <Route path="/emailtest" element={<EmailTest/>}/>

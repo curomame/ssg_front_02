@@ -33,7 +33,7 @@ function SignUpInformation() {
     "userAddress": {
           "addrStreet":"",
           "addrDetail":"",
-          "addrZipCode":"",
+          "addrZipCode":12345,
           "addrDefault" : true
         }
 
@@ -51,7 +51,7 @@ function SignUpInformation() {
     axios.post(url, integrateInfo)
       .then((res) => {
         if(res.data.status === 200){
-          navigate('/signup/auth')
+          navigate('/signup/auth', { state:{"email":integrateInfo.email, "phoneNum":integrateInfo.phoneNum, "userId":integrateInfo.userId}})
         }
       })
       .catch((err) => console.error(err));

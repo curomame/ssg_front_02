@@ -147,6 +147,13 @@ project
 
 <br>
 
+### ⚙️F/E B/E 시스템 아키텍쳐
+
+<img src="./public/img/readme/gusungdododo.png">
+
+
+<br>
+
 ### 💻 F / E 사용 기술
 <br style={display:flex}>
   <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=black"> 

@@ -27,7 +27,7 @@ function MainSelectedCategory() {
         }
   })
   .then(res=> {
-    console.log(res)
+    // console.log(res)
     setItemDatas(res.data.productTitleDtoList)
   })
   .catch(err => console.error(err))
@@ -36,7 +36,7 @@ function MainSelectedCategory() {
 
       axios.get(process.env.REACT_APP_TEST_URL+`/productCtgList/lCtg/${isSelected+1}/1`)
       .then(res=> {
-        console.log(res)
+        // console.log(res)
         setItemDatas(res.data.productTitleDtoList)
       })
       .catch(err => console.error(err))

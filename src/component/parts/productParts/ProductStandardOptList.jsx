@@ -1,9 +1,10 @@
 import React from 'react'
+import { useEffect } from 'react';
 
 function ProductStandardOptList({detailData,setOpenModal,setProductOptId}) {
 
   // console.log(detailData.standardOptionDTOList[0].optionName)
-
+  
   const handleProductOptId = (optId) =>{
     
     setProductOptId([optId.productOptionId])
@@ -20,7 +21,9 @@ function ProductStandardOptList({detailData,setOpenModal,setProductOptId}) {
       
       <div class="productOptBox"><div><p>선택하세요.({detailData.standardOptionDTOList[0].optionName})</p></div></div>
         {detailData.standardOptionDTOList.map((item) => {
-          return <div onClick={()=>handleProductOptId(item)} key={item.productOptionId} class="productOptBox"><div><p>{item.optionDescription}</p></div></div>
+          return <div onClick={()=>handleProductOptId(item)} key={item.productOptionId} class="productOptBox"><div>
+            <p>{item.optionDescription}</p></div>
+            </div>
         })}
       </div>
     

@@ -318,10 +318,11 @@
 .categoryUnderMenuContainer{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .categoryUnderMenuContainer div{
-  width: 33%;
+  width: 32%;
   height: 46px;
   border: 0.5px solid #77777740;
 }

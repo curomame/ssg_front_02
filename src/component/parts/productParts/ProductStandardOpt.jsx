@@ -8,12 +8,11 @@ function ProductStandardOpt({detailData,setProductOptId}) {
   const [openModal,setOpenModal] = useState(false)
 
   const hanleSetProductOptId = () => {
-    setProductOptId([detailData.standardOptionDTOList[0].productOptionId])
+    setProductOptId([...[detailData.standardOptionDTOList[0].productOptionId]])
   }
 
-  // console.log(detailData);
-
   // console.log(detailData.standardOptionDTOList.length);
+console.log(detailData.standardOptionDTOList[0].productOptionId);
 
   return (
     <>

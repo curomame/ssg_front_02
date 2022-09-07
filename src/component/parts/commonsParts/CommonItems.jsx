@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function CommonItems({itemDatas}) {
 
@@ -9,6 +10,7 @@ function CommonItems({itemDatas}) {
       itemDatas.map((item) => (
 
       <div key={item.productId} className="categoryItemContainer">
+      <Link to={`/product/${item.productId}`}>
       <div>
         <div><img style={{"width":"100%"}} src={process.env.REACT_APP_DISPLAY_IMG_URL+item.titleImgUrl} alt="" /></div>
         
@@ -33,6 +35,7 @@ function CommonItems({itemDatas}) {
                   </div>
                 </div>
       </div>
+      </Link>
       </div>
       ))
     }

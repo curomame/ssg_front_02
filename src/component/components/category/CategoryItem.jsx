@@ -183,7 +183,7 @@ function CategoryItem({tempStatus,ctgId,tempId,setTempId}) {
   },[])
 
 
-  console.log(itemDatas);
+  // console.log(itemDatas);
 
   return (
     <>

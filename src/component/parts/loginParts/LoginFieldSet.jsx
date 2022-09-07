@@ -35,7 +35,7 @@ function LoginFieldSet() {
   const handleLogin = ( ) => {
       axios.post(process.env.REACT_APP_TEST_URL+"/user/login",loginData)
         .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         localStorage.setItem("Authorization",res.data.access_token)
         setTempAuth(true);
         setLogin(true)

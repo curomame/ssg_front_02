@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useRecoilState } from 'recoil';
 import { TempAuthState } from '../../../recoil/atoms/TempAuthState';
 
-function KakaoAuth() {
+function Oauth() {
 
   const navigate = useNavigate();
   const params = useParams();
@@ -14,15 +14,15 @@ function KakaoAuth() {
   useEffect(() => {
 
     setTempAuth(true);
+    
     localStorage.setItem('Authorization',params.params)
     navigate('/')
 
   },[])
   return (
     <>
-
     </>
   )
 }
 
-export default KakaoAuth
+export default Oauth
