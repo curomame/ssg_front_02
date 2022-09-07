@@ -13,7 +13,7 @@ import OrderShipment from '../component/components/order/OrderShipment'
 function Order() {
 
   const [userDatas, setUserDatas] = useState(null);
-  const [productDatas, setProductDatas] = useState(null);
+  const [productDatas, setProductDatas] = useState([]);
 
   useEffect(() => {
 
@@ -29,12 +29,14 @@ function Order() {
       headers:{
         "Authorization":localStorage.getItem("Authorization")
       }
-    }).then(res => {setProductDatas(res.data.data.cartOutputDtoList)})
+    }).then(res => {setProductDatas([...res.data.data.cartOutputDtoList])})
       .catch(err=>console.log(err))
 
 
 
   },[])
+
+
 
   return (
     <>
@@ -46,8 +48,10 @@ function Order() {
 
     <div className='orderContainer'>
     
+    
       <OrderShipment/>
-      <OrderPriceDetail/>
+      <OrderPriceDetail
+      productDatas={productDatas}/>
       <OrderShipComment/>
       <OrderProductInfo
         productDatas={productDatas}/>
@@ -58,7 +62,6 @@ function Order() {
         userDatas={userDatas}
         productDatas={productDatas}
       />
-
     </div>
 
     

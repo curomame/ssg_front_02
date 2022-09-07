@@ -118,3 +118,24 @@
   line-height: 52px;
 }
 
+
+.orderDC p {
+  color: red;
+}
+
+.orderLast {
+  color: #222;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.orderPriceDetailContainer > div:first-child{
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.orderPriceDetailContainer hr{
+  border-bottom: 0.3px solid lightgray;
+  width: 100%;
+}
