@@ -7,12 +7,15 @@ function ProductStandardOpt({detailData,setProductOptId}) {
 
   const [openModal,setOpenModal] = useState(false)
 
+  const [tempItem, setTempItem] = useState([])
+
   const hanleSetProductOptId = () => {
-    setProductOptId([...[detailData.standardOptionDTOList[0].productOptionId]])
+        setProductOptId([...[detailData.standardOptionDTOList[0].productOptionId]])
+    
   }
 
+
   // console.log(detailData.standardOptionDTOList.length);
-console.log(detailData.standardOptionDTOList[0].productOptionId);
 
   return (
     <>
@@ -29,10 +32,37 @@ console.log(detailData.standardOptionDTOList[0].productOptionId);
       
       {openModal && 
         <ProductStandardOptList
+        setTempItem={setTempItem}
         setProductOptId={setProductOptId}
         detailData={detailData}
         setOpenModal={setOpenModal}
         />}
+
+        {tempItem &&
+        tempItem.map((item,idx) => {
+            console.log(item)
+          return <div key={idx}>
+
+            <div className='productSelectedOptItemContainer productStandardOptContainer'>
+                    <div className='productSelectedOptItemTitle'>
+                      <div><p><span>{detailData.productGetDto.productName}</span> </p></div>
+                      <div><p><span>{item.optionName}:{item.optionDescription}</span> </p></div>
+                    </div>
+
+                    <div className='productSelectedOptItemPrice'>
+                      <div className='productSelectedOptItemPriceInput'>
+                        <div onClick={()=>setTempCount(tempCount-1)}><span className="material-icons-outlined">remove</span></div>
+                          <input type="number" value={tempCount}/>
+                        <div onClick={()=>setTempCount(tempCount+1)}><span className="material-icons-outlined">add</span></div>
+                      </div>
+                    <div><p>{(detailData.productGetDto.price).toLocaleString()}원</p></div>
+                  </div>
+
+                </div>
+
+
+          </div>
+        })}
 
       </>
 

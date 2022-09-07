@@ -4,20 +4,30 @@ function AddCartUtil(productOptId) {
 
   const tempToken = localStorage.getItem("Authorization")
 
-  console.log(productOptId[0]);
+  console.log(productOptId);
 
 
 
   //카트에 상품을 넣는 유틸
-  const inputData = [{
-    "productOptionId": productOptId[0],
-    "qty" : 1}]
+  // const inputData = [{
+  //   "productOptionId": productOptId[0],
+  //   "qty" : 1}]
+
+  const lastInputData = [];
+
+  for(let i of productOptId){
+    const newInput = {}
+    newInput.productOptionId = +i;
+    newInput.qty = 1
+    lastInputData.push(newInput);
+  }
+
 
     if(tempToken === null){
       window.alert('로그인후 장바구니 담기가 가능합니다. :>)')
     } else {
       axios.post(process.env.REACT_APP_TEST_URL+'/cart/add',
-      inputData
+      lastInputData
       ,
       {
         headers:{

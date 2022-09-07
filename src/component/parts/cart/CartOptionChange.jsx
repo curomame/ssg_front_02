@@ -8,7 +8,7 @@ function CartOptionChange({itemOptData,setOptChange,setCartDatas}) {
 
   const navigate = useNavigate()
 
-  const [optionId, setOptionId] = useState()
+  const [optionId, setOptionId] = useState({})
   const [tempModalDatas, setTempModalDatas] = useState()
   const [optChangeMiniModal, setOptChangeMiniModal] =useState(false)
 
@@ -44,9 +44,14 @@ function CartOptionChange({itemOptData,setOptChange,setCartDatas}) {
   },[itemOptData]) 
 
   const handleStdOpt = (id) => {
-    console.log(optionId)
-    console.log(id);
-    console.log(itemOptData.productOptionId);
+
+    const newObj = {}
+    newObj.standardName = itemOptData.standardOptionDTO[0].name
+    newObj.productOptionId = id;
+
+    console.log(newObj,'here');
+
+    setOptionId({...newObj})
   }
   
 
@@ -62,6 +67,8 @@ function CartOptionChange({itemOptData,setOptChange,setCartDatas}) {
     } 
       
   }
+
+  
 
   const handleChangeBId = (item) => {
 
@@ -80,6 +87,7 @@ function CartOptionChange({itemOptData,setOptChange,setCartDatas}) {
   
 
   const handleChangeOption = () => {
+
     console.log(itemOptData.cartId,itemOptData.productOptionId,optionId.productOptionId);
 
     axios.put(process.env.REACT_APP_TEST_URL+'/cart/option/mod',
@@ -103,6 +111,7 @@ function CartOptionChange({itemOptData,setOptChange,setCartDatas}) {
   // console.log(itemOptData.standardOptionDTO)
     // console.log(itemOptData.cartId)
     
+    console.log(optionId);
 
   return (
     <>
@@ -143,9 +152,7 @@ function CartOptionChange({itemOptData,setOptChange,setCartDatas}) {
       {itemOptData.productOptionType === 'STANDARD_TYPE' && 
         <>
           {itemOptData.standardOptionDTO.map((item) => {
-
-            console.log(itemOptData);
-            return <div onClick={()=>handleStdOpt(item.standardOptionId)} key={item.standardOptionId}>{item.standardOptionId}</div>
+            return <div onClick={()=>handleStdOpt(item.productOptionId)} key={item.standardOptionId}>{item.standardOptionId}</div>
 
 
           })}
