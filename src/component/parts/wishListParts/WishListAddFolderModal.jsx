@@ -28,6 +28,7 @@ function WishListAddFolderModal({openNewFolder,setOpenNewFolder,setFoldDatas,tem
       })
       .catch(err => console.error(err))
 
+      setFolderName('')
       setOpenNewFolder(false)
 
   }
